@@ -10,7 +10,7 @@ function History() {
   const history = JSON.parse(localStorage.getItem("barbarian-prince") || "[]");
 
   return (
-    <section className="flex flex-col py-2">
+    <section className="flex flex-col">
       <Card title="History">
         {history.length === 0 && <p>No history yet.</p>}
 

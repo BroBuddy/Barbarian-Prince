@@ -6,6 +6,7 @@ import Game from "./pages/Game";
 import EventOverview from "./features/events/pages/EventOverview";
 import EventDetail from "./features/events/pages/EventDetail";
 import History from "./pages/History";
+import TravelOverview from "./features/travel/pages/TravelOverview";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Game /> },
       { path: "/event", element: <EventOverview /> },
       { path: "/event/:tag", element: <EventDetail /> },
+      { path: "/travel", element: <TravelOverview /> },
       { path: "/history", element: <History /> },
     ],
   },

@@ -4,12 +4,17 @@ import "./Card.scss";
 type CardProps = {
   title: string;
   tag?: string;
+  color?: string;
   children: React.ReactNode;
 };
 
-const Card: React.FC<CardProps> = ({ title, tag, children }) => {
+const Card: React.FC<CardProps> = ({ title, tag, color, children }) => {
+  const divStyle = {
+    backgroundColor: color || "#b36a46",
+  };
+
   return (
-    <div className="card">
+    <div className="card" style={divStyle}>
       <div className="flex items-center bg-orange mb-2">
         {tag && (
           <span className="text-white text-md ml-2 my-2">

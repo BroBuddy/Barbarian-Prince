@@ -1,0 +1,32 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --beige: #e2d2ba;
+  --brown: #6a5038;
+  --blue: #234e77;
+  --yellow: #ab8236;
+  --green: #255c39;
+  --purple: #483c79;
+  --red: #95312f;
+}
+
+$colors: (
+  "black": var(--black),
+  "white": var(--white),
+  "beige": var(--beige),
+  "brown": var(--brown),
+  "blue": var(--blue),
+  "yellow": var(--yellow),
+  "green": var(--green),
+  "purple": var(--purple),
+  "red": var(--red),
+);
+
+@each $name, $hex in $colors {
+  .text-#{$name} {
+    color: $hex;
+  }
+  .bg-#{$name} {
+    background-color: $hex;
+  }
+}

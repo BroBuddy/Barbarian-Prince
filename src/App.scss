@@ -1,0 +1,77 @@
+@use "./styles/typography";
+@use "./styles/spacing";
+@use "./styles/flexbox";
+@use "./styles/sizing";
+@use "./styles/colors";
+@use "./styles/utilities";
+
+#root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 768px;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  padding-left: 10px;
+  margin: 0 10px;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: var(--black);
+  color: var(--black);
+  padding: 0 0 45px 0;
+}
+
+p,
+li,
+em,
+strong,
+span {
+  line-height: 1.2em;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+table {
+  font-size: 13px;
+
+  tr {
+    th {
+      padding: 2px;
+    }
+
+    td {
+      padding: 4px;
+    }
+  }
+}

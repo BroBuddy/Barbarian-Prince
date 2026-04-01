@@ -6,11 +6,16 @@
 @use "./styles/utilities";
 
 #root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family:
+    "Palatino Linotype", "Book Antiqua", Palatino, Georgia, Garamond, serif;
   line-height: 1.5;
   margin: 0 auto;
   width: 100%;
   max-width: 768px;
+}
+
+h3 {
+  font-style: italic;
 }
 
 a {
@@ -48,6 +53,7 @@ li,
 em,
 strong,
 span {
+  font-size: 14px;
   line-height: 1.3em;
 }
 
@@ -64,15 +70,32 @@ span {
 }
 
 table {
-  font-size: 13px;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: auto;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
 
   tr {
+    td,
     th {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    th {
+      color: var(--orange);
       padding: 2px;
+      text-align: left;
     }
 
     td {
       padding: 4px;
+      text-align: left;
     }
+  }
+
+  tr:nth-child(odd) td {
+    background-color: var(--white);
   }
 }

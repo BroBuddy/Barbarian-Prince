@@ -10,13 +10,19 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ title, tag, children }) => {
   return (
     <div className="card">
-      <div className="flex items-center mb-2">
+      <div className="flex items-center bg-orange mb-2">
         {tag && (
-          <span className="text-orange text-md mr-2">{tag.toUpperCase()}</span>
+          <span className="text-white text-md ml-2 my-2">
+            {tag.toUpperCase()}
+          </span>
         )}
-        {title && <Headline>{title}</Headline>}
+        {title && (
+          <div className="mx-2">
+            <Headline>{title}</Headline>
+          </div>
+        )}
       </div>
-      {children && <div>{children}</div>}
+      {children && <div className="mx-3">{children}</div>}
     </div>
   );
 };

@@ -1,21 +1,28 @@
+import { parseEventCell } from "@/lib/Helper";
 import type { SimpleListTableType } from "../types/EventType";
 
 function SimpleListTable({ table }: { table: SimpleListTableType }) {
   return (
     <div className="mb-6">
-      <h3 className="font-bold mb-2">{table.label}</h3>
+      <h3 className="text-bold mb-2">{table.label}</h3>
 
-      <div className="border rounded-xl overflow-hidden">
-        {table.rows.map((row, i) => (
-          <div
-            key={i}
-            className="flex justify-between border-b last:border-0 p-3"
-          >
-            <span className="font-semibold">{row[0]}</span>
-            <span>{row[1]}</span>
-          </div>
-        ))}
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th className="p-2 w-2">#</th>
+            <th className="p-2">Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {table.rows.map((row, i) => (
+            <tr key={i}>
+              <td className="p-2">{row[0]}</td>
+              <td className="p-2">{parseEventCell(row[1])}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

@@ -3,10 +3,17 @@ import { getEventDataByTag } from "../services/EventService";
 import { useParams } from "react-router-dom";
 import TableRenderer from "../components/TableRenderer";
 import type { Event } from "../types/EventType";
+import { useHistory } from "@/hooks/useHistory";
+import { useEffect } from "react";
 
 function EventDetail() {
   const { tag } = useParams();
   const event: Event = getEventDataByTag(tag as string);
+  const { addToHistory } = useHistory();
+
+  useEffect(() => {
+    addToHistory(event.tag, event.title);
+  }, [addToHistory, event]);
 
   if (!event) return null;
 

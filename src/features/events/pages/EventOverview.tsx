@@ -13,7 +13,7 @@ function EventOverview() {
       <div className="flex flex-wrap">
         {events.map((item) => {
           return (
-            <div key={item.tag} className="m-1 w-6">
+            <div key={item.tag} className="m-1 w-5">
               <Link to={`/event/${item.tag}`}>{item.tag.toUpperCase()}</Link>
             </div>
           );

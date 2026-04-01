@@ -10,7 +10,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ title, tag, color, children }) => {
   const divStyle = {
-    backgroundColor: color || "#b36a46",
+    backgroundColor: color || "#efe7d2",
   };
 
   return (

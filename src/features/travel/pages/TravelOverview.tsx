@@ -28,7 +28,7 @@ function TravelOverview() {
                   <tr key={rowIndex}>
                     {row.map((cell, cellIndex) => (
                       <td key={cellIndex} className="p-2 text-center">
-                        <a href={`/event/${cell.toUpperCase()}`} className="">
+                        <a href={`/event/${cell.toLowerCase()}`} className="">
                           {cell}
                         </a>
                       </td>

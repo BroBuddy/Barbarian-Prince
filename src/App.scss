@@ -16,6 +16,7 @@
 a {
   font-weight: bold;
   text-decoration: none;
+  color: var(--orange);
 }
 
 ul,
@@ -37,7 +38,7 @@ body {
   display: flex;
   box-sizing: border-box;
   min-height: 100vh;
-  background: var(--black);
+  background: var(--beige);
   color: var(--black);
   padding: 0 0 45px 0;
 }
@@ -47,7 +48,7 @@ li,
 em,
 strong,
 span {
-  line-height: 1.2em;
+  line-height: 1.3em;
 }
 
 .rounded {

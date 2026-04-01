@@ -3,5 +3,5 @@ interface HeadlineProps {
 }
 
 export function Headline({ children }: HeadlineProps) {
-  return <h3 className="flex my-0 mb-2">{children}</h3>;
+  return <h3 className="m-0">{children}</h3>;
 }

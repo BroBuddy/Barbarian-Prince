@@ -1,22 +1,22 @@
+import { Headline } from "./Headline";
 import "./Card.scss";
 
 type CardProps = {
-  type: string;
-  name: string;
-  image: string;
+  title: string;
+  tag?: string;
   children: React.ReactNode;
 };
 
-const Card: React.FC<CardProps> = ({ type, name, image, children }) => {
+const Card: React.FC<CardProps> = ({ title, tag, children }) => {
   return (
-    <div className={`card ${type}`}>
-      <div className="name text-xl p-2">
-        <strong>{name}</strong>
+    <div className="card">
+      <div className="flex items-center mb-2">
+        {tag && (
+          <span className="text-orange text-md mr-2">{tag.toUpperCase()}</span>
+        )}
+        {title && <Headline>{title}</Headline>}
       </div>
-      <div>
-        <img src={image} alt={name} className="w-18" />
-      </div>
-      <div className="p-2">{children}</div>
+      {children && <div>{children}</div>}
     </div>
   );
 };

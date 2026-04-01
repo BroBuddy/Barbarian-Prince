@@ -1,72 +1,7 @@
 .card {
   background-color: var(--beige);
-  border: 3px solid var(--brown);
+  border: 3px solid var(--orange);
   border-radius: 10px;
   margin: 10px;
-  width: 180px;
-
-  &.Guardian {
-    border-color: var(--blue);
-
-    .name {
-      background-color: var(--blue);
-      color: var(--white);
-    }
-
-    h3 {
-      color: var(--blue);
-    }
-  }
-
-  &.Seeker {
-    border-color: var(--yellow);
-
-    .name {
-      background-color: var(--yellow);
-      color: var(--white);
-    }
-
-    h3 {
-      color: var(--yellow);
-    }
-  }
-
-  &.Rogue {
-    border-color: var(--green);
-
-    .name {
-      background-color: var(--green);
-      color: var(--white);
-    }
-
-    h3 {
-      color: var(--green);
-    }
-  }
-
-  &.Mystic {
-    border-color: var(--purple);
-
-    .name {
-      background-color: var(--purple);
-      color: var(--white);
-    }
-
-    h3 {
-      color: var(--purple);
-    }
-  }
-
-  &.Survivor {
-    border-color: var(--red);
-
-    .name {
-      background-color: var(--red);
-      color: var(--white);
-    }
-
-    h3 {
-      color: var(--red);
-    }
-  }
+  padding: 10px;
 }

@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({ title, tag, color, children }) => {
           </div>
         )}
       </div>
-      {children && <div className="mx-3">{children}</div>}
+      {children && <div className="mx-1">{children}</div>}
     </div>
   );
 };

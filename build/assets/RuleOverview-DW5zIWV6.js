@@ -1,0 +1,1 @@
+import{t as e}from"./rule-C7MThMAh.js";export{e as default};

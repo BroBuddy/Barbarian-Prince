@@ -37,7 +37,7 @@ function MapOverview() {
   };
 
   return (
-    <Card title="Map">
+    <Card title="🗺️ Map">
       <MapSelector selectedMap={selectedMap} onSelect={handleBadgeClick} />
       <MapImage
         selectedMap={selectedMap}

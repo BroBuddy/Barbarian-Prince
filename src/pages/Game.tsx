@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Game() {
   return (
     <>
-      <Card title="Barbarian Prince">
+      <Card title="⚔️ Barbarian Prince">
         <p>
           This game will be a new experience. You are about to become a
           character in a story - a story that changes each game. You are the
@@ -42,7 +42,7 @@ function Game() {
           map.
         </p>
       </Card>
-      <Card title="How to Play">
+      <Card title="📖 How to Play">
         <p>
           Barbarian Prince is a realistic adventure game. You play the game in
           days. Each day starts with you selecting an action (
@@ -87,7 +87,7 @@ function Game() {
           <Link to="/event/e001">e001</Link>.
         </p>
       </Card>
-      <Card title="Edge of the Game Map">
+      <Card title="🗺️ Edge of the Game Map">
         <p>
           During the game, the Barbarian Prince cannot leave the game map. If an
           event or rule would normally land him off the map, he simply stops at
@@ -96,7 +96,7 @@ function Game() {
           to the Barbarian Prince, and are ignored.
         </p>
       </Card>
-      <Card title="Credits">
+      <Card title="🏆 Credits">
         <p>
           Barbarian Prince is copyright ©1981 by Heritage USA. Designed and
           developed by Arnold Hendrick, Cover painting by Frank Cirocco, map,

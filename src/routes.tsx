@@ -10,6 +10,7 @@ import TableOverview from "./features/table/pages/TableOverview";
 import TableDetail from "./features/table/pages/TableDetail";
 import TreasureTable from "./features/table/pages/TreasureTable";
 import SearchingRuinsTable from "./features/table/pages/SearchingRuins";
+import Map from "./pages/Map";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: "/table/ruins", element: <SearchingRuinsTable /> },
       { path: "/table/:id", element: <TableDetail /> },
       { path: "/history", element: <History /> },
+      { path: "/map", element: <Map /> },
     ],
   },
 ]);

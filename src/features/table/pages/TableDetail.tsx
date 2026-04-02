@@ -11,7 +11,7 @@ function TableDetail() {
   if (!travel) return null;
 
   return (
-    <Card title={travel.terrain} color={travel.color}>
+    <Card title={travel.terrain}>
       <div className="flex flex-wrap">
         <Badge icon="🧭" text={travel.lost} />
         <Badge icon="📜" text={travel.event} />

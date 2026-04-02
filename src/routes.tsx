@@ -7,6 +7,7 @@ import EventOverview from "./features/events/pages/EventOverview";
 import EventDetail from "./features/events/pages/EventDetail";
 import History from "./pages/History";
 import TravelOverview from "./features/travel/pages/TravelOverview";
+import TravelDetail from "./features/travel/pages/TravelDetail";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: "/event", element: <EventOverview /> },
       { path: "/event/:tag", element: <EventDetail /> },
       { path: "/travel", element: <TravelOverview /> },
+      { path: "/travel/:id", element: <TravelDetail /> },
       { path: "/history", element: <History /> },
     ],
   },

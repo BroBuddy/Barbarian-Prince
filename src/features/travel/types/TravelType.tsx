@@ -2,6 +2,10 @@ export type Travel = {
   id: number;
   terrain: TravelTerrain;
   color: string;
+  lost: string;
+  event: string;
+  hunt: boolean | null;
+  fodder: boolean | null;
   matrix: string[][];
 };
 
@@ -13,4 +17,6 @@ export type TravelTerrain =
   | "Swamp"
   | "Mountains"
   | "Desert"
-  | "On Road";
+  | "On Road"
+  | "Airborne"
+  | "Cross River";

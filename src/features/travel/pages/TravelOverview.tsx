@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import { getTravelData } from "../services/TravelService";
 import type { Travel } from "../types/TravelType";
+import { Link } from "react-router-dom";
 
 function TravelOverview() {
   const travels = getTravelData();
@@ -8,39 +9,14 @@ function TravelOverview() {
   if (!travels) return null;
 
   return (
-    <>
+    <Card title="Travel Tables">
       {travels.map((item: Travel) => (
-        <div key={item.id} className="mb-6">
-          <Card title={item.terrain} color={item.color}>
-            <table>
-              <thead>
-                <tr>
-                  {item.matrix[0].map((_, colIndex) => (
-                    <th key={colIndex} className="p-2 text-black text-center">
-                      {colIndex + 1}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-
-              <tbody>
-                {item.matrix.map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {row.map((cell, cellIndex) => (
-                      <td key={cellIndex} className="p-2 text-center">
-                        <a href={`/event/${cell.toLowerCase()}`} className="">
-                          {cell}
-                        </a>
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Card>
-        </div>
+        <Link to={`/travel/${item.id}`} key={item.id} className="flex flex-row">
+          <span className="m-2">#{item.id}</span>
+          <span className="my-2 text-black">{item.terrain}</span>
+        </Link>
       ))}
-    </>
+    </Card>
   );
 }
 

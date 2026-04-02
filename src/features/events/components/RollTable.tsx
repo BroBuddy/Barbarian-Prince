@@ -11,7 +11,7 @@ function RollTable({ table }: { table: RollTableType }) {
         <thead>
           <tr className="text-black">
             {table.cols.map((col, i) => (
-              <th key={i} className="p-3">
+              <th key={i} className="text-black p-2">
                 {col}
               </th>
             ))}
@@ -22,7 +22,7 @@ function RollTable({ table }: { table: RollTableType }) {
           {table.rows.map((row, i) => (
             <tr key={i}>
               {row.map((cell, j) => (
-                <td key={j} className="p-3">
+                <td key={j} className="p-2">
                   {parseLinks(cell)}
                 </td>
               ))}

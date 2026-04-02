@@ -17,7 +17,10 @@ export type EventType =
   | "weather"
   | "magic"
   | "item"
-  | "event";
+  | "event"
+  | "story"
+  | "npc"
+  | "settlement";
 
 export type TableType = SimpleListTableType | RollTableType;
 

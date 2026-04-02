@@ -20,7 +20,7 @@ function RuleDetail() {
 
   return (
     <Card title={`${ruleTypeEmoji[rule.type]} ${rule.title}`} tag={rule.tag}>
-      <p>{parseLinks(rule.desc as string)}</p>
+      {rule.desc && <p>{parseLinks(rule.desc as string)}</p>}
 
       {rule.tables?.map((table, index) => (
         <TableRenderer key={index} table={table} />

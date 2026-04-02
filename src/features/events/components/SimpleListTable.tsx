@@ -1,4 +1,4 @@
-import { parseEventCell } from "@/lib/Helper";
+import { parseEventLinks } from "@/lib/Helper";
 import type { SimpleListTableType } from "../types/EventType";
 
 function SimpleListTable({ table }: { table: SimpleListTableType }) {
@@ -9,7 +9,7 @@ function SimpleListTable({ table }: { table: SimpleListTableType }) {
       <table>
         <thead>
           <tr>
-            <th className="p-2 w-2">#</th>
+            <th className="p-2 w-3">#</th>
             <th className="p-2">Description</th>
           </tr>
         </thead>
@@ -18,7 +18,7 @@ function SimpleListTable({ table }: { table: SimpleListTableType }) {
           {table.rows.map((row, i) => (
             <tr key={i}>
               <td className="p-2">{row[0]}</td>
-              <td className="p-2">{parseEventCell(row[1])}</td>
+              <td className="p-2">{parseEventLinks(row[1])}</td>
             </tr>
           ))}
         </tbody>

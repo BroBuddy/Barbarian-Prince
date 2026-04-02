@@ -1,33 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
-export function parseEventCell(cell: string) {
-  return cell.split("—").map((part, index, arr) => {
-    const trimmed = part.trim();
-    const firstToken = trimmed.split(" ")[0].toUpperCase();
-    const isEventLink = firstToken.startsWith("E") && firstToken.length === 4;
+export function parseEventLinks(text: string): React.ReactNode {
+  const parts = text.split(/([Ee]\d{3,4})/g);
 
-    const element = isEventLink ? (
-      <a
-        key={index}
-        href={`/event/${firstToken.toLowerCase()}`}
-        className="text-blue-500 underline px-1"
-      >
-        {trimmed}
-      </a>
+  return parts.map((part, i) =>
+    /^[Ee]\d{3,4}$/.test(part) ? (
+      <Link key={i} to={`/event/${part.toLowerCase()}`}>
+        {part}
+      </Link>
     ) : (
-      <span key={index} className="px-1">
-        {trimmed}
-      </span>
-    );
-
-    if (index < arr.length - 1) {
-      return (
-        <React.Fragment key={index}>
-          {element} <span>—</span>
-        </React.Fragment>
-      );
-    }
-
-    return element;
-  });
+      <Fragment key={i}>{part}</Fragment>
+    ),
+  );
 }

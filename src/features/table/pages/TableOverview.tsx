@@ -28,6 +28,10 @@ function TableOverview() {
           <span className="m-2">#11</span>
           <span className="my-2 text-black">Treasure Table</span>
         </Link>
+        <Link to="/table/ruins" className="flex flex-row">
+          <span className="m-2">#12</span>
+          <span className="my-2 text-black">Searching Ruins Table</span>
+        </Link>
       </Card>
     </>
   );

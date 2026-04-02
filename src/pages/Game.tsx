@@ -25,11 +25,17 @@ function Game() {
           necessary. For convenience, all the rules are collected together in
           the beginning of this booklet, and the major charts and tables
           provided on a special sheet. The most important rules sections are
-          r203, r204, r215, r220, and r225. You may wish to briefly review these
-          first, if you wish to understand the basic mechanics of play before
-          you start. If you are an experienced gamer, you can read all the rules
-          sections first (r201 to r228), and then just refer to them later as
-          you play.
+          <Link className="ml-1" to="/rule/r203">
+            r203
+          </Link>
+          , <Link to="/rule/r204">r204</Link>, <Link to="/rule/r215">r215</Link>
+          , <Link to="/rule/r220">r220</Link>, and{" "}
+          <Link to="/rule/r225">r225</Link>. You may wish to briefly review
+          these first, if you wish to understand the basic mechanics of play
+          before you start. If you are an experienced gamer, you can read all
+          the rules sections first (<Link to="/rule/r201">r201</Link> to{" "}
+          <Link to="/rule/r228">r228</Link>), and then just refer to them later
+          as you play.
         </p>
         <p>
           The small metal token is used to mark your current location on the
@@ -39,17 +45,18 @@ function Game() {
       <Card title="How to Play">
         <p>
           Barbarian Prince is a realistic adventure game. You play the game in
-          days. Each day starts with you selecting an action (r203), such as
-          travelling to a new hex on the map. Depending on the action selected,
-          you will be referred to a chart, where you roll one or two dice. The
-          dice roll and chart may then indicate a special event section, which
-          you then resolve.
+          days. Each day starts with you selecting an action (
+          <Link to="/rule/r203">r203</Link>), such as travelling to a new hex on
+          the map. Depending on the action selected, you will be referred to a
+          chart, where you roll one or two dice. The dice roll and chart may
+          then indicate a special event section, which you then resolve.
         </p>
         <p>
           After all events (if any) are resolved for your daily action, you must
-          then eat your main (evening) meal, as described in the food rules
-          (r215), and if in a town, castle, or temple hex, you must also
-          purchase lodging (r217).
+          then eat your main (evening) meal, as described in the food rules (
+          <Link to="/rule/r215">r215</Link>), and if in a town, castle, or
+          temple hex, you must also purchase lodging (
+          <Link to="/rule/r217">r217</Link>).
         </p>
         <p>
           This ends the day, and you continue play with the start of the next
@@ -58,12 +65,13 @@ function Game() {
           won after 70 days, the game is automatically lost!
         </p>
         <p>
-          Many events may lead to fighting, described in the combat rules
-          (r220). You may also have additional characters (r201) join your
-          “party.” These additional characters are especially useful in fights,
-          although some may have special knowledge or abilities useful in
-          certain events. Magicians, wizards, witches, priests and monks are
-          especially useful people to have in your party.
+          Many events may lead to fighting, described in the combat rules (
+          <Link to="/rule/r220">r220</Link>). You may also have additional
+          characters (<Link to="/rule/r201">r201</Link>) join your “party.”
+          These additional characters are especially useful in fights, although
+          some may have special knowledge or abilities useful in certain events.
+          Magicians, wizards, witches, priests and monks are especially useful
+          people to have in your party.
         </p>
         <p>
           All events are self explanatory, and refer to the main rules section

@@ -11,12 +11,16 @@ import TableDetail from "./features/table/pages/TableDetail";
 import TreasureTable from "./features/table/pages/TreasureTable";
 import SearchingRuinsTable from "./features/table/pages/SearchingRuins";
 import MapOverview from "./features/map/pages/MapOverview";
+import RuleOverview from "./features/rule/pages/RuleOverview";
+import RuleDetail from "./features/rule/pages/RuleDetail";
 
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
       { path: "/", element: <Game /> },
+      { path: "/rule", element: <RuleOverview /> },
+      { path: "/rule/:tag", element: <RuleDetail /> },
       { path: "/event", element: <EventOverview /> },
       { path: "/event/:tag", element: <EventDetail /> },
       { path: "/table", element: <TableOverview /> },

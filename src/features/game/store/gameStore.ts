@@ -6,8 +6,7 @@ const MAX_VALUES: Record<string, number> = {
   Endurance: 9,
   WitAndWiles: 6,
   Starvation: 8,
-  Day: 7,
-  Week: 10,
+  Day: 70,
 };
 
 type GameState = {
@@ -28,7 +27,6 @@ const useGameStore = create<GameState>()(
         Gold: 0,
         Starvation: 0,
         Day: 1,
-        Week: 1,
       },
       setResources: (newResources) => {
         set((state) => {

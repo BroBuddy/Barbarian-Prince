@@ -1,7 +1,6 @@
 import Card from "@/components/Card";
 import { useEffect, useState } from "react";
 import MapImage from "../components/MapImage";
-import MapSelector from "../components/MapSelector";
 import type { MarkerType } from "../components/Marker";
 
 function MapOverview() {
@@ -38,11 +37,11 @@ function MapOverview() {
 
   return (
     <Card title="🗺️ Map">
-      <MapSelector selectedMap={selectedMap} onSelect={handleBadgeClick} />
       <MapImage
         selectedMap={selectedMap}
         marker={marker}
         onImageClick={handleImageClick}
+        onMapChange={handleBadgeClick}
       />
     </Card>
   );

@@ -20,7 +20,7 @@ function RollTable({ table }: { table: RollTableType }) {
 
         <tbody>
           {table.rows.map((row, i) => (
-            <tr key={i} className="border-t hover:bg-gray-100">
+            <tr key={i}>
               {row.map((cell, j) => (
                 <td key={j} className="p-3">
                   {parseLinks(cell)}

@@ -9,7 +9,7 @@ function SimpleListTable({ table }: { table: SimpleListTableType }) {
       <table>
         <thead>
           <tr>
-            <th className="p-2 w-3">#</th>
+            <th className="p-2 w-4">#</th>
             <th className="p-2">Description</th>
           </tr>
         </thead>

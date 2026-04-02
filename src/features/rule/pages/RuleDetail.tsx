@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import { useParams } from "react-router-dom";
 import { useHistory } from "@/hooks/useHistory";
 import { useEffect } from "react";
-import { parseLinks } from "@/lib/Helper";
+import { parseLinks, ruleTypeEmoji } from "@/lib/Helper";
 import TableRenderer from "@/features/events/components/TableRenderer";
 import { getRuleDataByTag } from "../services/RuleService";
 import type { Rule } from "../types/RuleType";
@@ -19,7 +19,7 @@ function RuleDetail() {
   if (!rule) return null;
 
   return (
-    <Card title={rule.title} tag={rule.tag}>
+    <Card title={`${ruleTypeEmoji[rule.type]} ${rule.title}`} tag={rule.tag}>
       <p>{parseLinks(rule.desc as string)}</p>
 
       {rule.tables?.map((table, index) => (

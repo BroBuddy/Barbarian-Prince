@@ -1,5 +1,18 @@
+import type { RuleType } from "@/features/rule/types/RuleType";
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+
+export const ruleTypeEmoji: Record<RuleType, string> = {
+  action: "🎯",
+  character: "🧙",
+  combat: "⚔️",
+  encounter: "👥",
+  food: "🍖",
+  movement: "🗺️",
+  reference: "📋",
+  treasure: "💰",
+  special: "✨",
+};
 
 export function parseLinks(text: string): React.ReactNode {
   const parts = text.split(/([Ee]\d{3,4}[a-zA-Z]?|[Rr]\d{3,4}[a-zA-Z]?)/g);

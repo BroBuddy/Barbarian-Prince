@@ -22,10 +22,10 @@ const useGameStore = create<GameState>()(
       resources: {
         Combat: 8,
         Endurance: 9,
+        Starvation: 0,
         WitAndWiles: 0,
         Food: 0,
         Gold: 0,
-        Starvation: 0,
         Day: 1,
       },
       setResources: (newResources) => {
@@ -77,7 +77,7 @@ const useGameStore = create<GameState>()(
       },
     }),
     {
-      name: "barbarian-prince-stats",
+      name: "barbarian-prince-store",
     },
   ),
 );

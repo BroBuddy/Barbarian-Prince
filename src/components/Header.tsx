@@ -1,4 +1,5 @@
 import ResourceManager from "@/features/game/components/ResourceManager";
+import ResourceModal from "@/features/game/components/ResourceModal";
 import { useState } from "react";
 
 const Header = () => {
@@ -21,6 +22,8 @@ const Header = () => {
           <ResourceManager />
         </div>
       </div>
+
+      <ResourceModal isOpen={isOpen} toggleModal={toggleModal} />
     </header>
   );
 };

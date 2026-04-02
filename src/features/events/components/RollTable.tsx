@@ -1,5 +1,6 @@
 import { Headline } from "@/components/Headline";
 import type { RollTableType } from "../types/EventType";
+import { parseLinks } from "@/lib/Helper";
 
 function RollTable({ table }: { table: RollTableType }) {
   return (
@@ -22,7 +23,7 @@ function RollTable({ table }: { table: RollTableType }) {
             <tr key={i} className="border-t hover:bg-gray-100">
               {row.map((cell, j) => (
                 <td key={j} className="p-3">
-                  {cell}
+                  {parseLinks(cell)}
                 </td>
               ))}
             </tr>

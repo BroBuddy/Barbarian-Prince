@@ -5,6 +5,18 @@ import { Link } from "react-router-dom";
 function FrequentlyUsed() {
   const frequentlyUsed: TagItem[] = [
     {
+      tag: "r207",
+      title: "Travel Tables",
+    },
+    {
+      tag: "r226",
+      title: "Treasure Table",
+    },
+    {
+      tag: "r208",
+      title: "Searching Ruins",
+    },
+    {
       tag: "r220",
       title: "Combat",
     },
@@ -17,28 +29,8 @@ function FrequentlyUsed() {
       title: "Escape and Hiding",
     },
     {
-      tag: "r207",
-      title: "Travel Tables",
-    },
-    {
-      tag: "r330",
-      title: "Battle Reference",
-    },
-    {
       tag: "r205",
       title: "Lost",
-    },
-    {
-      tag: "r203",
-      title: "Daily Actions",
-    },
-    {
-      tag: "r206",
-      title: "Transport",
-    },
-    {
-      tag: "r221",
-      title: "Wounds and Endurance",
     },
   ];
 

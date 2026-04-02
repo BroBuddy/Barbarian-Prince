@@ -2,13 +2,18 @@ import Card from "@/components/Card";
 import { ruinsData } from "../data/ruinsData";
 import { parseLinks } from "@/lib/Helper";
 
-function SearchingRuinsTable() {
+function SearchingRuins() {
   const ruinsTable = ruinsData;
 
   if (!ruinsTable) return null;
 
   return (
-    <Card title="Searching Ruins Table">
+    <Card title="Searching Ruins">
+      <p>
+        As a daily action, you spend the day searching ruins with your party.
+        Roll two dice to determine the result.
+      </p>
+
       <table>
         <thead>
           <tr>
@@ -33,4 +38,4 @@ function SearchingRuinsTable() {
   );
 }
 
-export default SearchingRuinsTable;
+export default SearchingRuins;

@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 import { ruinsData } from "../data/ruinsData";
-import { parseEventLinks } from "@/lib/Helper";
+import { parseLinks } from "@/lib/Helper";
 
 function SearchingRuinsTable() {
   const ruinsTable = ruinsData;
@@ -22,7 +22,7 @@ function SearchingRuinsTable() {
             <tr key={i}>
               {row.map((cell, j) => (
                 <td key={j}>
-                  <span>{parseEventLinks(cell)}</span>
+                  <span>{parseLinks(cell)}</span>
                 </td>
               ))}
             </tr>

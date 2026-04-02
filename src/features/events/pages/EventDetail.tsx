@@ -5,7 +5,7 @@ import TableRenderer from "../components/TableRenderer";
 import type { Event } from "../types/EventType";
 import { useHistory } from "@/hooks/useHistory";
 import { useEffect } from "react";
-import { parseEventLinks } from "@/lib/Helper";
+import { parseLinks } from "@/lib/Helper";
 
 function EventDetail() {
   const { tag } = useParams();
@@ -20,7 +20,7 @@ function EventDetail() {
 
   return (
     <Card title={event.title} tag={event.tag}>
-      <p>{parseEventLinks(event.desc as string)}</p>
+      <p>{parseLinks(event.desc as string)}</p>
 
       {event.tables?.map((table, index) => (
         <TableRenderer key={index} table={table} />
@@ -29,7 +29,8 @@ function EventDetail() {
       {event.note && (
         <p>
           <em>
-            <span className="text-purple">Important Note:</span> {event.note}
+            <span className="text-purple mr-1">Important Note:</span>
+            {parseLinks(event.note as string)}
           </em>
         </p>
       )}

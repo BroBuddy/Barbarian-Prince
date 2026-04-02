@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-export function parseEventLinks(text: string): React.ReactNode {
+export function parseLinks(text: string): React.ReactNode {
   const parts = text.split(/([Ee]\d{3,4})/g);
 
   return parts.map((part, i) =>

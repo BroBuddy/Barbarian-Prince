@@ -9,7 +9,7 @@ type Links = {
 const links: Links[] = [
   { to: "/", label: "Game" },
   { to: "/event", label: "Events" },
-  { to: "/travel", label: "Travel" },
+  { to: "/table", label: "Tables" },
   { to: "/history", label: "History" },
 ];
 

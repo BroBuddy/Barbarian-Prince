@@ -1,12 +1,12 @@
 import Card from "@/components/Card";
 import Badge from "@/components/Badge";
 import { useParams } from "react-router-dom";
-import { getTravelDataById } from "../services/TravelService";
-import type { Travel } from "../types/TravelType";
+import { getTravelDataById } from "../services/TableService";
+import type { Table } from "../types/TableType";
 
-function TravelDetail() {
+function TableDetail() {
   const { id } = useParams();
-  const travel: Travel | undefined = getTravelDataById(Number(id));
+  const travel: Table | undefined = getTravelDataById(Number(id));
 
   if (!travel) return null;
 
@@ -51,4 +51,4 @@ function TravelDetail() {
   );
 }
 
-export default TravelDetail;
+export default TableDetail;

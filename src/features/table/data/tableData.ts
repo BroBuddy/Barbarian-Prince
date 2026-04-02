@@ -1,6 +1,6 @@
-import type { Travel } from "../types/TravelType";
+import type { Table } from "../types/TableType";
 
-export const travelData: Travel[] = [
+export const tableData: Table[] = [
   {
     id: 1,
     terrain: "Countryside",

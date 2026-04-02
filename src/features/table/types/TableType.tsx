@@ -1,6 +1,6 @@
-export type Travel = {
+export type Table = {
   id: number;
-  terrain: TravelTerrain;
+  terrain: TableTerrain;
   color: string;
   lost: string;
   event: string;
@@ -9,7 +9,7 @@ export type Travel = {
   matrix: string[][];
 };
 
-export type TravelTerrain =
+export type TableTerrain =
   | "Countryside"
   | "Farmland"
   | "Hills"

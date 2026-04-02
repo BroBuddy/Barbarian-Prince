@@ -6,8 +6,9 @@ import Game from "./pages/Game";
 import EventOverview from "./features/events/pages/EventOverview";
 import EventDetail from "./features/events/pages/EventDetail";
 import History from "./pages/History";
-import TravelOverview from "./features/travel/pages/TravelOverview";
-import TravelDetail from "./features/travel/pages/TravelDetail";
+import TableOverview from "./features/table/pages/TableOverview";
+import TableDetail from "./features/table/pages/TableDetail";
+import TreasureTable from "./features/table/pages/TreasureTable";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,9 @@ const router = createBrowserRouter([
       { path: "/", element: <Game /> },
       { path: "/event", element: <EventOverview /> },
       { path: "/event/:tag", element: <EventDetail /> },
-      { path: "/travel", element: <TravelOverview /> },
-      { path: "/travel/:id", element: <TravelDetail /> },
+      { path: "/table", element: <TableOverview /> },
+      { path: "/table/treasure", element: <TreasureTable /> },
+      { path: "/table/:id", element: <TableDetail /> },
       { path: "/history", element: <History /> },
     ],
   },

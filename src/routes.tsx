@@ -23,8 +23,8 @@ const router = createBrowserRouter([
       { path: "/table/treasure", element: <TreasureTable /> },
       { path: "/table/ruins", element: <SearchingRuinsTable /> },
       { path: "/table/:id", element: <TableDetail /> },
-      { path: "/history", element: <History /> },
       { path: "/map", element: <MapOverview /> },
+      { path: "/history", element: <History /> },
     ],
   },
 ]);

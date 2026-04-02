@@ -5,4 +5,12 @@ export type Travel = {
   matrix: string[][];
 };
 
-export type TravelTerrain = "Countryside" | "Farmland" | "Hills" | "Forest";
+export type TravelTerrain =
+  | "Countryside"
+  | "Farmland"
+  | "Hills"
+  | "Forest"
+  | "Swamp"
+  | "Mountains"
+  | "Desert"
+  | "On Road";

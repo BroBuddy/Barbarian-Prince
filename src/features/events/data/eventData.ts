@@ -1549,4 +1549,904 @@ export const eventData: Event[] = [
     type: "combat",
     desc: "You encounter a group of hawkmen who swoop down on your party. Roll one die for the number of hawkmen, each is combat skill 7, endurance 5, wealth 7. They surprise your party in combat (r220). You cannot escape from combat, but must fight to the death.",
   },
+  {
+    tag: "e109",
+    title: "Wild Pegasus",
+    type: "encounter",
+    desc: "You encounter a wild pegasus. Each character in your party is allowed one attempt to capture it — roll one die. If the result is 5 or higher the character captures the pegasus, you may add it as a winged mount to your party.",
+  },
+  {
+    tag: "e110",
+    title: "Air Spirit",
+    type: "magic",
+    desc: "You encounter an air spirit, but will only recognize it if a magician, wizard, witch, priest or monk is in your party. If you can't recognize it, this event ends. If you recognize it, you can attempt communication if you wish. To talk to the air spirit, roll one die. If the roll equals or exceeds your wit & wiles, communication fails — the air spirit becomes confused and blows you off course. Roll one die for the direction (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW) and then roll one die for the number of hexes you are blown in that direction. Move your party to this new hex, and continue with your daily actions (r203). If the die roll is less than your wit & wiles, you successfully talk with the air spirit. It will help you in your journey — roll two dice, and move up to that many hexes immediately, without risk of getting lost, and with no new travel events except for the last hex (where a normal travel event must be determined).",
+  },
+  {
+    tag: "e111",
+    title: "Storm Demon",
+    type: "magic",
+    desc: "You encounter a powerful Demon of storms, which attacks your party. If you have any magicians, wizards, witches, priests, or monks in your party, each can attempt to stop the demon by rolling one die — a 6 means the demon attack is blocked, any other result means no effect on the attack. If you are unable to block the attack, your entire party is blown away to be lost or killed. You crash in an adjacent hex (roll one die to determine which one: 1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW), where your winged mount is killed, and you roll one die for the number of wounds suffered. Your wealth and possessions you carried are intact, but that of the rest of your party is lost.",
+  },
+  {
+    tag: "e112",
+    title: "Meet Eagle Clan",
+    type: "encounter",
+    desc: "While airborne you encounter eagles in flight. Roll one die for the number of eagles, each is combat skill 4, endurance 3, and wealth 1. If your party has a character type or mount other than humans, elves, and/or pegasus mounts, you must select the evade or fight option. Wizards, witches, magicians, priests and monks are presumed human unless specified as some other race when first encountered.",
+    note: "If you select follow, see r319 for procedure for a follow move today, and then consult the event listed. If you elect to follow, you must abandon all members of your party without winged mounts or ability to fly.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Options",
+        cols: ["Die", "Evade", "Follow", "Fight"],
+        rows: [
+          ["1", "pass r325", "ambush e113", "attack r304"],
+          ["2", "pass r325", "hunt e114", "attacked r305"],
+          ["3", "pass r326", "hunt e114", "attacked r306"],
+          ["4", "pass r326", "lair e115", "attacked r306"],
+          ["5", "conversation r341", "help e116", "surprised r308"],
+          ["6", "inquiry r342", "allies e117", "surprised r309"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e113",
+    title: "Eagle Ambush",
+    type: "combat",
+    desc: "The eagles lead you to a craggy area, when more eagles suddenly appear — roll one die for the additional eagles who arrive. All of these make a surprise attack on your party, causing combat (r220).",
+  },
+  {
+    tag: "e114",
+    title: "Eagle Hunt",
+    type: "event",
+    desc: "Eagles are hunting, and they join your party for the hunt. This ends all travel today, and for the evening meal (r215) you can hunt regardless of hex type, and add one to your normal combat skill when doing so. You and the eagles will camp on a high crag, and do not count as landing in this hex for the day. Tomorrow the eagles leave, ending the event. You can either land in the hex (consult travel table for possible event immediately, r204 and r207) before pursuing any action you wish (r203), or you can leave the hex by travel (r204). If you leave the hex, instructions from the eagles act as if you had a guide for tomorrow only.",
+  },
+  {
+    tag: "e115",
+    title: "Eagle Lair",
+    type: "location",
+    desc: "The eagles lead you to their lair, where you meet family and make friends. Tonight you receive free food (r215) for your entire party. Do not roll for landing in the hex — the eagle lair replaces the normal landing event. Later in the game you can return to the eagle lair for free food, but only if you make airborne travel into the lair hex, and do not make a normal landing (but instead land in the lair).",
+  },
+  {
+    tag: "e116",
+    title: "Eagle Help",
+    type: "location",
+    desc: "Same as e115 — the eagles lead you to their lair, where you meet family and make friends, and receive free food (r215) for your entire party tonight. In addition, when you leave the lair the eagles provide one of themselves to join your party and act as a guide, combat skill 4 and endurance 3. The eagle is able to feed itself each day on the wing, but will leave you whenever you end a day in a town, castle, or temple.",
+  },
+  {
+    tag: "e117",
+    title: "Eagle Allies",
+    type: "event",
+    desc: "The eagles lead you to their high council, and after hearing your tale, decide to support your quest for the Northlands kingdom. They give you 50 gold to help with expenses, plus a warrior band of eagles to join your party. Roll two dice for the number of eagles in the warrior band, each is combat skill 4, endurance 3. Any may act as guides if you wish. In addition, after the council tonight your entire party is feasted — your evening meal's food (r215) is entirely provided by the eagles.",
+  },
+  {
+    tag: "e118",
+    title: "Giant",
+    type: "encounter",
+    desc: "You encounter a 12-foot tall giant, carrying a very big club. He is combat skill 9, endurance 8, wealth 10.",
+    note: "If the giant joins your party, he is too big to be carried on any mount, so you can't use mounted travel (r204) while he is with your party. In addition, he eats double the normal amount of food (r215) each day.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Options",
+        cols: ["Die", "Talk", "Evade", "Fight"],
+        rows: [
+          ["1", "inquiry r342", "escape-fly r313", "surprise r301"],
+          ["2", "plead comrades r337", "escape-mtd r312", "surprise r302"],
+          ["3", "looter r340", "hide r316", "attack r304"],
+          ["4", "pass r328", "hide r317", "attack r305"],
+          ["5", "attacked r306", "hide r319", "attacked r306"],
+          ["6", "surprised r308", "hide r320", "attacked r306"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e119",
+    title: "Flash Flood",
+    type: "weather",
+    desc: "Your party is travelling down a shallow depression, a wadi. Suddenly there is a roaring, and a wall of water rushes toward you. Rains elsewhere have caused a flash flood. Roll one die for each member of your party — 5 or 6 means the character can't scramble up the bank fast enough, and is carried away by the flood. This includes the character, any mount, and any wealth or possessions. Those carried away are permanently lost. If you are carried away in the flood, any mount of yours is killed, roll one die for the number of wounds you suffer, and you can only rescue one load of material from that which you were carrying (r206). All the rest is lost, and you are so far separated from your party that they give you up for dead and disappear also.",
+  },
+  {
+    tag: "e120",
+    title: "Exhaustion",
+    type: "weather",
+    desc: "The burning days and freezing nights sap the strength of your party. Mounts cannot be ridden, and the load capacity of all men and mounts (r206) is halved. Each character in your party suffers one wound. No rest or healing of wounds (r222) is allowed until you leave the desert, or are in an oasis hex. Mounts recover normal abilities whenever you leave the desert and rest one day, or rest a day at an oasis.",
+  },
+  {
+    tag: "e121",
+    title: "Sunstroke",
+    type: "weather",
+    desc: "The heat of the sun is unexpected. Roll one die for each character and mount in your party — a 6 means they or it collapses from sunstroke. Mounts that collapse must be left to die. Characters that collapse must be carried if possible, even if that means other loads must be abandoned (see r206). If you suffer sunstroke, other characters in the party will carry you if possible, otherwise they leave you behind and disappear. If you suffer sunstroke and are not carried for the rest of the day, you suffer wounds equal to one die roll, and revive in time for the evening meal (r215) — however, you are unable to hunt. If your party continues carrying any sunstroke victims, there is no special effect except that sunstroke victims cannot participate in hunting. All characters recover from sunstroke at the evening meal.",
+  },
+  {
+    tag: "e122",
+    title: "Raftsmen",
+    type: "event",
+    desc: "You meet raftsmen at the side of the river. For 1 gold piece they will transport you across, along with any members of your party and mounts that you wish. Alternately, starting tomorrow, you can hire them for travel up or down the river. See r213 for details.",
+  },
+  {
+    tag: "e123",
+    title: "Knight at the Bridge",
+    type: "combat",
+    desc: "You find a small bridge that will permit crossing the river. However, a knight in armour stands at the opposite end, challenging any who wish to cross. You can only cross if you personally engage him in combat (r220) — the knight is combat skill 8, endurance 8, wealth 30. You may refuse the combat and end travel for the day, but roll one die for each character in your party — a 6 indicates he deserts due to your cowardice. If you engage in combat, roll one die at the start of each round — you strike first if the roll is 4 or more, the knight strikes first if the roll is 3 or less. If either you or the knight is knocked unconscious, the duel ends. If you are knocked unconscious crossing is prohibited, and travel ends for the day. If the knight is knocked unconscious you can either leave him here and continue to travel, or you can halt for the day, treat his wounds, and allow him to join your party (no wages need be paid, but food r215 and lodging r217 must be supplied). You may give up the combat and end travel for the day after any combat round, without invoking the usual escape procedure.",
+  },
+  {
+    tag: "e124",
+    title: "Raft",
+    type: "event",
+    desc: "You cross the river using a quickly built raft. Roll one die to determine if any unfortunate incident occurs during the crossing.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Crossing incident (1d6)",
+        rows: [
+          ["1-2", "Nothing — crossing uneventful"],
+          ["3", "e094 — Crocodiles"],
+          ["4", "e125 — Raft Overturns"],
+          ["5", "e126 — Raft Caught in Current"],
+          ["6", "e127 — Raft in Rough Water"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e125",
+    title: "Raft Overturns",
+    type: "event",
+    desc: "The raft is caught in an eddy, hits a rock, and overturns. Everyone in your party, including mounts, swims to shore. However, all wealth and all possessions are lost.",
+  },
+  {
+    tag: "e126",
+    title: "Raft Caught in Current",
+    type: "event",
+    desc: "Your raft is swept downriver — move one hex downriver (see r213 for definition of downriver). Then roll one die for each mount and the characters in your party — a 6 indicates it is lost overboard and drowns. If you fall overboard you can swim to shore, losing all your wealth, possessions and mount, while your party disappears downriver on the raft and is lost to you.",
+  },
+  {
+    tag: "e127",
+    title: "Raft in Rough Water",
+    type: "event",
+    desc: "Your raft hits white water — all food stores piled on it are lost overboard. All characters, mounts, wealth and possessions are saved. Raft continues its journey safely and you land or continue (as appropriate to your action) without further incident.",
+  },
+  {
+    tag: "e128",
+    title: "Merchant",
+    type: "encounter",
+    desc: "You meet a friendly merchant. You can either pass by and ignore him, ending this encounter, or you can stop to chat and barter. If you stop, roll two dice and consult the chart below.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Merchant offers (2d6)",
+        rows: [
+          ["2", "Merchant has pegasus mount for sale — 50 gold"],
+          [
+            "3",
+            "Merchant mentions cave tombs in this hex — if you go to look, see e028",
+          ],
+          [
+            "4",
+            "Merchant has cure-poison vials for sale — each costs 10 gold (see e181 for details of its use)",
+          ],
+          [
+            "5",
+            "Merchant mentions a farm nearby in this hex — if you investigate see e009",
+          ],
+          [
+            "6",
+            "Merchant has food for sale — 1 gold per 2 food units, up to a maximum of eight (8) units may be purchased",
+          ],
+          [
+            "7",
+            "Merchant may outwit you — roll one die, if it exceeds your wit & wiles you spend 10 gold needlessly (or all your money, if you have less)",
+          ],
+          [
+            "8",
+            "Merchant has healing potions for sale — each costs 5 gold (see e180 for use)",
+          ],
+          ["9", "Merchant has two horses for sale — 6 gold pieces each"],
+          ["10", "Merchant has coffle of slaves for sale — see e163"],
+          [
+            "11",
+            "Merchant provides some final clues about a treasure — see e147",
+          ],
+          ["12", "Learn unique secrets from the merchant — see e162"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e129",
+    title: "Merchant Caravan",
+    type: "encounter",
+    desc: "You meet a merchant caravan camped for the night. You may halt for the day with them to talk and trade, or you can ignore them and end this event. If you stop, roll two dice and consult the chart below.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Caravan offers (2d6)",
+        rows: [
+          ["2", "Learn unique secrets from various caravan members — see e162"],
+          [
+            "3",
+            "Learn of a monastery in this hex — if you go to look see e022",
+          ],
+          [
+            "4",
+            "Merchants have anti-poison talisman/amulet for sale for 25 gold — for details of its use see e187",
+          ],
+          [
+            "5",
+            "Merchants noticed farms in this hex — if you go to look see e009",
+          ],
+          ["6", "Meet an independent merchant in the caravan — see e128"],
+          [
+            "7",
+            "Caravan guards become hostile — you must flee the hex, see escape r218",
+          ],
+          [
+            "8",
+            "Caravan healer has potions for sale — 6 gold each, for use see e180",
+          ],
+          [
+            "9",
+            "Caravan has up to six spare horses for sale — 7 gold pieces each",
+          ],
+          ["10", "Caravan has coffle of slaves for sale — see e163"],
+          [
+            "11",
+            "Talk with caravan guards give you hints to a treasure — see e147",
+          ],
+          [
+            "12",
+            "Caravan passed a nearby ruin yesterday — roll one die for which adjacent hex contains the ruins (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW)",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e130",
+    title: "Meet a High Lord",
+    type: "encounter",
+    desc: "You meet a high and powerful lord of the land. The Lord has a bodyguard — roll two dice and add one (+1) for the number of guards, each of which is combat skill 6, endurance 6.",
+    note: "If arrested, you are jailed at the Lord's residence — either the appropriate castle, nearest temple for the High Priest, or nearest town for Mayor. Advance time by one day. If you achieve an audience, roll one die for Baron Huldra: 1-2→nothing; 3-4→e150; 5→e151; 6→e152. For Count Drogat see e161; Lady Aeravir see e160; High Priest see e155; Town Mayor see e156. Any inquiry result that normally allows hiring instead permits you to bribe the bodyguards with 10 gold for an audience. If you fight and kill all the guards, the Lord must automatically grant you an audience.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Lord's identity (1d6)",
+        rows: [
+          ["1", "Baron of Huldra Castle"],
+          ["2", "Count Drogat of Drogat Castle"],
+          ["3", "Lady Aeravir of Aeravir Castle"],
+          ["4", "High Priest of a Temple"],
+          ["5-6", "Town Mayor"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Options",
+        cols: ["Die", "Talk", "Evade", "Fight"],
+        rows: [
+          ["1", "pass r327", "escape-mtd r312", "surprise r303"],
+          ["2", "pass r329", "escape r314", "attack r305"],
+          ["3", "arrested e060", "escape r315", "attacked r306"],
+          ["4", "audience", "hide r317", "attacked r306"],
+          ["5", "inquiry r342", "hide r319", "attacked r307"],
+          ["6", "attacked r307", "attacked r306", "surprised r309"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e131",
+    title: "Empty Ruins",
+    type: "event",
+    desc: "You spend the entire day fruitlessly searching the ruins, and find nothing.",
+  },
+  {
+    tag: "e132",
+    title: "Organized Search",
+    type: "event",
+    desc: "If alone, you spend the day fruitlessly searching the ruins and find nothing. If there are other characters in your party, roll one die. If the roll is less than the number of characters in your party (including yourself) the organized search helps — roll again immediately in rules section r208.",
+  },
+  {
+    tag: "e133",
+    title: "Plague",
+    type: "event",
+    desc: "After considerable searching during the day, you and your party find a variety of items worth 50 gold pieces in all, among many skeletons. Tonight, just before you start to eat (r215), a plague of mind-madness begins to affect your party, due to an ancient curse on this place. Roll one die for each character in your party — a 3 or higher means madness has destroyed the mind and the character crumples into a heap and soon dies, foaming at the mouth. All surviving members of the party immediately escape from the hex (r218) and camp elsewhere for the night (r215). Mounts are not affected, so survivors can bring mounts, possessions, and wealth of the entire party with them. If you are victim of the madness yourself, your northern blood helps you to survive. You will awake the next morning, having gone without food (r216), and find all your surviving followers dead or escaped with all your wealth and possessions. You can now decide what action to take for the new day — all normal actions are allowed (r203).",
+  },
+  {
+    tag: "e134",
+    title: "Unstable Ruins",
+    type: "event",
+    desc: "In the ruins are many unstable walls and rocks, making your search very dangerous. You can either give up searching these ruins, doing nothing else today, or you can continue. If you continue, roll one die for each character in your party — if a 6 or higher results he is injured in the rubble, roll two dice for the wounds suffered. If any character survives the day unwounded, the search might yield results — see r208 and immediately roll again (which can result in this again, meaning the ruins are doubly dangerous, etc.). Note this result applies to this ruins each day you search — all characters in your party must risk the rubble as described above.",
+  },
+  {
+    tag: "e135",
+    title: "Broken Columns",
+    type: "magic",
+    desc: "Along a palisade of broken columns, you find an altar with an ancient inscription. If your party includes a magician, wizard, witch, priest, and/or monk, the inscription can be deciphered and one die rolled for its meaning. If none can decipher the inscription, this result is no event.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Inscription meaning (1d6)",
+        rows: [
+          ["1", "e042 — Alcove of Sending"],
+          ["2", "e043 — Small Altar"],
+          ["3", "e044 — High Altar"],
+          ["4", "e045 — Arch of Travel"],
+          ["5", "e046 — Gateway to Darkness"],
+          ["6", "e047 — Mirror of Reversal"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e136",
+    title: "Hidden Treasures",
+    type: "treasure",
+    desc: "You uncover the remains of a palace treasure room. Roll one die for the contents.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Contents (1d6)",
+        rows: [
+          ["1", "e037 — Broken Chest"],
+          ["2", "e038 — Cache under Stone"],
+          ["3", "e039 — Treasure Chest"],
+          ["4", "e044 — High Altar"],
+          ["5", "500 gold"],
+          ["6", "Nothing"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e137",
+    title: "Inhabitants",
+    type: "encounter",
+    desc: "You encounter things living in the ruins. Roll one die.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Inhabitants (1d6)",
+        rows: [
+          ["1", "e032 — Ghosts"],
+          ["2", "e051 — Bandits"],
+          ["3", "e052 — Goblins"],
+          ["4", "e055 — Orcs"],
+          ["5", "e057 — Troll"],
+          ["6", "e082 — Spectre"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e138",
+    title: "Unclean",
+    type: "combat",
+    desc: "The ruins are unclean, and have horrible, gruesome creatures populating them. Roll one die for what you encounter. If you survive this encounter, you can immediately consult r208 again to continue your search today, or you can end the searching for the day and have your evening meal (r215).",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Creature (1d6)",
+        rows: [
+          ["1", "e032 — Ghosts"],
+          ["2", "e033 — Warrior Wraiths"],
+          ["3", "e034 — Spectre of the Inner Tomb"],
+          ["4", "e056 — Orc Tower patrol"],
+          ["5", "e082 — Spectre"],
+          ["6", "e098 — Dragon"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e139",
+    title: "Minor Treasures",
+    type: "treasure",
+    desc: "You uncover a minor treasure. Roll one die.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Treasure (1d6)",
+        rows: [
+          ["1", "Wealth 25"],
+          ["2", "Wealth 60"],
+          ["3", "e038 — Cache under Stone"],
+          ["4", "e039 — Treasure Chest"],
+          ["5", "e040 — Treasure Chest (trapped)"],
+          ["6", "e140 — Magic Box"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e140",
+    title: "Magic Box",
+    type: "treasure",
+    desc: "You find a magic box. You can only open it if you have a magician, wizard or witch in your party. Until then, you can carry it with you, since it is relatively light. Once such a person is in your party, you can open it and examine the contents. Roll one die.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Contents (1d6)",
+        rows: [
+          ["1", "e141 — Hydra's Teeth"],
+          ["2", "e142 — Gems"],
+          ["3", "Wealth 60"],
+          ["4", "Wealth 110"],
+          ["5", "e195 — Magic Possession"],
+          ["6", "Nothing but rubbish"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e141",
+    title: "Hydra's Teeth",
+    type: "item",
+    desc: "Roll two dice for the number of Hydra's teeth inside. The magician/wizard/witch explains that whenever you scatter these teeth on the ground, that number of undead warriors will rise and fight in your party for one combat (r220) at your command. These undead teeth-warriors are combat skill 5, endurance 4, and wealth 0. They will only last for that combat, and then disappear. However, you can scatter the teeth at any instant to use them that one time, including at the start or during any combat.",
+  },
+  {
+    tag: "e142",
+    title: "Gems",
+    type: "treasure",
+    desc: "The box contains a horde of gems worth wealth 200 (consult r225 for wealth 100 twice). If you have a magician, wizard or witch in your party they also recognize one as a vision gem — see e041.",
+  },
+  {
+    tag: "e143",
+    title: "Secret of the Temples",
+    type: "event",
+    desc: "You learn the secret of all temple priests — the Chaga drug. This is available in any town where you buy food, for 2 gold pieces a serving. If you buy a serving and offer it to a temple priest while making a normal offering (r212), you can add one (+1) to the dice roll when determining the results of that offering. Similarly, if you give it to the high priest when seeking an audience with him (r211) you can add one (+1) to that dice roll also.",
+  },
+  {
+    tag: "e144",
+    title: "Secret of the Baron Huldra",
+    type: "event",
+    desc: "You learn that the Baron of Huldra is actually a double Bastard, and has imprisoned the true heir to the castle with a hill tribe in the Wredwrock Badlands, in hex 1611. You can attempt to rescue the heir and install him as the rightful Baron at Huldra if you wish. To do so, you must travel to hex 1611 and defeat the hill tribe — this requires that you have a magician, wizard or priest in your party (to cast a spell), that you have a magic sword (e186) or shield of light (e193) to impress the tribesmen, a charisma talisman (e189) to walk among them, or a nerve gas bomb (e190) to kill them. Alternately, you can simply fight through the guards of the heir, making a surprise attack in combat (r220) on them — roll three dice and add one (+1) for the number of guards (each CS 4, End 5). You then escape (r218) from the hex with the true heir (CS 5, End 7). If you reach Huldra Castle, you can seek an audience with the current Baron (r211) and reveal the true heir on a roll of 10 or higher, or make a sneak attack on the Baron at night (his six bodyguards are each CS 6, End 6; the Baron himself is CS 6, End 8 and strikes first in combat). If you succeed in disposing of the original Baron, the heir will take the throne and march his army with you back to the Northlands to help you regain your throne — you have won the game!",
+  },
+  {
+    tag: "e145",
+    title: "Secret of Lady Aeravir",
+    type: "event",
+    desc: "The Lady of Aeravir Castle is the priestess of a local temple cult that requires virginity. You discover that she is actually quite promiscuous, and can use this to advantage if you gain an audience with her. Add one (+1) when attempting to gain an audience (r211) with her, and if you gain it, you can roll twice for the results of the audience and select whichever result you prefer most. However, the Lady dislikes blackmail — you must escape from the hex at the end of the day when you use this secret knowledge. You can never return.",
+  },
+  {
+    tag: "e146",
+    title: "The Secret of Count Drogat",
+    type: "event",
+    desc: "You learn that Count Drogat, lord of Drogat Castle, is actually an undead creature who lives from the suffering, pain, and death of others. This explains why he so often tortures and dismembers felons in his realm, and often goes into rages that leave his lands in a reign of terror. However, he is very vulnerable to foulbane, a rare plant which can only be purchased from the food merchants at Duffyd Temple (hex 2018) for 1 gold piece. Using the foulbane, when you attempt to gain an audience (r211) with Count Drogat you add one (+1) to your dice roll, and if you gain an audience you can ignore the first audience result die roll and try again if you wish — however, you must abide by the second result regardless of what it is. Finally, using the foulbane in Drogat Castle you can spend a day, instead of a normal daily action, in arranging for a special theft of the Count's personal jewels. At the end of the day you escape from the hex (r218) with wealth 110, but can never return to the castle hex due to the Count's anger. In the process of the theft you might acquire magic items (part of the wealth 110).",
+  },
+  {
+    tag: "e147",
+    title: "Clue to Treasure",
+    type: "treasure",
+    desc: "You gain information about a nearby treasure. Roll one die for direction (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW) and roll another die for the distance in hexes in that direction where the treasure lies. When you reach that hex, and spend a day searching for it like a cache (r214), you can then roll two dice to see what you find.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "What you find (2d6)",
+        rows: [
+          ["2", "e066 — Secret Temple"],
+          ["3", "e037 — Broken Chest"],
+          ["4", "e038 — Cache under Stone"],
+          ["5", "e039 — Treasure Chest"],
+          ["6", "e040 — Treasure Chest (trapped)"],
+          ["7", "e030 — Mummies (1 gold piece)"],
+          ["8", "Wealth 110 (see r225)"],
+          ["9", "e139 — Minor Treasures"],
+          ["10", "e140 — Magic Box"],
+          ["11", "e136 — Hidden Treasures"],
+          ["12", "e054 — Goblin Keep"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e148",
+    title: "Seneschal Requires Bribe",
+    type: "event",
+    desc: "You must pay a bribe to the seneschal to gain an audience with the lord. Roll one die and multiply by five (5) in a town or temple, or by ten (10) in a castle, for the number of gold pieces needed in the bribe. If you pay this bribe, add ten (+10) and roll for seeking an audience (r211) once more. If you don't pay the bribe, you cannot attempt an audience with the lord in this hex for the rest of the game.",
+  },
+  {
+    tag: "e149",
+    title: "Must Learn Court Manners",
+    type: "event",
+    desc: "Your northern ways brand you as a boor. You are turned away as unpresentable. After you spend 10 gold pieces for better clothes in any town, castle, or temple you can try again for an audience. Until then, you cannot seek any further audiences in this hex. Once you have spent for better clothes, this event can still occur again, indicating that you must spend yet more to improve your appearance.",
+  },
+  {
+    tag: "e150",
+    title: "Pay Your Respects",
+    type: "event",
+    desc: "You gain an audience with the Lord or Lady, pay your respects, tell your tales, and receive a purse of wealth 50. You cannot seek an audience with that same lord tomorrow, but after that you could try again.",
+  },
+  {
+    tag: "e151",
+    title: "Find Favour",
+    type: "event",
+    desc: "You gain an audience and are heard favourably. Your entire party is given food (r215) and lodging (r217) free tonight. Tomorrow you are given a gift of gold — roll one die and multiply by 100 for the amount — plus an escort of cavalryman that guides you and remains with you during the day you leave the hex. The escort is so strong that you will automatically defeat and kill anything you meet in combat, without using the normal combat procedure.",
+  },
+  {
+    tag: "e152",
+    title: "Noble Ally",
+    type: "event",
+    desc: "You gain an audience and are heard with interest. The Lord decides to support your cause fully, and prepares to march his army to the Northlands with you, to help you regain your throne. You have fulfilled your quest and won the game!",
+  },
+  {
+    tag: "e153",
+    title: "Master of the Household",
+    type: "event",
+    desc: "You encounter the Master of the Household, who prevents you from receiving an audience. If you bribe him with 10 gold pieces, you can try for an audience on some future day. Otherwise, he takes a dislike to you, and you can never attempt to seek audiences in this hex again.",
+  },
+  {
+    tag: "e154",
+    title: "Meet Lord's Daughter",
+    type: "event",
+    desc: "You meet the ruler's beautiful daughter. Roll one die for her attitude.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Her attitude (1d6)",
+        rows: [
+          [
+            "1-2",
+            "She hates you — see e060; you cannot seek an audience again in this hex",
+          ],
+          [
+            "3",
+            "You dally with her, but she is reserved — this attempt to seek an audience ends with no result whatsoever, but you can try again another day",
+          ],
+          [
+            "4",
+            "She is reserved — you bow and pass on, roll again for seeking an audience (r211) immediately",
+          ],
+          [
+            "5",
+            "She takes a liking to you in conversation — roll again immediately for seeking an audience (r211) and add one (+1) to your dice roll",
+          ],
+          [
+            "6",
+            "She falls in love with you (r228) — roll again immediately for seeking an audience (r211) and add four (+4) to your dice roll. After resolving that, if you leave the hex she will leave with you. You will be accused of kidnapping and are wanted throughout the land — as if you had killed someone in every town, temple and castle south of the Tragoth River. To help you in your quest, your new lover has acquired horses for your entire party and brings along her personal jewellery, worth wealth 200 (r225, consult wealth 100 twice)",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e155",
+    title: "Audience with High Priest",
+    type: "event",
+    desc: "You have private discussion with the high priest. Roll one die.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Audience result (1d6)",
+        rows: [
+          ["1", "He is insulted — see e060 immediately"],
+          [
+            "2",
+            "He hears your pleas, but remains unmoved by your difficulties. Event ends, and you cannot seek another audience in this hex until next week",
+          ],
+          [
+            "3",
+            "He hears your pleas, and suggests you try offerings at the temple (r212) tomorrow or on some later day. You cannot seek another audience in this hex until you make this offering. If you have made an offering at a temple within the last three days, roll again",
+          ],
+          [
+            "4",
+            "He listens to your tale and offers to help you with your offerings at the temple tomorrow (r212). If you agree, and make the offerings tomorrow, add two (+2) to your dice roll when resolving that action. You cannot seek another audience in this hex until you make an offering in this hex",
+          ],
+          [
+            "5",
+            "He decides to provide modest support for your quest, and gives you wealth 110 (see r225). You cannot seek an audience again in this hex",
+          ],
+          [
+            "6",
+            "He decides to provide full support for your quest and ventures — he gives you 200 in gold plus wealth 110. You cannot seek an audience again here",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e156",
+    title: "Audience with Town Mayor",
+    type: "event",
+    desc: "You have private discussions with the mayor. Roll one die.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Audience result (1d6)",
+        rows: [
+          ["1", "He is insulted — see e060 immediately"],
+          [
+            "2",
+            "He hears your story, but remains stone-faced, unwilling or unable to help. However, you are free to seek audiences with him again any day",
+          ],
+          [
+            "3",
+            "He hears your story and gives you free food and lodging for tonight, as a distinguished (if dispossessed) visitor from the north. You are free to seek audiences with him again any day",
+          ],
+          [
+            "4",
+            "He hears your pleas with favour, and gives you a letter of recommendation to the Lord of the nearest castle (e157). You cannot seek another audience with him until next week, at the earliest",
+          ],
+          [
+            "5",
+            "He hears your story with interest, gives you a letter of recommendation to the Lord of the nearest castle (e157) and 50 gold for expenses. You cannot seek another audience with him until you have used the letter",
+          ],
+          [
+            "6",
+            "If your party includes a monk or priest, he will support your cause for religious reasons — provides a letter of recommendation to any castle or temple you request, gives you wealth 100, and his trusted assistant (CS 4, End 4) as a member of your party. If not, he dismisses you and refuses any further audiences until you have such a character in your party",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e157",
+    title: "Letter of Recommendation",
+    type: "item",
+    desc: "You are given a properly signed and sealed letter that provides an introduction to the appropriate Lord (see previous section). This allows you to add two (+2) to your dice roll when seeking an audience (r211) with that lord in his hex of residence.",
+  },
+  {
+    tag: "e158",
+    title: "Hostile Guards",
+    type: "combat",
+    desc: "You leave the rest of your party in an atrium, and are then confronted by two hostile guards. Each is combat skill 5, endurance 6, and wealth 7. If you pay 20 gold as a bribe they will let you pass — roll again on the appropriate seeking audience table (r211). Otherwise, they will attack you, getting the first strike in combat (r220). Regardless of whether you win or lose, the combat means you must immediately escape from this hex (r218).",
+  },
+  {
+    tag: "e159",
+    title: "Must Purify Yourself",
+    type: "event",
+    desc: "You must make an offering at a temple (r212) before you can attempt another audience in this hex. The offering must be made at any temple. This result does not prevent you from attempting audiences elsewhere before making this offering. If you do make the required offering, and then try for another audience in this hex, your devotion is noted and you can add two (+2) to the dice roll when seeking the audience (r211).",
+  },
+  {
+    tag: "e160",
+    title: "Audience with Lady Aeravir",
+    type: "event",
+    desc: "You are allowed a semi-private interview with the ruler of Aeravir Castle. Roll one die for the result.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Audience result (1d6)",
+        rows: [
+          [
+            "1",
+            "She listens graciously, but has no interest in Northlands problems — you cannot seek another audience with her, and this results in nothing",
+          ],
+          [
+            "2",
+            "She listens but seems distracted — audience ends without result, but you cannot seek an audience again some other day",
+          ],
+          [
+            "3",
+            "She takes pity on you, and gives you a gift of wealth 60 to help in your quest, but decrees that you cannot seek another audience with her",
+          ],
+          [
+            "4",
+            "She finds you favourably endowed with virtue. You and your entire party can eat (r215) and lodge (r217) at her castle for as long as you wish, whenever you wish. In addition, she provides you with a gift of wealth 110 to help you on your quest. However, you cannot seek another audience with her",
+          ],
+          [
+            "5",
+            "She has seductive charms — roll one die for the number of days that pass before you come to your senses again. After the time track is advanced, roll one die on this table again to see what the Lady thinks. Meantime, your entire party has been living in the castle, but any true love (r228) has deserted in despair, and you cannot roll for her return until after you leave this hex",
+          ],
+          [
+            "6",
+            "The Lady decides to support your cause fully. She gives you one die roll times 150 in gold, and an escort of three stalwart knights (each CS 7, End 6), mounts for your entire party, and one spare pack-horse. Tonight she will hold a grand feast for you and all your party, providing food (r215) and lodging (r217) free. If any party members have wounds, her healers will cure all wounds tonight as well, even poisoned wounds",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e161",
+    title: "Audience with Count Drogat",
+    type: "event",
+    desc: "You are allowed a semi-private interview with the ruler of Drogat Castle. Roll one die for the result, and add one (+1) if you have a Trollskin and give it to the Count.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Audience result (1d6)",
+        rows: [
+          [
+            "1",
+            "Count's eyes glow like red coals — you are his next victim, see e061!",
+          ],
+          [
+            "2",
+            "Count listens with half an ear — audience ends with no result, but you can seek another audience some other day",
+          ],
+          [
+            "3",
+            "Count is in a humorous mood, gives you flippant advice and sends you forth. You must leave Drogat Castle tomorrow, and are advised to never seek an audience with the Count again unless you carry a Letter of Recommendation",
+          ],
+          [
+            "4",
+            "Count takes an interest in your situation, and provides you with 100 gold and a treasure worth wealth 110 to further your cause",
+          ],
+          [
+            "5",
+            "If you have killed (personally) at least five men or creatures the Count takes an interest in you — he will go so far as to provide 500 gold, a treasure of wealth 110, and two winged pegasus mounts. You are advised to never seek an audience with the Count again, since he is in one of his rare good moods. Otherwise you are dismissed, and cannot seek an audience again with the Count until you have killed five",
+          ],
+          [
+            "6",
+            "The Count listens to your story with interest. Upon learning the names of the northern usurpers he declares that they were the very ones who did him ill deeds many years ago. He immediately rallies his army to your cause, and uses his powerful magic to transport you, your party, him, and his army to the Northland capital to retake your throne. You immediately win",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e162",
+    title: "Learn Secrets",
+    type: "event",
+    desc: "You finally accumulate enough hints and bits of unrelated information to learn of the important secrets of this region. Roll one die.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Secret (1d6)",
+        rows: [
+          ["1-2", "e143 — Secret of the Temples"],
+          ["3-4", "e144 — Secret of Baron Huldra"],
+          ["5", "e145 — Secret of Lady Aeravir"],
+          ["6", "e146 — Secret of Count Drogat"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e163",
+    title: "Slave Market",
+    type: "location",
+    desc: "You can purchase slaves at the auction block. Porter slaves are available — roll one die to establish cost in gold per porter. These slaves need not be paid wages, and will function even if not fed (r215), but each day without food halves their carrying capacity (round fractions down). When their capacity reaches zero they die. See r206 to use porters. Slave girls are available — roll two dice and add two (+2) for the cost of each. Each slave girl functions as a Gift of Charm (e182) as long as she is fed properly (r215), and can be given as such. Slave girls who are not fed lose this ability until they are fed regularly for as many days as they missed meals. For each girl you buy, roll two dice — if the result is 12 exactly you fall in love, freeing her to be your mate, see r228. Finally, in the market you find an old warrior — only you spot his hidden qualities. Roll one die to establish the price in gold, adding two (+2) if you didn't buy any porters or slave girls. If you buy him, he becomes a willing member of your party at no pay as soon as you free him. Then roll one die to determine his combat skill and one to determine his endurance.",
+  },
+  {
+    tag: "e164",
+    title: "Giant Lizard",
+    type: "combat",
+    desc: "A huge, giant lizard that shakes the earth as it walks attacks you. It is combat skill 10, endurance 12, but you strike first in combat (r220). Escape is only possible if you have mounts — those without cannot escape.",
+  },
+  {
+    tag: "e165",
+    title: "Elven Town",
+    type: "location",
+    desc: "You discover a hidden town inhabited by elves. Roll one die, subtracting one (-1) if your party includes an elf, magician, wizard, or witch, and adding one (+1) if your party includes a dwarf. If the roll exceeds your wit & wiles the elves decide you are untrustworthy — you are immediately arrested, see e060. Otherwise, the elves allow you to visit their town. If you are given permission to visit the town, treat it just like a normal town marked on the map for all purposes, including selection of daily actions (r203), food (r215), and lodging (r217). Any followers hired in the town (r210) will be elves. If you return to the hex later in the game, you must roll again to see if the elves still give you permission to visit, or arrest you.",
+  },
+  {
+    tag: "e166",
+    title: "Elven Castle",
+    type: "location",
+    desc: "You discover a hidden castle inhabited by elves. Roll one die, subtracting one (-1) if your party includes an elf, magician, wizard, or witch, and adding one (+1) if your party includes a dwarf. If the roll equals or exceeds your wit & wiles, the elves decide you are unworthy — your entire party including yourself are arrested, see e060. Otherwise, you may visit the castle. If you can visit, treat the castle like a normal castle marked on the map for all purposes, including selection of daily actions (r203), food (r215), and lodging (r217). Any followers hired in the castle (r210) will be elves. If you return to the hex later in the game, you must roll again to see if the elves still give you permission to visit, or arrest you.",
+  },
+  {
+    tag: "e180",
+    title: "Healing Potion",
+    type: "item",
+    desc: "This potion can be applied once to any character (including yourself) at the end of the day, after the evening meal (r215). The potion immediately cures all wounds except poison wounds.",
+  },
+  {
+    tag: "e181",
+    title: "Cure Poison Vial",
+    type: "item",
+    desc: "Any character can drink this vial once during the evening meal (r215). It will cure all poison wounds overnight. Only poison wounds are cured — it has no effect on regular wounds.",
+  },
+  {
+    tag: "e182",
+    title: "Gift of Charm",
+    type: "item",
+    desc: "This is a small item of no real value, but with a magic aura. You can give this gift to any character(s) you encounter as part of any talk or talk option. When you use it, you can then roll a second and a third time for that option, and select whichever result you prefer. Once given away, the gift is gone and useless unless the receiver later fights you in combat and you kill him. Then you can recover the gift as part of the defeated's possessions.",
+  },
+  {
+    tag: "e183",
+    title: "Endurance Sash",
+    type: "item",
+    desc: "You wear this sash around your waist, and its magic adds one (+1) to your normal endurance level. The effect is permanent as long as you retain your possessions. You cannot wear more than one sash — additional ones can be cached (r214) or given to other characters in your party.",
+  },
+  {
+    tag: "e184",
+    title: "Resistance Talisman",
+    type: "item",
+    desc: "This jewelled talisman allows you to resist all magic spells and attacks. Whenever magic is used, you can call upon the talisman to negate it. However, the talisman may be unable to contain a strong spell — each time it is used roll one die, a result of 6 means the spell is stopped but the talisman is shattered and broken in the process.",
+  },
+  {
+    tag: "e185",
+    title: "Poison Drug",
+    type: "item",
+    desc: "This drug can be applied to the weapons of any one character in your party. Its use means that whenever that character strikes in combat (r220) and inflicts wounds, for each normal wound given, one extra poison wound is also given. After a combat where the poisoned weapon is used, roll one die — a 6 means the poison has worn off, and the weapon returns to normal. Since a character often has multiple weapons, he has the option of using his poisoned weapon, or a normal weapon, as desired.",
+  },
+  {
+    tag: "e186",
+    title: "Magic Sword",
+    type: "item",
+    desc: "A character can carry this special sword among his weapons. The magic sword adds one (+1) to the combat skill of the character with it. In addition, the blade's magic means that every wound it inflicts counts as poisoned too.",
+  },
+  {
+    tag: "e187",
+    title: "Anti-Poison Amulet",
+    type: "item",
+    desc: "This protects against all poison wounds. Any poison wound inflicted is ignored if the target has this amulet. Normal wounds still take effect. When a poison wound is prevented, roll two dice — if the total is 12, the amulet has reached its limit, cannot absorb more poison, and must be discarded.",
+  },
+  {
+    tag: "e188",
+    title: "Pegasus Mount",
+    type: "item",
+    desc: "You have acquired a pegasus — a winged horse that allows you to travel airborne. The pegasus is like a normal mount in all other respects, including the same transport ability (r206), food requirements (r215), and lodging when in towns, castles, or temples (r217). You can use the pegasus as a normal mount on the ground, if desired.",
+  },
+  {
+    tag: "e189",
+    title: "Charisma Talisman",
+    type: "item",
+    desc: "The character that wears this talisman improves his stature and charisma in the eyes of others. If you wear it, add one (+1) to your wit & wiles in any event or option that involves or results from talk or negotiation. This talisman does not improve your wit & wiles when trying to evade, hide, attack, or surprise. Like many magical devices, this talisman's spell may eventually wear out — after each use, roll two dice, if the total is 12 it has worn out and must be discarded.",
+  },
+  {
+    tag: "e190",
+    title: "Nerve Gas Bomb",
+    type: "item",
+    desc: "This sealed jar is filled with a deadly and quick-acting gas created by a master alchemist. If you surprise an enemy in combat (r220), instead of your initial strikes, your entire party can stand off and let you hurl the bomb. When you do, roll one die for each character encountered: 1-4 = character killed by gas; 5 = character flees from gas, takes his wealth and possessions with him; 6 = character unaffected by gas. The jar with the gas is rather heavy, and counts as one (1) load to transport (r206).",
+  },
+  {
+    tag: "e191",
+    title: "Resistance Ring",
+    type: "item",
+    desc: "This ring creates a magic aura around the wearer. Every time the wearer is wounded, roll two dice. The ring can be used to ward poison wounds like normal wounds. The ring can also be used to ward magic attacks against the wearer, but will not protect others in the party. In a magic attack, two rolls must be made, and the single worst result (to the wearer) is applied.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Ring result (2d6)",
+        rows: [
+          ["2-8", "Blow warded by ring — ignore wounds"],
+          [
+            "9-11",
+            "Blow skids around aura and strikes home — take normal wound result minus one wound (deflected in the skidding)",
+          ],
+          [
+            "12",
+            "Ring fails — blow has normal effect, and ring melts on your finger, causing injury and one extra wound",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e192",
+    title: "Resurrection Necklace",
+    type: "item",
+    desc: "This necklace of black opals and tiny bones holds the secret of a second life. If the wearer dies for any reason, including voluntary suicide, at the end of that day the character rises from the dead. The necklace disintegrates as the character revives, and thus only works once. The resurrection occurs in the same hex, but the character is now free to select any action on the next day. A character revived by the necklace, having been left for dead, will have lost all possessions and money, and the entire party will have scattered, although a lover might return (see r228). A character revived by the necklace has a somewhat ghoulish cast, and is a bit weaker — endurance is reduced by one. Such appearances are favoured at Drogat Castle, and so you can add one (+1) if seeking an audience (r211) with Count Drogat.",
+  },
+  {
+    tag: "e193",
+    title: "Shield of Light",
+    type: "item",
+    desc: "This enchanted shield will flash and shine in the eyes of any attacker. When a character has this shield, any opponent in combat has his combat skill reduced by one (-1). If the character with the shield dies, the shield will dull and die, becoming useless. At the end of each combat where the shield is used, roll one die — if a 6 results, the shield is so banged and damaged by battle that it is now useless. To preserve the shield, you may elect to not use it in some combats. You can change your mind during the battle, but must then check for damage after the battle anyway.",
+  },
+  {
+    tag: "e194",
+    title: "Royal Helm of the Northlands",
+    type: "item",
+    desc: "This ancient and sacred treasure has long been lost. Myths and tales still relate the great exploits of its wearers. Now you hold this treasure that gives you automatic and indisputable right to the Northlands throne. If you return to either Ogon (0101) or Weshor (1501) towns with the helm, you will be instantly hailed as the rightful King of the Northlands, and win the game. In the meantime, possession of the helm increases your stature and self-confidence, so increase your wit & wiles by one (+1).",
+  },
+  {
+    tag: "e195",
+    title: "Possessions Reference",
+    type: "item",
+    desc: "Roll two dice for the specific magic item.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Item (2d6)",
+        rows: [
+          ["2", "e191 — Resistance Ring"],
+          ["3", "e186 — Magic Sword"],
+          ["4", "e182 — Gift of Charm"],
+          ["5", "e184 — Resistance Talisman"],
+          ["6", "e181 — Cure Poison Vial"],
+          ["7", "e180 — Healing Potion"],
+          ["8", "e185 — Poison Drug"],
+          ["9", "e193 — Shield of Light"],
+          ["10", "e183 — Endurance Sash"],
+          ["11", "e189 — Charisma Talisman"],
+          ["12", "e192 — Resurrection Necklace"],
+        ],
+      },
+    ],
+  },
 ];

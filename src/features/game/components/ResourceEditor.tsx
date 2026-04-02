@@ -9,10 +9,10 @@ type BoxResource = {
 const BOX_RESOURCES: BoxResource[] = [
   { name: "Combat", max: 9 },
   { name: "Endurance", max: 9 },
-  { name: "Starvation", max: 8 },
+  { name: "Starvation", max: 9 },
   { name: "WitAndWiles", max: 6 },
-  { name: "Food", max: 20 },
-  { name: "Gold", max: 500 },
+  { name: "Food", max: 100 },
+  { name: "Gold", max: 600 },
   { name: "Day", max: 70 },
 ];
 

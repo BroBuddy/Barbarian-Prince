@@ -4,8 +4,10 @@ import { persist } from "zustand/middleware";
 const MAX_VALUES: Record<string, number> = {
   Combat: 9,
   Endurance: 9,
+  Starvation: 9,
   WitAndWiles: 6,
-  Starvation: 8,
+  Food: 100,
+  Gold: 600,
   Day: 70,
 };
 

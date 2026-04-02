@@ -79,6 +79,29 @@ function Game() {
           <Link to="/event/e001">e001</Link>.
         </p>
       </Card>
+      <Card title="Edge of the Game Map">
+        <p>
+          During the game, the Barbarian Prince cannot leave the game map. If an
+          event or rule would normally land him off the map, he simply stops at
+          the map edge instead. In other cases, rumoured treasures and other
+          locations may be off the game map, in which case they are inaccessible
+          to the Barbarian Prince, and are ignored.
+        </p>
+      </Card>
+      <Card title="Credits">
+        <p>
+          Barbarian Prince is copyright ©1981 by Heritage USA. Designed and
+          developed by Arnold Hendrick, Cover painting by Frank Cirocco, map,
+          rule illustrations and graphics by Cynthia Sims Millan, typography by
+          Arnold Hendrick, figure design by Max Carr, map hexgrid and number
+          system courtesy of Simulations Publications, Inc.
+        </p>
+        <p>
+          Graphic re-visioning by Todd Sanders, using, in part, additional
+          material by Boardgamegeek.com users: Jumbit, AngusBull, wrrlykam
+          (David Bate) and Brewtal Legend (Julian Jimenez).
+        </p>
+      </Card>
     </>
   );
 }

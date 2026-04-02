@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Preloader from "./components/Preloader";
 
-const Game = lazy(() => import("./pages/Game"));
+const Game = lazy(() => import("./features/game/pages/Game"));
 const EventOverview = lazy(
   () => import("./features/events/pages/EventOverview"),
 );

@@ -1,18 +1,27 @@
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import Preloader from "./components/Preloader";
-import Game from "./pages/Game";
-import EventOverview from "./features/events/pages/EventOverview";
-import EventDetail from "./features/events/pages/EventDetail";
-import History from "./pages/History";
-import TableOverview from "./features/table/pages/TableOverview";
-import TableDetail from "./features/table/pages/TableDetail";
-import TreasureTable from "./features/table/pages/TreasureTable";
-import SearchingRuinsTable from "./features/table/pages/SearchingRuins";
-import MapOverview from "./features/map/pages/MapOverview";
-import RuleOverview from "./features/rule/pages/RuleOverview";
-import RuleDetail from "./features/rule/pages/RuleDetail";
+
+const Game = lazy(() => import("./pages/Game"));
+const EventOverview = lazy(
+  () => import("./features/events/pages/EventOverview"),
+);
+const EventDetail = lazy(() => import("./features/events/pages/EventDetail"));
+const History = lazy(() => import("./pages/History"));
+const TableOverview = lazy(
+  () => import("./features/table/pages/TableOverview"),
+);
+const TableDetail = lazy(() => import("./features/table/pages/TableDetail"));
+const TreasureTable = lazy(
+  () => import("./features/table/pages/TreasureTable"),
+);
+const SearchingRuinsTable = lazy(
+  () => import("./features/table/pages/SearchingRuins"),
+);
+const MapOverview = lazy(() => import("./features/map/pages/MapOverview"));
+const RuleOverview = lazy(() => import("./features/rule/pages/RuleOverview"));
+const RuleDetail = lazy(() => import("./features/rule/pages/RuleDetail"));
 
 const router = createBrowserRouter([
   {

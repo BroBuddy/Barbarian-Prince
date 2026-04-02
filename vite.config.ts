@@ -9,6 +9,16 @@ export default defineConfig({
     outDir: "build",
     emptyOutDir: true,
     cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) return "vendor";
+          if (id.includes("/features/rule/")) return "rule";
+          if (id.includes("/features/events/")) return "events";
+          if (id.includes("/features/map/")) return "map";
+        },
+      },
+    },
   },
   resolve: {
     alias: {

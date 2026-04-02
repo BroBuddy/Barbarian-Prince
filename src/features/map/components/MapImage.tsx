@@ -14,8 +14,8 @@ export default function MapImage({
   const handleClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     const target = e.target as HTMLImageElement;
     const rect = target.getBoundingClientRect();
-    const x = e.clientX - rect.left - 17;
-    const y = e.clientY - rect.top - 17;
+    const x = e.clientX - rect.left - 20;
+    const y = e.clientY - rect.top - 20;
     onImageClick(x, y);
   };
 

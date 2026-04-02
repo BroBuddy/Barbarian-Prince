@@ -5,13 +5,13 @@ export const ruleData: Rule[] = [
     tag: "r201",
     title: "Characters",
     type: "character",
-    desc: "Each character in the game has a combat skill, an endurance value, and a wealth code. Each is rated numerically, with higher numbers being better. If no wealth code is given, it is presumed to be zero (no wealth). Characters can be friendly or hostile, intelligent or unintelligent. When a character joins your party, note his vital statistics. You can voluntarily dismiss or abandon members of your party if you wish.",
+    desc: "Each character in the game has a combat skill, an endurance value, and a wealth code. Each is rated numerically, with higher numbers being better. If no wealth code is given, it is presumed to be zero (no wealth). The characters include yourself (the Barbarian Prince, see r202), any followers who join your “party, ” and any men, women, creatures or animals encountered in the course of the game. Characters can be friendly or hostile, intelligent or unintelligent. When a character joins your party, note his (or her) vital statistics as needed. You can voluntarily dismiss or abandon members of your party if you wish (sometimes expedient when making an escape, or when food or money is short). Other characters encountered during events need not be permanently recorded. Unless they join your party, these other characters simply go on their way, and “disappear” from the game.",
   },
   {
     tag: "r202",
     title: "Your Character",
     type: "character",
-    desc: "You begin play as the Barbarian Prince, Cal Arath, rightful heir to the throne of the Northlands Kingdom.",
+    desc: "You begin play as the Barbarian Prince, Cal Arath, rightful heir to the throne of the Northlands Kingdom. Few humans can match your skill with trusty Bonebiter, your broadsword: you have combat skill 8. Life in the harsh northlands has developed your powerful body and magnificent physique: you have endurance 9. Alas, in making your escape, you could only grab a few coins; your wealth code is 2 (see r225 for determine exactly how many gold pieces your have). In addition, you have a “wit & wiles” rating, reflecting your ability to react quickly to situations, think your way out of trouble, and convince people. Roll one die to determine this “wit & wiles.” If the result is 1, consider it 2 instead. If you have played the game before and won, you may wish an extra challenge by using a wit & wiles rating one less than your previous value; if you lost before, use a wit & wiles one higher than the previous value.",
     tables: [
       {
         type: "simple-list",

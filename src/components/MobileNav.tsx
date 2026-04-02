@@ -11,7 +11,7 @@ const links: Links[] = [
   { to: "/", icon: "⚔️", label: "Game" },
   { to: "/table", icon: "🎲", label: "Tables" },
   { to: "/map", icon: "🗺️", label: "Map" },
-  { to: "/history", icon: "⏳", label: "History" },
+  { to: "/helper", icon: "💡", label: "Helper" },
 ];
 
 const MobileNav = () => {

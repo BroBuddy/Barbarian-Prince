@@ -8,7 +8,7 @@ const EventOverview = lazy(
   () => import("./features/events/pages/EventOverview"),
 );
 const EventDetail = lazy(() => import("./features/events/pages/EventDetail"));
-const History = lazy(() => import("./pages/History"));
+const Helper = lazy(() => import("./pages/Helper"));
 const TableOverview = lazy(
   () => import("./features/table/pages/TableOverview"),
 );
@@ -29,6 +29,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Game /> },
       { path: "/rule", element: <RuleOverview /> },
+      { path: "/rule/r207", element: <TableOverview /> },
       { path: "/rule/:tag", element: <RuleDetail /> },
       { path: "/event", element: <EventOverview /> },
       { path: "/event/:tag", element: <EventDetail /> },
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       { path: "/table/ruins", element: <SearchingRuinsTable /> },
       { path: "/table/:id", element: <TableDetail /> },
       { path: "/map", element: <MapOverview /> },
-      { path: "/history", element: <History /> },
+      { path: "/helper", element: <Helper /> },
     ],
   },
 ]);

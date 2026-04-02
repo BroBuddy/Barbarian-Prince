@@ -1,4 +1,3 @@
-import Badge from "@/components/Badge";
 import Card from "@/components/Card";
 import { useEffect, useState } from "react";
 
@@ -40,33 +39,30 @@ function Map() {
   ) => {
     const target = e.target as HTMLImageElement;
     const rect = target.getBoundingClientRect();
-    const x = e.clientX - rect.left - 10;
-    const y = e.clientY - rect.top - 10;
+    const x = e.clientX - rect.left - 17;
+    const y = e.clientY - rect.top - 17;
 
     setMarker({ x, y });
   };
 
   return (
     <Card title="Map">
-      <div className="flex mb-2">
-        {[1, 2, 3, 4, 5, 6].map((num) => (
+      <div className="flex flex-wrap w-12 mb-1">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
           <div
             key={num}
-            className="pointer"
+            className={`w-3 h-3 mr-1 mb-1 pointer flex items-center justify-center rounded 
+        ${num === selectedMap ? "bg-purple" : "bg-orange"} text-white text-sm`}
             onClick={() => handleBadgeClick(num)}
           >
-            <Badge
-              icon="🗺️"
-              text={num.toString()}
-              variant={num === selectedMap ? "dark" : "default"}
-            />
+            {num}
           </div>
         ))}
       </div>
 
       <div style={{ position: "relative", display: "inline-block" }}>
         <img
-          src={`/images/map_${selectedMap}.webp`}
+          src={`/images/image_part_00${selectedMap}.png`}
           alt={`Map part ${selectedMap}`}
           className="pointer"
           onClick={handleImageClick}
@@ -83,11 +79,11 @@ function Map() {
               position: "absolute",
               top: marker.y,
               left: marker.x,
-              width: "25px",
-              height: "25px",
+              width: "35px",
+              height: "35px",
               borderRadius: "50%",
-              backgroundColor: "#7c1d78",
-              border: "2px solid white",
+              backgroundColor: "transparent",
+              border: "5px solid #7c1d78",
             }}
           />
         )}

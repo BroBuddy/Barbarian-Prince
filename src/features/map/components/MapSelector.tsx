@@ -8,7 +8,7 @@ export default function MapSelector({
   onSelect,
 }: MapSelectorProps) {
   return (
-    <div className="flex flex-wrap w-12 mb-1">
+    <div className="flex flex-wrap mb-1">
       {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
         <div
           key={num}

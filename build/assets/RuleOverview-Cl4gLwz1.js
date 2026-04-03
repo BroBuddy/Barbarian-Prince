@@ -1,1 +1,0 @@
-import{t as e}from"./rule-CiFUs-jA.js";export{e as default};

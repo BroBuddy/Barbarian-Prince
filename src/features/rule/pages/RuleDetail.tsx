@@ -12,11 +12,13 @@ function RuleDetail() {
   const rule = getRuleDataByTag(tag as string);
   const { addToHistory } = useHistory();
 
-  if (!rule) return null;
-
   useEffect(() => {
+    if (!rule) return;
+
     addToHistory(rule.tag, rule.title);
   }, [addToHistory, rule]);
+
+  if (!rule) return null;
 
   return (
     <Card title={rule.title} tag={rule.tag}>

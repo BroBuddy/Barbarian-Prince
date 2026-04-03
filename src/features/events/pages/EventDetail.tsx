@@ -13,11 +13,13 @@ function EventDetail() {
   const event = getEventDataByTag(tag as string);
   const { addToHistory } = useHistory();
 
-  if (!event) return null;
-
   useEffect(() => {
+    if (!event) return;
+
     addToHistory(event.tag, event.title);
   }, [addToHistory, event]);
+
+  if (!event) return null;
 
   return (
     <Card title={event.title} tag={event.tag}>

@@ -426,7 +426,7 @@ export const eventData: Event[] = [
     title: "Priest",
     type: "npc",
     desc: "You encounter a local priest (ev3 cs3 wc15) leading a donkey by the reins. He seems aloof and not disposed to conversation, but he might be afraid of you. You can let him pass, ending this encounter, or select one of two options below.",
-    note: "NOTE: If you do kill the priest in combat, roll 1d6: on a 5 or 6, he curses you with the 'Mark of Cain.' You must immediately roll 1d6 for each follower in your party: if you roll over your wit & wiles, that follower immediately deserts you. In addition, all monks and priests in the future will recognize the mark and will not join your party, and you can never seek an audience with the High Priest of any temple marked on the map. You may still do so with High Priests of any secret unmarked temples you find.",
+    note: "If you do kill the priest in combat, roll 1d6: on a 5 or 6, he curses you with the 'Mark of Cain.' You must immediately roll 1d6 for each follower in your party: if you roll over your wit & wiles, that follower immediately deserts you. In addition, all monks and priests in the future will recognize the mark and will not join your party, and you can never seek an audience with the High Priest of any temple marked on the map. You may still do so with High Priests of any secret unmarked temples you find.",
     tables: [
       {
         type: "roll-table",
@@ -1502,7 +1502,7 @@ export const eventData: Event[] = [
     title: "Dragon",
     type: "encounter",
     desc: "You encounter a huge, winged, fire-breathing dragon (ev12 cs11). Roll 1d6: on a 1 or 2, you have found it in its lair, which has both wealth 110 and wealth 60; on a 3 or more, it has only wealth 30. If you must fight it in combat (r220) you cannot escape. Choose from the options below and roll 1d6, adding one (+1) if this is the dragon's lair.",
-    note: "NOTE: If you kill the dragon, its eye counts as a trophy and is greatly valued by High Priests of temples across the land, and may be of assistance in gaining an audience. The Dragon's Eye counts as 1 load to transport (r206). In addition, a Dragon's Eye can be sold for 20 gold to any merchant or in any town, castle, or temple whenever you buy food.",
+    note: "If you kill the dragon, its eye counts as a trophy and is greatly valued by High Priests of temples across the land, and may be of assistance in gaining an audience. The Dragon's Eye counts as 1 load to transport (r206). In addition, a Dragon's Eye can be sold for 20 gold to any merchant or in any town, castle, or temple whenever you buy food.",
     tables: [
       {
         type: "roll-table",
@@ -1552,14 +1552,14 @@ export const eventData: Event[] = [
     title: "Tame the Roc",
     type: "encounter",
     desc: 'If you elect to attempt to tame the roc, you will need to sacrifice 4 food units or a mount as bait. Then roll 1d6 and add your wit & wiles to the result (you may also add two (+2) if you have a druid, magician, witch, or wizard in your party): on an 8 or less, the roc immediately attacks (r306); on a 9 or 10, the roc grabs the food and flies away; on an 11 or more, you have tamed the giant roc – from now on, the roc will act as a winged mount for up to 2 characters but will not land in any settlement hex, and may find food at night "on the wing" instead of needing to be fed.',
-    note: "NOTE: If you kill the roc, you can cut off its beak as a trophy. Count Drogat of Drogat Castle especially prizes this item, and it may help you gain an audience with him. Carrying the Roc's Beak counts as 1 load (see r206). Alternatively, the beak can be sold for 35 gold pieces to any merchant, or in any town, castle, or temple whenever you buy food.",
+    note: "If you kill the roc, you can cut off its beak as a trophy. Count Drogat of Drogat Castle especially prizes this item, and it may help you gain an audience with him. Carrying the Roc's Beak counts as 1 load (see r206). Alternatively, the beak can be sold for 35 gold pieces to any merchant, or in any town, castle, or temple whenever you buy food.",
   },
   {
     tag: "e100",
     title: "Griffon",
     type: "encounter",
     desc: "You meet a winged griffon (ev6 cs8 wc12). The griffon is intelligent, and could serve both as a member of your party and as a winged mount for another character. However, griffons are normally quite independent and ferocious, and this one looks especially unfriendly, if not hostile! Your options are:",
-    note: "NOTE: If you kill the griffon, you can remove one of its claws and carry it as a trophy and extra possession. A Griffon's Claw is especially valued by Lady Aeravir of Aeravir Castle, and may help you gain an audience with her. Alternatively, the claw can be sold for 25 gold to any merchant or in any town, castle, or temple whenever you buy food.",
+    note: "If you kill the griffon, you can remove one of its claws and carry it as a trophy and extra possession. A Griffon's Claw is especially valued by Lady Aeravir of Aeravir Castle, and may help you gain an audience with her. Alternatively, the claw can be sold for 25 gold to any merchant or in any town, castle, or temple whenever you buy food.",
     tables: [
       {
         type: "roll-table",

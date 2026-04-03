@@ -924,6 +924,7 @@ export const eventData: Event[] = [
     tag: "e052",
     title: "Goblins",
     type: "encounter",
+    image: true,
     desc: "You sight a band of 2d6 goblins (ev3 cs3 wc1) in the distance. You can see an additional member of the band, who seems to be their hobgoblin leader (ev5 cs6 wc5). You saw them first, so you can either escape (r218) from the area or attempt to follow them (r219). If you follow them, after the follow movement, roll 1d6: if you roll over your wit & wiles, the band discovers you and attacks, but your party will get the first strike in combat (r220); if you roll equal to or under your wit & wiles, you remain out of sight – roll 1d6 to see where they lead you: 1: e054; 2–6: e053.",
   },
   {
@@ -978,6 +979,7 @@ export const eventData: Event[] = [
     tag: "e054",
     title: "Goblin Keep",
     type: "location",
+    image: true,
     desc: "You see a fortified tower, the keep of a Goblin King. The area is swarming with hundreds of goblins. You decide to flee, but a band of goblins has already seen you. They charge forward with screams and howls. If you are unable to escape from this hex (r218) for any reason or decide not to resist, you are captured; see e061. If you try to escape, first make your escape move (r218), then roll 1d6 to see if you elude your pursuers. If your wit & wiles exceeds the roll, you lose them and the event ends; otherwise, you must either surrender (go to e061 and return to the keep hex) or fight them. If you fight, roll 1d6×3 for the number of goblins (ev3 cs3 wc1) plus their hobgoblin leader (ev5 cs6 wc4). You can strike first in combat (r220), but you cannot escape – you must fight to the death or else surrender (e061). If you kill them all, your escape is made good, and this event ends. If you return to the hex of the Goblin King's keep any time later in the game, you will be captured automatically by the goblins (e061).",
   },
   {
@@ -996,12 +998,14 @@ export const eventData: Event[] = [
     tag: "e057",
     title: "Troll",
     type: "combat",
+    image: true,
     desc: "A huge stone-skinned troll confronts your party. Roll 1d6: over your wit & wiles, the troll (ev8 cs8 wc15) strikes first in combat (r220); equal to or under your wit & wiles, you strike first. The troll's skin has regenerative properties, allowing it to automatically heal 1 wound at the end of each round until you bring it to zero (0) wounds. If you kill the troll, its stone skin is a valuable item. When you have an opportunity to buy food at a settlement or from merchants, you can sell the Trollskin for 50 gold. It is also known that Count Drogat of Drogat Castle will treasure the gift should you manage to get a personal audience with him. The Trollskin counts as 1 load for transport.",
   },
   {
     tag: "e058",
     title: "Band of Dwarves",
     type: "encounter",
+    image: true,
     desc: "You encounter a group of 1d6+1 dwarves (ev6 cs5 wc10). If your party has fewer members than the dwarf band, you spot them first, and can either follow them (r219), hide (r218b), or escape from them (r218a) as you wish, or encounter them, using one of the three options below. If your party is equal in size or larger, they spot you first and you must encounter them.",
     note: "* If your party has mounts, you can use escape mounted (r312) instead of rolling to resolve the evade option. FOLLOWING: After following the band of dwarves, roll 1d6: equal to or over your wit & wiles, they discover you and attack, striking first in combat (r220); under your wit & wiles, the dwarves do not discover your party – roll 1d6 to see where they end the day: 1: dwarf mines, e059; 2–6: campsite, e053.",
     tables: [
@@ -1024,12 +1028,14 @@ export const eventData: Event[] = [
     tag: "e059",
     title: "Dwarf Mines",
     type: "location",
+    image: true,
     desc: "You see the entrance to a great underground castle mined out of the earth by dwarves. Dwarven constables and patrols quickly intercept your party. Roll 1d6, subtracting one (−1) if there is a dwarf in your party, and adding one (+1) if there is an elf: over your wit & wiles, you and your party are arrested immediately, see e060; equal to or under your wit & wiles, they let you pass and you enter the incredible castle mines. There you can undertake any actions and activities allowed in a castle (r203), including Seek an Audience with the Dwarf Lord (r211g) who rules the mines. Like any castle, you must spend the normal amounts for food (r215) and lodging (r217). Anyone you meet or hire in the mines will be dwarves. If you have a dwarf in your party, add one (+1) to Seek News & Information (r209) rolls here.",
   },
   {
     tag: "e059a",
     title: "Audience with the Dwarf Lord",
     type: "location",
+    image: true,
     desc: "You have an audience with the Lord of the mines. Roll 1d6 for the result, and add one (+1) if you give a gemstone (e142) to the Dwarf Lord.",
     tables: [
       {
@@ -1078,6 +1084,7 @@ export const eventData: Event[] = [
     tag: "e061",
     title: "Marked for Death",
     type: "event",
+    image: true,
     desc: 'You are found guilty of a very grave offence, and the death penalty is demanded. Until then, you and your party are imprisoned. All your money, possessions, and mounts are confiscated and permanently lost. You are provided with food and "lodging" while in prison. At the start of each day in prison, roll 1d6: on a 1, you manage to escape (see below for details); on a 6, you must finally meet the headsman and are put to death; on a 2–5, your imprisonment continues.',
     tables: [
       {
@@ -1095,6 +1102,7 @@ export const eventData: Event[] = [
     tag: "e062",
     title: "Thrown in the Dungeon",
     type: "event",
+    image: true,
     desc: "You are thrown into a deep dungeon. Other members of your party are imprisoned or sold as slaves, and are permanently lost to you (except for a true love, see r228). You lose all wealth, possessions, and mounts. While in the dungeon, you are provided with food and lodging (of a sort). At the start of each day in the dungeon, roll 2d6 and add one (+1) for each full week you have been in the dungeon: on an 11 or more, you escape (r218) that day; on a 10 or less, you continue to languish in captivity. Each full week (7 days) you spend in the dungeon inflicts 1 poisoned wound on you, due to unhealthy conditions, disease, and gradual weakness and starvation. While you languish in the dungeon, you do not need to make a poisoned wound roll (see r222b) every evening like you normally would. If you escape, it takes the entire day, with just enough time to reclaim your broadsword, Bonebiter, but no other wealth, mounts, or other possessions. After escaping, you must find food (r215).",
   },
   {
@@ -1107,6 +1115,7 @@ export const eventData: Event[] = [
     tag: "e064",
     title: "Ruins",
     type: "location",
+    image: true,
     desc: "You discover hidden ruins. You can undertake a search action in them (r208) on any following day you are in the hex, just as if they were ruins marked on the map.",
   },
   {
@@ -1119,6 +1128,7 @@ export const eventData: Event[] = [
     tag: "e066",
     title: "Secret Temple",
     type: "location",
+    image: true,
     desc: "You find a secret temple of an obscure and feared cult. Before you can do anything, a large group of guardian monks surrounds you. Roll 1d6: equal to or over your wit & wiles, you and your party are arrested – see e060 and subtract one (−1) from the roll when resolving that event; under your wit & wiles, you talk your way past the guardians, and you can stay at the temple as if it were a normal temple marked on the map, including for food (r215) and lodging (r217) and all daily actions allowed at a temple (r203). If you later return to this temple, the guardians will continue to permit you free entrance, with no new die rolls needed. However, if you kill anyone while in this temple hex, or escape (r218) from it, the next time you enter, you are immediately arrested by the guardian monks; see e060 and subtract two (−2) from the roll when resolving that event.",
   },
   {
@@ -1137,6 +1147,7 @@ export const eventData: Event[] = [
     tag: "e068a",
     title: "Wizard Tower",
     type: "location",
+    image: true,
     desc: "A great wizard's tower looms before you. The ruling wizard is jealous, and will tolerate no rivals – any magicians, witches, or wizards in your party must either desert or be arrested, unless you elect to have your whole party escape (r218) from the hex. Otherwise, you can stay as if it were a castle for the purposes of food (r215) and lodging (r217). On subsequent days, you can Study History (r229) or Seek an Audience with the wizard (r211e), but you cannot Seek News (r209), Hire Followers (r210), or Visit a Tavern (r294) or Market (r298).",
   },
   {
@@ -1189,12 +1200,14 @@ export const eventData: Event[] = [
     tag: "e070",
     title: "Halfling Town",
     type: "location",
+    image: true,
     desc: "You come across a hidden and unknown town of halflings with small buildings and inns nested amongst the gentle, rolling hills. You can Seek News (r209) and Visit the Tavern (r294) or Market (r298), but you cannot Hire Followers (r210), because the halflings in this town enjoy their armchairs and pipeweed a bit too much. The usual rules for food (r215) and lodging (r217) apply. Halflings have a great love of gossip, news, and new faces, so any day you devote to Seek News & Information (r209), you and your party will be wined and dined so much that you need not buy any food for your evening meal – you've already had more than enough! If you kill any halflings while in this town, you will be arrested immediately; see e060 and subtract one (−1) from the roll for that event. If you kill any other characters or escape (r218) while here, for the rest of the game the halflings here will dislike you; you will no longer be wined and dined when seeking news, and you must deduct one (−1) from Seek News and Seek an Audience (r211d) rolls in this town.",
   },
   {
     tag: "e070a",
     title: "Audience with the Halfling Mayor",
     type: "location",
+    image: true,
     desc: "You are invited to a private discussion with the Halfling Mayor. Roll 1d6, adding one (+1) to the roll if your party includes a halfling or wizard.",
     tables: [
       {
@@ -1234,6 +1247,7 @@ export const eventData: Event[] = [
     tag: "e071",
     title: "Band of Elves",
     type: "encounter",
+    image: true,
     desc: "You encounter a band of 1d6+1 elves (ev4 cs5 wc7). You have three options, but due to the greater wisdom of elves, subtract one (−1) from your wit & wiles during this event.",
     note: "* Subtract one (−1) from the roll if your party includes an elf; add one (+1) if your party includes a dwarf; add one (+1) if the event occurs in a forest hex. † If the elves join your party, see r007a for their unique abilities. ‡ If the party is not in forest, you may use escape mounted (r312) instead of rolling to resolve the evade option. § Elves are excellent archers, so they will each start with a ranged attack (see r220g) with cs6 for the attack, unless they are surprised.",
     tables: [
@@ -1264,6 +1278,7 @@ export const eventData: Event[] = [
     tag: "e072",
     title: "Contest",
     type: "event",
+    image: true,
     desc: "The Lord is holding a contest in the courtyard today. To enter you must fight and win 3 fights in a row by yourself to face the Arena Champion. You may receive no help from your party, but you may use any of your possessions during the battle. Winning earns you 10 gold in the 1st round, 50 gold in the 2nd round, and 100 gold in the 3rd round. If you lose in any round, the arena's healers restore you to full health, but you are disqualified and forfeit any contest winnings from previous rounds. If you survive the 3rd round, the healers restore you fully before the main event against the Champion (ev8 cs8). If you defeat the Champion, you win 200 gold and gain an immediate audience (r211).",
     note: "* If you knock the Champion unconscious and then spare his life, you forfeit half (½) your total contest winnings, but still gain an audience with the Lord; roll 1d6: on a 3 or more, the Champion joins your party as a loyal ally.",
     tables: [
@@ -1289,6 +1304,7 @@ export const eventData: Event[] = [
     tag: "e073",
     title: "Witch",
     type: "npc",
+    image: true,
     desc: "You encounter a witch. Roll 1d6: 1–4: she is an old witch (ev3 cs1 wc10); 5–6: she is a young witch (ev4 cs2 wc5). Roll 1d6 again: over your wit & wiles, the witch is hostile; equal to your wit & wiles, the witch ignores you and the event ends; under your wit & wiles, the witch is friendly. HOSTILE WITCH: Your party must escape (r218) immediately. Roll 1d6 for each character in the party, including yourself: on a 6, the character is transfigured into a frog and is lost. If you are turned into a frog, any surviving lover, magician, witch, or wizard in your party can turn you back, though you will have lost all luck (r202a). Otherwise, you will remain a frog permanently and lose the game. FRIENDLY WITCH: Roll 1d6 to determine her actions: 1–2: she joins your party as an ally (r334); 3–4: she can be hired to join your party (r333); 5–6: she gives you a gift, e195. If the young witch joins your party, roll 1d6 again: on a 6, you become lovers (r228). A witch in your party may forage for healing herbs (see r293) in any hex that permits hunting.",
   },
   {
@@ -1301,12 +1317,14 @@ export const eventData: Event[] = [
     tag: "e074",
     title: "Spiders",
     type: "combat",
+    image: true,
     desc: "You are trapped by the webs of 1d6 giant spiders (ev3 cs4). Their webs trap your party, and the combat skill of each character is reduced by one (−1). The spiders only inflict poisoned wounds. It is very likely that you are surprised too (r309). If you kill the spiders, you can harvest their venom. It takes the venom of three spiders to make one vial of poison drug (e185).",
   },
   {
     tag: "e075",
     title: "Wolves",
     type: "combat",
+    image: true,
     desc: "This event is postponed until after your finish your evening meal (r215). In the cover of night, your party is attacked by a pack of 2d6+1 wolves (ev3 cs3) on the hunt. They may surprise you (r309). You cannot escape from the wolf attack, but at the start of the combat roll 1d6 and add one (+1) for each follower with you, one (+1) for each food unit you throw to the wolves, and two (+2) for each mount you sacrifice to them. If the total is greater than the number of wolves, they leave you alone; otherwise, they attack. At the end of each combat round, if any wolves are still left alive, one of your mounts will be killed. Since materials being transported (see r206) by the mount have been unloaded for the night, only the mount itself is lost, not what it carried. Wolf pelts may be collected (r223) and sold at market for 3 gold each (see r298a). Each pelt counts as 1 load.",
   },
   {
@@ -1319,6 +1337,7 @@ export const eventData: Event[] = [
     tag: "e077",
     title: "Herd of Wild Horses",
     type: "event",
+    image: true,
     desc: "You surprise a herd of wild horses. Each character in your party can capture one, giving you that many additional mounts. However, you must spend tomorrow resting (r203) in order to break and train the horses. If you have a druid, magician, witch, or wizard in your party, roll 1d6: on a 3 or more, that character successfully casts a spell to train the animals instantly, no extra day of rest required. You may sell any of the horses to a willing buyer.",
   },
   {

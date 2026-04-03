@@ -10,9 +10,9 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ title, tag, children }) => {
   return (
     <div className="card">
-      <div className="flex items-center bg-orange mb-2">
+      <div className="flex items-center bg-grey mb-2 py-1">
         {tag && (
-          <span className="text-white text-md ml-2 my-2">
+          <span className="text-black text-md ml-2 my-2">
             {tag.toUpperCase()}
           </span>
         )}

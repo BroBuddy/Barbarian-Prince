@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import type { TagItem } from "@/pages/Helper";
-
-function tagToPath(tag: string): string {
-  const lower = tag.toLowerCase();
-  if (lower.startsWith("e")) return `/event/${lower}`;
-  if (lower.startsWith("r")) return `/rule/${lower}`;
-  return `/`;
-}
+import { getLinkClass, tagToPath } from "@/lib/Helper";
 
 function History() {
   const history = JSON.parse(localStorage.getItem("barbarian-prince") || "[]");
 
   return (
-    <Card title="📜 History">
+    <Card title="History">
       {history.length === 0 && <p>No history yet.</p>}
 
       {history.map((item: TagItem, index: number) => (
-        <Link to={tagToPath(item.tag)} key={index} className="flex flex-row">
+        <Link
+          to={tagToPath(item.tag)}
+          key={index}
+          className={getLinkClass(item.tag)}
+        >
           <span className="m-2">{item.tag}</span>
           <span className="my-2 text-black">{item.title}</span>
         </Link>

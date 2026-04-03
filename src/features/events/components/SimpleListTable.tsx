@@ -9,12 +9,14 @@ function SimpleListTable({ table }: { table: SimpleListTableType }) {
       <h3 className="text-bold mb-2">{table.label}</h3>
 
       <table>
-        <thead>
-          <tr>
-            <th className="p-2 w-4">#</th>
-            {hasDescription && <th className="p-2">Description</th>}
-          </tr>
-        </thead>
+        {hasDescription && (
+          <thead>
+            <tr>
+              <th className="text-white p-2 w-4">#</th>
+              <th className="text-white p-2">Description</th>
+            </tr>
+          </thead>
+        )}
 
         <tbody>
           {table.rows.map((row, i) => (

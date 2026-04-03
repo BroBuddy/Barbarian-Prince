@@ -13,7 +13,7 @@ const Header = () => {
     <header>
       <div
         style={{ borderBottom: "4px solid #000", zIndex: 9999 }}
-        className="fixed pointer left-0 top-0 bg-orange flex flex-col"
+        className="fixed pointer left-0 top-0 bg-light-grey flex flex-col"
         aria-expanded={isOpen}
         aria-controls="attribute-modal"
         onClick={() => toggleModal()}

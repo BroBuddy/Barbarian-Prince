@@ -17,7 +17,7 @@ const ResourceSelector = ({
             width: "25px",
             height: "25px",
             border: "1px solid #000",
-            backgroundColor: i <= value ? "#b36a46" : "#fff",
+            backgroundColor: i <= value ? "#c00100" : "#fff",
             cursor: "pointer",
           }}
         >

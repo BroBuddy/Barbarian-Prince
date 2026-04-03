@@ -15,7 +15,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Your Character",
+        label: "",
         rows: [["r202a", "Spending Luck"]],
       },
     ],
@@ -69,7 +69,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Travel",
+        label: "",
         rows: [
           ["r204a", "Travel Speeds"],
           ["r204b", "Travel Events"],
@@ -181,7 +181,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Travel Tables",
+        label: "",
         rows: [
           ["r207a", "Farmland"],
           ["r207b", "Countryside"],
@@ -235,12 +235,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Countryside",
+        label: "",
         rows: [["Lost: 10+"], ["Event: 9+"], ["Hunt: Yes"], ["Fodder: Yes"]],
       },
       {
         type: "roll-table",
-        label: "Countryside",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e021", "e171", "e008"],
@@ -260,12 +260,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Forest",
+        label: "",
         rows: [["Lost: 9+"], ["Event: 9+"], ["Hunt: Yes"], ["Fodder: Yes"]],
       },
       {
         type: "roll-table",
-        label: "Forest",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e171", "e007", "e008"],
@@ -285,12 +285,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Hills",
+        label: "",
         rows: [["Lost: 9+"], ["Event: 10+"], ["Hunt: Yes"], ["Fodder: Yes"]],
       },
       {
         type: "roll-table",
-        label: "Hills",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e006", "e006", "e008"],
@@ -310,12 +310,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Mountains",
+        label: "",
         rows: [["Lost: 8+"], ["Event: 10+"], ["Hunt: No"], ["Fodder: No"]],
       },
       {
         type: "roll-table",
-        label: "Mountains",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e006", "e006", "e058"],
@@ -335,12 +335,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Swamp",
+        label: "",
         rows: [["Lost: 6+"], ["Event: 10+"], ["Hunt: Yes"], ["Fodder: No"]],
       },
       {
         type: "roll-table",
-        label: "Swamp",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e022", "e046", "e033"],
@@ -361,12 +361,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Desert",
+        label: "",
         rows: [["Lost: 7+"], ["Event: 10+"], ["Hunt: No*"], ["Fodder: No*"]],
       },
       {
         type: "roll-table",
-        label: "Desert",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e019", "e128", "e129", "e051", "e023", "e068"],
@@ -383,35 +383,18 @@ export const ruleData: Rule[] = [
     tag: "r207h",
     title: "Cross River",
     type: "reference",
+    note: "roll 1-2: Roll on terrain table before crossing river",
     tables: [
       {
         type: "simple-list",
-        label: "Cross River",
+        label: "",
         rows: [["Lost: 9+"], ["Event: 10+"], ["Hunt: –"], ["Fodder: –"]],
       },
       {
         type: "roll-table",
-        label: "Cross River",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
-          [
-            "1",
-            "Roll on terrain table before crossing river",
-            "",
-            "",
-            "",
-            "",
-            "",
-          ],
-          [
-            "2",
-            "Roll on terrain table after crossing river",
-            "",
-            "",
-            "",
-            "",
-            "",
-          ],
           ["3", "e123", "e123", "e057", "e057", "e051", "e127"],
           ["4", "e094", "e094", "e091", "e126", "e122", "e084"],
           ["5", "e083", "e122", "e122", "e124", "e124", "e124"],
@@ -427,12 +410,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "On Road",
+        label: "",
         rows: [["Lost: –"], ["Event: 10+"], ["Hunt: –"], ["Fodder: –"]],
       },
       {
         type: "roll-table",
-        label: "On Road",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e018", "e020", "e023", "e168", "e168", "e168"],
@@ -452,12 +435,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Airborne",
+        label: "",
         rows: [["Lost: 12+"], ["Event: 10+"], ["Hunt: –"], ["Fodder: –"]],
       },
       {
         type: "roll-table",
-        label: "Airborne",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e102", "e102", "e103", "e103", "e104", "e104"],
@@ -478,12 +461,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Village",
+        label: "",
         rows: [["Lost: –"], ["Event: 9+*"], ["Hunt: No"], ["Fodder: No"]],
       },
       {
         type: "roll-table",
-        label: "Village",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e009", "e199p", "r199o", "r199q", "e199n", "e199m"],
@@ -504,12 +487,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Town",
+        label: "",
         rows: [["Lost: –"], ["Event: 8+*"], ["Hunt: No"], ["Fodder: No"]],
       },
       {
         type: "roll-table",
-        label: "Town",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e050", "e050", "e050", "e081", "e081", "e175"],
@@ -530,12 +513,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Castle",
+        label: "",
         rows: [["Lost: –"], ["Event: 9+*"], ["Hunt: No"], ["Fodder: No"]],
       },
       {
         type: "roll-table",
-        label: "Castle",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e050", "e050", "e199d", "e081", "e081", "e175"],
@@ -556,12 +539,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Temple",
+        label: "",
         rows: [["Lost: –"], ["Event: 10+*"], ["Hunt: No"], ["Fodder: No"]],
       },
       {
         type: "roll-table",
-        label: "Temple",
+        label: "",
         cols: ["roll", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e018", "e018", "e018", "e018", "e018", "e018"],
@@ -581,60 +564,33 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Special",
-        cols: ["Special", "Event", "1", "2", "3", "4", "5", "6"],
-        rows: [
-          [
-            "Dwarf Mines (e059)",
-            "9+",
-            "e006",
-            "e058",
-            "e006",
-            "e018",
-            "r199q",
-            "castle",
-          ],
-          [
-            "Wizard Tower (e068a)",
-            "10+",
-            "e023",
-            "e025",
-            "e016",
-            "e023",
-            "e135",
-            "e175",
-          ],
-          [
-            "Halfling Town (e070)",
-            "9+",
-            "e008",
-            "e008",
-            "e009",
-            "e169",
-            "e199m",
-            "village",
-          ],
-          [
-            "Cloud Castle (e117)",
-            "9+",
-            "e108",
-            "e101",
-            "e118",
-            "e108",
-            "e199b",
-            "castle",
-          ],
-          [
-            "Elf Haven (e166)",
-            "9+",
-            "e007",
-            "e071",
-            "e199n",
-            "e007",
-            "e080",
-            "castle",
-          ],
-        ],
+        label: "Dwarf Mines (e059)",
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        rows: [["9+", "e006", "e058", "e006", "e018", "r199q", "castle"]],
+      },
+      {
+        type: "roll-table",
+        label: "Wizard Tower (e068a)",
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        rows: [["10+", "e023", "e025", "e016", "e023", "e135", "e175"]],
+      },
+      {
+        type: "roll-table",
+        label: "Halfling Town (e070)",
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        rows: [["9+", "e008", "e008", "e009", "e169", "e199m", "village"]],
+      },
+      {
+        type: "roll-table",
+        label: "Cloud Castle (e117)",
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        rows: [["9+", "e108", "e101", "e118", "e108", "e199b", "castle"]],
+      },
+      {
+        type: "roll-table",
+        label: "Elf Haven (e166)",
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        rows: [["9+", "e007", "e071", "e199n", "e007", "e080", "castle"]],
       },
     ],
   },
@@ -646,12 +602,12 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Rafting",
+        label: "",
         rows: [["Lost: –"], ["Event: 10+"]],
       },
       {
         type: "roll-table",
-        label: "Rafting",
+        label: "",
         cols: ["Roll 2d6", "Event"],
         rows: [
           ["2", "e125"],
@@ -677,7 +633,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Search Ruins",
+        label: "",
         cols: ["Roll 2d6", "Event"],
         rows: [
           ["2", "e133"],
@@ -703,7 +659,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek News & Information",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "No news of note, nothing seems to be happening."],
@@ -764,7 +720,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek to Hire Followers",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           [
@@ -817,7 +773,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Seek an Audience with a Local Lord",
+        label: "",
         rows: [
           ["r211a", "Seek an Audience at any Village"],
           ["r211b", "Seek an Audience at any Town"],
@@ -847,7 +803,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience at any Village",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2–3", "Insult the village elders, e060a."],
@@ -868,7 +824,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience at any Town",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "Grievously insult the town council, e062."],
@@ -894,7 +850,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience at any Temple",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "Anger temple guards, e063."],
@@ -922,7 +878,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience at any Halfling Town",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "Insult the town council, e063."],
@@ -957,7 +913,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience at any Wizard's Tower",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           [
@@ -988,7 +944,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience at any Elf Haven",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2–3", "You insult the Elf Lord, e062."],
@@ -1016,7 +972,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience at any Dwarf Mines",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "You insult the race of dwarves, e063."],
@@ -1040,7 +996,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience at Cloud Castle",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "The Hawk Lord despises all those from below, see e063."],
@@ -1071,7 +1027,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience with the Baron of Huldra Castle",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "Audience permanently refused, cannot try again."],
@@ -1095,7 +1051,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience with Count Drogat of Drogat Castle",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "You are the Count's next victim; see e061."],
@@ -1122,7 +1078,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Seek an Audience with Lady Aeravir of Aeravir Castle",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["2", "You insult the Lady's dignity, arrested e060."],
@@ -1151,7 +1107,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Make an Offering",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           [
@@ -1238,7 +1194,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Food",
+        label: "",
         rows: [
           ["r215a", "Food Units"],
           ["r215b", "Hunting"],
@@ -1301,7 +1257,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Starvation",
+        label: "",
         rows: [
           ["r216a", "Character Starvation"],
           ["r216b", "Follower Starvation"],
@@ -1343,7 +1299,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Starvation",
+        label: "",
         rows: [
           ["r218a", "Escape"],
           ["r218b", "Hiding"],
@@ -1378,7 +1334,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Combat",
+        label: "",
         rows: [
           ["r220a", "Combat Procedure"],
           ["r220b", "Selecting Opponents"],

@@ -40,7 +40,7 @@ const ResourceEditor = () => {
                 <button
                   style={{ border: "none" }}
                   onClick={() => handleSet(name, Math.max(0, value - 1))}
-                  className="px-3 py-1 bg-orange text-black"
+                  className="px-3 py-1 bg-dark-grey text-white"
                 >
                   -
                 </button>
@@ -59,7 +59,7 @@ const ResourceEditor = () => {
                 <button
                   style={{ border: "none" }}
                   onClick={() => handleSet(name, Math.min(max, value + 1))}
-                  className="px-3 py-1 bg-orange text-black"
+                  className="px-3 py-1 bg-dark-grey text-white"
                 >
                   +
                 </button>

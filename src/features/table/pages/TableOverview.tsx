@@ -10,7 +10,7 @@ function TableOverview() {
 
   return (
     <>
-      <Card title="🎲 Travel Tables">
+      <Card title="Travel Tables">
         {travels.map((item: Table) => (
           <Link
             to={`/table/${item.id}`}
@@ -18,7 +18,7 @@ function TableOverview() {
             className="flex flex-row"
           >
             <span className="m-2">#{item.id}</span>
-            <span className="my-2 text-black">{item.terrain}</span>
+            <span className="my-2">{item.terrain}</span>
           </Link>
         ))}
       </Card>

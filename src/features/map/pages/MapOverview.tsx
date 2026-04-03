@@ -36,7 +36,7 @@ function MapOverview() {
   };
 
   return (
-    <Card title="🗺️ Map">
+    <Card title="Map">
       <MapImage
         selectedMap={selectedMap}
         marker={marker}

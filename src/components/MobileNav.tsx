@@ -3,15 +3,14 @@ import "./MobileNav.scss";
 
 type Links = {
   to: string;
-  icon: string;
   label: string;
 };
 
 const links: Links[] = [
-  { to: "/", icon: "⚔️", label: "Game" },
-  { to: "/rule/r203", icon: "🎯", label: "Daily Actions" },
-  { to: "/map", icon: "🗺️", label: "Map" },
-  { to: "/helper", icon: "💡", label: "Helper" },
+  { to: "/", label: "Game" },
+  { to: "/rule/r203", label: "Daily Actions" },
+  { to: "/map", label: "Map" },
+  { to: "/helper", label: "Helper" },
 ];
 
 const MobileNav = () => {
@@ -19,7 +18,7 @@ const MobileNav = () => {
 
   return (
     <nav className="mobile-nav">
-      {links.map(({ to, icon, label }) => {
+      {links.map(({ to, label }) => {
         const isActive = location.pathname === to;
 
         return (
@@ -34,7 +33,6 @@ const MobileNav = () => {
             }}
             className={` ${isActive ? "active" : ""}`}
           >
-            <span className="mr-1">{icon}</span>
             <span>{label}</span>
           </Link>
         );

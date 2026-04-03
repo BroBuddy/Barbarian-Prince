@@ -7,7 +7,7 @@ type BadgeProps = {
 };
 
 const Badge: React.FC<BadgeProps> = ({ text, icon, variant = "default" }) => {
-  const variantStyles = variant === "default" ? "bg-orange" : "bg-purple";
+  const variantStyles = variant === "default" ? "bg-red" : "bg-purple";
 
   return (
     <span

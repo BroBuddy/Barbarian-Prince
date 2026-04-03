@@ -9,9 +9,9 @@ function RollTable({ table }: { table: RollTableType }) {
 
       <table>
         <thead>
-          <tr className="text-black">
+          <tr>
             {table.cols.map((col, i) => (
-              <th key={i} className="text-black p-2">
+              <th key={i} className="text-white p-2">
                 {col}
               </th>
             ))}

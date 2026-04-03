@@ -1,5 +1,5 @@
 .mobile-nav {
-  background-color: var(--orange);
+  background-color: var(--light-grey);
   border-top: 4px solid var(--black);
   box-sizing: border-box;
   display: flex;
@@ -11,7 +11,7 @@
   padding: 6px;
 
   a {
-    color: var(--white);
+    color: var(--black);
     display: flex;
     font-size: 14px;
     flex-direction: column;
@@ -21,7 +21,7 @@
 
     &.active,
     &:hover {
-      color: var(--light-blue);
+      color: var(--dark-grey);
       font-weight: bold;
     }
   }

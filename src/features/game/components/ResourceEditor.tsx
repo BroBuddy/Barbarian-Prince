@@ -1,16 +1,18 @@
 import useGameStore from "../store/gameStore";
+import NumberStepper from "./NumberStepper";
 import ResourceSelector from "./ResourceSelector";
 
 type BoxResource = {
   name: string;
   max: number;
+  color?: string;
 };
 
 const BOX_RESOURCES: BoxResource[] = [
-  { name: "Combat", max: 9 },
-  { name: "Endurance", max: 9 },
-  { name: "Starvation", max: 9 },
-  { name: "WitAndWiles", max: 6 },
+  { name: "Combat", max: 9, color: "#b91c1c" },
+  { name: "Endurance", max: 9, color: "#15803d" },
+  { name: "Starvation", max: 9, color: "#1d4ed8" },
+  { name: "WitAndWiles", max: 6, color: "#a16207" },
   { name: "Food", max: 100 },
   { name: "Gold", max: 600 },
   { name: "Day", max: 70 },
@@ -26,7 +28,7 @@ const ResourceEditor = () => {
 
   return (
     <div className="flex flex-col mt-2 mx-10">
-      {BOX_RESOURCES.map(({ name, max }) => {
+      {BOX_RESOURCES.map(({ name, max, color }) => {
         const value = resources[name];
 
         const isLarge = name === "Food" || name === "Gold" || name === "Day";
@@ -36,39 +38,17 @@ const ResourceEditor = () => {
             <span className="text-white">{name}</span>
 
             {isLarge ? (
-              <div className="flex items-center gap-2">
-                <button
-                  style={{ border: "none" }}
-                  onClick={() => handleSet(name, Math.max(0, value - 1))}
-                  className="px-3 py-1 bg-dark-grey text-white"
-                >
-                  -
-                </button>
-
-                <input
-                  type="number"
-                  value={value}
-                  min={0}
-                  max={max}
-                  onChange={(e) =>
-                    handleSet(name, Math.min(max, Number(e.target.value)))
-                  }
-                  className="w-6 text-center"
-                />
-
-                <button
-                  style={{ border: "none" }}
-                  onClick={() => handleSet(name, Math.min(max, value + 1))}
-                  className="px-3 py-1 bg-dark-grey text-white"
-                >
-                  +
-                </button>
-              </div>
+              <NumberStepper
+                value={value}
+                max={max}
+                onChange={(val) => handleSet(name, val)}
+              />
             ) : (
               <ResourceSelector
                 max={max}
                 value={value}
                 onChange={(val) => handleSet(name, val)}
+                color={color}
               />
             )}
           </div>

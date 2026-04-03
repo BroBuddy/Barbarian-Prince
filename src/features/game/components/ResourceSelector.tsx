@@ -1,27 +1,34 @@
+type ResourceSelectorProps = {
+  max: number;
+  value: number;
+  onChange: (val: number) => void;
+  color?: string;
+};
+
 const ResourceSelector = ({
   max,
   value,
   onChange,
-}: {
-  max: number;
-  value: number;
-  onChange: (val: number) => void;
-}) => {
+  color = "#888",
+}: ResourceSelectorProps) => {
+  const boxColor = "#fff";
+
   return (
     <div className="flex flex-row flex-wrap">
-      {Array.from({ length: max + 1 }, (_, i) => i).map((i) => (
+      {Array.from({ length: max + 1 }, (_, i) => i).map((index: number) => (
         <div
-          key={i}
-          onClick={() => onChange(i)}
+          key={index}
+          onClick={() => onChange(index)}
           style={{
             width: "25px",
             height: "25px",
             border: "1px solid #000",
-            backgroundColor: i <= value ? "#c00100" : "#fff",
+            backgroundColor: index <= value ? color : boxColor,
+            color: index <= value ? "#fff" : "#000",
             cursor: "pointer",
           }}
         >
-          {i}
+          {index}
         </div>
       ))}
     </div>

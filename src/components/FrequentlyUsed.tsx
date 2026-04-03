@@ -43,7 +43,7 @@ function FrequentlyUsed() {
           key={index}
           className={getLinkClass(item.tag)}
         >
-          <span className="m-2">{item.tag}</span>
+          <span className="m-2 w-4">{item.tag}</span>
           <span className="my-2 text-black">{item.title}</span>
         </Link>
       ))}

@@ -1211,7 +1211,7 @@ export const ruleData: Rule[] = [
     tag: "r215a",
     title: "Food Units",
     type: "food",
-    desc: 'For convenience, food is counted in "units." Each food unit is sufficient to feed 1 character for 1 day and weighs 1 load (see r206a). Mounts require 2 units per day if they are unable to forage for their own fodder. If there is no water available (in a desert hex with no oasis) then the food requirement doubles for men and mounts, to represent the need to also carry water.',
+    desc: 'For convenience, food is counted in "units." Each food unit is sufficient to feed 1 character for 1 day and weighs 1 load (see r206). Mounts require 2 units per day if they are unable to forage for their own fodder. If there is no water available (in a desert hex with no oasis) then the food requirement doubles for men and mounts, to represent the need to also carry water.',
   },
   {
     tag: "r215b",

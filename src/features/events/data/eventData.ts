@@ -1807,6 +1807,7 @@ const eventData: Event[] = [
     tag: "e117",
     title: "Castle in the Clouds",
     type: "location",
+    image: true,
     desc: "You see the wonderous sight of an enormous castle floating amidst the clouds! You may fly past, ending the event. Otherwise, if you elect to investigate, roll 1d6.",
     tables: [
       {
@@ -1871,6 +1872,7 @@ const eventData: Event[] = [
     tag: "e118",
     title: "Giant",
     type: "encounter",
+    image: true,
     desc: "You encounter a 12-foot-tall giant (ev8 cs9 wc10), with a large, bushy head, and carrying a very big club. Your options are: If the giant joins your party, he is too big to be carried on any mount, so you can't use mounted travel (r204) while he is with your party. In addition, he eats double the normal amount of food (r215) each day. The giant will not enter any village, town, or temple for fear of frightening the locals, but will find food for himself and re-join your party when you return to the wilds. In a castle, he must be lodged in his own room (r217).",
     tables: [
       {
@@ -1916,6 +1918,7 @@ const eventData: Event[] = [
     tag: "e123",
     title: "Knight at the Bridge",
     type: "encounter",
+    image: true,
     desc: "You find a small bridge across the river. However, an armoured knight (ev8 cs8 wc30) stands in the middle, challenging any who wish to cross to personally engage him in combat (r220). If you refuse the combat and end travel for the day, roll 1d6 for each character in your party: on a 6, that character deserts on account of your cowardice. If you enter combat, roll 1d6 at the start of each round: on a 4 or more, you strike first; on a 3 or less, the knight strikes first. If either of you are knocked unconscious, the duel ends. If you are knocked unconscious, crossing is prohibited and travel ends for the day. If the knight is knocked unconscious, you can either leave him here and continue to travel, or you can halt for the day, treat his wounds, and invite him to join your party as an ally, in exchange for food (r215) and lodging (r217). You may give up the combat and end travel for the day after any combat round, without invoking the usual escape procedure.",
   },
   {
@@ -1946,11 +1949,12 @@ const eventData: Event[] = [
     tag: "e128",
     title: "Merchant",
     type: "npc",
+    image: true,
     desc: "You meet a friendly merchant. You can either pass by and ignore him, ending this encounter, you can stop to chat and barter, or you can attempt to rob him (see e128a). If you stop to barter, roll 2d6.",
     tables: [
       {
         type: "roll-table",
-        label: "Merchant",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "The merchant has a pegasus mount for sale for 50 gold."],
@@ -1999,11 +2003,12 @@ const eventData: Event[] = [
     tag: "e129",
     title: "Merchant Caravan",
     type: "encounter",
+    image: true,
     desc: "You meet a merchant caravan setting up camp for the night. You may halt for the day to talk and trade with them, or you can ignore them and end this event. If you stop, roll 2d6 on the list below.",
     tables: [
       {
         type: "roll-table",
-        label: "Merchant Caravan",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "Learn unique secrets from various caravan members, e162."],
@@ -2040,6 +2045,7 @@ const eventData: Event[] = [
     tag: "e130",
     title: "Meet a High Lord",
     type: "encounter",
+    image: true,
     desc: "You meet a high and powerful Lord, attended by 2d6+1 bodyguards (ev6 cs6). Roll 1d6 for the Lord's identity.",
     tables: [
       {
@@ -2073,6 +2079,7 @@ const eventData: Event[] = [
     tag: "e131",
     title: "The Secret of Jakor's Keep",
     type: "story",
+    image: true,
     desc: "You learn that Jakor, a mighty Northern Lord who was allied with your ancestors, and dead many long centuries now, was in fact a powerful wizard. Even after all this time, a legend persists that Jakor did not really die, and that his spirit still roams his decaying keep. It could be that the restless shade of Jakor could help you regain your lost throne.",
     note: "Travel to Jakor's Keep (0901). Must be accompanied by a magician, witch, or wizard. Complete a Search Ruins (r208) action first. Spend 40 gold at any town or castle for a silver pentagram to add +1 to the roll. Destroy an unused resurrection necklace (e192) during the invocation to add +2 to the roll.",
     tables: [
@@ -2103,6 +2110,7 @@ const eventData: Event[] = [
     tag: "e132",
     title: "Organized Search",
     type: "event",
+    image: true,
     desc: "If alone, you spend the day fruitlessly searching the ruins and find nothing. If you have followers in your party, roll 1d6: if you roll less than the size of your party, the help pays off — roll again immediately on r208.",
   },
   {
@@ -2186,6 +2194,7 @@ const eventData: Event[] = [
     tag: "e138",
     title: "Unclean",
     type: "combat",
+    image: true,
     desc: "The ruins are unclean and have horrible, gruesome creatures populating them. If you survive the encounter, you can immediately consult r208 again to continue your search, or stop for the day and eat your evening meal (r215).",
     tables: [
       {
@@ -2228,6 +2237,7 @@ const eventData: Event[] = [
     tag: "e140",
     title: "Magic Box",
     type: "item",
+    image: true,
     desc: "You find a magic box, but you can only open it if you have a magician, witch, or wizard in your party. Until then, you may carry it with you as it is relatively light. Once such a character joins your party, the box can be opened.",
     tables: [
       {
@@ -2274,12 +2284,14 @@ const eventData: Event[] = [
     tag: "e145",
     title: "The Secret of Lady Aeravir",
     type: "story",
+    image: true,
     desc: "The Lady of Aeravir Castle is the priestess of a local temple cult that requires virginity. You discover she is actually quite promiscuous, and can use this to your advantage if you gain an audience with her. Add +1 when you Seek an Audience with the Lady (r211K), and if you receive it, you may roll twice for the results of the audience and select whichever you prefer. However, Lady Aeravir detests blackmail — you must escape from the hex (r218) at the end of the day after using this knowledge, and never return.",
   },
   {
     tag: "e146",
     title: "The Secret of Count Drogat",
     type: "story",
+    image: true,
     desc: "You learn that Count Drogat, Lord of Drogat Castle, is actually an undead creature who lives on the suffering, pain, and death of others. Secretly, the Count is very vulnerable to foulbane, a rare plant purchasable as a special daily action from food merchants at Duffyd Temple (hex 2018) for 1 gold piece.",
     note: "Using foulbane when you Seek an Audience with Count Drogat (r211J) adds +1 to your roll, and if you gain an audience you may ignore the first result and try again (must abide by the second). The foulbane is then discarded. While at Drogat Castle, you may use a second sprig of foulbane instead of a normal daily action to arrange a heist of the Count's personal jewels — escape (r218) at day's end with wc110, but can never return.",
   },
@@ -2331,6 +2343,7 @@ const eventData: Event[] = [
     tag: "e151",
     title: "Find Favour",
     type: "npc",
+    image: true,
     desc: "You gain an audience and are heard favourably. Your entire party is given free food (r215) and lodging (r217) tonight. In the morning, you are gifted 1d6×100 gold pieces, plus an escort of cavalrymen that guides you and remains with you during the day you leave the hex. The escort is so strong that you will automatically defeat and kill anything you meet in combat, without using the normal combat procedure.",
   },
   {
@@ -2349,6 +2362,7 @@ const eventData: Event[] = [
     tag: "e154",
     title: "Meet Lord's Daughter",
     type: "npc",
+    image: true,
     desc: "You meet the Lord's beautiful daughter.",
     tables: [
       {
@@ -2384,6 +2398,7 @@ const eventData: Event[] = [
     tag: "e155",
     title: "Audience with a High Priest",
     type: "npc",
+    image: true,
     desc: "You have a private discussion with the wizened High Priest.",
     tables: [
       {
@@ -2420,6 +2435,7 @@ const eventData: Event[] = [
     tag: "e156",
     title: "Audience with the Town Mayor",
     type: "npc",
+    image: true,
     desc: "You have private discussions with the Mayor.",
     tables: [
       {

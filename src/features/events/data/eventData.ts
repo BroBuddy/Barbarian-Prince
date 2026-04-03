@@ -35,7 +35,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade*", "fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "pass r327", "attacked r307", "surprise r300"],
           ["2", "pass r328", "attack r306", "surprise r301"],
@@ -58,7 +58,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk*", "evade†", "fight"],
+        cols: ["🎲", "Talk*", "Evade", "Fight"],
         rows: [
           ["1", "converse r341", "escape (mtd) r312", "surprise r303"],
           ["2", "converse r341", "escape r315", "attack r304"],
@@ -80,8 +80,8 @@ const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Mercenary Band",
-        cols: ["🎲", "talk", "evade*", "fight"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "conversation r341", "hide r319", "surprise r301"],
           ["2", "bribe-hire (20) r332", "pass r328", "surprise r302"],
@@ -104,7 +104,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade*", "fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "conversation r341", "escape r311", "surprise r302"],
           ["2", "hirelings r338", "escape r314", "surprise r303"],
@@ -145,7 +145,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["roll*", "talk", "evade†", "fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "surprised r308", "bribe (5) r322", "surprised r308"],
           ["2", "bribe-hire (20) r332", "pass r328", "attacked r306"],
@@ -194,7 +194,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["roll*", "talk†", "evade‡", "fight"],
+        cols: ["", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "hide r317", "surprise r302"],
           ["2", "conversation r341", "hide r318", "attack r305"],
@@ -446,7 +446,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "fight"],
+        cols: ["🎲", "Talk", "Fight"],
         rows: [
           ["1", "plead comrade r336", "surprise r301"],
           ["2", "plead comrade r336", "surprise r303"],
@@ -489,14 +489,14 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade", "fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "pass r325", "attack r305"],
           ["2", "conversation r341", "pass r325", "attack r305"],
           ["3", "plead comrades* r336", "pass r325", "attacked r306"],
           ["4", "plead comrades* r336", "pass r326", "attacked r306"],
           ["5", "pass r325", "surprised r310", "attacked r307"],
-          ["6", "pass r325", "monk†", "surprised r308"],
+          ["6", "pass r325", "monk", "surprised r308"],
         ],
       },
     ],
@@ -511,7 +511,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade", "fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "conversation r341", "pass r325", "surprise r302"],
           ["2", "conversation r341", "pass r325", "attack r304"],
@@ -534,7 +534,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade*", "fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "conversation r341", "pass r325", "surprise r301"],
           ["2", "inquiry r342", "hide r317", "surprise r302"],
@@ -557,7 +557,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk*", "fight"],
+        cols: ["🎲", "Talk*", "Fight"],
         rows: [
           ["1", "plead comrades r336", "surprise r301"],
           ["2", "plead comrades r336", "surprise r303"],
@@ -599,7 +599,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade", "fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "pass r325", "attack r305"],
           ["2", "inquiry r342", "pass r325", "attacked r306"],
@@ -900,7 +900,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade*", "fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "surprised r308", "attacked† r306", "surprised r308"],
           ["2", "attacked† r306", "hide r320", "attacked† r307"],
@@ -1012,7 +1012,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade*", "fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape r311", "surprise r302"],
           ["2", "bribe-join (30) r331", "escape r314", "surprise r303"],
@@ -1254,7 +1254,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["roll*", "talk†", "evade‡", "fight§"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["0", "follow e071a", "pass r325", "surprise r301"],
           ["1", "inquiry r342", "escape (fly) r313", "surprise r302"],
@@ -1356,19 +1356,21 @@ const eventData: Event[] = [
     tag: "e080",
     title: "Pixies",
     type: "magic",
+    image: true,
     desc: "A group of small, flying sprites called pixies appear and dance around. Unless you have a druid, magician, wizard, witch, elf, or halfling in your party they will dance away and end the encounter. If your party includes any one of these characters, the pixies may stop to grant you a boon, roll 1d6: 1: nothing of use; 2: they give you advice that may lead to treasure 1d6 hexes away in a random direction (r204g) – once there, see e026; 3: they lead you to an ancient cache, e038; 4–5: they provide a magical gift, e195; 6: they give you a winged pegasus mount, e188.",
   },
   {
     tag: "e081",
     title: "Mounted Patrol",
     type: "encounter",
+    image: true,
     desc: "You encounter a mounted patrol of 1d6 soldiers (ev5 cs6 wc4). One of the men is the leader and has wealth 10 instead. Your options are:",
     note: "* If your party all have winged mounts and/or flying ability, you can use escape flying (r313) instead of rolling for the evade option.",
     tables: [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade*", "fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape (mtd) r312", "surprise r302"],
           ["2", "pass r327", "escape (mtd) r312", "attack r305"],
@@ -1384,6 +1386,7 @@ const eventData: Event[] = [
     tag: "e082",
     title: "Spectre",
     type: "magic",
+    image: true,
     desc: "An unearthly spectre from the astral plane appears in the midst of your party, casting a hideous miasma in all directions. One character in your party is the spectre's victim (see r343, but you must roll for any druids, magicians, monks, priests, witches, or wizards in your party first). The victim is turned to smoke and taken by the spectre to the astral plane, never to be seen again. If you are the victim, you are lost and the game ends. However, since a spectre is a magical being, it can be turned away using any possession that protects against magic attacks or injury.",
   },
   {
@@ -1397,6 +1400,7 @@ const eventData: Event[] = [
     tag: "e084",
     title: "Bear Comes to Dinner",
     type: "combat",
+    image: true,
     desc: "You are about to sit down for a meal when a large, ferocious black bear (ev5 cs6) wanders into your campsite! The bear will randomly attack one character (r343) after another in your party until all are killed, the bear is killed, or you escape. The bear strikes first in combat (r220). If you kill the bear, a bear pelt may be sold at a market for 8 gold (see r298a). The pelt counts as 1 load for transport.",
   },
   {
@@ -1409,6 +1413,7 @@ const eventData: Event[] = [
     tag: "e086",
     title: "High Pass",
     type: "event",
+    image: true,
     desc: "In order to leave the hex by any direction except that which you entered, you must travel through a very high, alpine pass. On your next travel action (r204), unless you leave by the hex you entered, you must take the high pass as long as you aren't lost. When you travel the high pass, roll 2d6 for the effects of high winds, sub-freezing temperatures, snow, etc.",
     note: "* Due to terrible conditions, you cannot cache spare wealth and possessions here. They must be abandoned in the snows and lost entirely.",
     tables: [
@@ -1430,12 +1435,14 @@ const eventData: Event[] = [
     tag: "e087",
     title: "Impassable Woods",
     type: "event",
+    image: true,
     desc: "You find the forest becomes thicker and thicker along this route, until further travel is impossible. You can only leave this hex by travelling back to the hex from which you came (r204). However, if entered from another direction, this hex could be passable.",
   },
   {
     tag: "e088",
     title: "Rock Fall",
     type: "event",
+    image: true,
     desc: "As you travel along through a steep-sided gorge, a rock fall begins, threatening your entire party. Roll 1d6 for each character; mounts without riders are rolled for separately.",
     tables: [
       {
@@ -1466,6 +1473,7 @@ const eventData: Event[] = [
     tag: "e090",
     title: "Quicksand",
     type: "event",
+    image: true,
     desc: "Your party stumbles into quicksand. Roll 1d6 on the list below for each character or mount. If a character is riding a mount, you can either roll for both together as a character, or the character can sacrifice the mount and its load in order to jump from it to safety.",
     tables: [
       {
@@ -1497,6 +1505,7 @@ const eventData: Event[] = [
     tag: "e091",
     title: "Poison Snake",
     type: "combat",
+    image: true,
     desc: "Your party unknowingly walks over the nest of a poison snake. One character (see r343) is bit and suffers 1d6 poisoned wounds.",
   },
   {
@@ -1515,6 +1524,7 @@ const eventData: Event[] = [
     tag: "e094",
     title: "Crocodiles",
     type: "combat",
+    image: true,
     desc: "A bask of 1d6 very large and very hungry crocodiles (ev6 cs4) attack your party. If you are in a swamp, you cannot escape in battle (see r220e). Crocodiles always strike first in combat (r220), and in a swamp they gain surprise as well.",
   },
   {
@@ -1576,13 +1586,14 @@ const eventData: Event[] = [
     tag: "e098",
     title: "Dragon",
     type: "encounter",
+    image: true,
     desc: "You encounter a huge, winged, fire-breathing dragon (ev12 cs11). Roll 1d6: on a 1 or 2, you have found it in its lair, which has both wealth 110 and wealth 60; on a 3 or more, it has only wealth 30. If you must fight it in combat (r220) you cannot escape. Choose from the options below and roll 1d6, adding one (+1) if this is the dragon's lair.",
     note: "If you kill the dragon, its eye counts as a trophy and is greatly valued by High Priests of temples across the land, and may be of assistance in gaining an audience. The Dragon's Eye counts as 1 load to transport (r206). In addition, a Dragon's Eye can be sold for 20 gold to any merchant or in any town, castle, or temple whenever you buy food.",
     tables: [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade", "fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "pass r329", "escape (fly) r313", "surprise r302"],
           ["2", "pass r329", "escape r315", "surprise r303"],
@@ -1605,12 +1616,13 @@ const eventData: Event[] = [
     tag: "e099",
     title: "Roc",
     type: "encounter",
+    image: true,
     desc: "A gigantic bird, the legendary roc (ev8 cs10), swoops down on your party from above. You can choose to evade or fight the monstrous avian. However, you may instead attempt to tame it (see e099a), a difficult and dangerous process!",
     tables: [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "evade", "fight"],
+        cols: ["🎲", "Evade", "Fight"],
         rows: [
           ["1", "escape (fly) r313", "surprise r301"],
           ["2", "escape (fly) r313", "surprise r303"],
@@ -1633,13 +1645,14 @@ const eventData: Event[] = [
     tag: "e100",
     title: "Griffon",
     type: "encounter",
+    image: true,
     desc: "You meet a winged griffon (ev6 cs8 wc12). The griffon is intelligent, and could serve both as a member of your party and as a winged mount for another character. However, griffons are normally quite independent and ferocious, and this one looks especially unfriendly, if not hostile! Your options are:",
     note: "If you kill the griffon, you can remove one of its claws and carry it as a trophy and extra possession. A Griffon's Claw is especially valued by Lady Aeravir of Aeravir Castle, and may help you gain an audience with her. Alternatively, the claw can be sold for 25 gold to any merchant or in any town, castle, or temple whenever you buy food.",
     tables: [
       {
         type: "roll-table",
         label: "Roll (1d6)",
-        cols: ["🎲", "talk", "evade", "fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape (fly) r313", "surprise r303"],
           ["2", "plead comrades r337", "escape r315", "attack r305"],
@@ -1655,13 +1668,14 @@ const eventData: Event[] = [
     tag: "e101",
     title: "Harpies",
     type: "encounter",
+    image: true,
     desc: "You encounter harpies (ev4 cs5 wc4)*, dirty, nasty bird-women known to occasionally ally with humans. Roll 1d6 for the number of harpies you encounter: 1–3: 1 harpy; 4–5: 2 harpies; 6: 3 harpies. Your options are:",
     note: '* Harpies attack with cs5, but because they can fly, they have cs6 when defending. NOTE: If the harpy(s) join your party, she has her own wings and can travel airborne without needing a winged mount. She also counts as travelling on a normal mount because the wings allow her to make long "air-lifted" hops as well. If you ever enter a settlement, you must roll 1d6 before your evening meal: on a 4 or less, see e017.',
     tables: [
       {
         type: "roll-table",
-        label: "Harpies",
-        cols: ["🎲", "talk", "evade", "fight"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape (fly) r313", "surprise r302"],
           ["2", "pass r329", "pass r325", "attack r304"],
@@ -1695,6 +1709,7 @@ const eventData: Event[] = [
     tag: "e105",
     title: "Storm Clouds Ahead",
     type: "weather",
+    image: true,
     desc: "You can land immediately, in the hex you just entered, and avoid any risk. Alternately, if you continue flying today (assuming you have any airborne travel remaining), before checking for lost or a travel event (r204), roll 1d6 for what happens as you try to fly on: 1: e103; 2: e102; 3: e079; 4–5: no effect; 6: e105a.",
   },
   {
@@ -1731,25 +1746,28 @@ const eventData: Event[] = [
     tag: "e110",
     title: "Air Spirit",
     type: "magic",
+    image: true,
     desc: "You encounter an air spirit, but will only recognize it as such if there is a druid, magician, monk, priest, witch, or wizard in your party. If you can't recognize it, this event ends. If you recognize the spirit, you can attempt communication if you wish. To talk to the air spirit, roll 1d6: equal to or over your wit & wiles, communication fails, the air spirit becomes confused and blows you 1d6 hexes in a random direction (r204g) – move your party to this new hex and continue with your daily actions (r203); under your wit & wiles, you successfully talk with the air spirit and it agrees to help you in your quest – roll 2d6, and move up to that many hexes immediately, without risk of getting lost, and with no new travel events except for the hex where you land, where you must roll for a terrain travel event (r204).",
   },
   {
     tag: "e111",
     title: "Storm Demon",
     type: "magic",
+    image: true,
     desc: "You are attacked by a powerful demon of storms. If you have any druids, magicians, monks, priests, witches, or wizards in your party, each can attempt to stop the demon by rolling 1d6: on a 6, the demon attack is blocked; on a 1–5, there is no effect on the attack. If you are unable to block the attack, your entire party is blown away to be lost or killed. You crash in an adjacent hex (r204g), where your winged mount is killed, and you suffer 1d6 wounds. Your wealth and possessions you carried are intact, but that of the rest of your party is lost to you.",
   },
   {
     tag: "e112",
     title: "Meet Eagle Clan",
     type: "encounter",
+    image: true,
     desc: "While airborne, you encounter 1d6 eagles (ev3 cs4 wc1) in flight. Your options are listed below. If your party has characters other than humans or elves, and flying creatures other than pegasus mounts, you cannot follow, but can only choose to evade or fight (druids, magicians, monks, priests, witches, and wizards are presumed human unless specified as some other race when first encountered).",
     note: "* If you select follow, see r319 for procedure for a follow move today, and then roll for an event. If you elect to follow, you must abandon all members of your party without winged mounts or flying ability.",
     tables: [
       {
         type: "roll-table",
-        label: "Meet Eagle Clan",
-        cols: ["🎲", "evade", "follow*", "fight"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Evade", "follow*", "Fight"],
         rows: [
           ["1", "pass r325", "ambush e113", "attack r304"],
           ["2", "pass r325", "hunt e114", "attacked r305"],
@@ -1858,7 +1876,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Giant",
-        cols: ["🎲", "talk", "evade", "fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape (fly) r313", "surprise r301"],
           ["2", "plead comrades r337", "escape (mtd) r312", "surprise r302"],
@@ -2039,12 +2057,12 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Meet a High Lord",
-        cols: ["🎲", "talk", "evade", "fight§"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "pass r327", "escape (mtd) r312", "surprise r303"],
           ["2", "pass r329", "escape r314", "attack r305"],
           ["3", "arrested* e060", "escape r315", "attacked r306"],
-          ["4", "audience†", "hide r317", "attacked r306"],
+          ["4", "audience", "hide r317", "attacked r306"],
           ["5", "inquiry‡ r342", "hide r319", "attacked r307"],
           ["6", "attacked r307", "attacked r306", "surprised r309"],
         ],
@@ -2767,7 +2785,7 @@ const eventData: Event[] = [
           ["2", "conversation r341", "escape r314", "surprise r303"],
           ["3", "inquiry r342", "escape r315", "attack r304"],
           ["4", "fortune e172a", "hide r319", "attack r305"],
-          ["5", "thief †", "thief †", "attacked r306"],
+          ["5", "thief ", "thief ", "attacked r306"],
           ["6", "attacked r306", "hide r317", "battle r330"],
         ],
       },

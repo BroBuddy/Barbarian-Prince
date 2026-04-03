@@ -251,8 +251,8 @@ export const ruleData: Rule[] = [
       },
       {
         type: "roll-table",
-        label: "Farmland",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        label: "",
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e009", "e009", "e009", "e009", "e009", "e009"],
           ["2", "e018", "e018", "e020", "e020", "e023", "e130"],
@@ -277,7 +277,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e021", "e171", "e008"],
           ["2", "e009", "e022", "e050", "e018", "e020", "e023"],
@@ -302,7 +302,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e171", "e007", "e008"],
           ["2", "e074", "e074", "e073", "e022", "e051", "e178"],
@@ -327,7 +327,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e006", "e006", "e008"],
           ["2", "e098", "e019", "e023", "e051", "e068", "e020"],
@@ -352,7 +352,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e006", "e006", "e058"],
           ["2", "e099", "e100", "e023", "e068", "e101", "e170"],
@@ -377,7 +377,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e022", "e046", "e033"],
           ["2", "e020", "e068", "e073", "e051", "e051", "e074"],
@@ -403,7 +403,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e019", "e128", "e129", "e051", "e023", "e068"],
           ["2", "e028", "e082", "e055", "e003", "e004", "e028"],
@@ -429,7 +429,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["3", "e123", "e123", "e057", "e057", "e051", "e127"],
           ["4", "e094", "e094", "e091", "e126", "e122", "e084"],
@@ -452,7 +452,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e018", "e020", "e023", "e168", "e168", "e168"],
           ["2", "e050", "e051", "e051", "e051", "e003", "e003"],
@@ -478,7 +478,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e102", "e102", "e103", "e103", "e104", "e104"],
           ["2", "e112", "e112", "e112", "e112", "e108", "e108"],
@@ -503,7 +503,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e009", "e199p", "r199o", "r199q", "e199n", "e199m"],
           ["2", "e199k", "e199h", "e199d", "e199f", "e199a", "e199b"],
@@ -529,7 +529,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e050", "e050", "e050", "e081", "e081", "e175"],
           ["2", "r199q", "e199d", "e172", "e199i", "e199e", "e003"],
@@ -555,7 +555,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e050", "e050", "e199d", "e081", "e081", "e175"],
           ["2", "e197", "r199q", "e199j", "e179", "e169", "e169"],
@@ -581,7 +581,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e018", "e018", "e018", "e018", "e018", "e018"],
           ["2", "e021", "e021", "e021", "e130", "e199k", "e143"],
@@ -645,7 +645,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll 2d6", "Event"],
+        cols: ["🎲", "Event"],
         rows: [
           ["2", "e125"],
           ["3", "e126"],
@@ -671,7 +671,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll 2d6", "Event"],
+        cols: ["🎲", "Event"],
         rows: [
           ["2", "e133"],
           ["3", "e135"],
@@ -1208,7 +1208,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Cache Recovery",
-        cols: ["Roll 1d6", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["1–4", "Cache is found intact; you recover all items placed there."],
           [
@@ -1570,7 +1570,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Wealth Code",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
+        cols: ["🎲", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "0", "0", "1", "1", "2", "2"],
           ["2", "0", "1", "2", "2", "3", "4"],
@@ -1603,8 +1603,8 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Trap",
-        cols: ["Roll 1d6", "Result"],
+        label: "",
+        cols: ["🎲", "Result"],
         rows: [
           ["1", "The trap malfunctions, no wounds suffered."],
           ["2", "A needle darts out, inflicting 1 poisoned wound (see r222b)."],
@@ -1656,7 +1656,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Study History",
+        label: "",
         cols: ["🎲", "Result"],
         rows: [
           [
@@ -1702,7 +1702,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Visit a Tavern",
+        label: "",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "Sleepy tavern – Nothing exciting happening."],
@@ -1758,7 +1758,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Beg for Alms",
+        label: "",
         cols: ["🎲", "Result"],
         rows: [
           [
@@ -1827,7 +1827,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Attempt Robbery",
+        label: "",
         rows: [
           ["r297a", "Rob a Stranger"],
           ["r297b", "Rob a House"],
@@ -1845,8 +1845,8 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Rob a Stranger",
-        cols: ["Roll 2d6", "Result"],
+        label: "",
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Dwarf (ev7 cs6 wc21)."],
           [
@@ -1886,8 +1886,8 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Rob a House Loot",
-        cols: ["Roll 1d6", "Loot"],
+        label: "Loot",
+        cols: ["🎲", "Loot"],
         rows: [
           ["1", "wc10"],
           ["2", "wc30"],
@@ -1907,7 +1907,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Rob a Castle or Temple Loot",
+        label: "Loot",
         cols: ["🎲", "Loot"],
         rows: [
           ["1–2", "wc70"],
@@ -1925,7 +1925,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Visit the Market",
+        label: "",
         cols: ["🎲", "Result"],
         rows: [
           ["≤3", "Market is closed, or full of worthless tat."],
@@ -2168,13 +2168,13 @@ export const ruleData: Rule[] = [
   },
   {
     tag: "r330",
-    title: "Battle – Reference",
+    title: "Battle Reference",
     type: "encounter",
     desc: "You are forced to fight with the characters you've encountered, roll 2d6 and go to the appropriate entry.",
     tables: [
       {
         type: "roll-table",
-        label: "Battle Reference",
+        label: "",
         cols: ["🎲", "Entry"],
         rows: [
           ["≤2", "r310"],
@@ -2254,8 +2254,8 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Looters Reaction",
-        cols: ["Roll 1d6", "Result"],
+        label: "",
+        cols: ["🎲", "Result"],
         rows: [
           [
             "1–2",
@@ -2278,7 +2278,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Conversation",
+        label: "",
         cols: ["🎲", "Result"],
         rows: [
           [
@@ -2316,7 +2316,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Inquiry",
+        label: "",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "You unwittingly give insult; see r309."],

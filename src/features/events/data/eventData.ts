@@ -6,7 +6,7 @@ export const eventData: Event[] = [
     title: "The Adventure Begins",
     type: "story",
     desc: "Evil events have overtaken your Northlands Kingdom. Your father, King Hendryc Arath, is dead – assassinated by rivals to the throne. These usurpers now hold the palace with their mercenary royal guard. You have escaped and must collect 500 gold pieces to raise a force to smash them and retake your heritage. Furthermore, the usurpers have powerful friends overseas. If you can't return to take them out in ten weeks, their allies will arm, and you will lose your kingdom forever. Now consult r202 to determine your starting attributes (r201) as the Barbarian Prince, and then return to this event and read on: To escape the mercenary royal guard, your loyal body servant Ogab smuggled you into a merchant caravan to the southern border. Roll 1d6 to see where the caravan takes you, while poor Ogab faces the wrath of the royal guards back home.",
-    note: "IMPORTANT NOTE: If you finish daily actions on any hex north of the Tragoth River, the mercenary royal guardsmen may find you. After any normal events are concluded, but before you take your evening meal (see r215), you must roll 1d6: on a 4 or more (3 or more if you are in Ogon or Weshor) go to e002.",
+    note: "If you finish daily actions on any hex north of the Tragoth River, the mercenary royal guardsmen may find you. After any normal events are concluded, but before you take your evening meal (see r215), you must roll 1d6: on a 4 or more (3 or more if you are in Ogon or Weshor) go to e002.",
     tables: [
       {
         type: "roll-table",

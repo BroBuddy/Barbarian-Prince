@@ -3,6 +3,18 @@ import { useEffect, useState } from "react";
 import MapImage from "../components/MapImage";
 import type { MarkerType } from "../components/Marker";
 
+const REGION_NAMES: Record<number, string> = {
+  1: "Northwest",
+  2: "North",
+  3: "Northeast",
+  4: "West",
+  5: "Center",
+  6: "East",
+  7: "Southwest",
+  8: "South",
+  9: "Southeast",
+};
+
 function MapOverview() {
   const [selectedMap, setSelectedMap] = useState<number>(() => {
     const saved = localStorage.getItem("map_selected");
@@ -26,22 +38,22 @@ function MapOverview() {
     }
   }, [marker]);
 
-  const handleBadgeClick = (num: number) => {
+  const handleMapChange = (num: number) => {
     setSelectedMap(num);
     setMarker(null);
   };
 
-  const handleImageClick = (x: number, y: number) => {
+  const handleMapClick = (x: number, y: number) => {
     setMarker({ x, y });
   };
 
   return (
-    <Card title="Map">
+    <Card title={`Northlands · ${REGION_NAMES[selectedMap]}`}>
       <MapImage
         selectedMap={selectedMap}
         marker={marker}
-        onImageClick={handleImageClick}
-        onMapChange={handleBadgeClick}
+        onMapClick={handleMapClick}
+        onMapChange={handleMapChange}
       />
     </Card>
   );

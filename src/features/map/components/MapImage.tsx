@@ -5,24 +5,12 @@ import "./MapImage.scss";
 interface MapImageProps {
   selectedMap: number;
   marker: MarkerType | null;
-  onImageClick: (x: number, y: number) => void;
+  onMapClick: (x: number, y: number) => void;
   onMapChange: (newMap: number) => void;
 }
 
 const GRID_COLS = 3;
 const GRID_ROWS = 3;
-
-const REGION_NAMES: Record<number, string> = {
-  1: "Northwest",
-  2: "North",
-  3: "Northeast",
-  4: "West",
-  5: "Center",
-  6: "East",
-  7: "Southwest",
-  8: "South",
-  9: "Southeast",
-};
 
 function getGridPos(map: number) {
   const col = (map - 1) % GRID_COLS;
@@ -38,17 +26,19 @@ function getMapNumber(row: number, col: number) {
 export default function MapImage({
   selectedMap,
   marker,
-  onImageClick,
+  onMapClick,
   onMapChange,
 }: MapImageProps) {
   const rectModifier = 20;
 
-  const handleClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+  const handleMapClick = (
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>,
+  ) => {
     const target = e.target as HTMLImageElement;
     const rect = target.getBoundingClientRect();
     const x = e.clientX - rect.left - rectModifier;
     const y = e.clientY - rect.top - rectModifier;
-    onImageClick(x, y);
+    onMapClick(x, y);
   };
 
   const { col, row } = getGridPos(selectedMap);
@@ -64,16 +54,12 @@ export default function MapImage({
 
   return (
     <>
-      <p className="text-center mb-2">
-        Northlands · {REGION_NAMES[selectedMap]}
-      </p>
-
       <div className="map-container">
         <img
           src={`/images/image_part_00${selectedMap}.png`}
           alt={`Map part ${selectedMap}`}
           className="map-image"
-          onClick={handleClick}
+          onClick={handleMapClick}
         />
 
         <MapDirections

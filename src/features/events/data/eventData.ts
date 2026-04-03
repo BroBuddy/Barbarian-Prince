@@ -193,7 +193,7 @@ export const eventData: Event[] = [
           ["2", "conversation r341", "hide r318", "attack r305"],
           ["3", "inquiry r342", "escape r314", "attacked r306"],
           ["4", "conversation r341", "escape r315", "attacked r306"],
-          ["5", "escapee r335", "escape r315", "surprised r308"],
+          ["5", "escape r335", "escape r315", "surprised r308"],
           ["6", "plead comrades r336", "pass r326", "battle r330"],
           ["7", "pass r328", "pass r329", "surprised r309"],
           ["8", "pass r329", "surprised r310", "surprised r310"],
@@ -878,7 +878,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Campsite Location",
+        label: "",
         cols: ["Roll 2d6", "Result"],
         rows: [
           [
@@ -951,7 +951,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Band of Dwarves",
+        label: "",
         cols: ["roll", "talk", "evade*", "fight"],
         rows: [
           ["1", "inquiry r342", "escape r311", "surprise r302"],
@@ -978,7 +978,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Audience with the Dwarf Lord",
+        label: "",
         cols: ["Roll 1d6", "Result"],
         rows: [
           ["1", "He is insulted; see e060 immediately."],
@@ -1091,7 +1091,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Audience with the Wizard",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           ["0", "He is angered by your interruptions, e062."],
@@ -1143,7 +1143,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Audience with the Halfling Mayor",
+        label: "",
         cols: ["Roll 1d6", "Result"],
         rows: [
           [
@@ -1183,7 +1183,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Band of Elves",
+        label: "",
         cols: ["roll*", "talk†", "evade‡", "fight§"],
         rows: [
           ["0", "follow e071a", "pass r325", "surprise r301"],
@@ -1213,7 +1213,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Contest Opponents",
+        label: "",
         cols: ["Roll 1d6", "Opponent"],
         rows: [
           ["1", "Wolf (ev3 cs3)."],
@@ -1292,7 +1292,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Mounted Patrol",
+        label: "",
         cols: ["roll", "talk", "evade*", "fight"],
         rows: [
           ["1", "inquiry r342", "escape (mtd) r312", "surprise r302"],
@@ -1339,7 +1339,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "High Pass Effects",
+        label: "",
         cols: ["Roll 2d6", "Effect"],
         rows: [
           ["≤7", "No effect; travel is not hindered."],
@@ -1365,7 +1365,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Rock Fall",
+        label: "",
         cols: ["Roll 1d6", "Effect"],
         rows: [
           ["1–4", "Rocks miss; no effect."],
@@ -1395,7 +1395,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Quicksand",
+        label: "",
         cols: ["Roll 1d6", "Effect"],
         rows: [
           [
@@ -1450,7 +1450,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Mounts at Risk",
+        label: "",
         cols: ["Roll 1d6", "Effect"],
         rows: [
           ["1–4", "Mount is still in fair condition, no special effect."],
@@ -1474,7 +1474,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Mounts Die",
+        label: "",
         cols: ["Roll 1d6", "Effect"],
         rows: [
           ["1", "Mount recovering; do not roll any further for it."],
@@ -1506,7 +1506,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Dragon",
+        label: "",
         cols: ["roll", "talk", "evade", "fight"],
         rows: [
           ["1", "pass r329", "escape (fly) r313", "surprise r302"],

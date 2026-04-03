@@ -1,17 +1,26 @@
+import type { EventType } from "@/features/events/types/EventType";
 import type { RuleType } from "@/features/rule/types/RuleType";
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-export const ruleTypeEmoji: Record<RuleType, string> = {
+export const ruleTypeEmoji: Record<RuleType | EventType, string> = {
+  encounter: "👥",
+  combat: "⚔️",
+  treasure: "💰",
   action: "🎯",
   character: "🧙",
-  combat: "⚔️",
-  encounter: "👥",
   food: "🍖",
   movement: "🗺️",
   reference: "📋",
-  treasure: "💰",
   special: "✨",
+  location: "📍",
+  weather: "🌦️",
+  magic: "🔮",
+  item: "🎒",
+  event: "📖",
+  story: "📜",
+  npc: "🧑",
+  settlement: "🏘️",
 };
 
 export function tagToPath(tag: string): string {

@@ -1532,8 +1532,8 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Treasure Table",
-        cols: ["Wealth Code", "1", "2", "3", "4", "5", "6"],
+        label: "Wealth Code",
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "0", "0", "1", "1", "2", "2"],
           ["2", "0", "1", "2", "2", "3", "4"],
@@ -2181,7 +2181,7 @@ export const ruleData: Rule[] = [
   },
   {
     tag: "r335",
-    title: "Escapee",
+    title: "Escape",
     type: "encounter",
     desc: "Character(s) encountered are fleeing someone. They will join your party if you permit it, and at no cost to you (other than food and lodging), but will disappear whenever you enter any settlement hex.",
   },

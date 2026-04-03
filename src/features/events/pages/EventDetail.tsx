@@ -6,6 +6,7 @@ import type { Event } from "../types/EventType";
 import { useHistory } from "@/hooks/useHistory";
 import { useEffect } from "react";
 import { parseLinks } from "@/lib/Helper";
+import Badge from "@/components/Badge";
 
 function EventDetail() {
   const { tag } = useParams();
@@ -20,6 +21,7 @@ function EventDetail() {
 
   return (
     <Card title={event.title} tag={event.tag}>
+      {event.type && <Badge text={event.type} icon={event.type} />}
       <p>{parseLinks(event.desc as string)}</p>
 
       {event.tables?.map((table, index) => (

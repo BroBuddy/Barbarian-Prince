@@ -1,1 +1,0 @@
-import{n as e}from"./rule-BM6uQCut.js";export{e as default};

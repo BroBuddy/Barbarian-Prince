@@ -29,7 +29,6 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Game /> },
       { path: "/rule", element: <RuleOverview /> },
-      { path: "/rule/r226", element: <TreasureTable /> },
       { path: "/rule/:tag", element: <RuleDetail /> },
       { path: "/event", element: <EventOverview /> },
       { path: "/event/:tag", element: <EventDetail /> },

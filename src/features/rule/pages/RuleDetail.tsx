@@ -6,6 +6,7 @@ import { parseLinks } from "@/lib/Helper";
 import TableRenderer from "@/features/events/components/TableRenderer";
 import { getRuleDataByTag } from "../services/RuleService";
 import type { Rule } from "../types/RuleType";
+import Badge from "@/components/Badge";
 
 function RuleDetail() {
   const { tag } = useParams();
@@ -20,6 +21,7 @@ function RuleDetail() {
 
   return (
     <Card title={rule.title} tag={rule.tag}>
+      {rule.type && <Badge text={rule.type} icon={rule.type} />}
       {rule.desc && <p>{parseLinks(rule.desc as string)}</p>}
 
       {rule.tables?.map((table, index) => (

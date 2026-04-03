@@ -29,7 +29,7 @@ const NumberStepper = ({
         onChange={(e) =>
           onChange(Math.min(max, Math.max(min, Number(e.target.value))))
         }
-        className="w-10 text-center"
+        className="w-6 text-center bg-grey"
       />
 
       <button

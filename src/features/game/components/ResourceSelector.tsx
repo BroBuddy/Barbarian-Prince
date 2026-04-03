@@ -11,7 +11,7 @@ const ResourceSelector = ({
   onChange,
   color = "#888",
 }: ResourceSelectorProps) => {
-  const boxColor = "#fff";
+  const boxColor = "#ddd";
 
   return (
     <div className="flex flex-row flex-wrap">

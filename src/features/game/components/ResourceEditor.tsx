@@ -27,15 +27,17 @@ const ResourceEditor = () => {
   };
 
   return (
-    <div className="flex flex-col mt-2 mx-10">
+    <div className="flex flex-col mt-4 mx-10">
       {BOX_RESOURCES.map(({ name, max, color }) => {
         const value = resources[name];
 
         const isLarge = name === "Food" || name === "Gold" || name === "Day";
 
         return (
-          <div key={name} className="flex flex-col items-start mb-3">
-            <span className="text-white">{name}</span>
+          <div key={name} className="flex flex-col items-start mb-4">
+            <span className="text-white mb-1">
+              {name === "WitAndWiles" ? "Wit & Wiles" : name}
+            </span>
 
             {isLarge ? (
               <NumberStepper

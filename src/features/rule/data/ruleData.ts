@@ -246,7 +246,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Farmland",
+        label: "",
         rows: [["Lost: 11+"], ["Event: 8+"], ["Hunt: ✅"], ["Fodder: ✅"]],
       },
       {

@@ -1,0 +1,1 @@
+import{t as e}from"./rule-BGpn1vuY.js";export{e as default};

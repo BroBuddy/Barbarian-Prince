@@ -2370,7 +2370,19 @@ export const eventData: Event[] = [
     title: "Hostile Guards",
     type: "combat",
     desc: "You leave the rest of your party in an atrium and are confronted by 2 hostile guards (EV6 CS5 WC7). If you pay 20 gold as a bribe they will let you pass — roll again to Seek an Audience (R211) here. Otherwise, they attack you, getting the first strike in combat (R220). Regardless of whether you win or lose, you must immediately escape from this hex (R218).",
-    note: "In a village (E158A): You are cornered alone by 2 hostile guards (CS4 EV5 WC6). Bribe costs 10 gold. Roll again for Seek an Audience (R211A) if you pay. Otherwise they attack with first strike (R220); you must escape (R218) either way.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [["e158a", "In a Village"]],
+      },
+    ],
+  },
+  {
+    tag: "e158a",
+    title: "In a Village",
+    type: "combat",
+    desc: "You are cornered alone by 2 hostile guards (cs 4 ev5 wc6). If you pay 10 gold as a bribe they will let you pass, roll again to Seek an Audience (r211a) here. Otherwise, they attack you, getting the rst strike in combat (r220). Regardless of whether you win or lose, you must immediately escape from this hex (r218).",
   },
   {
     tag: "e159",
@@ -2493,8 +2505,8 @@ export const eventData: Event[] = [
     tag: "e165",
     title: "The Imp of Pelgar",
     type: "story",
-    desc: "You learn that the town of Pelgar was destroyed after the townsfolk reneged on a deal struck with an infernal imp. The imp is rumoured to still inhabit the ruins, lording over the imprisoned souls of the townsfolk who reneged on him.",
-    note: "Travel to the ruins of Pelgar (hex 2009) with either a magician, monk, priest, witch, or wizard in your party, OR a resistance talisman (E184) to protect you from the imp's foul magic. After you Search Ruins (R208), you may roll 1d6 to attempt to strike your own bargain.",
+    desc: "You learn that the town of Pelgar was destroyed after the townsfolk reneged on a deal struck with an infernal imp. The imp is rumoured to still inhabit the ruins, lording over the imprisoned souls of the townsfolk who reneged on him. If you travel to the ruins of Pelgar (hex 2009) with either a magician, monk, priest, witch, or wizard in your party, or a resistance talisman (e184) to protect you from the imp’s foul magic, then after you Search Ruins (r208), you may roll 1d6 to attempt to strike your own bargain, risky as it may be:",
+    note: "Decline the Offer: If you are unwilling to accept the offer, or unable to pay the cost immediately, the imp snarls a curse at you and vanishes. Roll 1d3 and lower the result by one (−1) until the curse can be broken by a true love (see r228): 1: wit & wiles; 2: combat skill; 3: endurance.",
     tables: [
       {
         type: "roll-table",
@@ -2508,6 +2520,14 @@ export const eventData: Event[] = [
           [
             "2",
             "The imp (EV3 CS4 WC110) appears and attacks you with its powerful magic. It is only hurt by wounds from a magic sword or strikes from a magician, monk, priest, witch, or wizard.",
+          ],
+          [
+            "3",
+            "The imp appears in a swirling column of vile, black smoke, cackling at the thought of more souls to torment. Roll 1d6: on a 3 or less, the magical protection you have is, sadly, not enough to protect you – you are doomed and the game ends here; on a 4 or more, the Imp is impressed and agrees to listen; see result 4–6.",
+          ],
+          [
+            "4-6",
+            "The snickering imp listens to your story and bows with a flourish in service to you. Roll 1d6 to see what the diabolical creature offers and then see “accept the offer” below: 1–2: e195; 3–4: wc110 worth of loot; 5: four mercenaries (ev3 cs5) for your party who will never desert; 6: as soon as you end your day north of the Tragoth River again, the throne will be yours and you will win the game.",
           ],
         ],
       },

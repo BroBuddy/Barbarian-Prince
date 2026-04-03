@@ -1,1 +1,0 @@
-.map-container{width:100%;display:inline-block;position:relative}.map-image{cursor:pointer;border-radius:8px;width:100%;height:auto;display:block}.arrow-btn{cursor:pointer;background:0 0;border:none;justify-content:center;align-items:center;width:30px;height:30px;font-size:22px;transition:opacity .3s;display:flex}.arrow-btn--disabled{opacity:.3;cursor:default;pointer-events:none}

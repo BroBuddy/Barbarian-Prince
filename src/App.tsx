@@ -14,7 +14,9 @@ function App() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="mt-10">
+        <Outlet />
+      </div>
       <MobileNav />
     </>
   );

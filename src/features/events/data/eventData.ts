@@ -32,7 +32,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Mercenary Royal Guardsmen",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade*", "fight"],
         rows: [
           ["1", "pass r327", "attacked r307", "surprise r300"],
@@ -54,7 +54,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Swordsman",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk*", "evade†", "fight"],
         rows: [
           ["1", "converse r341", "escape (mtd) r312", "surprise r303"],
@@ -98,7 +98,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Amazons",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade*", "fight"],
         rows: [
           ["1", "conversation r341", "escape r311", "surprise r302"],
@@ -120,7 +120,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Dwarf Companions",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["1–2", "The dwarf is alone."],
@@ -138,7 +138,7 @@ export const eventData: Event[] = [
       },
       {
         type: "roll-table",
-        label: "Dwarf",
+        label: "Roll (1d6)",
         cols: ["roll*", "talk", "evade†", "fight"],
         rows: [
           ["1", "surprised r308", "bribe (5) r322", "surprised r308"],
@@ -161,7 +161,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Elf Characteristics",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["1", "No additional characteristics."],
@@ -186,7 +186,7 @@ export const eventData: Event[] = [
       },
       {
         type: "roll-table",
-        label: "Elf",
+        label: "Roll (1d6)",
         cols: ["roll*", "talk†", "evade‡", "fight"],
         rows: [
           ["1", "inquiry r342", "hide r317", "surprise r302"],
@@ -215,7 +215,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Halfling Talk",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["1", "Banal conversation and many irrelevancies waste your time."],
@@ -253,7 +253,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Type of Farm",
+        label: "Roll (2d6)",
         cols: ["🎲", "Event"],
         rows: [
           ["2–3", "e012"],
@@ -273,7 +273,7 @@ export const eventData: Event[] = [
     tag: "e010",
     title: "Starving Farmer",
     type: "settlement",
-    desc: "The farmer had a ruined harvest; his family is now starving. He begs the charity of 5 food units from you. If you have them, but refuse, all your followers are disgusted by your evil temper; roll 1d6 for each at the start of tomorrow: on a 3 or more, that follower deserts you. If you grant the charity, or don't have 5 food units, there is no further event, and the encounter ends.",
+    desc: "",
     tables: [
       {
         type: "simple-list",
@@ -293,7 +293,7 @@ export const eventData: Event[] = [
     tag: "e011",
     title: "Peaceful Farmer",
     type: "settlement",
-    desc: "The farmer is generous, provides food and lodging for your entire party tonight at no cost. Tomorrow morning, he will sell you food units at the rate of 4 units per gold piece and will sell as much as you wish to buy. Finally, when you leave the hex, roll 1d6: on a 6, the farmer's youngest son (ev4 cs3) joins you for the adventurous life and can act as a guide within two hexes of the farm in any direction.",
+    desc: "",
     tables: [
       {
         type: "simple-list",
@@ -313,7 +313,7 @@ export const eventData: Event[] = [
     tag: "e012",
     title: "Farmer with Protector",
     type: "settlement",
-    desc: "The farmer warns you off his land but will sell you food at 2 units per gold piece, in any amount you desire. Regardless of whether you buy or not, the event then ends, and you go on your way.",
+    desc: "",
     tables: [
       {
         type: "simple-list",
@@ -333,7 +333,7 @@ export const eventData: Event[] = [
     tag: "e013",
     title: "Rich Peasant Family",
     type: "settlement",
-    desc: "The family provides food (r215) and lodging (r217) as if you are in town, with the same penalties if you refuse to pay. The family may have stables – roll 1d6: on a 4 or more, they do. If they have stables, they have 1d6 horses for sale for 1d6×2 gold pieces per horse. They will also sell food at 2 food units per gold piece.",
+    desc: "",
     tables: [
       {
         type: "simple-list",
@@ -393,7 +393,8 @@ export const eventData: Event[] = [
     tag: "e016",
     title: "Magician's Home",
     type: "magic",
-    desc: "The magician (ev5 cs3) insists you stay the night and tell him of your adventures. You must provide your own food for the day, as he has a small larder. He may be willing to discuss joining your party; see r342 if you wish to try. If you don't, or do and avoid a combat situation, he will give you a magic gift – consult r225, then roll on Line B of the Treasure Table (r226) for the item received.",
+    desc: "",
+    note: "If the magician joins your party, in combat he may forfeit his attack for one round to enchant all weapons carried by your party, adding one (+1) to their combat skill. e magic lasts until the end of the combat.",
     tables: [
       {
         type: "simple-list",
@@ -426,11 +427,10 @@ export const eventData: Event[] = [
     title: "Priest",
     type: "npc",
     desc: "You encounter a local priest (ev3 cs3 wc15) leading a donkey by the reins. He seems aloof and not disposed to conversation, but he might be afraid of you. You can let him pass, ending this encounter, or select one of two options below.",
-    note: "If you do kill the priest in combat, roll 1d6: on a 5 or 6, he curses you with the 'Mark of Cain.' You must immediately roll 1d6 for each follower in your party: if you roll over your wit & wiles, that follower immediately deserts you. In addition, all monks and priests in the future will recognize the mark and will not join your party, and you can never seek an audience with the High Priest of any temple marked on the map. You may still do so with High Priests of any secret unmarked temples you find.",
     tables: [
       {
         type: "roll-table",
-        label: "Priest",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "fight"],
         rows: [
           ["1", "plead comrade r336", "surprise r301"],
@@ -439,6 +439,14 @@ export const eventData: Event[] = [
           ["4", "conversation r341", "attack r305"],
           ["5", "inquiry r342", "attack r305"],
           ["6", "pass r325", "attack r306"],
+        ],
+      },
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["e018a", "Mark of Cain"],
+          ["e018b", "Priest Abilities"],
         ],
       },
     ],
@@ -464,7 +472,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Hermit Monk",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade", "fight"],
         rows: [
           ["1", "inquiry r342", "pass r325", "attack r305"],
@@ -485,7 +493,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Travelling Monk",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade", "fight"],
         rows: [
           ["1", "conversation r341", "pass r325", "surprise r302"],
@@ -507,7 +515,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Warrior Monks",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade*", "fight"],
         rows: [
           ["1", "conversation r341", "pass r325", "surprise r301"],
@@ -529,7 +537,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Druid",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk*", "fight"],
         rows: [
           ["1", "plead comrades r336", "surprise r301"],
@@ -538,6 +546,14 @@ export const eventData: Event[] = [
           ["4", "conversation r341", "attack r305"],
           ["5", "inquiry r342", "attack r305"],
           ["6", "pass r325", "attacked r306"],
+        ],
+      },
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["e022a", "Druid Abilities"],
+          ["e022b", "Druid's Lightning Bolt"],
         ],
       },
     ],
@@ -562,7 +578,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Wizard",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade", "fight"],
         rows: [
           ["1", "inquiry r342", "pass r325", "attack r305"],
@@ -572,6 +588,11 @@ export const eventData: Event[] = [
           ["5", "pass r328", "escape r313", "surprised r308"],
           ["6", "ally r334", "see e024", "attacked r307"],
         ],
+      },
+      {
+        type: "simple-list",
+        label: "",
+        rows: [["e023a", "Wizard's Fireballs"]],
       },
     ],
   },
@@ -648,6 +669,9 @@ export const eventData: Event[] = [
     title: "Spectre of the Inner Tomb",
     type: "combat",
     desc: "Looking around the atrium of an old tomb, you notice a hidden passage to the interior. You pass within, but it is a long hall, taking the rest of the day to explore. You sense the presence of a restless spectre. You can either retreat now or continue. If you retreat, the event ends. If you continue, then at the end of the day, before the evening meal, you finally reach the inner tomb to find…",
+    tables: [
+      { type: "simple-list", label: "", rows: [["e034a", "The Spectre"]] },
+    ],
   },
   {
     tag: "e034a",
@@ -712,7 +736,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Altar Protection",
+        label: "Roll (1d6)",
         cols: ["🎲", "Effect"],
         rows: [
           [
@@ -743,7 +767,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "High Altar",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["1", "The monk or priest is engulfed in godly fires and dies."],
@@ -797,7 +821,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Fugitive",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           [
@@ -843,7 +867,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Local Constabulary",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade*", "fight"],
         rows: [
           ["1", "surprised r308", "attacked† r306", "surprised r308"],
@@ -878,7 +902,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           [
@@ -951,7 +975,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade*", "fight"],
         rows: [
           ["1", "inquiry r342", "escape r311", "surprise r302"],
@@ -978,7 +1002,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["1", "He is insulted; see e060 immediately."],
@@ -1091,7 +1115,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["0", "He is angered by your interruptions, e062."],
@@ -1143,7 +1167,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           [
@@ -1183,7 +1207,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["roll*", "talk†", "evade‡", "fight§"],
         rows: [
           ["0", "follow e071a", "pass r325", "surprise r301"],
@@ -1213,7 +1237,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "Opponent"],
         rows: [
           ["1", "Wolf (ev3 cs3)."],
@@ -1292,7 +1316,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade*", "fight"],
         rows: [
           ["1", "inquiry r342", "escape (mtd) r312", "surprise r302"],
@@ -1339,7 +1363,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (2d6)",
         cols: ["🎲", "Effect"],
         rows: [
           ["≤7", "No effect; travel is not hindered."],
@@ -1365,7 +1389,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "Effect"],
         rows: [
           ["1–4", "Rocks miss; no effect."],
@@ -1395,7 +1419,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "Effect"],
         rows: [
           [
@@ -1450,7 +1474,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "Effect"],
         rows: [
           ["1–4", "Mount is still in fair condition, no special effect."],
@@ -1474,7 +1498,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "Effect"],
         rows: [
           ["1", "Mount recovering; do not roll any further for it."],
@@ -1506,7 +1530,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade", "fight"],
         rows: [
           ["1", "pass r329", "escape (fly) r313", "surprise r302"],
@@ -1534,7 +1558,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Roc",
+        label: "Roll (1d6)",
         cols: ["🎲", "evade", "fight"],
         rows: [
           ["1", "escape (fly) r313", "surprise r301"],
@@ -1563,7 +1587,7 @@ export const eventData: Event[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Griffon",
+        label: "Roll (1d6)",
         cols: ["🎲", "talk", "evade", "fight"],
         rows: [
           ["1", "inquiry r342", "escape (fly) r313", "surprise r303"],
@@ -2532,5 +2556,815 @@ export const eventData: Event[] = [
         ],
       },
     ],
+  },
+  {
+    tag: "e166",
+    title: "Elf Haven",
+    type: "location",
+    desc: "You discover a hidden castle inhabited by elves. Roll 1d6, subtract one (−1) if your party includes a druid, elf, magician, witch, or wizard, and add one (+1) if your party includes a dwarf: if the roll is under your wit & wiles, you may enter the wondrous haven; otherwise, the elves deem you unworthy and your party is arrested (e060).",
+    note: "If granted entry, you may perform most daily castle actions (r203), but cannot Seek News (r209) or Visit the Tavern (r294). You may Seek an Audience with the Elf Lord (r211f). Any followers hired (r210) will be elves (ev5 cs5 wc15). Normal food (r215) and lodging (r217) costs apply. On any return visit, you must roll again to determine entry or arrest.",
+  },
+  {
+    tag: "e166a",
+    title: "Audience with the Elf Lord",
+    type: "npc",
+    desc: "You have a private discussion with the Lord of the woodland realm. You may only roll once and may not seek further audiences here.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Elf Lord's Reaction (1d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          [
+            "1",
+            "The Lord is angry that your arrival may have made his haven known to the outside world; your party is sent to the dungeons. See e062.",
+          ],
+          [
+            "2",
+            "The Elf Lord is unmoved; the world of men is of no concern to him.",
+          ],
+          [
+            "3",
+            "The Lord hears your tale and offers advice in metaphors so obtuse you struggle to understand. Roll 1d6: under your wit & wiles, you learn nothing; equal to or over your wit & wiles, decipher his wisdom — roll 1d6 again: 1–3: e147; 4–6: e176. Your party is fed and lodged tonight for free.",
+          ],
+          [
+            "4",
+            "The Elf Lord agrees to help — but only in return for a favour. Evil creatures have drawn near his realm. Travel to a forest hex 3 hexes away (r204); instead of a normal travel event, roll 1d6: 1: e098; 2: e073; 3: e074; 4: e055; 5: e033; 6: e057. If you destroy the creatures and return, the Lord names you an 'Elf-Friend', gives you wc110 and a brooch that lets you roll twice on any talk option with elves. Your party is fed and lodged tonight for free.",
+          ],
+          [
+            "5",
+            "The Elf Lord agrees to help your quest. Your party is fed and lodged tonight for free. His son, the Elf Prince (ev6 cs6), joins you as an ally — he is a superb archer, gaining +2 combat skill for ranged attacks (r220g). Every party member also receives an elf cloak, granting automatic success on any hide action (r317–r320) in a forest hex.",
+          ],
+          [
+            "6",
+            "If there is an elf in your party, the Elf Lord becomes your Noble Ally (e152). If not, see result 5 above; the Lord also tells you of ancient magic in a random adjacent forest hex (r204g for direction) — if you go there, see e198.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e167",
+    title: "The Warrior's Heart",
+    type: "story",
+    desc: "You learn the Dead Plains ruins are of an ancient civilization and might hold a legendary artifact known as the Warrior's Heart. An army in possession of the Heart is said to be mighty enough to win any battle.",
+    note: "Travel to the Dead Plains Ruins (hex 0206). If your party has a combined combat skill of 20 or more, you may move the heavy columns blocking the entrance as a daily action (r203). Otherwise, search for another entrance once a day by rolling 1d6 under your wit & wiles. Once inside, Explore the Ruins as a special daily action (r204) while on this hex — roll 2d6, adding +2 if a dwarf is in your party, and a further +1 if you entered by another entrance.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Explore the Ruins (2d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          [
+            "2–3",
+            "The torchlight fades and you become lost in the dark; you must end the day in the ruins and roll on this list again tomorrow with −1.",
+          ],
+          [
+            "4",
+            "You wander endless stone corridors finding nothing, and emerge just in time for your evening meal (r215). In the morning, if you have a dwarf you may continue exploring; otherwise roll 1d6 equal to or under your wit & wiles or abandon the quest.",
+          ],
+          [
+            "5",
+            "The ground shakes! Roll 1d6, adding +1 for each previous roll here: 1–3: the tremors subside; 4–5: e088; 6: a fissure opens — roll 1d6 for each party member: on a 1, that character falls to their death with all their wealth and possessions.",
+          ],
+          ["6", "You trigger an ancient trap! See r227."],
+          [
+            "7",
+            "You find clues to treasure — roll 1d6: equal to or under your wit & wiles, add +1 to all future Explore the Ruins rolls here.",
+          ],
+          [
+            "8",
+            "You discover a hidden passage — if you have a dwarf, or roll 1d6 equal to or under your wit & wiles, add +2 to your next Explore the Ruins roll here.",
+          ],
+          ["9", "You uncover a hidden hoard. See e136."],
+          [
+            "10",
+            "You enter a chamber painted in frescoes of a lost age. See e135.",
+          ],
+          [
+            "11",
+            "You make an important discovery; roll 1d6: 1–3: e136; 4–6: e139.",
+          ],
+          [
+            "12+",
+            "You have reached the innermost chamber. To claim the Warrior's Heart you must cross a narrow stone bridge over a bottomless pit. You may send a follower, but whether they succeed or fail, every party member deserts due to your cowardice. Roll 2d6: on a 5 or less, you fall to your death; on a 6 or more, you cross and return with the artifact. While you possess the Warrior's Heart, your party's combat skill and endurance each increase by +1, and you only need 300 gold to raise an army.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e168",
+    title: "Roadside Inn",
+    type: "settlement",
+    desc: "You happen upon a small but lively inn. Food (r215) and lodging (r217) are both on offer. Roll 1d6: on a 4 or more, the inn also has stables. You may Visit the Tavern (r294) here, and the innkeeper will sell you 2 food units per 1 gold piece before you leave.",
+  },
+  {
+    tag: "e169",
+    title: "Festival",
+    type: "event",
+    desc: "You learn that a festival is being held here. Food is free today, but lodging (r217) costs double due to the crowds. No other actions (r203) are available in this hex today.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Festival Event (1d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          ["1", "e049"],
+          ["2", "e173"],
+          ["3", "e129"],
+          [
+            "4",
+            "The tavern is busy — add +1 to a Visit the Tavern (r294) roll, or +1 to a Seek News (r209) roll.",
+          ],
+          [
+            "5",
+            "You discover the festival is secretly a cover for creatures of the night to prey on innocent visitors. Roll 1d6: 1–2: e170; 3: e046; 4: e047; 5: e073 (hostile); 6: e024.",
+          ],
+          ["6", "There is a tournament. See e179."],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e170",
+    title: "Vampire",
+    type: "combat",
+    desc: "This event is postponed until after your evening meal (r215). A cloud of mist solidifies into a shape — you have encountered a vampire (ev7 cs8 wc60). See r306.",
+    note: "At the start of combat (r220), the vampire uses mesmerism. To break it and attack, you must roll 1d6 equal to or under your wit & wiles. Each party member must roll 4 or more on 1d6 or be frozen in fear. Vampires can only be harmed by magical spells, magical weapons, or attacks from a priest. If reduced below half its endurance, roll 1d6 at the end of the round: on a 4 or more, the vampire turns into a bat and flies away. If you kill the vampire, the clasp on its cape bears the Drogat crest — if you Seek an Audience with Count Drogat (r211j) and give him the clasp, add +4 to the die roll. Modifier: a priest in your party gives the vampire −1 combat skill; foulbane also gives the vampire −1 combat skill.",
+  },
+  {
+    tag: "e171",
+    title: "Werewolf",
+    type: "combat",
+    desc: "This event is postponed until after your evening meal (r215). You are surprised (r308) in combat by a werewolf (ev8 cs7). At the start of combat, its howl summons 1d6−2 wolves (ev3 cs3). The werewolf can only be harmed by magical or holy weapons, or by your broadsword Bonebiter. Escape (r220e) is only possible on a 5 or 6 (only on a 6 if additional wolves are present).",
+    note: "When the werewolf attacks, roll 1d6: on a 2 or less, it strikes with claws; on a 3 or more, it bites. A bite wound infects the character with lycanthropy — they will transform into a werewolf in exactly 4 weeks unless they are in a temple at the time. If the Barbarian Prince transforms, the game is lost. When it dies, the werewolf reverts to a man's corpse. Transport the corpse to the nearest temple for burial to add +3 to your next Seek an Audience (r211c) or Make an Offering (r212) roll there. To cure lycanthropy, gain an audience with a High Priest (r211c); instead of rolling on e155, you learn the infected must spend the full moon on a mountain hex bound in silver chain (30 gold from any castle as a special daily action). The next full moon is 1d6 days later. After satisfying these conditions, the infected is healed.",
+  },
+  {
+    tag: "e172",
+    title: "Vagabond",
+    type: "encounter",
+    desc: "You meet a roving vagabond from a far-off land (ev5 cs4 wc7). Roll 1d6: on a 5 or 6, the vagabond is female. Roll 1d6 again: 1–4: the vagabond is alone; 5–6: the vagabond is part of a rover caravan (see e172b). If the female vagabond joins your party, roll 1d6: on a 6, she becomes your lover (r228). If the vagabond joins your party, you may have your fortune told (see e172a), and also add +1 to your wit & wiles when you Attempt Robbery (r296).",
+    note: "Thief footnote: The vagabond attempts to pick your pocket. Roll 1d6: equal to or under your wit & wiles, you catch them in the act (r305); over your wit & wiles, lose half (½) your wealth. Mounts footnote: if your party has mounts, you may use escape mounted (r312) instead of rolling to resolve the evade option.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Encounter Options (1d6)",
+        cols: ["🎲", "Talk", "Evade", "Fight"],
+        rows: [
+          ["1", "conversation r341", "escape r311", "surprise r302"],
+          ["2", "conversation r341", "escape r314", "surprise r303"],
+          ["3", "inquiry r342", "escape r315", "attack r304"],
+          ["4", "fortune e172a", "hide r319", "attack r305"],
+          ["5", "thief †", "thief †", "attacked r306"],
+          ["6", "attacked r306", "hide r317", "battle r330"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e172a",
+    title: "Fortune-Teller",
+    type: "event",
+    desc: "In a heavy accent, the vagabond requests 3 gold pieces in exchange for reading your fortune. If you accept, roll 1d6. After the reading, you may choose to roll on the talk option from e172 again, or end the event.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Fortune Reading (1d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          [
+            "1",
+            "Death! Roll 1d6 for each follower: on a 3 or more, that follower immediately deserts out of superstition.",
+          ],
+          [
+            "2",
+            "Luck! Roll 1d6: 1–3: gain 1 luck point; 4–6: lose 1 luck point.",
+          ],
+          [
+            "3",
+            "Riches! You may roll twice on any one future wealth roll of your choice.",
+          ],
+          [
+            "4",
+            "Treasure! The vagabond divines clues to a possible treasure. See e147.",
+          ],
+          [
+            "5",
+            "Love! You may choose any female character in your party or one you later encounter to become your true love (r228).",
+          ],
+          [
+            "6",
+            "Destiny! The vagabond tells you of legends entwined with your own fate. See e176.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e172b",
+    title: "Rover Caravan",
+    type: "encounter",
+    desc: "The vagabond is traveling with a caravan of 1d3+1 brightly-coloured wagons, each holding 1d3 rovers (ev5 cs4 wc5). If the encounter does not end in combat, you may join the caravan.",
+    note: "If in a settlement, roll 1d6: on a 1–3, the rovers set up a festival (e169) for the next 1d6 days. After this, or if encountered on the road, roll randomly for the road direction the rovers travel at 1 hex per day. While traveling with the caravan, rovers fight alongside you in any encounter (r207). Rover tradition: they share food with you first; on alternate days you must provide food for them — if you will not or cannot, leave the caravan or they will attack (r306). At the end of each day, roll 1d6: on a 6, see e053. At a settlement, roll again to see if the rovers put on a festival and stay a few days. You may leave the caravan at any time.",
+  },
+  {
+    tag: "e173",
+    title: "Thieves",
+    type: "combat",
+    desc: "You have been set upon by 1d3+1 thieves (ev4 cs4 wc10)! (In a town: 1d3+3 thieves.) Roll 1d6, adding +1 if they outnumber your party, +1 if you have Attempted Robbery (r296) in this hex, and +1 if that robbery was against a thief or thieves' guild: on a 4 or more, you are ambushed (r308); on a 3 or less, the thieves allow you to surrender and will not attack if you hand over your wealth and possessions — if you refuse, they attack (r307). If you survive and knock a thief unconscious, you can extract the location of the thieves' guild — it is in the nearest town. You may attempt to rob the guild like a house (r297b) but the wealth code is 60.",
+  },
+  {
+    tag: "e174",
+    title: "Chapel",
+    type: "location",
+    desc: "You have found a small stone chapel maintained by an order of 1d3+1 priests (ev3 cs3). Free food (r215) and lodging (r217) are available if you are alone or have only 1 follower and have less than 10 gold. There are no stables. Any night spent at the chapel heals 2 wounds (r222). You may Make an Offering (r212) here, but read any result of 11 or greater as a 10. Instead of normal travel events while staying here, roll 1d6: 1: e032; 2–3: e069; 4: e018; 5–6: none.",
+    note: "Alternatively, you may steal from the chapel. You must kill each priest to do so, may earn the 'Mark of Cain' (e018a), and will be a wanted man here (r224). Roll 1d6 for loot: 1–2: wc10; 3: wc15; 4: e180; 5: wc21; 6: wc30.",
+  },
+  {
+    tag: "e175",
+    title: "Apothecary",
+    type: "settlement",
+    desc: "You have found the shop of an apothecary. He will also buy any of the listed items for half (½) their listed price. When you use any concoction bought from the apothecary, roll 1d6: on a 1, it is a dud and does nothing.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Stock Available (1d6)",
+        cols: ["🎲", "Item", "Price"],
+        rows: [
+          ["1", "Healing potions (e180)", "6 gold each"],
+          ["2", "Cure-poison vials (e181)", "10 gold each"],
+          ["3", "Poison drugs (e185)", "8 gold each"],
+          ["4", "One (1) death mist flask (e190)", "20 gold"],
+          [
+            "5",
+            "One (1) wisdom potion — raises your wit & wiles by +1 and gives you all the abilities of a priest (e018b)",
+            "30 gold",
+          ],
+          [
+            "6",
+            "One (1) fairy dust — gives flying ability (r204d) for a day",
+            "12 gold",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e176",
+    title: "The Secret of the Ruins",
+    type: "story",
+    desc: "You have learnt one of the ancient legends of this land concerning the ruins of a forgotten age.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Secret Learned (1d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          ["1–2", "e131"],
+          ["3–4", "e165"],
+          ["5–6", "e167"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e177",
+    title: "Audience with the Village Chief",
+    type: "npc",
+    desc: "You have private discussions with the chief of the small village.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Village Chief's Reaction (1d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          [
+            "1",
+            "He is insulted. See e060 immediately, and add +1 to the roll.",
+          ],
+          [
+            "2",
+            "He hears your story but remains stone-faced and unwilling, or unable, to help. You are free to seek further audiences with him.",
+          ],
+          [
+            "3",
+            "The Chief hears your story and gives you free food and lodging for tonight as a distinguished (if dispossessed) visitor from the north. You are free to seek audiences with him again.",
+          ],
+          [
+            "4",
+            "He hears your pleas with favour, and gives you a Letter of Recommendation (e157) to the Mayor of the nearest town. You cannot seek audiences with him again until you have used the letter.",
+          ],
+          [
+            "5",
+            "See result 4 above, but he also gives you a purse of 18 gold.",
+          ],
+          [
+            "6",
+            "The Chief decides to help you; he provides 1d3+1 horses for your party, 2d6 food units, and wealth 21. Roll 1d6: 1–2: the Chief's eldest son (ev4 cs4) joins you as a follower; 3–4: the Chief tells you of a magician in the village who may help — see e016 with a friendly approach; 5: a healing potion (e180); 6: a warm handshake. You cannot seek another audience with the Chief again.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e178",
+    title: "Dryad",
+    type: "encounter",
+    desc: "You encounter a wood nymph, known as a dryad (ev6 cs4 wc5). Roll 1d6 (subtract −1 if you have a druid or elf in your party): over your wit & wiles, the dryad is hostile; equal to your wit & wiles, she ignores you and the event ends; under your wit & wiles, she is friendly.",
+    note: "Hostile dryad — roll 1d6: 1–3: the dryad attacks, calling upon forest magic — 1d6 root snakes (ev3 cs3) emerge from the soil to fight alongside her (r306); 4–6: the dryad attempts to beguile you — roll 1d6 for yourself and each party member: on a 6, that character is charmed. Unbeguiled characters may attack the dryad (r304) or escape (r311) — but escaping loses beguiled characters forever. If you are beguiled with no one to help, you lose the game. Beguiled characters are released by a druid, magician, witch, or wizard rolling 5 or 6 on 1d6, or if the dryad is killed. Friendly dryad — roll 1d6: 1–2: she shows you a magical place in the forest (e198); 3: spirits of the forest guide you — subtract −1 from lost rolls until you next leave a forest hex; 4–5: she teaches you how to forage for healing herbs like a druid or witch (r293); 6: the dryad gives you a gift (e195).",
+  },
+  {
+    tag: "e179",
+    title: "Tournament",
+    type: "event",
+    desc: "The local Lord is holding a tournament today. Meals are free (r215), but lodging (r217) costs double due to crowds. Daily actions are suspended, but you may roll twice if you Seek to Hire Followers (r210) tomorrow. If you pay 5 gold pieces, you can roll twice on the list below (reroll duplicates) and enter those competitions. If you or a party member wins a contest, you gain 15 gold and roll 1d6: 1: you meet the local Lord (e130); 2–6: add +1 to a Seek an Audience (r211) roll tomorrow.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Competition (1d6)",
+        cols: ["🎲", "Event", "Rules"],
+        rows: [
+          [
+            "1",
+            "Arm wrestling",
+            "Roll 2d6 and add your current endurance: on a 16 or more, you win.",
+          ],
+          [
+            "2",
+            "Pie eating contest",
+            "Roll 2d6: equal to or under your current endurance, you survive the round; over your endurance, you tap out. If you survive, roll again adding +1 for each previous round survived. Survive 4 rounds to win.",
+          ],
+          [
+            "3",
+            "Shell game",
+            "Roll 2d6, subtract −1 if a magician or vagabond is in your party: equal to or over your wit & wiles, you lose; under your wit & wiles, you win.",
+          ],
+          [
+            "4",
+            "Archery",
+            "Roll 2d6 and add the combined ranged combat skill (r220g) of your party: on a 16 or more, you win.",
+          ],
+          [
+            "5",
+            "Race",
+            "5 laps; roll 1d6 five times (an elf rolls four times instead due to speed): if you roll any 1s, you lose; otherwise you win.",
+          ],
+          [
+            "6",
+            "Arena combat",
+            "See e072; each round ends when either combatant is knocked unconscious.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e180",
+    title: "Healing Potion",
+    type: "item",
+    desc: "This potion can be applied once to any character (including yourself) at the end of the day, after the evening meal (r215). The potion immediately cures all wounds except poisoned wounds.",
+  },
+  {
+    tag: "e181",
+    title: "Cure-Poison Vial",
+    type: "item",
+    desc: "Any character can drink this vial once during the evening meal (r215). It will cure all poisoned wounds overnight. Only poisoned wounds are cured; it has no effect on regular wounds.",
+  },
+  {
+    tag: "e182",
+    title: "Gift of Charm",
+    type: "item",
+    desc: "This is a small item of no real value, but with a magic aura. You can give this gift to any character(s) you encounter as part of any talk option. When you use it, you can roll a second and a third time for that option and select whichever result you prefer. Once given away, the gift is gone and useless unless the receiver later fights you in combat and you kill him — then you can recover the gift as part of his possessions.",
+  },
+  {
+    tag: "e183",
+    title: "Endurance Sash",
+    type: "item",
+    desc: "You wear this sash around your waist and its magic adds +1 to your endurance value. The effect is permanent as long as you retain your possessions. You cannot wear more than one sash; additional ones can be cached (r214) or given to other characters in your party.",
+  },
+  {
+    tag: "e184",
+    title: "Resistance Talisman",
+    type: "item",
+    desc: "This jewelled talisman allows you to resist all magic spells and attacks. Whenever magic is used, you can call upon the talisman to negate it. However, the talisman may be unable to contain a strong spell — each time it is used roll 1d6: on a 6, the spell is stopped but the talisman is shattered and broken in the process.",
+  },
+  {
+    tag: "e185",
+    title: "Poison Drug",
+    type: "item",
+    desc: "This drug can be applied to the weapons of any one character in your party so that whenever that character strikes in combat (r220) and inflicts wounds, for each normal wound given, 1 additional poisoned wound is also given. After a combat where the poisoned weapon was used, roll 1d6: on a 6, the poison has worn off and the weapon returns to normal. Since a character often has multiple weapons, they have the option of using the poisoned weapon or a normal weapon as desired.",
+  },
+  {
+    tag: "e186",
+    title: "Magic Sword",
+    type: "item",
+    desc: "A character can carry this special sword among his weapons. The magic sword adds +1 to the combat skill of the character with it. In addition, the blade's magic means that every wound it inflicts counts as poisoned too.",
+  },
+  {
+    tag: "e187",
+    title: "Anti-poison Amulet",
+    type: "item",
+    desc: "The protection from wearing this amulet means that any poisoned wound received can be ignored. Normal wounds can still be inflicted. Whenever a poisoned wound is prevented, roll 2d6: on a 12, the amulet has reached the limit of poison it can absorb and must be discarded.",
+  },
+  {
+    tag: "e188",
+    title: "Pegasus Mount",
+    type: "item",
+    desc: "You have acquired a pegasus — a winged horse that allows you to travel airborne. The pegasus is like a normal mount in all other respects, including the same transport ability (r206), food requirements (r215), and lodging when in settlements (r217). You can also use the pegasus as a normal mount on the ground, if desired.",
+  },
+  {
+    tag: "e189",
+    title: "Charisma Talisman",
+    type: "item",
+    desc: "The character that wears this talisman improves their stature and charisma in the eyes of others. If you wear it, add +1 to your wit & wiles in any situation that involves or results from a talk option. This talisman does not improve your wit & wiles when trying to evade, hide, attack, or surprise. After each use, roll 2d6: on a 12, its magic is spent and it must be discarded.",
+  },
+  {
+    tag: "e190",
+    title: "Death Mist Flask",
+    type: "item",
+    desc: "This sealed ceramic flask is filled with a deadly and quick-acting gas, created by a master alchemist. If you surprise an enemy in combat (r220), instead of your initial strikes, your entire party can stand off and let you hurl the flask. Roll 1d6 for each character encountered: 1–4: character killed by death mist; 5: character flees, taking their wealth and all possessions; 6: character unaffected by the death mist. The flask is rather heavy and counts as 1 load to transport (r206).",
+  },
+  {
+    tag: "e191",
+    title: "Resistance Ring",
+    type: "item",
+    desc: "This ring creates a magical aura around the wearer. Every time the wearer is wounded, roll 2d6. The ring can also ward off poisoned wounds like normal wounds, and can shield the wearer from harm caused by magic (but will not protect others in the party). In a magic attack, roll twice (2×) on the table below and apply the worst result to the wearer.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Wound Warding (2d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          ["2–8", "The blow is warded by the ring; ignore wounds."],
+          [
+            "9–11",
+            "The blow skids around the aura and strikes home; take normal wound result, minus one (−1) wound which was deflected.",
+          ],
+          [
+            "12",
+            "The ring fails; the strike has full effect, and the ring melts on your finger, inflicting one extra (+1) wound.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e192",
+    title: "Resurrection Necklace",
+    type: "item",
+    desc: "This necklace of black opals and tiny bones holds the secret of a second life. If the wearer dies for any reason, including voluntary suicide, at the end of that day the character rises from the dead. The necklace disintegrates as the character revives, and thus only works once. The resurrection occurs in the same hex, and the character is free to select any action on the next day.",
+    note: "A character revived by the necklace will have lost all possessions and money, and the entire party will have scattered, although a lover might return (r228). The revived character has a somewhat ghoulish cast and is a bit weaker — reduce endurance by −1. Such appearances are favoured at Drogat Castle, adding +1 if you Seek an Audience with Count Drogat (r211j).",
+  },
+  {
+    tag: "e193",
+    title: "Shield of Light",
+    type: "item",
+    desc: "This enchanted shield will flash and shine in the eyes of any attacker. When a character has this shield, any opponent in combat finds their combat skill reduced by −1. If the character with the shield dies, the shield will dull and die, becoming useless. At the end of each combat where the shield is used, roll 1d6: if you roll a 6, the shield is so banged up that it is now useless. To preserve the shield, you may elect not to use it in some combats. You can change your mind during the battle, but must still check for damage after the battle.",
+  },
+  {
+    tag: "e194",
+    title: "Royal Helm of the Northlands",
+    type: "item",
+    desc: "This ancient and sacred treasure has long been lost. You now hold this helm — a treasure that bestows automatic and indisputable right to the Northlands throne — and the boost in stature and self-confidence increases your wit & wiles by +1. If you return to either Ogon (0101) or Weshor (1501) with the helm, you will be instantly hailed as the rightful King of the Northlands, and win the game.",
+  },
+  {
+    tag: "e195",
+    title: "Magical Possessions",
+    type: "treasure",
+    desc: "Roll 2d6 for the specific item.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Roll (2d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          ["2", "e191"],
+          ["3", "e186"],
+          ["4", "e189"],
+          ["5", "e184"],
+          ["6", "e187"],
+          ["7", "e180"],
+          ["8", "e182"],
+          ["9", "e193"],
+          ["10", "e183"],
+          ["11", "e189"],
+          ["12", "e192"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e196",
+    title: "Winged Boots",
+    type: "item",
+    desc: "You have found a pair of magical boots that will allow the wearer to fly. You may use airborne travel (r204d) and escape flying (r313) rather than rolling on an evade interact option in an encounter (abandoning any party members that cannot fly). If in combat, the wearer (only) may add +1 to any escape (r220e) attempt.",
+  },
+  {
+    tag: "e197",
+    title: "Animal Trainer",
+    type: "settlement",
+    desc: "You have found a clever trainer of animals that may have some to sell to you. Roll 1d6 for the animals on sale today (roll twice at a castle).",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Roll (1d6)",
+        cols: ["🎲", "Animal", "Price"],
+        rows: [
+          ["1–2", "Horses", "7 gold each"],
+          ["3", "Trained falcon (e107)", "4 gold"],
+          [
+            "4",
+            "Magical familiar — roll 1d6: 1: cat; 2: lizard; 3: owl; 4: weasel; 5: spider; 6: flying squirrel. If given to a magician, witch, or wizard, adds +1 to the character's endurance.",
+            "10 gold",
+          ],
+          [
+            "5",
+            "Loyal hunting dog (ev3 cs3) — must be fed each day, but adds +1 to hunting (r215b)",
+            "5 gold",
+          ],
+          ["6", "Pegasus (e188)", "50 gold"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e198",
+    title: "Forest Magic",
+    type: "magic",
+    desc: "As you travel through the forest, the air becomes charged with ancient woodland magic. If you have a druid, elf, magician, witch, or wizard in your party, you may roll 1d6 to see what you have found and then decide whether to continue or end the event. If you do not have one of these characters, you must decide to continue or not before rolling the die.",
+    note: "After completing results 3–6 (and result 6 at the ruined keep), roll 1d6: on a 4–6 (3–6 at the ruined keep), you encounter a magical creature — roll 1d6: 1: e080; 2–3: e178; 4–5: e198a; 6: e198b.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Roll (1d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          [
+            "1",
+            "A hidden temple of an elven forest cult. See e066. All priests or monks at the temple are elves. If you have an elf in your party, add +1 to Seek an Audience (r211c) here. You may only Make an Offering (r212) if you have an elf in your party.",
+          ],
+          [
+            "2",
+            "A circle of ancient standing stones marking a place of power. If you have a druid, tomorrow he may either pray here to add +1 to his combat skill, or Make an Offering (r212) with +2 added to the roll. Also roll 1d6 for a possible event: 1–3: none; 4: a hostile druid — see e022 and make a fight roll; 5: e019; 6: e045.",
+          ],
+          [
+            "3",
+            "A ring of large, colourful mushrooms. Any characters in your party may eat a mushroom; roll 1d6 for each who do: 1–3: delicious — the character needs no food tonight; 4: poison — take 1 poisoned wound; 5: magic — druids, elves, magicians, witches, or wizards add +1 to their combat skill; others heal 1 wound; 6: refreshing — the mushroom totally heals the character of all wounds, including poisoned.",
+          ],
+          [
+            "4",
+            "A tranquil pool beneath a small waterfall. Any characters may choose to drink or bathe; roll 1d6 for each: 1–3: cool and calming but no effect; 4: refreshing — heal 1 wound if drunk, heal all wounds if bathed; 5: poison — take 1 poisoned wound if drunk, killed if bathed and not immediately cured (e181); 6: invigorating — add +1 to combat skill until tomorrow night if drunk, add +1 to combat skill permanently if bathed.",
+          ],
+          [
+            "5",
+            "An enchanted grove of huge twisting trees and beautiful flowers bathed in golden sunlight. Druids, elves, magicians, witches, or wizards gain +1 to their endurance. All other party members heal 1 wound. Also roll 1d6: on a 6, roll on Line B of the Treasure Table (r226).",
+          ],
+          [
+            "6",
+            "An ancient, ruined keep reclaimed by a blanket of vines, trees, and moss. See e064. If you have a druid or elf in your party, gain +2 to Search Ruins (r208) here.",
+          ],
+        ],
+      },
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["e198a", "Living Forest"],
+          ["e198b", "Wood Spirit"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e198a",
+    title: "Living Forest",
+    type: "combat",
+    desc: "Each character in your party is attacked (r306) by a long, knotted root snake (ev3 cs3). A character cannot escape the combat unless the root snake attacking them has been destroyed (these living plant creatures cannot be knocked unconscious). However, if you have a druid or witch in your party, they can skip their attack to roll 1d6: on a 4 or more, they cast a spell to calm the forest and end combat.",
+  },
+  {
+    tag: "e198b",
+    title: "Wood Spirit",
+    type: "encounter",
+    desc: "You encounter an ancient spirit of the forest. If you have a druid, elf, or witch in your party, they communicate with the spirit, who will act as your guide and allow you to automatically succeed in any lost rolls (r205) until you leave a forest hex. If you do not have such a character, the wood spirit takes a dislike to intruders and obscures all paths out of this forest — until you leave a forest hex, add +1 to all lost rolls.",
+  },
+  {
+    tag: "e199",
+    title: "Settlement Events",
+    type: "event",
+    desc: "When visiting a village, town, castle, or temple, you may have encounters unique to settlement hexes. See sub-events e199a through e199i.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["e199a", "Pickpocket"],
+          ["e199b", "The Well"],
+          ["e199c", "Hungry Peasants"],
+          ["e199d", "Caught in the Act"],
+          ["e199e", "Treating Yourself"],
+          ["e199f", "Beggars"],
+          ["e199g", "Pacifist"],
+          ["e199h", "Pet Dog"],
+          ["e199i", "Counterfeit"],
+          ["e199j", "Bad Omen"],
+          ["e199k", "Castle Guard"],
+          ["e199l", "Well-Stocked"],
+          ["e199m", "Curse"],
+          ["e199n", "Druid Spirit"],
+          ["e199o", "Rats"],
+          ["e199p", "Healer"],
+          ["e199q", "Crates"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e199a",
+    title: "Pickpocket",
+    type: "event",
+    desc: "After passing through a crowd, you notice your coin purse has been lightened by a sneaky thief. Roll 1d6 for the number of coins stolen: 1–4: 3 gold pieces; 5–6: 7 gold pieces.",
+  },
+  {
+    tag: "e199b",
+    title: "The Well",
+    type: "event",
+    desc: "You pass an old stone well and feel an urge to toss a gold coin in. If you give into the urge, roll 1d6: 1–2: a chilling cackle echoes from below — lose 1 luck; 3–5: nothing happens, except you lost 1 coin; 6: a laugh of delight floats up — gain 1 luck.",
+  },
+  {
+    tag: "e199c",
+    title: "Hungry Peasants",
+    type: "event",
+    desc: "A family of peasants are selling tea from a cart and eating a meagre lunch. They tell you they haven't sold any tea today, and will trade some for proper food. For every food unit you give the family, they give you one packet of tea. Later, you open the packets to examine the leaves. Roll 1d6 for each packet: 1–4: plain tea leaves; 5–6: it is actually a poultice of healing herbs (r222a)!",
+  },
+  {
+    tag: "e199d",
+    title: "Caught in the Act",
+    type: "event",
+    desc: "You hear an old woman shouting in the distance just as a young thief bumps into you.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Roll (1d6)",
+        cols: ["🎲", "Result"],
+        rows: [
+          [
+            "1",
+            "The culprit drops the stolen item into your hands and runs off; you are accused of the theft and arrested. See e060.",
+          ],
+          [
+            "2–3",
+            "The robber gets away; you're fined 1d6 gold for failing to help.",
+          ],
+          [
+            "4–5",
+            "The thief drops the item and disappears into the woods. The old woman is grateful — her son runs the inn and offers your party free food (r215) and lodging (r217) tonight.",
+          ],
+          [
+            "6",
+            "You collar the robber and recover the stolen item. The old woman is so grateful she gifts you the item as a token of gratitude; roll 1d6: 1–2: e182; 3–4: e187; 5–6: e142.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e199e",
+    title: "Treating Yourself",
+    type: "event",
+    desc: "Taken with the joys of hot food and a comfortable bed after so many days in the wild, you overspend by 5 gold.",
+  },
+  {
+    tag: "e199f",
+    title: "Beggars",
+    type: "event",
+    desc: "You are accosted by a family of beggars who tell you a sad story and ask for 1d6×2 gold pieces. If you have the money but decline to give it, roll 1d6 for each follower in your party: on a 5 or 6, that follower deserts due to your lack of charity.",
+  },
+  {
+    tag: "e199g",
+    title: "Pacifist",
+    type: "event",
+    desc: "A young pacifist approaches to preach a sermon of nonviolence. If you are travelling alone, you nod politely and continue on your way. Otherwise, choose one random follower (r343) and roll 1d6 adding the follower's combat skill.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Roll (1d6 + combat skill)",
+        cols: ["🎲", "Result"],
+        rows: [
+          [
+            "2–4",
+            "The follower deserts immediately to lead a peaceful life, taking all his wealth, possessions, and any mount with him.",
+          ],
+          [
+            "5–6",
+            "The follower is deeply moved and declares he will sit out the next combat. You may let him do so, or dismiss him immediately.",
+          ],
+          [
+            "7–8",
+            "The follower thoughtfully considers the pacifist's words and privately decides he will not strike during the first round of the next combat.",
+          ],
+          [
+            "9+",
+            "The follower is unaffected. Your party bids the young lady a good afternoon and you continue on your way.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e199h",
+    title: "Pet Dog",
+    type: "event",
+    desc: "A small dog has been following you for the last few days and now cautiously approaches, wagging its tail. It looks very hungry. If you do not already have a dog, and feed the friendly mutt 2 food units immediately, it becomes your loyal companion (see e197 result 5 for details); otherwise, it slinks away and won't be seen again.",
+  },
+  {
+    tag: "e199i",
+    title: "Counterfeit",
+    type: "event",
+    desc: "You try to pay for food, but your gold is refused on account of it being fake. Looking through your coin purse, you find that 1d6×2 coins are indeed fakes! Reduce your wealth by that amount. If you do not have that much gold and have already spent some in the settlement, you must flee the hex (r218) before anyone catches on.",
+  },
+  {
+    tag: "e199j",
+    title: "Bad Omen",
+    type: "event",
+    desc: "You repeatedly glimpse a black cat crossing in front of you throughout the day. Others nearby notice it too and swear it is a bad omen. Roll 1d6: equal to or over your wit & wiles, you are so unsettled by it that you lose 1 luck.",
+  },
+  {
+    tag: "e199k",
+    title: "Castle Guard",
+    type: "event",
+    desc: "You are confronted by 1d6+3 guards (ev6 cs6); they have been warned about visitors carrying powerful magic items in the castle. Roll for a random magical possession (r343) – that item is immediately con scated and the guards storm off. If you choose to attack the guards instead, see r304; if you defeat them, you must escape the hex (r218) before you are discovered.",
+  },
+  {
+    tag: "e199l",
+    title: "Well-Stocked",
+    type: "event",
+    desc: "Thanks to a strong merchant’s guild in the area, stores in this settlement are flush with stock. Re-roll any 2’s and 12’s on Visit the Market (r298) rolls in this settlement.",
+  },
+  {
+    tag: "e199m",
+    title: "Curse",
+    type: "event",
+    desc: "As you cross a small field, you step into a patch of dead weeds and flowers adjacent to a crude dwelling. An old crone immediately rushes out, yelling and screaming that you have destroyed her garden. She levels a finger at you and mutters a curse before returning to her hovel. Lose 1 luck.",
+  },
+  {
+    tag: "e199n",
+    title: "Druid Spirit",
+    type: "event",
+    desc: "The ghost of a druid appears before you late at night and accuses you of trampling sacred plants on the journey here. The spirit demands that you make amends by sowing the plant’s seeds in the grove where you destroyed it. To do this, you must return to the previous hex and, after resolving any travel events, sow seeds as a daily action by rolling 1d6: on a 3 or more, you successfully plant the seeds. Until then, your maximum luck is reduced by one (−1). When you complete this task, the spirit reappears and, in gratitude for your efforts, imparts druidic wisdom to you, allowing you to forage for healing herbs like a druid or witch (see r293).",
+  },
+  {
+    tag: "e199o",
+    title: "Rats",
+    type: "event",
+    desc: "Mischievous rats sneak into your room and make off with one of your possessions (see r343 to randomly select an item). If you have no possessions, they steal 1d6+2 gold pieces.",
+  },
+  {
+    tag: "e199p",
+    title: "Healer",
+    type: "event",
+    desc: "A healer is passing through, offering to cure any maladies at no charge. Roll 1d6: on a 5 or 6, the healer really does have power, and heals 1 wound, even if it’s poisoned; on a 4 or less, the healer licks his thumb and rubs it on your forehead before moving on.",
+  },
+  {
+    tag: "e199q",
+    title: "Crates",
+    type: "event",
+    desc: "A cart driver asks your party for help unloading and loading crates tomorrow. If you agree to help, then postpone the remainder of this event until tomorrow, when this will count as your daily action. You finish just in time for the evening meal (r215); before leaving, the cart driver gives you gold as thanks, and heads out onto the road. Roll 1d6 for the total payment: 1: wc7; 2–3: wc10; 4–5: wc15; 6: wc21.",
+  },
+
+  {
+    tag: "e200",
+    title: "Shadows of the North",
+    type: "encounter",
+    desc: "You encounter someone familiar. Roll 1d6: 1–3: e200a; 4–6: e200b.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["e200a", "Ogab"],
+          ["e200b", "Volk"],
+          ["e200c", "King Hendryc"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e200a",
+    title: "Ogab",
+    type: "encounter",
+    desc: "If you previously encountered Ogab and he was killed, see e200b instead.) e gods must be kind, for instead of encountering the mercenary royal guards, you have a happy reunion with your loyal body servant, Ogab (ev4 cs4 wc12). He has escaped to join you as a staunch ally (r334). He will never voluntarily desert you, regardless of any events or food and lodging requirements. Also, whilst Ogab is with you, add one (+1) to your wit & wiles for his support and advice.",
+  },
+  {
+    tag: "e200b",
+    title: "Volk",
+    type: "encounter",
+    desc: "The guardsmen are led by your traitorous brother, Volk (ev8 cs8 wc25), his scarred face hidden by a fearsome metal helmet, see e002 and add two (+2) to the number of mercenary guardsmen you encoun- ter. You must choose to either evade or ght, and subtract one (−1) from the roll. If you kill Volk, you will be able to reclaim your lost throne; you have won the game!",
+  },
+  {
+    tag: "e200c",
+    title: "King Hendryc",
+    type: "encounter",
+    desc: "You become aware that the shade is actually your poor, dead father, reaching out from beyond the grave. ough overcome with grief, you are heartened by the experience. e late King Hendryc’s shade lays his phantasmal hands upon the blade of your broadsword; treat Bonebiter from now on as a magic sword (e186). Before returning to the shadows, your father imparts some ancient knowledge – roll 1d6: 1–3: e147; 4–6: e176.",
   },
 ];

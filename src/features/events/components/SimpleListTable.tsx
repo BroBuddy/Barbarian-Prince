@@ -12,7 +12,7 @@ function SimpleListTable({ table }: { table: SimpleListTableType }) {
         {hasDescription && (
           <thead>
             <tr>
-              <th className="text-white p-2 w-4">#</th>
+              <th className="text-white p-2 w-4">📖</th>
               <th className="text-white p-2">Description</th>
             </tr>
           </thead>

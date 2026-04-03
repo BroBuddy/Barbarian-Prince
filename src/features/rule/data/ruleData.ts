@@ -126,8 +126,8 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Compass",
-        cols: ["Roll", "Direction"],
+        label: "",
+        cols: ["🎲", "Direction"],
         rows: [
           ["1", "North"],
           ["2", "Northeast"],
@@ -144,6 +144,42 @@ export const ruleData: Rule[] = [
     title: "Lost",
     type: "movement",
     desc: 'Each time you attempt to leave a hex and enter a new hex, there is a danger of becoming lost. Consult the Travel Table (r207) for the terrain type you are leaving – note the "Lost" number, then roll 2d6: if you roll equal to or over the number, your party is lost. If you are lost, you cannot travel further that day. Once you are lost, for each subsequent day you attempt to leave the hex in the same direction, subtract one (−1) from the Travel Table roll.',
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r205a", "Local Guide"],
+          ["r205b", "Self-Guiding Moves"],
+          ["r205c", "Airborne & Lost"],
+          ["r205d", "River Crossing"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r205a",
+    title: "Local Guide",
+    type: "movement",
+    desc: "Your party of followers may include a guide, making it harder to get lost. If it does, subtract one (−1) from your lost check. However, if you get lost despite your guide, roll 1d6: on a 5 or 6, the guide deserts out of mortification for his failure, or in fear of your anger! If you have more than one guide in your party, only the one you selected as guide for the day will desert, but you are still lost, even if you have additional guides available.",
+  },
+  {
+    tag: "r205b",
+    title: "Self-Guiding Moves",
+    type: "movement",
+    desc: "If your party is leaving a hex by travelling along a road, you can never get lost. If you are travelling by raft (see r213; only as a result of certain special events) you cannot get lost. There is no need to roll dice for getting lost, although travel events can still occur.",
+  },
+  {
+    tag: "r205c",
+    title: "Airborne & Lost",
+    type: "movement",
+    desc: "If your party is flying (using an airborne move), use the Airborne Travel Table (r207j) instead of the ground terrain table, to see whether you are lost. If you get lost during airborne travel, there is danger of “drift” – roll 1d6: on a 4 or more, move 1 hex in a random direction (see r204g to determine the direction) before landing.",
+  },
+  {
+    tag: "r205d",
+    title: "River Crossing",
+    type: "movement",
+    desc: "If your party is trying to cross a river, first roll on the Cross River Travel Table (r207h) to see if you become lost. If you are lost, this represents a failure to find a proper crossing (ford, footbridge, place to swim, raft materials, etc.), so you must remain in the hex and check for a travel event in that terrain. If you are on a road or flying, you can cross a river automatically. Crossing by road implies that a permanent bridge exists there (such as the one between hexes 1318 and 1319). Once you cross the river, you do not make another lost check, but you must check for a travel event in the terrain of the new hex you’ve entered.",
   },
   {
     tag: "r206",
@@ -211,12 +247,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "Farmland",
-        rows: [["Lost: 11+"], ["Event: 8+"], ["Hunt: Yes"], ["Fodder: Yes"]],
+        rows: [["Lost: 11+"], ["Event: 8+"], ["Hunt: ✅"], ["Fodder: ✅"]],
       },
       {
         type: "roll-table",
         label: "Farmland",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e009", "e009", "e009", "e009", "e009", "e009"],
           ["2", "e018", "e018", "e020", "e020", "e023", "e130"],
@@ -236,12 +272,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 10+"], ["Event: 9+"], ["Hunt: Yes"], ["Fodder: Yes"]],
+        rows: [["Lost: 10+"], ["Event: 9+"], ["Hunt: ✅"], ["Fodder: ✅"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e021", "e171", "e008"],
           ["2", "e009", "e022", "e050", "e018", "e020", "e023"],
@@ -261,12 +297,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 9+"], ["Event: 9+"], ["Hunt: Yes"], ["Fodder: Yes"]],
+        rows: [["Lost: 9+"], ["Event: 9+"], ["Hunt: ✅"], ["Fodder: ✅"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e171", "e007", "e008"],
           ["2", "e074", "e074", "e073", "e022", "e051", "e178"],
@@ -286,12 +322,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 9+"], ["Event: 10+"], ["Hunt: Yes"], ["Fodder: Yes"]],
+        rows: [["Lost: 9+"], ["Event: 10+"], ["Hunt: ✅"], ["Fodder: ✅"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e006", "e006", "e008"],
           ["2", "e098", "e019", "e023", "e051", "e068", "e020"],
@@ -311,12 +347,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 8+"], ["Event: 10+"], ["Hunt: No"], ["Fodder: No"]],
+        rows: [["Lost: 8+"], ["Event: 10+"], ["Hunt: ❌"], ["Fodder: ❌"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e006", "e006", "e058"],
           ["2", "e099", "e100", "e023", "e068", "e101", "e170"],
@@ -336,12 +372,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 6+"], ["Event: 10+"], ["Hunt: Yes"], ["Fodder: No"]],
+        rows: [["Lost: 6+"], ["Event: 10+"], ["Hunt: ✅"], ["Fodder: ❌"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e003", "e004", "e005", "e022", "e046", "e033"],
           ["2", "e020", "e068", "e073", "e051", "e051", "e074"],
@@ -362,12 +398,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 7+"], ["Event: 10+"], ["Hunt: No*"], ["Fodder: No*"]],
+        rows: [["Lost: 7+"], ["Event: 10+"], ["Hunt: ❌*"], ["Fodder: ❌*"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e019", "e128", "e129", "e051", "e023", "e068"],
           ["2", "e028", "e082", "e055", "e003", "e004", "e028"],
@@ -383,17 +419,17 @@ export const ruleData: Rule[] = [
     tag: "r207h",
     title: "Cross River",
     type: "reference",
-    note: "roll 1-2: Roll on terrain table before crossing river",
+    note: "Roll 1-2: Roll on terrain table before crossing river",
     tables: [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 9+"], ["Event: 10+"], ["Hunt: –"], ["Fodder: –"]],
+        rows: [["Lost: 9+"], ["Event: 10+"], ["Hunt: ❌"], ["Fodder: ❌"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["3", "e123", "e123", "e057", "e057", "e051", "e127"],
           ["4", "e094", "e094", "e091", "e126", "e122", "e084"],
@@ -411,12 +447,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: –"], ["Event: 10+"], ["Hunt: –"], ["Fodder: –"]],
+        rows: [["Lost: ❌"], ["Event: 10+"], ["Hunt: ❌"], ["Fodder: ❌"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e018", "e020", "e023", "e168", "e168", "e168"],
           ["2", "e050", "e051", "e051", "e051", "e003", "e003"],
@@ -432,23 +468,23 @@ export const ruleData: Rule[] = [
     tag: "r207j",
     title: "Airborne",
     type: "reference",
+    note: "Roll 6: Roll on ground terrain table",
     tables: [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 12+"], ["Event: 10+"], ["Hunt: –"], ["Fodder: –"]],
+        rows: [["Lost: 12+"], ["Event: 10+"], ["Hunt: ❌"], ["Fodder: ❌"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e102", "e102", "e103", "e103", "e104", "e104"],
           ["2", "e112", "e112", "e112", "e112", "e108", "e108"],
           ["3", "e106", "e106", "e105", "e105", "e079", "e079"],
           ["4", "e107", "e109", "e107", "e101", "e110", "e111"],
           ["5", "e099", "e098", "e100", "e101", "e117", "e117"],
-          ["6", "Roll on ground terrain table", "", "", "", "", ""],
         ],
       },
     ],
@@ -462,12 +498,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: –"], ["Event: 9+*"], ["Hunt: No"], ["Fodder: No"]],
+        rows: [["Lost: ❌"], ["Event: 9+*"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e009", "e199p", "r199o", "r199q", "e199n", "e199m"],
           ["2", "e199k", "e199h", "e199d", "e199f", "e199a", "e199b"],
@@ -488,12 +524,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: –"], ["Event: 8+*"], ["Hunt: No"], ["Fodder: No"]],
+        rows: [["Lost: ❌"], ["Event: 8+*"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e050", "e050", "e050", "e081", "e081", "e175"],
           ["2", "r199q", "e199d", "e172", "e199i", "e199e", "e003"],
@@ -514,12 +550,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: –"], ["Event: 9+*"], ["Hunt: No"], ["Fodder: No"]],
+        rows: [["Lost: ❌"], ["Event: 9+*"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e050", "e050", "e199d", "e081", "e081", "e175"],
           ["2", "e197", "r199q", "e199j", "e179", "e169", "e169"],
@@ -540,12 +576,12 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: –"], ["Event: 10+*"], ["Hunt: No"], ["Fodder: No"]],
+        rows: [["Lost: ❌"], ["Event: 10+*"]],
       },
       {
         type: "roll-table",
         label: "",
-        cols: ["roll", "1", "2", "3", "4", "5", "6"],
+        cols: ["#", "1", "2", "3", "4", "5", "6"],
         rows: [
           ["1", "e018", "e018", "e018", "e018", "e018", "e018"],
           ["2", "e021", "e021", "e021", "e130", "e199k", "e143"],
@@ -561,36 +597,37 @@ export const ruleData: Rule[] = [
     tag: "r207o",
     title: "Special",
     type: "reference",
+    desc: "All locations have an event roll of 9+, except Wizard Tower, which is 10+.",
     tables: [
       {
         type: "roll-table",
         label: "Dwarf Mines (e059)",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
-        rows: [["9+", "e006", "e058", "e006", "e018", "r199q", "castle"]],
+        cols: ["1", "2", "3", "4", "5", "6"],
+        rows: [["e006", "e058", "e006", "e018", "r199q", "Castle"]],
       },
       {
         type: "roll-table",
         label: "Wizard Tower (e068a)",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
-        rows: [["10+", "e023", "e025", "e016", "e023", "e135", "e175"]],
+        cols: ["1", "2", "3", "4", "5", "6"],
+        rows: [["e023", "e025", "e016", "e023", "e135", "e175"]],
       },
       {
         type: "roll-table",
         label: "Halfling Town (e070)",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
-        rows: [["9+", "e008", "e008", "e009", "e169", "e199m", "village"]],
+        cols: ["1", "2", "3", "4", "5", "6"],
+        rows: [["e008", "e008", "e009", "e169", "e199m", "Village"]],
       },
       {
         type: "roll-table",
         label: "Cloud Castle (e117)",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
-        rows: [["9+", "e108", "e101", "e118", "e108", "e199b", "castle"]],
+        cols: ["1", "2", "3", "4", "5", "6"],
+        rows: [["e108", "e101", "e118", "e108", "e199b", "Castle"]],
       },
       {
         type: "roll-table",
         label: "Elf Haven (e166)",
-        cols: ["#", "1", "2", "3", "4", "5", "6"],
-        rows: [["9+", "e007", "e071", "e199n", "e007", "e080", "castle"]],
+        cols: ["1", "2", "3", "4", "5", "6"],
+        rows: [["e007", "e071", "e199n", "e007", "e080", "Castle"]],
       },
     ],
   },
@@ -603,7 +640,7 @@ export const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: –"], ["Event: 10+"]],
+        rows: [["Lost: ❌"], ["Event: 10+"]],
       },
       {
         type: "roll-table",
@@ -660,7 +697,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "No news of note, nothing seems to be happening."],
           [
@@ -721,7 +758,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           [
             "2",
@@ -804,7 +841,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2–3", "Insult the village elders, e060a."],
           ["4", "Meet hostile guards, e158a."],
@@ -825,7 +862,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Grievously insult the town council, e062."],
           [
@@ -851,7 +888,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Anger temple guards, e063."],
           ["3", "Priestess resents a lewd remark, e060."],
@@ -879,7 +916,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Insult the town council, e063."],
           [
@@ -914,7 +951,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           [
             "2",
@@ -945,7 +982,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2–3", "You insult the Elf Lord, e062."],
           ["4", "Confronted by elf guards, e158."],
@@ -973,7 +1010,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "You insult the race of dwarves, e063."],
           ["3", "A remark about the length of a beard causes offense, e060."],
@@ -997,7 +1034,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "The Hawk Lord despises all those from below, see e063."],
           ["3", "You insult the Captain of the Guard; see e062."],
@@ -1028,7 +1065,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Audience permanently refused, cannot try again."],
           ["3", "Meet Baron's Daughter, e154."],
@@ -1052,7 +1089,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "You are the Count's next victim; see e061."],
           ["3", "The Captain of the Guard dislikes your haircut; see e062."],
@@ -1079,7 +1116,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "You insult the Lady's dignity, arrested e060."],
           ["3", "You must purify yourself first, e159."],
@@ -1108,7 +1145,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           [
             "2",
@@ -1495,7 +1532,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Poisoned Wounds",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["1", "The wound festers; gain 1 poisoned wound."],
           ["2–5", "No change."],
@@ -1620,7 +1657,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Study History",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           [
             "2",
@@ -1666,7 +1703,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Visit a Tavern",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Sleepy tavern – Nothing exciting happening."],
           [
@@ -1722,7 +1759,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Beg for Alms",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           [
             "1",
@@ -1871,7 +1908,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Rob a Castle or Temple Loot",
-        cols: ["Roll 1d6", "Loot"],
+        cols: ["🎲", "Loot"],
         rows: [
           ["1–2", "wc70"],
           ["3–4", "wc100"],
@@ -1889,7 +1926,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Visit the Market",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["≤3", "Market is closed, or full of worthless tat."],
           ["4", "Cutpurse picks your pocket; lose half (½) your gold."],
@@ -2138,7 +2175,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Battle Reference",
-        cols: ["Roll", "Entry"],
+        cols: ["🎲", "Entry"],
         rows: [
           ["≤2", "r310"],
           ["3", "r309"],
@@ -2242,7 +2279,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Conversation",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           [
             "2",
@@ -2280,7 +2317,7 @@ export const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Inquiry",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "You unwittingly give insult; see r309."],
           ["3", "You are forced into combat, unwillingly; see r330."],

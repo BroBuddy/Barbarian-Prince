@@ -2462,6 +2462,7 @@ const eventData: Event[] = [
     tag: "e158",
     title: "Hostile Guards",
     type: "combat",
+    image: true,
     desc: "You leave the rest of your party in an atrium and are confronted by 2 hostile guards (EV6 CS5 wc7). If you pay 20 gold as a bribe they will let you pass — roll again to Seek an Audience (r211) here. Otherwise, they attack you, getting the first strike in combat (r220). Regardless of whether you win or lose, you must immediately escape from this hex (r218).",
     tables: [
       {
@@ -2481,6 +2482,7 @@ const eventData: Event[] = [
     tag: "e159",
     title: "Must Purify Yourself",
     type: "event",
+    image: true,
     desc: "You must Make an Offering (r212) at a temple before you can Seek an Audience (r211C) again in this hex. The offering can be made at any temple. This result does not prevent you from seeking audiences elsewhere before making this offering. If you make the required offering and then try for another audience in this hex, your devotion is noted and you can add +2 to the Seek an Audience roll.",
   },
   {
@@ -2586,6 +2588,7 @@ const eventData: Event[] = [
     tag: "e163",
     title: "Slave Market",
     type: "settlement",
+    image: true,
     desc: "You can purchase slaves at the auction block. Porter slaves (r206) are available for 1d6 gold per porter — they need no wages and will function even if not fed (r215), but each day without food halves their carrying capacity (rounded down); when capacity reaches zero, they die. Slave girls are available for 2d6+2 gold each; each functions as a Gift of Charm (e182) as long as she is fed properly (r215). Slave girls who are not fed lose this ability until fed regularly for as many days as they missed meals; normal starvation risks (r216) apply each day without food. For each girl bought, roll 2d6: on a 12 exactly, you fall for her, freeing her as your true love (r228). Finally, on the market you find an old warrior available for 1d6 gold (add +2 to his price if you did not already buy porters or slave girls). If you buy and free him, he becomes a willing party member at no pay. Roll 1d6+1 for his combat skill and 1d6+1 for his endurance.",
   },
   {
@@ -2598,6 +2601,7 @@ const eventData: Event[] = [
     tag: "e165",
     title: "The Imp of Pelgar",
     type: "story",
+    image: true,
     desc: "You learn that the town of Pelgar was destroyed after the townsfolk reneged on a deal struck with an infernal imp. The imp is rumoured to still inhabit the ruins, lording over the imprisoned souls of the townsfolk who reneged on him. If you travel to the ruins of Pelgar (hex 2009) with either a magician, monk, priest, witch, or wizard in your party, or a resistance talisman (e184) to protect you from the imp’s foul magic, then after you Search Ruins (r208), you may roll 1d6 to attempt to strike your own bargain, risky as it may be:",
     note: "Decline the Offer: If you are unwilling to accept the offer, or unable to pay the cost immediately, the imp snarls a curse at you and vanishes. Roll 1d3 and lower the result by one (−1) until the curse can be broken by a true love (see r228): 1: wit & wiles; 2: combat skill; 3: endurance.",
     tables: [
@@ -2630,6 +2634,7 @@ const eventData: Event[] = [
     tag: "e166",
     title: "Elf Haven",
     type: "location",
+    image: true,
     desc: "You discover a hidden castle inhabited by elves. Roll 1d6, subtract one (−1) if your party includes a druid, elf, magician, witch, or wizard, and add one (+1) if your party includes a dwarf: if the roll is under your wit & wiles, you may enter the wondrous haven; otherwise, the elves deem you unworthy and your party is arrested (e060).",
     note: "If granted entry, you may perform most daily castle actions (r203), but cannot Seek News (r209) or Visit the Tavern (r294). You may Seek an Audience with the Elf Lord (r211f). Any followers hired (r210) will be elves (ev5 cs5 wc15). Normal food (r215) and lodging (r217) costs apply. On any return visit, you must roll again to determine entry or arrest.",
   },
@@ -2676,6 +2681,7 @@ const eventData: Event[] = [
     tag: "e167",
     title: "The Warrior's Heart",
     type: "story",
+    image: true,
     desc: "You learn the Dead Plains ruins are of an ancient civilization and might hold a legendary artifact known as the Warrior's Heart. An army in possession of the Heart is said to be mighty enough to win any battle.",
     note: "Travel to the Dead Plains Ruins (hex 0206). If your party has a combined combat skill of 20 or more, you may move the heavy columns blocking the entrance as a daily action (r203). Otherwise, search for another entrance once a day by rolling 1d6 under your wit & wiles. Once inside, Explore the Ruins as a special daily action (r204) while on this hex — roll 2d6, adding +2 if a dwarf is in your party, and a further +1 if you entered by another entrance.",
     tables: [
@@ -2726,6 +2732,7 @@ const eventData: Event[] = [
     tag: "e168",
     title: "Roadside Inn",
     type: "settlement",
+    image: true,
     desc: "You happen upon a small but lively inn. Food (r215) and lodging (r217) are both on offer. Roll 1d6: on a 4 or more, the inn also has stables. You may Visit the Tavern (r294) here, and the innkeeper will sell you 2 food units per 1 gold piece before you leave.",
   },
   {
@@ -2759,6 +2766,7 @@ const eventData: Event[] = [
     tag: "e170",
     title: "Vampire",
     type: "combat",
+    image: true,
     desc: "This event is postponed until after your evening meal (r215). A cloud of mist solidifies into a shape — you have encountered a vampire (ev7 cs8 wc60). See r306.",
     note: "At the start of combat (r220), the vampire uses mesmerism. To break it and attack, you must roll 1d6 equal to or under your wit & wiles. Each party member must roll 4 or more on 1d6 or be frozen in fear. Vampires can only be harmed by magical spells, magical weapons, or attacks from a priest. If reduced below half its endurance, roll 1d6 at the end of the round: on a 4 or more, the vampire turns into a bat and flies away. If you kill the vampire, the clasp on its cape bears the Drogat crest — if you Seek an Audience with Count Drogat (r211j) and give him the clasp, add +4 to the die roll. Modifier: a priest in your party gives the vampire −1 combat skill; foulbane also gives the vampire −1 combat skill.",
   },
@@ -2766,6 +2774,7 @@ const eventData: Event[] = [
     tag: "e171",
     title: "Werewolf",
     type: "combat",
+    image: true,
     desc: "This event is postponed until after your evening meal (r215). You are surprised (r308) in combat by a werewolf (ev8 cs7). At the start of combat, its howl summons 1d6−2 wolves (ev3 cs3). The werewolf can only be harmed by magical or holy weapons, or by your broadsword Bonebiter. Escape (r220e) is only possible on a 5 or 6 (only on a 6 if additional wolves are present).",
     note: "When the werewolf attacks, roll 1d6: on a 2 or less, it strikes with claws; on a 3 or more, it bites. A bite wound infects the character with lycanthropy — they will transform into a werewolf in exactly 4 weeks unless they are in a temple at the time. If the Barbarian Prince transforms, the game is lost. When it dies, the werewolf reverts to a man's corpse. Transport the corpse to the nearest temple for burial to add +3 to your next Seek an Audience (r211c) or Make an Offering (r212) roll there. To cure lycanthropy, gain an audience with a High Priest (r211c); instead of rolling on e155, you learn the infected must spend the full moon on a mountain hex bound in silver chain (30 gold from any castle as a special daily action). The next full moon is 1d6 days later. After satisfying these conditions, the infected is healed.",
   },
@@ -2773,6 +2782,7 @@ const eventData: Event[] = [
     tag: "e172",
     title: "Vagabond",
     type: "encounter",
+    image: true,
     desc: "You meet a roving vagabond from a far-off land (ev5 cs4 wc7). Roll 1d6: on a 5 or 6, the vagabond is female. Roll 1d6 again: 1–4: the vagabond is alone; 5–6: the vagabond is part of a rover caravan (see e172b). If the female vagabond joins your party, roll 1d6: on a 6, she becomes your lover (r228). If the vagabond joins your party, you may have your fortune told (see e172a), and also add +1 to your wit & wiles when you Attempt Robbery (r296).",
     note: "Thief footnote: The vagabond attempts to pick your pocket. Roll 1d6: equal to or under your wit & wiles, you catch them in the act (r305); over your wit & wiles, lose half (½) your wealth. Mounts footnote: if your party has mounts, you may use escape mounted (r312) instead of rolling to resolve the evade option.",
     tables: [
@@ -2795,6 +2805,7 @@ const eventData: Event[] = [
     tag: "e172a",
     title: "Fortune-Teller",
     type: "event",
+    image: true,
     desc: "In a heavy accent, the vagabond requests 3 gold pieces in exchange for reading your fortune. If you accept, roll 1d6. After the reading, you may choose to roll on the talk option from e172 again, or end the event.",
     tables: [
       {
@@ -2841,6 +2852,7 @@ const eventData: Event[] = [
     tag: "e173",
     title: "Thieves",
     type: "combat",
+    image: true,
     desc: "You have been set upon by 1d3+1 thieves (ev4 cs4 wc10)! (In a town: 1d3+3 thieves.) Roll 1d6, adding +1 if they outnumber your party, +1 if you have Attempted Robbery (r296) in this hex, and +1 if that robbery was against a thief or thieves' guild: on a 4 or more, you are ambushed (r308); on a 3 or less, the thieves allow you to surrender and will not attack if you hand over your wealth and possessions — if you refuse, they attack (r307). If you survive and knock a thief unconscious, you can extract the location of the thieves' guild — it is in the nearest town. You may attempt to rob the guild like a house (r297b) but the wealth code is 60.",
   },
   {
@@ -2901,6 +2913,7 @@ const eventData: Event[] = [
     tag: "e177",
     title: "Audience with the Village Chief",
     type: "npc",
+    image: true,
     desc: "You have private discussions with the chief of the small village.",
     tables: [
       {
@@ -2940,6 +2953,7 @@ const eventData: Event[] = [
     tag: "e178",
     title: "Dryad",
     type: "encounter",
+    image: true,
     desc: "You encounter a wood nymph, known as a dryad (ev6 cs4 wc5). Roll 1d6 (subtract −1 if you have a druid or elf in your party): over your wit & wiles, the dryad is hostile; equal to your wit & wiles, she ignores you and the event ends; under your wit & wiles, she is friendly.",
     note: "Hostile dryad — roll 1d6: 1–3: the dryad attacks, calling upon forest magic — 1d6 root snakes (ev3 cs3) emerge from the soil to fight alongside her (r306); 4–6: the dryad attempts to beguile you — roll 1d6 for yourself and each party member: on a 6, that character is charmed. Unbeguiled characters may attack the dryad (r304) or escape (r311) — but escaping loses beguiled characters forever. If you are beguiled with no one to help, you lose the game. Beguiled characters are released by a druid, magician, witch, or wizard rolling 5 or 6 on 1d6, or if the dryad is killed. Friendly dryad — roll 1d6: 1–2: she shows you a magical place in the forest (e198); 3: spirits of the forest guide you — subtract −1 from lost rolls until you next leave a forest hex; 4–5: she teaches you how to forage for healing herbs like a druid or witch (r293); 6: the dryad gives you a gift (e195).",
   },
@@ -2947,6 +2961,7 @@ const eventData: Event[] = [
     tag: "e179",
     title: "Tournament",
     type: "event",
+    image: true,
     desc: "The local Lord is holding a tournament today. Meals are free (r215), but lodging (r217) costs double due to crowds. Daily actions are suspended, but you may roll twice if you Seek to Hire Followers (r210) tomorrow. If you pay 5 gold pieces, you can roll twice on the list below (reroll duplicates) and enter those competitions. If you or a party member wins a contest, you gain 15 gold and roll 1d6: 1: you meet the local Lord (e130); 2–6: add +1 to a Seek an Audience (r211) roll tomorrow.",
     tables: [
       {
@@ -3004,6 +3019,7 @@ const eventData: Event[] = [
     tag: "e182",
     title: "Gift of Charm",
     type: "item",
+    image: true,
     desc: "This is a small item of no real value, but with a magic aura. You can give this gift to any character(s) you encounter as part of any talk option. When you use it, you can roll a second and a third time for that option and select whichever result you prefer. Once given away, the gift is gone and useless unless the receiver later fights you in combat and you kill him — then you can recover the gift as part of his possessions.",
   },
   {
@@ -3028,6 +3044,7 @@ const eventData: Event[] = [
     tag: "e186",
     title: "Magic Sword",
     type: "item",
+    image: true,
     desc: "A character can carry this special sword among his weapons. The magic sword adds +1 to the combat skill of the character with it. In addition, the blade's magic means that every wound it inflicts counts as poisoned too.",
   },
   {
@@ -3040,6 +3057,7 @@ const eventData: Event[] = [
     tag: "e188",
     title: "Pegasus Mount",
     type: "item",
+    image: true,
     desc: "You have acquired a pegasus — a winged horse that allows you to travel airborne. The pegasus is like a normal mount in all other respects, including the same transport ability (r206), food requirements (r215), and lodging when in settlements (r217). You can also use the pegasus as a normal mount on the ground, if desired.",
   },
   {
@@ -3095,6 +3113,7 @@ const eventData: Event[] = [
     tag: "e194",
     title: "Royal Helm of the Northlands",
     type: "item",
+    image: true,
     desc: "This ancient and sacred treasure has long been lost. You now hold this helm — a treasure that bestows automatic and indisputable right to the Northlands throne — and the boost in stature and self-confidence increases your wit & wiles by +1. If you return to either Ogon (0101) or Weshor (1501) with the helm, you will be instantly hailed as the rightful King of the Northlands, and win the game.",
   },
   {
@@ -3133,6 +3152,7 @@ const eventData: Event[] = [
     tag: "e197",
     title: "Animal Trainer",
     type: "settlement",
+    image: true,
     desc: "You have found a clever trainer of animals that may have some to sell to you. Roll 1d6 for the animals on sale today (roll twice at a castle).",
     tables: [
       {
@@ -3161,6 +3181,7 @@ const eventData: Event[] = [
     tag: "e198",
     title: "Forest Magic",
     type: "magic",
+    image: true,
     desc: "As you travel through the forest, the air becomes charged with ancient woodland magic. If you have a druid, elf, magician, witch, or wizard in your party, you may roll 1d6 to see what you have found and then decide whether to continue or end the event. If you do not have one of these characters, you must decide to continue or not before rolling the die.",
     note: "After completing results 3–6 (and result 6 at the ruined keep), roll 1d6: on a 4–6 (3–6 at the ruined keep), you encounter a magical creature — roll 1d6: 1: e080; 2–3: e178; 4–5: e198a; 6: e198b.",
     tables: [
@@ -3434,6 +3455,7 @@ const eventData: Event[] = [
     tag: "e200c",
     title: "King Hendryc",
     type: "encounter",
+    image: true,
     desc: "You become aware that the shade is actually your poor, dead father, reaching out from beyond the grave. ough overcome with grief, you are heartened by the experience. e late King Hendryc’s shade lays his phantasmal hands upon the blade of your broadsword; treat Bonebiter from now on as a magic sword (e186). Before returning to the shadows, your father imparts some ancient knowledge – roll 1d6: 1–3: e147; 4–6: e176.",
   },
 ];

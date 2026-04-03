@@ -6,19 +6,26 @@ const HEX_WIDTH = 2 * HEX_SIZE;
 const HEX_HEIGHT = Math.sqrt(3) * HEX_SIZE;
 const HEX_VERTICAL_SPACING = HEX_HEIGHT;
 
-interface TileImageMap {
-  [key: string]: string;
-}
+const tileColors: { [key: string]: string } = {
+  farmland: "#ffeb3b",
+  countryside: "#b5cd85",
+  forest: "#8bae7c",
+  hills: "#a78885",
+  mountains: "#bdb1c2",
+  swamp: "#acd0cd",
+  desert: "#fdf4d1",
+  village: "#5e4541",
+};
 
-const tileImages: TileImageMap = {
-  farmland: "/images/terrain/farmland.png",
-  countryside: "/images/terrain/countryside.png",
-  forest: "/images/terrain/forest.png",
-  hills: "/images/terrain/hills.png",
-  mountains: "/images/terrain/mountains.png",
-  swamp: "/images/terrain/swamp.png",
-  desert: "/images/terrain/desert.png",
-  village: "/images/terrain/village.png",
+const tileIcons: { [key: string]: string } = {
+  farmland: "🌾",
+  countryside: "🌱",
+  forest: "🌳",
+  hills: "⛰️",
+  mountains: "🏔️",
+  swamp: "🪷",
+  desert: "🌵",
+  village: "🏘️",
 };
 
 interface DrawHexType {
@@ -26,28 +33,14 @@ interface DrawHexType {
   x: number;
   y: number;
   size: number;
+  color: string;
   text: string;
-  imageSrc: string;
-  xPixel?: number;
-  yPixel?: number;
 }
 
-function drawHex({
-  ctx,
-  x,
-  y,
-  size,
-  text,
-  imageSrc,
-  xPixel = 0,
-  yPixel = 0,
-}: DrawHexType) {
+function drawHex({ ctx, x, y, size, color, text }: DrawHexType) {
   const w = 2 * size;
   const h = Math.sqrt(3) * size;
 
-  ctx.save();
-
-  // Hex clip
   ctx.beginPath();
   ctx.moveTo(x + size / 2, y);
   ctx.lineTo(x + (3 * size) / 2, y);
@@ -56,34 +49,17 @@ function drawHex({
   ctx.lineTo(x + size / 2, y + h);
   ctx.lineTo(x, y + h / 2);
   ctx.closePath();
-  ctx.clip();
 
-  const img = new Image();
-  img.src = imageSrc;
-  img.onload = () => {
-    ctx.drawImage(img, x + xPixel, y + yPixel, w, h);
-  };
-
-  ctx.restore();
-
-  // Hex Kontur
-  ctx.beginPath();
-  ctx.moveTo(x + size / 2, y);
-  ctx.lineTo(x + (3 * size) / 2, y);
-  ctx.lineTo(x + w, y + h / 2);
-  ctx.lineTo(x + (3 * size) / 2, y + h);
-  ctx.lineTo(x + size / 2, y + h);
-  ctx.lineTo(x, y + h / 2);
-  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
   ctx.strokeStyle = "black";
   ctx.stroke();
 
-  // Text
   ctx.fillStyle = "white";
-  ctx.font = "bold 12px sans-serif";
+  ctx.font = `bold ${size * 0.8}px 'Segoe UI Emoji', sans-serif`;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText(text, x + size, y + h / 2);
+  ctx.fillText(text, x + size, y + h / 2 + size * 0.2);
 }
 
 const HexCanvas: React.FC = () => {
@@ -95,16 +71,16 @@ const HexCanvas: React.FC = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = 800;
-    canvas.height = 600;
+    canvas.width = 400;
+    canvas.height = 400;
 
-    hexData.forEach((col, cIdx) => {
+    hexData.forEach((col: string[], cIdx: number) => {
       const xPixel = 0;
       const yPixel = 0;
       const xOffset = cIdx * (HEX_WIDTH * 0.75) + xPixel;
       const yOffset = cIdx % 2 !== 0 ? HEX_VERTICAL_SPACING / 2 + yPixel : 0;
 
-      col.forEach((tile, rIdx) => {
+      col.forEach((tile: string, rIdx: number) => {
         const x = xOffset;
         const y = rIdx * HEX_VERTICAL_SPACING + yOffset;
         drawHex({
@@ -112,10 +88,8 @@ const HexCanvas: React.FC = () => {
           x,
           y,
           size: HEX_SIZE,
-          text: tile[0].toUpperCase(),
-          imageSrc: tileImages[tile],
-          xPixel: 0,
-          yPixel: 0,
+          color: tileColors[tile],
+          text: tileIcons[tile],
         });
       });
     });

@@ -5,19 +5,18 @@ import { useEffect } from "react";
 import { parseLinks } from "@/lib/Helper";
 import TableRenderer from "@/features/events/components/TableRenderer";
 import { getRuleDataByTag } from "../services/RuleService";
-import type { Rule } from "../types/RuleType";
 import Badge from "@/components/Badge";
 
 function RuleDetail() {
   const { tag } = useParams();
-  const rule: Rule = getRuleDataByTag(tag as string);
+  const rule = getRuleDataByTag(tag as string);
   const { addToHistory } = useHistory();
+
+  if (!rule) return null;
 
   useEffect(() => {
     addToHistory(rule.tag, rule.title);
   }, [addToHistory, rule]);
-
-  if (!rule) return null;
 
   return (
     <Card title={rule.title} tag={rule.tag}>

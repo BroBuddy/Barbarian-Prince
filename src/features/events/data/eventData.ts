@@ -1,6 +1,6 @@
 import type { Event } from "../types/EventType";
 
-export const eventData: Event[] = [
+const eventData: Event[] = [
   {
     tag: "e001",
     title: "The Adventure Begins",
@@ -3419,3 +3419,5 @@ export const eventData: Event[] = [
     desc: "You become aware that the shade is actually your poor, dead father, reaching out from beyond the grave. ough overcome with grief, you are heartened by the experience. e late King Hendryc’s shade lays his phantasmal hands upon the blade of your broadsword; treat Bonebiter from now on as a magic sword (e186). Before returning to the shadows, your father imparts some ancient knowledge – roll 1d6: 1–3: e147; 4–6: e176.",
   },
 ];
+
+export { eventData };

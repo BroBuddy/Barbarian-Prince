@@ -1,6 +1,6 @@
 import type { Rule } from "../types/RuleType";
 
-export const ruleData: Rule[] = [
+const ruleData: Rule[] = [
   {
     tag: "r201",
     title: "Characters",
@@ -2347,3 +2347,5 @@ export const ruleData: Rule[] = [
     desc: "In a party of one character, that character is always the target of the attack. However, to target a random victim of a larger party, select the target characters one by one, in any order you choose, and roll 1d6: on a 6, that character is the target; on a 5 or less, select another character and try again. Continue this, going through the characters in again if necessary, until the required number of targets is selected. This method can also be used to randomly select items.",
   },
 ];
+
+export { ruleData };

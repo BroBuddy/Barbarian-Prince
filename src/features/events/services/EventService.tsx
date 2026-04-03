@@ -2,13 +2,15 @@ import { eventData } from "../data/eventData";
 import type { Event, EventItem } from "../types/EventType";
 
 const getEventData = (): EventItem[] => {
+  if (!eventData) return [];
+
   return eventData.map(({ tag, title }) => ({
     tag,
     title,
   }));
 };
 
-const getEventDataByTag = (tag: string): Event => {
+const getEventDataByTag = (tag: string): Event | undefined => {
   return eventData.find((item: Event) => item.tag === tag) as Event;
 };
 

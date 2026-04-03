@@ -34,7 +34,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Actions allowed in any hex",
+        label: "Allowed in any hex",
         rows: [
           ["Rest in current hex to heal (r222) and improve hunting (r215)."],
           ["Travel (r204) to a new hex; your most common choice."],
@@ -43,7 +43,7 @@ export const ruleData: Rule[] = [
       },
       {
         type: "simple-list",
-        label: "Actions allowed only in certain hexes",
+        label: "Allowed only in certain hexes",
         rows: [
           ["Seek an Audience with a Local Lord (r211) – any settlement hex"],
           ["Beg for Alms (r295) – any settlement hex"],

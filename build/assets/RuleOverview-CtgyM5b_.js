@@ -1,0 +1,1 @@
+import{t as e}from"./rule-BUI7T_HB.js";export{e as default};

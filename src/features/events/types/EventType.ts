@@ -2,6 +2,7 @@ export interface Event {
   tag: string;
   title: string;
   type: EventType;
+  image?: boolean;
   desc?: string;
   note?: string;
   tables?: TableType[];

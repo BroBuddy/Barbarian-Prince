@@ -7,6 +7,7 @@ import { useHistory } from "@/hooks/useHistory";
 import { useEffect } from "react";
 import { parseLinks } from "@/lib/Helper";
 import Badge from "@/components/Badge";
+import { ParagraphImage } from "@/components/ParagraphImage";
 
 function EventDetail() {
   const { tag } = useParams();
@@ -22,7 +23,12 @@ function EventDetail() {
   return (
     <Card title={event.title} tag={event.tag}>
       {event.type && <Badge text={event.type} icon={event.type} />}
-      <p>{parseLinks(event.desc as string)}</p>
+
+      <div style={{ overflow: "hidden" }}>
+        {event.image && <ParagraphImage tag={event.tag} title={event.title} />}
+
+        <p>{parseLinks(event.desc as string)}</p>
+      </div>
 
       {event.tables?.map((table, index) => (
         <TableRenderer key={index} table={table} />

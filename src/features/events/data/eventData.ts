@@ -5,6 +5,7 @@ export const eventData: Event[] = [
     tag: "e001",
     title: "The Adventure Begins",
     type: "story",
+    image: true,
     desc: "Evil events have overtaken your Northlands Kingdom. Your father, King Hendryc Arath, is dead – assassinated by rivals to the throne. These usurpers now hold the palace with their mercenary royal guard. You have escaped and must collect 500 gold pieces to raise a force to smash them and retake your heritage. Furthermore, the usurpers have powerful friends overseas. If you can't return to take them out in ten weeks, their allies will arm, and you will lose your kingdom forever. Now consult r202 to determine your starting attributes (r201) as the Barbarian Prince, and then return to this event and read on: To escape the mercenary royal guard, your loyal body servant Ogab smuggled you into a merchant caravan to the southern border. Roll 1d6 to see where the caravan takes you, while poor Ogab faces the wrath of the royal guards back home.",
     note: "If you finish daily actions on any hex north of the Tragoth River, the mercenary royal guardsmen may find you. After any normal events are concluded, but before you take your evening meal (see r215), you must roll 1d6: on a 4 or more (3 or more if you are in Ogon or Weshor) go to e002.",
     tables: [
@@ -27,6 +28,7 @@ export const eventData: Event[] = [
     tag: "e002",
     title: "Mercenary Royal Guardsmen",
     type: "encounter",
+    image: true,
     desc: "Roll 1d6: on a 1, go to e200. Otherwise, 1d6 mercenary thugs (ev4 cs5 wc4), dressed by the Northern usurpers as their royal guardsmen, are riding swiftly toward you on horseback! Your options are:",
     note: "* If your entire party has mounts, add one (+1) to the roll. If your party has winged mounts and/or flying ability, you can use escape flying (r313) instead of rolling for the evade option. You can abandon un-mounted members of the party.",
     tables: [
@@ -49,6 +51,7 @@ export const eventData: Event[] = [
     tag: "e003",
     title: "Swordsman",
     type: "npc",
+    image: true,
     desc: "You meet a swordsman adventurer (ev6 cs6 wc7). (Roll 1d6: on a 5 or 6, the adventurer is female.) Mounted on a sturdy horse, the adventurer takes an active interest in your party. Your options are:",
     note: "* If the swordswoman joins your party, roll 1d6: on a 6, she becomes your lover (r228). † If your party has winged mounts and/or flying ability, you can use escape flying (r313) instead of rolling for the evade option.",
     tables: [
@@ -71,6 +74,7 @@ export const eventData: Event[] = [
     tag: "e004",
     title: "Mercenary Band",
     type: "encounter",
+    image: true,
     desc: "You observe a small band of mercenaries approaching. Their leader (ev6 cs6 wc50) is mounted on a horse, followed by 1d6 men (ev4 cs5 wc4). If there are 1 or 2 troopers with him, they are mounted, otherwise they are on foot. Your options are:",
     note: "* If your entire party has mounts, add one (+1) to the roll. If your party has winged mounts and/or flying ability, you can use escape flying (r313) instead of rolling to resolve the evade option. You can abandon un-mounted members of the party for this.",
     tables: [
@@ -93,6 +97,7 @@ export const eventData: Event[] = [
     tag: "e005",
     title: "Amazons",
     type: "encounter",
+    image: true,
     desc: "You see a group of 1d6+1 Amazon warriors (ev5 cs6 wc4) approaching, all on foot. They are blood-sisters, and will only ever hire out together, serve together, and if any are abandoned or left behind, all will desert you together. Your options are:",
     note: "* If your party has mounts, you can use escape mounted (r312) instead of rolling to resolve the evade option.",
     tables: [
@@ -115,6 +120,7 @@ export const eventData: Event[] = [
     tag: "e006",
     title: "Dwarf",
     type: "npc",
+    image: true,
     desc: "You encounter a dwarf warrior (ev7 cs6 wc21). First, roll 1d6 to see if he is alone or accompanied by friends, then choose an interact option.",
     note: "* If the dwarf is alone, add one (+1) to the die roll. † If your party has mounts, you can use escape mounted (r312) instead of rolling to resolve the evade option. ‡ If the dwarf(s) join your party as a result of this conversation, they will reveal the location of ancient dwarf mines 1d6 hexes away (see r204g to determine a random direction). If you go there, then after any normal travel events, roll 1d6 for what you find: 1: e064; 2–3: e059; 4–5: e067; 6: e028.",
     tables: [
@@ -156,6 +162,7 @@ export const eventData: Event[] = [
     tag: "e007",
     title: "Elf",
     type: "npc",
+    image: true,
     desc: "You encounter an elf (ev5 cs5 wc15) on foot. First, roll 1d6: on a 5 or 6, the elf is female. Then roll 1d6 on the list below to determine additional characteristics. Choose an interact option from the list below and roll. However, due to the greater wisdom of elves, subtract one (−1) from your own wit & wiles for any rolls made in this encounter.",
     note: "* If the event occurs in a forest, add two (+2) to the roll. † If a female elf joins your party, roll 1d6: on a 6, she becomes your lover (r228). ‡ If the party is not in forest, you may use escape mounted (r312) instead of rolling to resolve the evade option.",
     tables: [
@@ -211,6 +218,7 @@ export const eventData: Event[] = [
     tag: "e008",
     title: "Halfling",
     type: "npc",
+    image: true,
     desc: "You encounter a stout halfling (ev6 cs3 wc4). You can attack him, talk with him, or pass by and end the encounter. If you attack him, you strike first in combat (r220), but after each round, if the halfling is still alive, roll 1d6: on a 2 or more, the halfling has escaped into the brush and the combat is over. If you pause to talk with him, you find he's a long-winded fellow like most halflings, and you cannot travel further today. Any other daily actions still undone will remain undone. To resolve the talk, roll 1d6.",
     tables: [
       {
@@ -249,6 +257,7 @@ export const eventData: Event[] = [
     tag: "e009",
     title: "Farm",
     type: "settlement",
+    image: true,
     desc: "You spot a small farm ahead. You may detour around it, but that will consume the rest of the day, ending all travel for today. Alternately, you can go up to it. If you decide to approach the farm, first roll 1d6: under your wit & wiles, you may roll on the table below first, then choose to make a friendly approach or a raid; equal to or over your wit & wiles, you must choose a friendly approach or raid first and then roll on the table below. If you select a raid and remain in this hex at the end of the day, you may be attacked by a vengeful mob tomorrow morning, before you have a chance to select your daily action. At that time, roll 1d6: on a 5 or more, see e017; on a 4 or less, there is no mob or event.",
     tables: [
       {
@@ -273,6 +282,7 @@ export const eventData: Event[] = [
     tag: "e010",
     title: "Starving Farmer",
     type: "settlement",
+    image: true,
     desc: "",
     tables: [
       {
@@ -293,6 +303,7 @@ export const eventData: Event[] = [
     tag: "e011",
     title: "Peaceful Farmer",
     type: "settlement",
+    image: true,
     desc: "",
     tables: [
       {
@@ -333,6 +344,7 @@ export const eventData: Event[] = [
     tag: "e013",
     title: "Rich Peasant Family",
     type: "settlement",
+    image: true,
     desc: "",
     tables: [
       {
@@ -353,6 +365,7 @@ export const eventData: Event[] = [
     tag: "e014",
     title: "Hostile Reaver Clan",
     type: "settlement",
+    image: true,
     desc: "The hostile clan is composed of a leader (ev5 cs5 wc10) and 1d6+2 clan members (ev4 cs4 wc4).",
     tables: [
       {
@@ -393,6 +406,7 @@ export const eventData: Event[] = [
     tag: "e016",
     title: "Magician's Home",
     type: "magic",
+    image: true,
     desc: "",
     note: "If the magician joins your party, in combat he may forfeit his attack for one round to enchant all weapons carried by your party, adding one (+1) to their combat skill. e magic lasts until the end of the combat.",
     tables: [
@@ -426,6 +440,7 @@ export const eventData: Event[] = [
     tag: "e018",
     title: "Priest",
     type: "npc",
+    image: true,
     desc: "You encounter a local priest (ev3 cs3 wc15) leading a donkey by the reins. He seems aloof and not disposed to conversation, but he might be afraid of you. You can let him pass, ending this encounter, or select one of two options below.",
     tables: [
       {
@@ -467,6 +482,7 @@ export const eventData: Event[] = [
     tag: "e019",
     title: "Hermit Monk",
     type: "npc",
+    image: true,
     desc: "You encounter a hermit monk (ev6 cs3) meditating in the wilderness. He seems to be ignoring you. You can select one of the options below.",
     note: "* Unless a priest or monk is with your party, reduce your wit & wiles by one (−1) temporarily when resolving these events, hermit monks listen poorly. † The encounter is not as it first appeared; roll 1d6 and resolve: 1–3: e020; 4–6: e021.",
     tables: [
@@ -489,6 +505,7 @@ export const eventData: Event[] = [
     tag: "e020",
     title: "Travelling Monk",
     type: "npc",
+    image: true,
     desc: "You encounter a travelling monk (ev5 cs4 wc4). Roll 1d6: on a 5 or 6, he's accompanied by a second monk of equal ability. He seems eager to talk. Your options are:",
     tables: [
       {
@@ -510,6 +527,7 @@ export const eventData: Event[] = [
     tag: "e021",
     title: "Warrior Monks",
     type: "encounter",
+    image: true,
     desc: "You encounter a party of grim-looking monks (ev6 cs6 wc10), bearing the armour and weaponry of a powerful military order. Roll 2d6 and take half (½) the total, rounded up, for the number in the group. Roll 1d6 again: on a 4 or more, they are all mounted as well. Your options are:",
     note: "* If your party has mounts, and the warrior monks do not, you may use escape mounted (r312) instead of rolling to resolve the evade option; if your party all have winged mounts and/or flying ability, you can use escape flying (r313).",
     tables: [
@@ -532,6 +550,7 @@ export const eventData: Event[] = [
     tag: "e022",
     title: "Druid",
     type: "npc",
+    image: true,
     desc: "You encounter a druid (ev4 cs4 wc10) – a nature priest usually found in a forest. Roll 1d6: on a 6, the druid is female. The druid will ignore you and the encounter ends unless you wish to approach and select an option below. If the druid joins your party, roll 1d6 to see if he or she is carrying any useful healing remedies: 1: none; 2–4: 1d3 healing herbs; 5: e180; 6: e181.",
     note: "* If you roll a r335 or r340 on any of the talk tables, see r338 instead.",
     tables: [
@@ -574,6 +593,7 @@ export const eventData: Event[] = [
     tag: "e023",
     title: "Wizard",
     type: "npc",
+    image: true,
     desc: "You meet a wizard (ev4 cs4 wc60), joined by a henchman (ev4 cs5 wc4). Roll 1d6: on a 3 or more, they are mounted on horses. The wizard seems old, but still active and perhaps quite powerful. If the wizard joins your party, during the evening meal he confides in you that he knows the location of a valuable treasure. According to his information, it is 1d6 hexes away in a random direction (r204g). Once there, consult e026 for how to find the treasure.",
     tables: [
       {
@@ -612,6 +632,7 @@ export const eventData: Event[] = [
     tag: "e025",
     title: "Wizard's Apprentice",
     type: "npc",
+    image: true,
     desc: "You meet the wizard's young apprentice (ev4 cs3), who is eager to leave the confines of the tower. He will join your party if you let him, and he has brought a magical item to help – roll on Line B of the Treasure Table (r226). He might also know of clues to a nearby treasure, but is not all that clear on the details; see e026 and subtract one (−1) from the roll. The apprentice is still practicing his magical studies; at the start of an event, roll 1d6: on a 5 or 6, the apprentice recalls his studies and can serve as a wizard (see e023) for the duration of the event. If you let the apprentice join your party, you must escape the wizard's tower (r218a) and then roll 1d6: if you roll over your wit & wiles, the wizard sends out fireballs (e023a) after you in anger. You can never return to the tower.",
   },
   {
@@ -630,6 +651,7 @@ export const eventData: Event[] = [
     tag: "e028",
     title: "Cave Tombs",
     type: "location",
+    image: true,
     desc: "Amid the howling winds on a craggy cliff, you find caves, and within the caves, the tombs of an ancient race. You can decide to avoid them, ending this event, or you can continue inward and investigate the tombs. If you continue inward, roll 1d6 (if you have a dwarf with you, roll twice and choose either result): 1: e030; 2: e031; 3: e032; 4: e033; 5: e034; 6: e029.",
   },
   {
@@ -654,6 +676,7 @@ export const eventData: Event[] = [
     tag: "e032",
     title: "Ghosts",
     type: "combat",
+    image: true,
     desc: "A group of 1d6+1 ghosts (ev2 cs4)* surprise you in combat (r220). They are guarding an ancient altar. If you kill all the ghosts, you can investigate the altar, if you wish. If you do, roll 1d6: 1: e037; 2: e039; 3: e041; 4: e042; 5: e044; 6: nothing.",
     note: "* If there is a priest in your party, the ghosts have cs3.",
   },
@@ -668,6 +691,7 @@ export const eventData: Event[] = [
     tag: "e034",
     title: "Spectre of the Inner Tomb",
     type: "combat",
+    image: true,
     desc: "Looking around the atrium of an old tomb, you notice a hidden passage to the interior. You pass within, but it is a long hall, taking the rest of the day to explore. You sense the presence of a restless spectre. You can either retreat now or continue. If you retreat, the event ends. If you continue, then at the end of the day, before the evening meal, you finally reach the inner tomb to find…",
     tables: [
       { type: "simple-list", label: "", rows: [["e034a", "The Spectre"]] },
@@ -684,6 +708,7 @@ export const eventData: Event[] = [
     tag: "e035",
     title: "Spell of Chaos",
     type: "magic",
+    image: true,
     desc: "A guardian spell of chaos is activated as your party passes within. If you have a wizard, magician, or witch with you, roll 1d6: on a 4 or more, they have magical protection that renders the spell harmless; on a 3 or less, or don't have one of these characters with you, then you and your entire party become mindless idiots. They will all wander away, so you lose all followers and possessions except for your own mount, and any wealth and possessions you personally carry. You do not eat an evening meal and begin to suffer the effects of starvation (r216). At the start of tomorrow, roll 1d6−1 for the number of days you remain mindless and wandering: if the result is 0, you have recovered; otherwise, each day, move one hex in a random direction (r204g). You have no travel events while wandering and will not eat. When your mind finally returns, you can begin to recover normal function again at the start of the next day.",
   },
   {
@@ -720,6 +745,7 @@ export const eventData: Event[] = [
     tag: "e041",
     title: "Vision Gem",
     type: "magic",
+    image: true,
     desc: "You find a large, fixed stone with multiple facets. You gaze into it without thinking and find you can see elsewhere. Roll 1d6 for what it is you discover: 1: e143; 2: e144; 3: e145; 4: e146; 5: e147; 6: e176.",
   },
   {
@@ -732,6 +758,7 @@ export const eventData: Event[] = [
     tag: "e043",
     title: "Small Altar",
     type: "magic",
+    image: true,
     desc: "You find a modest, stone altar with an arcane symbol carved onto it, and an artifact resting on the altar top. Roll 1d6 to determine what item has been placed there: 1: e186; 2: e189; 3: e191; 4: e192; 5: e193; 6: e194. There appears to be a spell of protection shimmering around the altar. If your party includes a magician, witch, or wizard, then they recognize the symbol, and can determine the nature of the protective magic – roll 1d6 on the list below and then decide if you want to approach the altar. If your party does not include a magician, witch, or wizard, then to retrieve the item, you must approach the altar before rolling for the effect on the list below. You can also choose not to risk it, turn back, and end the event.",
     tables: [
       {
@@ -763,6 +790,7 @@ export const eventData: Event[] = [
     tag: "e044",
     title: "High Altar",
     type: "magic",
+    image: true,
     desc: "You find a high altar of godly power. If any character in your party is a priest or monk, he will know the invocations to use at this altar. You can ask him to perform the rites and roll 1d6 to see what happens. If you do not ask him, or your party lacks such a follower, the event ends.",
     tables: [
       {
@@ -799,6 +827,7 @@ export const eventData: Event[] = [
     tag: "e045",
     title: "Arch of Travel",
     type: "magic",
+    image: true,
     desc: "You find a metal-banded archway inscribed with runes. If any character in your party is a magician, witch, or wizard, the runes can be read and the arch used, if you wish. Otherwise, the event ends. If you can use the arch, you can travel through it instead of making a normal daily travel action. Travelling through the arch allows you to make a magical transfer to any other hex on the map that you wish. However, you travel forward in time as well, as 1d6 days pass when you use the arch; advance the time track by that many days and continue play by rolling for a possible travel event in the new hex (r204). You cannot get lost by travelling through the arch. As long as your party continues to have a magician, witch, or wizard, you can return to this hex and use the arch again and again. However, arch travel is one way only, from the arch to another hex, and never the other way around!",
   },
   {
@@ -811,6 +840,7 @@ export const eventData: Event[] = [
     tag: "e047",
     title: "Mirror of Reversal",
     type: "combat",
+    image: true,
     desc: "You see an old mirror, and looking into it, discover yourself twisted into an evil shape. This thing leaps from the mirror and attacks you, getting the first strike in combat (r220). It has the same combat skill and endurance as yourself and has the same possessions and gold. If you have any followers, you can call for their aid in the battle, but for each strike a follower makes on the mirror-thing, roll 1d6: on a 5 or 6, the follower strikes you by accident (mistaking you for your double). If you kill the creature, the battle ends, and you permanently add one (+1) to your wit & wiles by gaining a fuller understanding of yourself in this contest. In addition, you double your possessions and wealth, naturally, by gaining all that the mirror-thing possessed.",
   },
   {
@@ -856,12 +886,14 @@ export const eventData: Event[] = [
     tag: "e049",
     title: "Travelling Minstrel",
     type: "npc",
+    image: true,
     desc: "You meet a minstrel (ev3 cs2 wc4). You can ignore him and end this event or invite him to dinner (r215). In the latter case, you must give him 1 food unit or he deserts; if fed, he'll sing a tale that night that prevents anyone in your party from deserting, no matter what events happened today, and even if your followers are not properly fed or lodged (r217). After the meal and music, you may start a conversation, if you wish (r341). If he joins your party, his ability to prevent desertions can be used just once more during the game, on any day you wish.",
   },
   {
     tag: "e050",
     title: "Local Constabulary",
     type: "encounter",
+    image: true,
     desc: 'This event only applies if you are within 3 hexes of a settlement, otherwise there is no event. If the nearest settlement is Ogon (0101) or Weshor (1501), see e002 instead. You encounter 1d6+1 local law enforcement officers (c5 e4 w4). Roll 1d6: on a 5 or 6, they are mounted. If they are on foot instead, add two (+2) to the number of officers encountered. Select your option below and roll the die. Add two (+2) to the roll if you have visited the nearest settlement before and did not leave it by an escape (r218). If you escaped, you are undoubtedly a "wanted" man, so you get no bonus. If you have never visited the nearest settlement before, you can add one (+1) to the roll.',
     note: "* If your party has mounts, and the constabulary does not, you can use escape mounted (r312) instead of rolling to resolve the evade option; if your party all have winged mounts and/or flying ability, you can use escape flying (r313) instead. † You may surrender instead of fighting – move to the nearest settlement and see e060.",
     tables: [

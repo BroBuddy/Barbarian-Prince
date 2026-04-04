@@ -150,17 +150,16 @@ const useGameStore = create<GameState>()(
 
       getTotalCombat: () => {
         const state = get();
-        const aliveFollowersCombat = state.followers
-          .filter((f) => f.endurance > 0)
-          .reduce((sum, f) => sum + f.combat, 0);
+        const aliveFollowersCombat = state.followers.reduce(
+          (sum, f) => sum + f.combat,
+          0,
+        );
 
         return state.resources.Combat + aliveFollowersCombat;
       },
 
       getTotalPayPerDay: () => {
-        return get()
-          .followers.filter((f) => f.endurance > 0)
-          .reduce((sum, f) => sum + f.payPerDay, 0);
+        return get().followers.reduce((sum, f) => sum + f.payPerDay, 0);
       },
 
       // ── Followers ──────────────────────────────────────────────────────
@@ -181,24 +180,22 @@ const useGameStore = create<GameState>()(
 
       updateFollower: (id, data) => {
         set((state) => {
-          const updatedFollowers = state.followers
-            .map((f) => {
-              if (f.id !== id) return f;
-              return {
-                ...f,
-                ...(data.title !== undefined && { title: data.title.trim() }),
-                ...(data.combat !== undefined && {
-                  combat: clamp(data.combat),
-                }),
-                ...(data.endurance !== undefined && {
-                  endurance: clamp(data.endurance),
-                }),
-                ...(data.payPerDay !== undefined && {
-                  payPerDay: clamp(data.payPerDay),
-                }),
-              };
-            })
-            .filter((f) => f.endurance > 0);
+          const updatedFollowers = state.followers.map((f) => {
+            if (f.id !== id) return f;
+            return {
+              ...f,
+              ...(data.title !== undefined && { title: data.title.trim() }),
+              ...(data.combat !== undefined && {
+                combat: clamp(data.combat),
+              }),
+              ...(data.endurance !== undefined && {
+                endurance: clamp(data.endurance),
+              }),
+              ...(data.payPerDay !== undefined && {
+                payPerDay: clamp(data.payPerDay),
+              }),
+            };
+          });
 
           return { followers: updatedFollowers };
         });

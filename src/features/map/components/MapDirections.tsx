@@ -1,3 +1,5 @@
+import styles from "./MapDirections.module.scss";
+
 interface Props {
   canGoUp: boolean;
   canGoDown: boolean;
@@ -37,11 +39,11 @@ const directions = [
   },
 ];
 
-export default function MapDirections(props: Props) {
+function MapDirections(props: Props) {
   return directions.map(({ label, ariaLabel, style, delta, can }) => (
     <div key={ariaLabel} style={{ position: "absolute", ...style }}>
       <button
-        className={`arrow-btn${!can(props) ? " arrow-btn--disabled" : ""}`}
+        className={`${styles.arrowBtn}${!can(props) ? ` ${styles.arrowBtnDisabled}` : ""}`}
         onClick={() => props.onMove(delta[0], delta[1])}
         aria-label={ariaLabel}
       >
@@ -50,3 +52,5 @@ export default function MapDirections(props: Props) {
     </div>
   ));
 }
+
+export default MapDirections;

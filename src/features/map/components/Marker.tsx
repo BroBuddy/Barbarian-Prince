@@ -1,4 +1,4 @@
-import "./Marker.scss";
+import styles from "./Marker.module.scss";
 
 export interface MarkerType {
   x: number;
@@ -8,7 +8,7 @@ export interface MarkerType {
 export default function Marker({ x, y }: MarkerType) {
   return (
     <div
-      className="marker"
+      className={styles.marker}
       style={{
         top: y,
         left: x,

@@ -1,6 +1,6 @@
 import Marker, { type MarkerType } from "./Marker";
 import MapDirections from "./MapDirections";
-import "./MapImage.scss";
+import styles from "./MapImage.module.scss";
 
 interface MapImageProps {
   selectedMap: number;
@@ -54,11 +54,11 @@ export default function MapImage({
 
   return (
     <>
-      <div className="map-container">
+      <div className={styles.mapContainer}>
         <img
           src={`/images/image_part_00${selectedMap}.png`}
           alt={`Map part ${selectedMap}`}
-          className="map-image"
+          className={styles.mapImage}
           onClick={handleMapClick}
         />
 

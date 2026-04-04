@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import TableRenderer from "../components/TableRenderer";
 import { useHistory } from "@/hooks/useHistory";
 import { useEffect } from "react";
-import { parseLinks } from "@/lib/Helper";
+import { parseLinks } from "@/lib/parseLinks";
 import Badge from "@/components/Badge";
 import { ParagraphImage } from "@/components/ParagraphImage";
 

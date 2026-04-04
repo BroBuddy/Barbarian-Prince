@@ -135,7 +135,7 @@ const useGameStore = create<GameState>()(
           endurance: clamp(data.endurance),
           payPerDay: clamp(data.payPerDay),
         };
-        set((state) => ({ followers: [...state.followers, follower] }));
+        set((state) => ({ followers: [follower, ...state.followers] }));
       },
 
       updateFollower: (id, data) => {

@@ -1,7 +1,7 @@
 import Card from "@/components/Card";
 import type { TagItem } from "../pages/Helper";
 import { Link } from "react-router-dom";
-import { getLinkClass } from "@/lib/Helper";
+import { getLinkClass } from "@/lib/formatters";
 
 const frequentlyUsed: TagItem[] = [
   {

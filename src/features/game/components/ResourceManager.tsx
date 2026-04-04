@@ -1,3 +1,4 @@
+import { getDayAndWeek } from "@/lib/formatters";
 import useGameStore from "../store/gameStore";
 
 const resourceIcons: Record<string, string> = {
@@ -9,12 +10,6 @@ const resourceIcons: Record<string, string> = {
   Gold: "💰",
   Day: "☀️",
 };
-
-function getDayAndWeek(day: number) {
-  const week = Math.ceil(day / 7);
-  const dayOfWeek = ((day - 1) % 7) + 1;
-  return { week, dayOfWeek };
-}
 
 const ResourceManager = () => {
   const resources = useGameStore((state) => state.resources);

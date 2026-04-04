@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 import { ruinsData } from "../data/ruinsData";
-import { parseLinks } from "@/lib/Helper";
+import { parseLinks } from "@/lib/parseLinks";
 
 function SearchingRuins() {
   const ruinsTable = ruinsData;

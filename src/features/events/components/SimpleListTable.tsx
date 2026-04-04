@@ -1,4 +1,4 @@
-import { parseLinks } from "@/lib/Helper";
+import { parseLinks } from "@/lib/parseLinks";
 import type { SimpleListTableType } from "../types/EventType";
 
 function SimpleListTable({ table }: { table: SimpleListTableType }) {

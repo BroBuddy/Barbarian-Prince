@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.addBtn {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  color: var(--white);
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+}

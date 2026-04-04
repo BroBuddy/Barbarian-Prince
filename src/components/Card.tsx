@@ -1,5 +1,5 @@
 import { Headline } from "./Headline";
-import "./Card.scss";
+import styles from "./Card.module.scss";
 
 type CardProps = {
   title: string;
@@ -9,7 +9,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ title, tag, children }) => {
   return (
-    <div className="card">
+    <div className={styles.card}>
       <div className="flex items-center bg-grey mb-2 py-1">
         {tag && (
           <span className="text-black text-md ml-2 my-2">

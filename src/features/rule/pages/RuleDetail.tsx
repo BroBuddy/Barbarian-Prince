@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import { useParams } from "react-router-dom";
 import { useHistory } from "@/hooks/useHistory";
 import { useEffect } from "react";
-import { parseLinks } from "@/lib/Helper";
+import { parseLinks } from "@/lib/parseLinks";
 import TableRenderer from "@/features/events/components/TableRenderer";
 import { getRuleDataByTag } from "../services/RuleService";
 import Badge from "@/components/Badge";

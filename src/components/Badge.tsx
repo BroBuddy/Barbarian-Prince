@@ -1,5 +1,4 @@
-import type { RuleType } from "@/features/rule/types/RuleType";
-import { ruleTypeEmoji } from "@/lib/Helper";
+import { getEmojiIcon, type EmojiType } from "@/lib/constants";
 import React from "react";
 
 type BadgeProps = {
@@ -15,7 +14,7 @@ const Badge: React.FC<BadgeProps> = ({ text, icon, variant = "default" }) => {
     <span
       className={`rounded text-md text-bold text-white py-1 px-2 mb-1 mr-1 ${variantStyles}`}
     >
-      {icon && <span className="mr-1">{ruleTypeEmoji[icon as RuleType]}</span>}
+      {icon && <span className="mr-1">{getEmojiIcon[icon as EmojiType]}</span>}
       {text ? text.charAt(0).toUpperCase() + text.slice(1) : ""}
     </span>
   );

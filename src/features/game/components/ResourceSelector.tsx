@@ -1,3 +1,5 @@
+import styles from "./ResourceSelector.module.scss";
+
 type ResourceSelectorProps = {
   max: number;
   value: number;
@@ -19,14 +21,10 @@ const ResourceSelector = ({
         <div
           key={index}
           onClick={() => onChange(index)}
+          className={styles.resourceSelector}
           style={{
-            width: "25px",
-            height: "25px",
-            border: "1px solid #000",
-            textAlign: "center",
             backgroundColor: index <= value ? color : boxColor,
             color: index <= value ? "#fff" : "#000",
-            cursor: "pointer",
           }}
         >
           {index}

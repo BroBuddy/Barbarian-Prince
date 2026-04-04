@@ -1,6 +1,6 @@
 import { Headline } from "@/components/Headline";
 import type { RollTableType } from "../types/EventType";
-import { parseLinks } from "@/lib/Helper";
+import { parseLinks } from "@/lib/parseLinks";
 
 function RollTable({ table }: { table: RollTableType }) {
   return (

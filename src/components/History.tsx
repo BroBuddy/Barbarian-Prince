@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import type { TagItem } from "@/pages/Helper";
-import { getLinkClass, tagToPath } from "@/lib/Helper";
+import { tagToPath, getLinkClass } from "@/lib/formatters";
 
 function History() {
   const history = JSON.parse(localStorage.getItem("barbarian-prince") || "[]");

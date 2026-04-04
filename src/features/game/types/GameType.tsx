@@ -6,6 +6,11 @@ export type Follower = {
   payPerDay: number;
 };
 
+export type FollowerTypes = Record<
+  keyof Omit<Follower, "id" | "title">,
+  string
+>;
+
 export type Enemy = {
   id: string;
   title: string;

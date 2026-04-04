@@ -1,0 +1,13 @@
+.mapContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.mapImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  cursor: pointer;
+}

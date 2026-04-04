@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import "./MobileNav.scss";
+import styles from "./MobileNav.module.scss";
 
 type Links = {
   to: string;
@@ -17,7 +17,7 @@ const MobileNav = () => {
   const location = useLocation();
 
   return (
-    <nav className="mobile-nav">
+    <nav className={styles.mobileNav}>
       {links.map(({ to, label }) => {
         const isActive = location.pathname === to;
 

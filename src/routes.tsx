@@ -2,10 +2,10 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Preloader from "./components/Preloader";
-import GameCharacter from "./features/game/pages/GameCharacter";
-import GameFollower from "./features/game/pages/GameFollower";
 
-const Game = lazy(() => import("./features/game/pages/Game"));
+const Game = lazy(() => import("./features/game/pages/GameOverview"));
+const GameCharacter = lazy(() => import("./features/game/pages/GameCharacter"));
+const GameFollower = lazy(() => import("./features/game/pages/GameFollower"));
 const EventOverview = lazy(
   () => import("./features/events/pages/EventOverview"),
 );

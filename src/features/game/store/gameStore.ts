@@ -82,11 +82,13 @@ const useGameStore = create<GameState>()(
       setResources: (newResources) => {
         set((state) => {
           const updatedResources = { ...state.resources };
+
           Object.entries(newResources).forEach(([key, value]) => {
             if (updatedResources[key] !== undefined) {
               updatedResources[key] = Math.max(0, value);
             }
           });
+
           return { resources: updatedResources };
         });
       },
@@ -94,6 +96,7 @@ const useGameStore = create<GameState>()(
       modifyResources: (modResources) => {
         set((state) => {
           const updatedResources = { ...state.resources };
+
           Object.entries(modResources).forEach(([key, value]) => {
             if (updatedResources[key] !== undefined) {
               const newValue = updatedResources[key] + value;
@@ -103,6 +106,7 @@ const useGameStore = create<GameState>()(
               );
             }
           });
+
           return { resources: updatedResources };
         });
       },
@@ -125,10 +129,6 @@ const useGameStore = create<GameState>()(
             updatedResources.Day = Math.min(nextDayNum, MAX_VALUES.Day);
           }
 
-          console.log(totalPay);
-          console.log(nextDayNum);
-          console.log(updatedResources);
-
           return { resources: updatedResources };
         });
       },
@@ -138,6 +138,7 @@ const useGameStore = create<GameState>()(
         const total = Object.entries(resources)
           .filter(([key]) => !["Day", "Week", "WitAndWiles"].includes(key))
           .reduce((sum, [, value]) => sum + value, 0);
+
         return total === 0;
       },
 
@@ -146,6 +147,7 @@ const useGameStore = create<GameState>()(
         const aliveFollowersCombat = state.followers
           .filter((f) => f.endurance > 0)
           .reduce((sum, f) => sum + f.combat, 0);
+
         return state.resources.Combat + aliveFollowersCombat;
       },
 
@@ -167,6 +169,7 @@ const useGameStore = create<GameState>()(
           endurance: clamp(data.endurance),
           payPerDay: clamp(data.payPerDay),
         };
+
         set((state) => ({ followers: [follower, ...state.followers] }));
       },
 
@@ -174,6 +177,7 @@ const useGameStore = create<GameState>()(
         set((state) => ({
           followers: state.followers.map((f) => {
             if (f.id !== id) return f;
+
             return {
               ...f,
               ...(data.title !== undefined && { title: data.title.trim() }),
@@ -215,6 +219,7 @@ const useGameStore = create<GameState>()(
           endurance: clamp(data.endurance),
           wealthCode: data.wealthCode,
         };
+
         set((state) => ({ enemies: [enemy, ...state.enemies] }));
       },
 
@@ -226,9 +231,11 @@ const useGameStore = create<GameState>()(
           console.warn(`Ungültiger wealthCode: ${data.wealthCode}`);
           return;
         }
+
         set((state) => ({
           enemies: state.enemies.map((e) => {
             if (e.id !== id) return e;
+
             return {
               ...e,
               ...(data.title !== undefined && { title: data.title.trim() }),

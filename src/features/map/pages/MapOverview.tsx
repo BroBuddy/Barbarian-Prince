@@ -2,18 +2,7 @@ import Card from "@/components/Card";
 import { useEffect, useState } from "react";
 import MapImage from "../components/MapImage";
 import type { MarkerType } from "../components/Marker";
-
-const REGION_NAMES: Record<number, string> = {
-  1: "Northwest",
-  2: "North",
-  3: "Northeast",
-  4: "West",
-  5: "Center",
-  6: "East",
-  7: "Southwest",
-  8: "South",
-  9: "Southeast",
-};
+import { REGION_NAMES } from "@/lib/constants";
 
 function MapOverview() {
   const [selectedMap, setSelectedMap] = useState<number>(() => {

@@ -1,0 +1,1 @@
+import{t as e}from"./rule-Mdwssohb.js";export{e as default};

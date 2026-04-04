@@ -9,10 +9,10 @@
   font-size: 22px;
   transition: opacity 0.3s;
   cursor: pointer;
+}
 
-  &--disabled {
-    opacity: 0.3;
-    cursor: default;
-    pointer-events: none;
-  }
+.arrowBtnDisabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
 }

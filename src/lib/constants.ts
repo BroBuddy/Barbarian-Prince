@@ -22,3 +22,15 @@ export const getEmojiIcon: Record<RuleType | EventType, string> = {
   npc: "🧑",
   settlement: "🏘️",
 };
+
+export const REGION_NAMES: Record<number, string> = {
+  1: "Northwest",
+  2: "North",
+  3: "Northeast",
+  4: "West",
+  5: "Center",
+  6: "East",
+  7: "Southwest",
+  8: "South",
+  9: "Southeast",
+};

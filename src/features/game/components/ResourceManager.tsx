@@ -23,7 +23,7 @@ const ResourceManager = () => {
   return (
     <div className="flex flex-row flex-wrap">
       {displayResources.map(([key, value]) => (
-        <div key={key} className="flex flex-row items-center px-1 pb-1 pt-2">
+        <div key={key} className="flex flex-row px-1 pb-1 pt-2">
           <span>{resourceIcons[key] || ""}</span>
           <span className="text-bold ml-1">
             {key === "Day"

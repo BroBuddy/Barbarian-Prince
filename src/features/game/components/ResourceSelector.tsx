@@ -23,6 +23,7 @@ const ResourceSelector = ({
             width: "25px",
             height: "25px",
             border: "1px solid #000",
+            textAlign: "center",
             backgroundColor: index <= value ? color : boxColor,
             color: index <= value ? "#fff" : "#000",
             cursor: "pointer",

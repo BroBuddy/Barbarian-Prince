@@ -1,0 +1,1 @@
+import{t as e}from"./rule-CaVGishd.js";export{e as default};

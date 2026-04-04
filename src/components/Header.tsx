@@ -1,5 +1,5 @@
 import ResourceManager from "@/features/game/components/ResourceManager";
-import ResourceModal from "@/features/game/components/ResourceModal";
+import GameModal from "@/features/game/components/GameModal";
 import { useState } from "react";
 
 const Header = () => {
@@ -22,7 +22,7 @@ const Header = () => {
         </div>
       </div>
 
-      <ResourceModal isOpen={isOpen} toggleModal={toggleModal} />
+      <GameModal isOpen={isOpen} toggleModal={toggleModal} />
     </header>
   );
 };

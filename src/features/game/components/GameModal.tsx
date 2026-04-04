@@ -1,6 +1,8 @@
+import Tabs, { type TabItem } from "@/components/Tabs";
 import ResourceEditor from "./ResourceEditor";
+import FollowerList from "./FollowerList";
 
-const ResourceModal = ({
+const GameModal = ({
   isOpen,
   toggleModal,
 }: {
@@ -17,6 +19,17 @@ const ResourceModal = ({
     e.stopPropagation();
   };
 
+  const tabs: TabItem[] = [
+    {
+      label: "Cal Arath",
+      content: <ResourceEditor />,
+    },
+    {
+      label: "Followers",
+      content: <FollowerList />,
+    },
+  ];
+
   return (
     <div
       onClick={handleBackgroundClick}
@@ -27,19 +40,20 @@ const ResourceModal = ({
         left: 0,
         width: "100vw",
         height: "100vh",
+        paddingTop: "30px",
         backgroundColor: "rgba(0,0,0,0.9)",
       }}
-      className="flex justify-center items-center modal fade-in"
+      className="flex justify-center modal fade-in"
     >
       <div
         onClick={handleContentClick}
-        className="flex flex-col text-center p-6"
-        style={{ maxWidth: "600px", width: "90%" }}
+        className="flex flex-col p-6"
+        style={{ maxWidth: "280px", width: "90%" }}
       >
-        <ResourceEditor />
+        <Tabs tabs={tabs} />
       </div>
     </div>
   );
 };
 
-export default ResourceModal;
+export default GameModal;

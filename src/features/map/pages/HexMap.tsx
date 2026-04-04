@@ -70,14 +70,16 @@ function drawHex({ ctx, x, y, size, img, label, rotate }: DrawHexType) {
   ctx.stroke();
 
   if (label) {
+    ctx.save();
     ctx.font = `bold ${size * 0.3}px sans-serif`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 3;
     ctx.strokeText(label, x + size, y + h * 0.78);
     ctx.fillStyle = "white";
     ctx.fillText(label, x + size, y + h * 0.78);
+    ctx.restore();
   }
 }
 

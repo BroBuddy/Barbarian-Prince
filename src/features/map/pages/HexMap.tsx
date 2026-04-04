@@ -16,7 +16,11 @@ const HexCanvas: React.FC = () => {
         WebkitOverflowScrolling: "touch",
       }}
     >
-      <canvas ref={canvasRef} onClick={handleClick} className="pointer" />
+      <canvas
+        ref={canvasRef}
+        onClick={handleClick}
+        className="bg-black pointer"
+      />
     </div>
   );
 };

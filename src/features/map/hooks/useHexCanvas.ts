@@ -1,7 +1,7 @@
 import { useRef, useEffect, useCallback } from "react";
 import { drawHex, loadImage } from "@/lib/mapHelper";
 import useGameStore from "@/features/game/store/gameStore";
-import { hexData } from "../pages/hexData";
+import { hexData } from "../data/hexData";
 
 const HEX_SIZE = 30;
 const HEX_WIDTH = 2 * HEX_SIZE;
@@ -32,6 +32,15 @@ export function useHexCanvas() {
 
   const drawAll = useCallback(
     async (ctx: CanvasRenderingContext2D, position: typeof playerPosition) => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const offscreen = document.createElement("canvas");
+      offscreen.width = canvas.width;
+      offscreen.height = canvas.height;
+      const offCtx = offscreen.getContext("2d");
+      if (!offCtx) return;
+
       for (const [cIdx, col] of hexData.entries()) {
         const xOffset = cIdx * (HEX_WIDTH * 0.75);
         const yOffset = cIdx % 2 !== 0 ? HEX_VERTICAL_SPACING / 2 : 0;
@@ -43,7 +52,7 @@ export function useHexCanvas() {
           try {
             const img = await loadImage(`/images/terrains/${tile.terrain}.png`);
             drawHex({
-              ctx,
+              ctx: offCtx,
               x,
               y,
               size: HEX_SIZE,
@@ -56,16 +65,16 @@ export function useHexCanvas() {
           }
 
           if (position?.col === cIdx && position?.row === rIdx) {
-            ctx.save();
+            offCtx.save();
             try {
               const markerImg = await loadImage("/images/marker.png");
               const cx = x + HEX_SIZE;
               const cy = y + HEX_HEIGHT / 2;
               const radius = HEX_SIZE * 0.6;
-              ctx.beginPath();
-              ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-              ctx.clip();
-              ctx.drawImage(
+              offCtx.beginPath();
+              offCtx.arc(cx, cy, radius, 0, Math.PI * 2);
+              offCtx.clip();
+              offCtx.drawImage(
                 markerImg,
                 cx - radius,
                 cy - radius,
@@ -75,10 +84,13 @@ export function useHexCanvas() {
             } catch {
               console.warn("Marker nicht gefunden");
             }
-            ctx.restore();
+            offCtx.restore();
           }
         }
       }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(offscreen, 0, 0);
     },
     [],
   );

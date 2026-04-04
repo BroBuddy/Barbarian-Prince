@@ -24,4 +24,6 @@ export type RuleType =
   | "movement"
   | "reference"
   | "treasure"
-  | "special";
+  | "special"
+  | "optional"
+  | "quest";

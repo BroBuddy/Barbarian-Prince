@@ -58,8 +58,8 @@ export function drawHex({ ctx, x, y, size, img, label, rotate }: DrawHexType) {
   ctx.lineTo(x + size / 2, y + h);
   ctx.lineTo(x, y + h / 2);
   ctx.closePath();
-  ctx.strokeStyle = "black";
-  ctx.stroke();
+  // ctx.strokeStyle = "black";
+  // ctx.stroke();
 
   if (label) {
     ctx.save();

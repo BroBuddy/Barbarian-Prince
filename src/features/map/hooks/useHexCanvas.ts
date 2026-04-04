@@ -1,7 +1,7 @@
 import { useRef, useEffect, useCallback } from "react";
-import { drawHex, loadImage } from "@/lib/mapHelper";
 import useGameStore from "@/features/game/store/gameStore";
 import { hexData } from "../data/hexData";
+import { loadImage, drawHex } from "../lib/mapHelper";
 
 const HEX_SIZE = 30;
 const HEX_WIDTH = 2 * HEX_SIZE;

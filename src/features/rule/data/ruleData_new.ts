@@ -1447,4 +1447,1075 @@ export const ruleData: Rule[] = [
     type: "action",
     desc: "Deliver a message to the nearest habitation. Receive a horse if you don't have one. Leave tomorrow. Payment: 3 gold per hex (by shortest route). Roll 1D6 on delivery: 1–2 reply needed (same pay); 3–4 gain Letter of Recommendation (e157); 5–6 no further event.",
   },
+
+  // ─── OPTIONAL RULES ───────────────────────────────────────────
+  {
+    tag: "r234",
+    title: "Victory",
+    type: "optional",
+    optional: true,
+    desc: "Standard victory: collect 500 gold and return across the Tragoth River within 70 days. Alternative victories: collect 5 different (Ψ) story events and return north; reach 500 XP and return north; or (fairy tale ending) have a True Love for 4 weeks and 100 gold to settle down.",
+    linkedRules: ["r235", "r237", "r228"],
+  },
+  {
+    tag: "r235",
+    title: "Luck",
+    type: "optional",
+    optional: true,
+    desc: "Start the game with 3 Luck points. Once per day, spend 1 Luck point to re-roll any dice result and use whichever result is more advantageous. Luck can be gained through XP (r237) or (Ψ) events or falling in love (r228).",
+    note: "If using Luck, it is advised to set Wit & Wiles to 3 (or 4 for an easier game) rather than rolling 1D3+2.",
+    linkedRules: ["r237", "r228"],
+  },
+  {
+    tag: "r236",
+    title: "Advantages",
+    type: "optional",
+    optional: true,
+    desc: "Start the game with one advantage from the list below. More can be gained through XP (r237).",
+    linkedRules: ["r237"],
+    tables: [
+      {
+        type: "simple-list",
+        label: "Available Advantages",
+        rows: [
+          [
+            "Agility",
+            "+1 to escape combat roll (r220e) if alone or with one other character.",
+          ],
+          [
+            "Barter",
+            "Pay half gold for bribes (r321–r324, r331–r332) and daily hireling payments (r333, r338–r339).",
+          ],
+          [
+            "Constitution",
+            "At end of a battle, immediately heal 1 wound taken in that battle.",
+          ],
+          [
+            "Hunter",
+            "+1 to Hunt total (r215b). If wounded on a hunt, roll 1D6 — wounds negated on 4+.",
+          ],
+          [
+            "Keen Senses",
+            "+1 to Wit & Wiles when rolling for surprise/ambush (r308–r309). Treat r310 as r309.",
+          ],
+          [
+            "Leader",
+            "+1 to Wit & Wiles when rolling for follower desertion (r216a, r217, r336–r337).",
+          ],
+          [
+            "Old Friend",
+            "One character encountered in a hex ending 01–08 who can join via Talk becomes a loyal ally (r334).",
+          ],
+          [
+            "Persuasion",
+            "+1 to Wit & Wiles when rolling on r314–r315 or r326–r329.",
+          ],
+          [
+            "Ranger",
+            "Specify a terrain type — +1 to Lost rolls (r205) in that terrain.",
+          ],
+          [
+            "Stealth",
+            "+1 to Wit & Wiles when rolling to Hide (r317–r318) or Attempting Thievery (r224).",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r237",
+    title: "Experience Points (XP)",
+    type: "optional",
+    optional: true,
+    desc: "Cal Arath gains XP by: 5XP at end of each week; 5XP first time entering a named Castle or Ruins hex; 5XP for [Site] or (Ψ) events; XP from defeating enemies (total Skill+Endurance of defeated, doubled for magical, divided by surviving party size).",
+    linkedRules: ["r236", "r238", "r239", "r241"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "XP Milestones",
+        cols: ["XP Total", "Reward"],
+        rows: [
+          [
+            "50, 150, 250, 350, 450",
+            "Choose: new Advantage (r236), new Combat Tactic (r239), or gain 2 Luck points (r235).",
+          ],
+          ["100, 400", "+1 to Skill."],
+          ["200", "+1 to Endurance."],
+          ["300", "+1 to Wit & Wiles."],
+          ["500", "Return across the Tragoth River to win the game instantly."],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r238",
+    title: "Increased Danger",
+    type: "optional",
+    optional: true,
+    desc: "If using XP (r237): from the start of Week 6, add +1 to the horizontal number on Travel Tables (r207), making result range 2–7. Characters marked with † become more dangerous — for each 100 XP you have, add +1 to both their Skill and Endurance.",
+    linkedRules: ["r237", "r207"],
+  },
+  {
+    tag: "r239",
+    title: "Combat Tactics",
+    type: "optional",
+    optional: true,
+    desc: "Start with 1 Combat Tactic chosen from r345–r348. Each tactic can only be used once per combat. Additional tactics can be gained through XP (r237) or Training (r240). The number in brackets at the start of a tactic indicates how many tactics you must already have before gaining it.",
+    linkedRules: [
+      "r237",
+      "r240",
+      "r345",
+      "r346",
+      "r347",
+      "r348",
+      "r349",
+      "r350",
+      "r351",
+      "r352",
+      "r353",
+      "r354",
+    ],
+  },
+  {
+    tag: "r240",
+    title: "Combat Training",
+    type: "action",
+    optional: true,
+    desc: "Daily action in a town or castle. Costs 4 gold/day (town) or 5 gold/day (castle). Roll 2D6 each day and add to a running total. If you roll 11 or 12, instead of adding, take 1D6 wounds. Total reaches 30: gain a new Combat Tactic (r239). Total reaches 6× current Skill: raise Skill by +1. Maximum +3 Skill from training.",
+    requiresHex: ["town", "castle", "dwarf-mine", "elf-haven"],
+    note: "Can also train at a Dwarf Mine (with a dwarf in party) or Elf Haven (with an elf in party) for 3 gold/day. If employed at a castle and have a quiet day, training costs nothing on a roll of 5–6.",
+    linkedRules: ["r239"],
+  },
+
+  // ─── QUESTS ───────────────────────────────────────────────────
+  {
+    tag: "r241",
+    title: "Completing a Quest",
+    type: "quest",
+    desc: "Quests are not daily actions and can only be accessed from another section. Roll 1D6 and consult the appropriate table. 'Investigate' quests require a daily action rolling 1D6 + Wit & Wiles until the target number is reached. Rolling a 6 on any Investigate roll ends the trail — quest fails.",
+    subRules: [
+      { tag: "r241a", title: "Quest for a Village" },
+      { tag: "r241b", title: "Quest for a Town" },
+      { tag: "r241c", title: "Quest for a Temple" },
+      { tag: "r241d", title: "Quest for Baron Huldra (hex 1212)" },
+      { tag: "r241e", title: "Quest for Count Drogat (hex 0323)" },
+      { tag: "r241f", title: "Quest for Lady Aeravir (hex 1923)" },
+      { tag: "r241g", title: "Quest for a Dwarf Lord" },
+      { tag: "r241h", title: "Quest for a Wizard" },
+      { tag: "r241i", title: "Quest for a Halfling Village" },
+      { tag: "r241j", title: "Quest for a Hawk Lord" },
+      { tag: "r241k", title: "Quest for a Giant Chieftain" },
+      { tag: "r241l", title: "Quest for the Elf King" },
+      { tag: "r241m", title: "Quest for a Thieves' Guild" },
+      { tag: "r241n", title: "Quest for a Tavern" },
+      { tag: "r241o", title: "Quest for a Merchant" },
+    ],
+  },
+  {
+    tag: "r241a",
+    title: "Quest for a Village",
+    type: "quest",
+    requiresHex: ["village"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Village Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1",
+            "Bandits camped in random adjacent hex threatening the village. Kill them (e051, 1D6+2 bandits) for 25 gold (5XP).",
+          ],
+          [
+            "2",
+            "Wolves killing livestock. Kill them for 30 gold (5XP). Each day roll 1D6: on 1–3 see e075 (r304).",
+          ],
+          [
+            "3",
+            "Deliver a message to the nearest village or town. Earn 3 gold per hex (shortest route).",
+          ],
+          ["4", "Roll 1D6: 1–3 r241n; 4–6 r241o."],
+          [
+            "5",
+            "Collect rare herbs from nearest forest hex for the village healer. Roll 1D6-3 per day (+2 if druid/witch in party). Earn 20 gold for 10 herbs.",
+          ],
+          [
+            "6",
+            "A mysterious beanstalk has appeared. Earn 25 gold to climb and investigate — see e430 (5XP).",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241b",
+    title: "Quest for a Town",
+    type: "quest",
+    requiresHex: ["town"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Town Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1",
+            "Strange lights from the local graveyard. Investigate for 20 gold — see e435 (5XP).",
+          ],
+          [
+            "2",
+            "Escaped prisoner in random adjacent hex. Search like a cache (r214). Return head for 40 gold.",
+          ],
+          [
+            "3",
+            "Deliver a message to the nearest town or castle. Earn 4 gold per hex (shortest route).",
+          ],
+          [
+            "4",
+            "Fetch rare ingredients from nearest temple for the apothecary. Reward: 30 gold + 2 free potions (e175) (5XP).",
+          ],
+          [
+            "5",
+            "Town guard hiring extra men — see r233 Town result 4, +1 to daily roll.",
+          ],
+          [
+            "6",
+            "Investigate theft: Investigate (15) for 50 gold. Each day roll 1D6: on 1–2 see e173. Success: see e173 (+1 in number, r303).",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241c",
+    title: "Quest for a Temple",
+    type: "quest",
+    requiresHex: ["temple"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Temple Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1",
+            "Escort a monk (S4, E5, W4) to the closest mountain hex for a day's meditation and return. Reward: +2 to Making Offerings (r212) (5XP).",
+          ],
+          [
+            "2",
+            "Guard a priest (S3, E3, W25) to the nearest habitation. Earn 30 gold on safe arrival.",
+          ],
+          [
+            "3",
+            "Ancient scriptures missing. Investigate (10) — found with a forgetful monk. Reward: free food and lodging at this temple (5XP).",
+          ],
+          [
+            "4",
+            "Temple guard duty — see r233 Castle result 1–2. On daily roll of 5, face 1D6+1 zombies (S5, E5*, W0) (r308).",
+          ],
+          [
+            "5",
+            "Old priest meditating in the wilderness (random direction, 1D3 hexes). Bring him food (3 units). Return for audience (e155) (5XP).",
+          ],
+          [
+            "6",
+            "Deliver urgent message to the nearest temple. Earn 4 gold per hex (shortest route).",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241d",
+    title: "Quest for Baron Huldra",
+    type: "quest",
+    requiresHex: ["1212"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Baron Huldra Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Hooded figure sighted in castle at night. Each day roll 1D6: 1–2 see e400 (5XP); 3–6 figure doesn't appear. Reward: 25 gold.",
+          ],
+          [
+            "3–4",
+            "Baron injured by giant black bear. Kill it and bring back the pelt from hex 1411 (search like cache r214). See e084. Reward: 50 gold (5XP).",
+          ],
+          [
+            "5–6",
+            "Mysterious knight (S8, E8) besting all in tournament. Defeat him for audience (e152) (10XP). Roll 1D6: 1–2 normal; 3–4 magic sword (e186); 5–6 undead (no wound penalties).",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241e",
+    title: "Quest for Count Drogat",
+    type: "quest",
+    requiresHex: ["0323"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Count Drogat Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Find a stolen clasp from a crypt. Investigate (12) to find the thief. Kill them (10XP). Reward: audience (e161 +2 to roll). Roll 1D6 for thief: 1–2 e170; 3 e023; 4 e172; 5 e128; 6 e020.",
+          ],
+          [
+            "3–4",
+            "Haunted portrait gallery. Restore order (10XP). Reward: Wealth 50 + magical item (e195). Roll 1D6: 1–2 e032; 3–4 e033; 5 e170; 6 e082. Refuse: see e062.",
+          ],
+          [
+            "5–6",
+            "Escaped prisoner in random adjacent hex. Search like a cache (r214). See e171 if successful (5XP). Reward: Wealth 60.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241f",
+    title: "Quest for Lady Aeravir",
+    type: "quest",
+    requiresHex: ["1923"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Lady Aeravir Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Investigate suspected spy noble. Investigate (15) (5XP). Reward: Wealth 60. Roll 1D6: 1–2 e023; 3–4 e170; 5–6 noble is loyal, also gain e151.",
+          ],
+          [
+            "3–4",
+            "Find stolen chalice from chapel. Investigate (12), deal with thief (5XP). Reward: audience (e160 +2 to roll). Roll 1D6 for thief: 1 e101; 2 e173; 3 e172; 4 e021; 5 e443; 6 e073 (hostile).",
+          ],
+          [
+            "5–6",
+            "Fetch rare herbs from Temple of Duffyd (hex 2018) within 10 days. Lady supplies up to 3 horses. Reward: 50 gold + audience (e160).",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241g",
+    title: "Quest for a Dwarf Lord",
+    type: "quest",
+    requiresHex: ["dwarf-mine"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Dwarf Lord Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Frost giant (†S10, E9, W10) blocking a dwarf trade-route in closest mountain hex. Kill it and return with its head (1 load) (10XP). Reward: rare gemstones (e142).",
+          ],
+          [
+            "3–4",
+            "Abandoned dwarf mines rumoured in random direction (roll 1D6 for direction and distance, closest hills or mountains hex). Go there (see e067) and return (10XP). Reward: 40 gold or audience (e059a).",
+          ],
+          [
+            "5–6",
+            "Guard a dwarf blacksmith (S5, E6, W21) to the nearest town and back. Earn 30 gold each way. Dwarf pays food and lodging. He stays 1D6 days.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241h",
+    title: "Quest for a Wizard",
+    type: "quest",
+    requiresHex: ["wizard-tower"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Wizard Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Fetch a creature trophy from the nearest mountain hex (search like a cache r214) (5XP). Reward: Wealth 60. Roll 1D6: 1–2 e098; 3–4 e099; 5–6 e100.",
+          ],
+          [
+            "3–4",
+            "Wizard's dragon is dying — fetch elixir from Temple of Duffyd. Wizard provides magic transport and gold for the purchase. Return with elixir. Reward: Wealth 110 + Dragonscale shield (+2S when defending).",
+          ],
+          [
+            "5–6",
+            "Wizard's apprentice (see e025) locked up in nearest town. Rescue him like robbing a townhouse (r224a) +1 guard (5XP). Reward: Wealth 60.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241i",
+    title: "Quest for a Halfling Village",
+    type: "quest",
+    requiresHex: ["halfling-village"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Halfling Village Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Collect fireworks (2 loads) from a magician (e016, friendly approach) in random direction (1D3 hexes). Deliver within 6 days for a festival (e169) (5XP). Reward: 20 gold.",
+          ],
+          [
+            "3–4",
+            "Strange noises in an adjacent forest (or countryside) hex. Investigate (5XP). Reward: 30 gold. Roll 1D6: 1–2 e198a; 3 e071; 4 e178; 5 e435; 6 e080.",
+          ],
+          [
+            "5–6",
+            "Escort halfling nephew (S3, E5, W7) to an Elf Haven (random direction, closest forest hex) (5XP). Reward: old treasure map (e147).",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241j",
+    title: "Quest for a Hawk Lord",
+    type: "quest",
+    requiresHex: ["cloud-castle"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Hawk Lord Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Harpies destroying eagle nests in random adjacent (or closest) mountain hex. Kill them (e101 +2 to number, fight option) (5XP). Reward: eagles become allies (e116).",
+          ],
+          [
+            "3–4",
+            "Insurrection in the Cloud Castle! Fight alongside the Hawk Lord's troops (see e108, r330) (Wealth 60). Refuse: escape the hex, can never return.",
+          ],
+          [
+            "5–6",
+            "Fetch a roc, griffon or dragon egg from random adjacent (or closest) mountain hex (5XP). See e439. Reward: audience (e117a +1 to roll). Hawk Lord will hatch the egg with magic.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241k",
+    title: "Quest for a Giant Chieftain",
+    type: "quest",
+    requiresHex: ["giant-castle"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Giant Chieftain Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Destroy rock golems (1D3+1, each S8, E8*) in random adjacent hill or mountain hex, led by sorceress Zenobia (†S4, E4, W60 — see e023a). Reward: Wealth 110.",
+          ],
+          [
+            "3–4",
+            "Ancient ruins under the castle can be explored (e064, 5XP). Giant Chieftain buys magical treasure and creature trophies (see r231 result 11).",
+          ],
+          [
+            "5–6",
+            "Chieftain's brother (S9, E8) is under an enchanted sleep. Wake him with a wizard/magician/witch in your party. He joins as an ally (r334). Reward: audience (e118b +1 to roll).",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241l",
+    title: "Quest for the Elf King",
+    type: "quest",
+    requiresHex: ["elf-haven"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Elf King Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "Help an elf mage (S5, E5, W15) explore ancient magic in the closest random forest hex (search like cache r214). See e198 (5XP). Reward: magical item (e195).",
+          ],
+          [
+            "3–4",
+            "Elf vision gem prophecy: dark wizard Castamaris will rule the Northlands. Elf King gives you 50 gold and bids you leave immediately (10XP). Must complete quest within 9 weeks instead of 10. (Ψ)",
+          ],
+          [
+            "5–6",
+            "A wounded unicorn reached the Haven. Kill the beast that injured it in a forest (random direction, 1D3 hexes) (10XP). Reward: audience (e166a +1 to roll). Roll 1D6: 1–2 e171; 3–4 e033; 5–6 e074.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241m",
+    title: "Quest for a Thieves' Guild",
+    type: "quest",
+    requiresHex: ["town"],
+    tables: [
+      {
+        type: "roll-table",
+        label: "Thieves' Guild Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1–2",
+            "An assassin (S7, E5, W50) killed the Guild Head. Investigate (18) and kill the assassin (r330, +2S in surprise round). Become the new Guild Head: gain 3D6 gold/day, but roll 1D6 daily — on a 1, an assassin attacks you (r308).",
+          ],
+          [
+            "3–4",
+            "Rob the nearest temple or castle. See r224b (Wit & Wiles -1, guards +2 in number, roll twice for loot).",
+          ],
+          [
+            "5–6",
+            "Rob an important visitor staying in town as if in their habitation (r224b). Roll 1D6: 1–2 lord of nearest castle (e130); 3 high priest of nearest temple (W100); 4 Dwarf Lord; 5 Wizard; 6 Elf Noble.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241n",
+    title: "Quest for a Tavern",
+    type: "quest",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Tavern Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1",
+            "Rats in the cellar. Each day roll 1D6: on 1–4 see e432 (r303). Reward: 20 gold.",
+          ],
+          [
+            "2",
+            "Tavern targeted by thieves. Each day roll 1D6: on 1–3 see e173 (r302). Reward: 30 gold.",
+          ],
+          [
+            "3",
+            "Deliver a keg of beer (2 loads) to nearest village, town or castle. Given a horse. Earn 4 gold per hex (shortest route).",
+          ],
+          [
+            "4",
+            "Missing adventurer. Roll random direction then search like a cache (r214) to find the body. Reward: 20 gold (5XP).",
+          ],
+          [
+            "5",
+            "Tavern keeper needs a bouncer — see r233 village or town results as appropriate.",
+          ],
+          [
+            "6",
+            "Roll again on the appropriate r241 table for the habitation. If not in a habitation, no quest available.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r241o",
+    title: "Quest for a Merchant",
+    type: "quest",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Merchant Quests (1D6)",
+        cols: ["Roll", "Quest"],
+        rows: [
+          [
+            "1",
+            "Deliver a bolt of fine cloth (3 loads) to nearest town or castle. Given a horse. Earn 5 gold per hex (shortest route).",
+          ],
+          [
+            "2",
+            "Collect animal pelts (5 loads) from the nearest village. Given a horse. Earn 4 gold per hex (shortest route).",
+          ],
+          [
+            "3",
+            "Join a merchant caravan as guards leaving tomorrow toward nearest habitation — see e129.",
+          ],
+          [
+            "4",
+            "New merchant undercutting everyone. Investigate (12) for 30 gold, then 'put him out of business' — see e128 (attack option).",
+          ],
+          [
+            "5",
+            "Merchant targeted by thieves. Each day roll 1D6: on 1–3 see e173 (r302). Reward: 40 gold.",
+          ],
+          ["6", "Roll again on the appropriate r241 table for the habitation."],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r242",
+    title: "Armor",
+    type: "optional",
+    optional: true,
+    desc: "Armor absorbs wounds before Endurance is affected. After any combat where armor absorbed wounds, roll 1D6: 1 destroyed; 2 must be repaired before use again; 3–6 unaffected. Armor counts as loads (r206). Only the Barbarian Prince may purchase armor.",
+    note: "Characters in your party or that you encounter may wear armor, but it is already factored into their Skill and Endurance.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Armor Types",
+        rows: [
+          ["Shield", "Absorbs 1 wound. Costs 5 gold (repair 2 gold). 1 load."],
+          [
+            "Chainmail",
+            "Absorbs 2 wounds. Costs 10 gold (repair 4 gold). 2 loads.",
+          ],
+          [
+            "Plate Armor",
+            "Absorbs 4 wounds. Costs 20 gold (repair 12 gold). 4 loads. Only available at a Castle.",
+          ],
+        ],
+      },
+    ],
+  },
+
+  // ─── ENCOUNTER REFERENCES ─────────────────────────────────────
+  {
+    tag: "r300",
+    title: "Surprise",
+    type: "encounter",
+    desc: "Your party surprises the characters encountered in combat (r220).",
+  },
+  {
+    tag: "r301",
+    title: "Surprise",
+    type: "encounter",
+    desc: "Roll 1D6. If your Wit & Wiles equals or exceeds the die roll, your party surprises the characters encountered. Otherwise you strike first in combat (r220).",
+  },
+  {
+    tag: "r302",
+    title: "Surprise",
+    type: "encounter",
+    desc: "Roll 1D6. If your Wit & Wiles exceeds the die roll, your party surprises the characters encountered. Otherwise you strike first in combat (r220).",
+  },
+  {
+    tag: "r303",
+    title: "Surprise",
+    type: "encounter",
+    desc: "Roll 1D6. If the number of characters in your party is less than the roll, your party surprises the characters encountered. Otherwise you strike first in combat (r220).",
+  },
+  {
+    tag: "r304",
+    title: "Attack",
+    type: "encounter",
+    desc: "Your party strikes first in combat (r220) against the characters.",
+  },
+  {
+    tag: "r305",
+    title: "Attack",
+    type: "encounter",
+    desc: "Roll 1D6. If your Wit & Wiles equals or exceeds the die roll, you strike first in combat (r220). Otherwise, characters encountered strike first.",
+  },
+  {
+    tag: "r306",
+    title: "Attacked",
+    type: "encounter",
+    desc: "Roll 1D6. If your Wit & Wiles exceeds the die roll, you strike first in combat (r220). Otherwise, characters encountered strike first.",
+  },
+  {
+    tag: "r307",
+    title: "Attacked",
+    type: "encounter",
+    desc: "Characters encountered strike first in combat (r220) against your party.",
+  },
+  {
+    tag: "r308",
+    title: "Surprised",
+    type: "encounter",
+    desc: "Roll 1D6. If your Wit & Wiles equals or exceeds the die roll, you sense danger — characters encountered only strike first against you in combat (r220). Otherwise you fail to sense danger and they surprise you (r220d).",
+  },
+  {
+    tag: "r309",
+    title: "Surprised",
+    type: "encounter",
+    desc: "Roll 1D6. If your Wit & Wiles exceeds the die roll, you sense danger — characters encountered only strike first against you in combat (r220). Otherwise you fail to sense danger and they surprise you (r220d).",
+  },
+  {
+    tag: "r310",
+    title: "Surprised",
+    type: "encounter",
+    desc: "Characters encountered surprise your party (r220d) and cause combat (r220).",
+  },
+  {
+    tag: "r311",
+    title: "Escape",
+    type: "encounter",
+    desc: "Your party escapes to an adjacent hex (r218). Roll 1D6 — on a result of 1, you are pursued (r344).",
+  },
+  {
+    tag: "r312",
+    title: "Escape Mounted",
+    type: "encounter",
+    desc: "Ride away if your entire party has mounts — escape to an adjacent hex (r218). Characters without mounts can be abandoned to permit the rest to escape, or the entire party cannot escape (r330). If encountered characters also have mounts, roll 1D6: on 1–2, you are pursued (r344).",
+  },
+  {
+    tag: "r313",
+    title: "Escape Flying",
+    type: "encounter",
+    desc: "Fly away if your entire party can fly — escape to an adjacent hex (r218). Characters who cannot fly can be abandoned, or the entire party cannot escape (r330). If encountered characters can also fly, roll 1D6: on 1–3, you are pursued (r344).",
+  },
+  {
+    tag: "r314",
+    title: "Escape",
+    type: "encounter",
+    desc: "Try to talk your way past them. Roll 1D6 — if your Wit & Wiles equals or exceeds the die roll, your party escapes to an adjacent hex (r218). Otherwise return to the previous event and select another option.",
+  },
+  {
+    tag: "r315",
+    title: "Escape",
+    type: "encounter",
+    desc: "Try to throw them off with a few well-chosen words. Roll 1D6 — if your Wit & Wiles exceeds the die roll, your party escapes to an adjacent hex (r218). Otherwise return to the previous event and select another option.",
+  },
+  {
+    tag: "r316",
+    title: "Hide",
+    type: "encounter",
+    desc: "Your party hides in this hex (r218).",
+  },
+  {
+    tag: "r317",
+    title: "Hide",
+    type: "encounter",
+    desc: "Think quickly and try to hide. Roll 1D6 — if your Wit & Wiles equals or exceeds the roll, your party hides in this hex (r218). Otherwise return to the previous event and select another option.",
+  },
+  {
+    tag: "r318",
+    title: "Hide",
+    type: "encounter",
+    desc: "Try hiding. Roll 1D6 — if your Wit & Wiles exceeds the die roll, your party hides in this hex (r218). Otherwise you didn't think fast enough — return to the previous event and select a new option.",
+  },
+  {
+    tag: "r319",
+    title: "Hide",
+    type: "encounter",
+    desc: "Look for enough cover to hide your party. Roll 1D6 — if the number of characters in your party is equal to or less than the die roll, you can hide (r218). Otherwise return to previous event. You can't abandon characters to hide — they would reveal your hiding place.",
+  },
+  {
+    tag: "r320",
+    title: "Hide",
+    type: "encounter",
+    desc: "Look for cover. Roll 1D6 — if the number of characters in your party is less than the die roll, you can hide (r218). Otherwise return to previous event. You cannot abandon party members to hide — they would reveal your hiding place.",
+  },
+  {
+    tag: "r321",
+    title: "Bribe to Pass",
+    type: "encounter",
+    desc: "If you pay the amount of gold indicated, characters encountered will let you pass and the encounter ends. Otherwise they become hostile — see r330 and add +1 to your dice roll.",
+  },
+  {
+    tag: "r322",
+    title: "Bribe to Pass",
+    type: "encounter",
+    desc: "Characters encountered have a nasty look. If you pay the amount of gold indicated they will pass and the event ends. Otherwise go to r330 and prepare to battle.",
+  },
+  {
+    tag: "r323",
+    title: "Bribe to Pass",
+    type: "encounter",
+    desc: "Characters seem unsavory. If you pay the gold demanded you can pass and the event ends. Otherwise there is risk of ambush — go to r330 with -1 to your dice roll.",
+  },
+  {
+    tag: "r324",
+    title: "Bribe to Pass",
+    type: "encounter",
+    desc: "Characters have weapons drawn, putting you at a disadvantage. Either pay the gold demanded and end this event, or let them attack and strike first in combat (r220).",
+  },
+  {
+    tag: "r325",
+    title: "Pass",
+    type: "encounter",
+    desc: "Characters lose interest in your party — encounter and event ends now.",
+  },
+  {
+    tag: "r326",
+    title: "Pass",
+    type: "encounter",
+    desc: "Try to lull their suspicions. Roll 1D6 — if your Wit & Wiles equals or exceeds the roll, characters let your party pass and the event ends. Otherwise see r330 and add +1 to your dice roll.",
+  },
+  {
+    tag: "r327",
+    title: "Pass",
+    type: "encounter",
+    desc: "Characters look nasty but slow on the uptake — try to talk your way past. Roll 1D6 — if your Wit & Wiles equals or exceeds the roll, they let your party pass and the event ends. Otherwise go to r330.",
+  },
+  {
+    tag: "r328",
+    title: "Pass",
+    type: "encounter",
+    desc: "Characters look rough — try to talk your way out of a fight. Roll 1D6 — if your Wit & Wiles exceeds the roll, they let your party pass and the event ends. Otherwise see r330.",
+  },
+  {
+    tag: "r329",
+    title: "Pass",
+    type: "encounter",
+    desc: "Characters have an unpleasant gleam in their eyes. Roll 1D6 — if your Wit & Wiles exceeds the roll they let your party pass and the event ends. Otherwise go to r330 with -1 from your dice roll.",
+  },
+  {
+    tag: "r330",
+    title: "Battle Reference",
+    type: "encounter",
+    desc: "You are forced to fight. Roll 2D6 and go to the reference.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Battle Reference",
+        cols: ["Roll", "Reference"],
+        rows: [
+          ["2 or less", "r310"],
+          ["3", "r309"],
+          ["4", "r308"],
+          ["5", "r307"],
+          ["6", "r306"],
+          ["7", "r305"],
+          ["8", "r304"],
+          ["9", "r303"],
+          ["10", "r302"],
+          ["11", "r301"],
+          ["12+", "r300"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r331",
+    title: "Bribe to Join",
+    type: "encounter",
+    desc: "Characters are looking for easy money. They will join your party if you pay the gold requested. If you don't pay, roll 1D6: 1–3 characters ignore you; 4 r321; 5 r322; 6 r323. If paid, they stay until you fail to give them an equal share of new gold, or until any party member is abandoned or killed — at which point they immediately desert.",
+  },
+  {
+    tag: "r332",
+    title: "Bribe to Hire",
+    type: "encounter",
+    desc: "Characters will hire as henchmen for 2 gold each day, provided you pay the bonus gold requested now. Daily pay starts tomorrow. If more than one character, hire all or none as a group. If you don't hire them, roll 1D6: 1–2 ignore you; 3 r321; 4 r322; 5 r323; 6 r324.",
+  },
+  {
+    tag: "r333",
+    title: "Hirelings",
+    type: "encounter",
+    desc: "Characters need a job. They will hire on at 2 gold each day, provided you pay today's wages now. They stay as long as paid each evening meal (r215). You can hire some or all. If you don't hire any, roll 1D6: 1–3 r325; 4 they pass on news (nearest habitation event) and leave; 5 r326; 6 r327.",
+  },
+  {
+    tag: "r334",
+    title: "Ally",
+    type: "encounter",
+    desc: "Characters know about your quest and have a personal grudge against the usurpers. They join as loyal followers at no cost beyond food and lodging, will not desert due to starvation (r216b) or lodging (r217), and may even help pay if they can.",
+  },
+  {
+    tag: "r335",
+    title: "Escapee",
+    type: "encounter",
+    desc: "Characters are fleeing someone. They will join your party at no cost (beyond food and lodging) but will disappear whenever you enter any habitation hex.",
+  },
+  {
+    tag: "r336",
+    title: "Plead Comrades",
+    type: "encounter",
+    desc: "Characters seem sympathetic. Roll 1D6 — if your Wit & Wiles equals or exceeds the roll, they join as followers. Otherwise they leave; roll 1D6 and on a 6 they pass on some news (nearest habitation event) before departing.",
+  },
+  {
+    tag: "r337",
+    title: "Plead Comrades",
+    type: "encounter",
+    desc: "Characters look unsavory but willing to talk. Roll 1D6 — if your Wit & Wiles exceeds the roll, they join as followers. Otherwise roll 1D6: 1 r325; 2 r330; 3 r340; 4 r341; 5 r342; 6 they pass on news (nearest habitation event) and depart.",
+  },
+  {
+    tag: "r338",
+    title: "Convince Hirelings",
+    type: "encounter",
+    desc: "Characters look dubiously at you. Roll 1D6 — if your Wit & Wiles equals or exceeds the roll, they join as hirelings. Pay 1 gold/day each if Wit & Wiles exceeded the roll; 2 gold/day if it equaled the roll. Today's pay must be given immediately. Those not hired (or if you fail) will pass by, ending the event.",
+  },
+  {
+    tag: "r339",
+    title: "Convince Hirelings",
+    type: "encounter",
+    desc: "Characters look askance and will pass by unless you stop to talk. If you stop: roll 1D6 — if your Wit & Wiles exceeds the die roll, they join at 2 gold/day with today's gold due now. You can hire some instead of all. If you fail: 1 they pass on news and depart; 2–3 r325; 4–6 r330.",
+  },
+  {
+    tag: "r340",
+    title: "Looter",
+    type: "encounter",
+    desc: "Characters look like they need money. Let them pass (encounter ends; roll 1D6 on a 6 you gain news from nearest habitation) or try to convince them to join. If you try: roll 1D6 — if Wit & Wiles equals or exceeds the roll, they join as long as they get an equal share of new gold. If you deny their share or fail to convince them: 1–2 they attack you personally (r220, first strike); 3–4 they attack your party (r330); 5–6 they depart angry.",
+  },
+  {
+    tag: "r341",
+    title: "Conversation",
+    type: "encounter",
+    desc: "Extended talking — you cannot travel further today and unfinished daily actions cannot be completed. Roll 2D6 for the result.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "Conversation Results",
+        cols: ["Roll", "Result"],
+        rows: [
+          [
+            "2",
+            "A hired assassin surprises you (r310) in combat (r220) and always strikes at you personally.",
+          ],
+          ["3", "Bandits who may surprise you — see r308."],
+          [
+            "4",
+            "Arrogant and surly — conversation turns into an argument, see r305.",
+          ],
+          [
+            "5",
+            "Characters need 10 gold now (r331) but will leave when you next enter a named habitation.",
+          ],
+          ["6", "Characters ask for 5 gold now and employment — see r332."],
+          ["7", "Characters willing to hire as henchmen — see r333."],
+          ["8", "Characters looking for fun and profit — see r338."],
+          ["9", "Characters fugitive from local justice — see r335."],
+          [
+            "10",
+            "Characters down on luck, looking for a turn in fortunes — see r336.",
+          ],
+          ["11", "Characters obviously plundering mercenaries — see r340."],
+          ["12", "Characters discover a common cause with you — see r334."],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r342",
+    title: "General Inquiry",
+    type: "encounter",
+    desc: "You are unsure of attitudes and make some general inquiries. Roll 2D6.",
+    tables: [
+      {
+        type: "roll-table",
+        label: "General Inquiry Results",
+        cols: ["Roll", "Result"],
+        rows: [
+          ["2", "You unwittingly give insult — see r309."],
+          ["3", "You are unwillingly forced into combat — see r330."],
+          ["4", "Characters interested in loot — see r340."],
+          ["5", "Characters attempt attack on you — see r306."],
+          [
+            "6",
+            "Characters uninterested — roll 1D6, on a 6 they pass on news (nearest habitation event) before departing.",
+          ],
+          [
+            "7",
+            "Characters reveal themselves gradually — you can talk further (r341) or let them pass (r325).",
+          ],
+          ["8", "Characters are for hire — see r333."],
+          ["9", "Characters may be for hire — see r339."],
+          ["10", "Characters may be sympathetic to your cause — see r337."],
+          ["11", "Characters uninterested, but may be for hire — see r338."],
+          [
+            "12",
+            "Characters aloof, but might consider joining you — see r336.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r343",
+    title: "Victim Selection",
+    type: "encounter",
+    desc: "One character in your party is the victim of the attack. If alone, you are the target. Otherwise, select characters one by one in any order. For each, roll 1D6 — on a '6' that character is the target. Continue until the target is selected.",
+  },
+  {
+    tag: "r344",
+    title: "Pursued",
+    type: "encounter",
+    desc: "Encountered characters give chase. Roll 2D6 + Wit & Wiles - total characters on both sides. Add +1 in forest, mountains or habitation hex; -1 in swamp, desert or farmland. Result 8+: escaped (r218). Result 7: repeat roll with -1 (pursuers catching up). Result 6 or less: caught, must fight (r306).",
+  },
+
+  // ─── COMBAT TACTICS ───────────────────────────────────────────
+  {
+    tag: "r345",
+    title: "Parry",
+    type: "combat",
+    optional: true,
+    desc: "(0) Add +3 to your Skill when defending in one combat round against a Character with Skill 6 or less.",
+  },
+  {
+    tag: "r346",
+    title: "Quick Thrust",
+    type: "combat",
+    optional: true,
+    desc: "(0) Add +2 to your Skill when attacking in one combat round against a Character with Skill 6 or less.",
+  },
+  {
+    tag: "r347",
+    title: "Block",
+    type: "combat",
+    optional: true,
+    desc: "(0) Ignore up to 2 wounds caused by a single successful strike of an attacking Character with Skill 6 or less.",
+  },
+  {
+    tag: "r348",
+    title: "Swift Strike",
+    type: "combat",
+    optional: true,
+    desc: "(0) Strike twice in one combat round against a Character with Skill 6 or less.",
+  },
+  {
+    tag: "r349",
+    title: "Stamina",
+    type: "combat",
+    optional: true,
+    desc: "(1) Ignore all negative modifiers to your Skill due to wounds for 3 combat rounds; then take 1 wound.",
+  },
+  {
+    tag: "r350",
+    title: "Feint",
+    type: "combat",
+    optional: true,
+    desc: "(2) Add +3 to your Skill when defending in one combat round against all Characters with Skill 7 or less.",
+  },
+  {
+    tag: "r351",
+    title: "Vicious Strike",
+    type: "combat",
+    optional: true,
+    desc: "(2) Add +2 wounds to a single successful strike you make against a Character with a Skill of 7 or less.",
+  },
+  {
+    tag: "r352",
+    title: "Blade Mastery",
+    type: "combat",
+    optional: true,
+    desc: "(3) Add +2 to your Skill for one combat round against all Characters with Skill 8 or less.",
+  },
+  {
+    tag: "r353",
+    title: "Dodge",
+    type: "combat",
+    optional: true,
+    desc: "(3) Ignore all wounds caused by a single successful strike of an attacking Character with Skill 8 or less.",
+  },
+  {
+    tag: "r354",
+    title: "Battle Fury",
+    type: "combat",
+    optional: true,
+    desc: "(4) Add +2 to your Skill when attacking in this combat but take 1 wound at the end of each combat round. Due to your fury you ignore all negative modifiers due to your wounds.",
+  },
 ];

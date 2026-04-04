@@ -7,9 +7,9 @@ const HexCanvas: React.FC = () => {
   return (
     <div
       ref={containerRef}
+      className="bg-black"
       style={{
         width: "100%",
-        backgroundColor: "#000",
         height: "calc(100vh - 50px)",
         overflow: "auto",
         WebkitOverflowScrolling: "touch",
@@ -17,8 +17,15 @@ const HexCanvas: React.FC = () => {
     >
       <canvas
         ref={canvasRef}
+        tabIndex={-1}
         onClick={handleClick}
         className="bg-black pointer"
+        style={{
+          outline: "none",
+          userSelect: "none",
+          WebkitTapHighlightColor: "transparent",
+          WebkitTouchCallout: "none",
+        }}
       />
     </div>
   );

@@ -9,7 +9,7 @@ function GameFollower() {
   return (
     <>
       <button
-        className="text-bold pointer mt-3 mx-1"
+        className="text-bold text-white pointer mt-5 pt-3 mx-1"
         onClick={() => addFollower(defaultFollower)}
       >
         ➕ Follower

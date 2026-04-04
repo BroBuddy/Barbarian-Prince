@@ -29,7 +29,10 @@ const GameCharacter = () => {
 
   return (
     <>
-      <button onClick={nextDay} className="text-bold pointer mt-3 mx-1">
+      <button
+        onClick={nextDay}
+        className="text-bold text-white pointer mt-5 pt-3 mx-1"
+      >
         ☀️ Next Day
       </button>
 

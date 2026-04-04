@@ -9,6 +9,7 @@ const HexCanvas: React.FC = () => {
       ref={containerRef}
       className="bg-black"
       style={{
+        paddingTop: "20px",
         width: "100%",
         height: "calc(100vh - 50px)",
         overflow: "auto",

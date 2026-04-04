@@ -14,7 +14,7 @@ function App() {
     <>
       <Header />
 
-      <div className="pt-15">
+      <div className="pt-10">
         <Outlet />
       </div>
     </>

@@ -103,6 +103,29 @@ const HexCanvas: React.FC = () => {
     drawAll(ctx);
   }, [playerPosition]);
 
+  useEffect(() => {
+    if (playerPosition) {
+      scrollToMarker(playerPosition.col, playerPosition.row);
+    }
+  }, []);
+
+  const scrollToMarker = (col: number, row: number) => {
+    const canvas = canvasRef.current;
+    const container = canvas?.parentElement;
+    if (!canvas || !container) return;
+
+    const xOffset = col * (HEX_WIDTH * 0.75);
+    const yOffset = col % 2 !== 0 ? HEX_VERTICAL_SPACING / 2 : 0;
+    const cx = xOffset + HEX_SIZE;
+    const cy = row * HEX_VERTICAL_SPACING + yOffset + HEX_HEIGHT / 2;
+
+    container.scrollTo({
+      left: cx - container.clientWidth / 2,
+      top: cy - container.clientHeight / 2,
+      behavior: "smooth",
+    });
+  };
+
   const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -121,6 +144,16 @@ const HexCanvas: React.FC = () => {
       row < hexData[col].length
     ) {
       setPlayerPosition(col, row);
+    }
+
+    if (
+      col >= 0 &&
+      col < hexData.length &&
+      row >= 0 &&
+      row < hexData[col].length
+    ) {
+      setPlayerPosition(col, row);
+      scrollToMarker(col, row);
     }
   };
 

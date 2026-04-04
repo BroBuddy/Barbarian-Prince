@@ -16,7 +16,7 @@ const ResourceManager = () => {
   const displayResources = Object.entries(resources);
 
   return (
-    <div className="flex flex-row flex-wrap">
+    <div className="flex flex-row flex-wrap justify-center">
       {displayResources.map(([key, value]) => {
         const displayValue = key === "Combat" ? totalCombat : value;
 

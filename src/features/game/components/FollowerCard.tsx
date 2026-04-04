@@ -19,9 +19,9 @@ function FollowerCard({ follower }: { follower: Follower }) {
   const { updateFollower, removeFollower } = useGameStore();
 
   return (
-    <div className={styles.card}>
+    <div className={styles.followerCard}>
       <button
-        className={styles.removeBtn}
+        className={styles.followerRemove}
         onClick={() => removeFollower(follower.id)}
         title="Entfernen"
       >
@@ -29,15 +29,14 @@ function FollowerCard({ follower }: { follower: Follower }) {
       </button>
 
       <input
-        className={styles.titleInput}
         value={follower.title}
         placeholder="Name"
         onChange={(e) => updateFollower(follower.id, { title: e.target.value })}
       />
 
       {(["combat", "endurance", "payPerDay"] as const).map((field) => (
-        <div key={field} className={styles.statRow}>
-          <span className={styles.statLabel}>{LABELS[field]}</span>
+        <div key={field} className="my-2">
+          <span className="text-bold">{LABELS[field]}</span>
 
           <ResourceSelector
             max={9}

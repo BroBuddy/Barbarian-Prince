@@ -15,10 +15,9 @@
 
 header {
   background-color: var(--light-grey);
-  border-bottom: 4px solid var(--black);
   box-sizing: border-box;
-  cursor: pointer;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -37,6 +36,17 @@ a {
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+input {
+  background: none;
+  border: none;
+  outline: none;
 }
 
 ul,

@@ -2,6 +2,8 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Preloader from "./components/Preloader";
+import CharacterOverview from "./features/game/pages/CharacterOverview";
+import GameFollower from "./features/game/pages/GameFollower";
 
 const Game = lazy(() => import("./features/game/pages/Game"));
 const EventOverview = lazy(
@@ -28,6 +30,8 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Game /> },
+      { path: "/character", element: <CharacterOverview /> },
+      { path: "/follower", element: <GameFollower /> },
       { path: "/rule", element: <RuleOverview /> },
       { path: "/rule/:tag", element: <RuleDetail /> },
       { path: "/event", element: <EventOverview /> },

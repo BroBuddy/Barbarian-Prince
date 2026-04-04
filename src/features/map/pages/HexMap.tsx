@@ -11,7 +11,6 @@ const HexCanvas: React.FC = () => {
         width: "100%",
         backgroundColor: "#000",
         height: "calc(100vh - 50px)",
-        marginTop: "-6px",
         overflow: "auto",
         WebkitOverflowScrolling: "touch",
       }}

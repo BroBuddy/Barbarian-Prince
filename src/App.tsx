@@ -1,6 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useLayoutEffect } from "react";
-import MobileNav from "./components/MobileNav";
 import Header from "./components/Header";
 import "./App.scss";
 
@@ -14,10 +13,10 @@ function App() {
   return (
     <>
       <Header />
-      <div className="mt-10">
+
+      <div className="pt-15">
         <Outlet />
       </div>
-      <MobileNav />
     </>
   );
 }

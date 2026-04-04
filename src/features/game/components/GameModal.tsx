@@ -1,5 +1,5 @@
 import Tabs, { type TabItem } from "@/components/Tabs";
-import ResourceEditor from "./ResourceEditor";
+import CharacterOverview from "../pages/CharacterOverview";
 import FollowerList from "./FollowerList";
 import styles from "./GameModal.module.scss";
 
@@ -23,7 +23,7 @@ const GameModal = ({
   const tabs: TabItem[] = [
     {
       label: "Cal Arath",
-      content: <ResourceEditor />,
+      content: <CharacterOverview />,
     },
     {
       label: "Followers",

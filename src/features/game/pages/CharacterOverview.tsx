@@ -1,6 +1,7 @@
 import useGameStore from "../store/gameStore";
-import NumberStepper from "./NumberStepper";
-import ResourceSelector from "./ResourceSelector";
+import NumberStepper from "../components/NumberStepper";
+import ResourceSelector from "../components/ResourceSelector";
+import Card from "@/components/Card";
 
 type BoxResource = {
   name: string;
@@ -17,7 +18,7 @@ const BOX_RESOURCES: BoxResource[] = [
   { name: "Gold", max: 600 },
 ];
 
-const ResourceEditor = () => {
+const CharacterOverview = () => {
   const resources = useGameStore((state) => state.resources);
   const setResources = useGameStore((state) => state.setResources);
   const nextDay = useGameStore((state) => state.nextDay);
@@ -27,11 +28,11 @@ const ResourceEditor = () => {
   };
 
   return (
-    <div className="flex flex-col mt-3">
+    <Card title="Cal Arath">
       <div className="flex items-center">
         <button
           onClick={nextDay}
-          className="text-white font-bold"
+          className="font-bold"
           style={{
             background: "none",
             border: "none",
@@ -51,7 +52,7 @@ const ResourceEditor = () => {
 
         return (
           <div key={name} className="flex flex-col mb-4">
-            <span className="text-white mb-1">
+            <span className="mb-1">
               {name === "WitAndWiles" ? "Wit & Wiles" : name}
             </span>
 
@@ -72,8 +73,8 @@ const ResourceEditor = () => {
           </div>
         );
       })}
-    </div>
+    </Card>
   );
 };
 
-export default ResourceEditor;
+export default CharacterOverview;

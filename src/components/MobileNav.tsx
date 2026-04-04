@@ -3,14 +3,16 @@ import styles from "./MobileNav.module.scss";
 
 type Links = {
   to: string;
-  label: string;
+  icon: string;
 };
 
 const links: Links[] = [
-  { to: "/", label: "Game" },
-  { to: "/rule/r203", label: "Actions" },
-  { to: "/map", label: "Map" },
-  { to: "/helper", label: "Helper" },
+  { to: "/", icon: "📖" },
+  { to: "/rule/r203", icon: "📅" },
+  { to: "/map", icon: "🗺️" },
+  { to: "/character", icon: "🧍" },
+  { to: "/follower", icon: "🧑‍🤝‍🧑" },
+  { to: "/helper", icon: "📜" },
 ];
 
 const MobileNav = () => {
@@ -18,22 +20,24 @@ const MobileNav = () => {
 
   return (
     <nav className={styles.mobileNav}>
-      {links.map(({ to, label }) => {
+      {links.map(({ to, icon }) => {
         const isActive = location.pathname === to;
 
         return (
           <Link
             key={to}
             to={to}
-            aria-label={`Navigate to ${label}`}
             style={{
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
+              opacity: isActive ? 0.4 : 1,
+              pointerEvents: isActive ? "none" : "auto",
+              cursor: isActive ? "default" : "pointer",
             }}
             className={` ${isActive ? "active" : ""}`}
           >
-            <span>{label}</span>
+            <span>{icon}</span>
           </Link>
         );
       })}

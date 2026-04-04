@@ -19,7 +19,6 @@ const TreasureTable = lazy(
 const SearchingRuinsTable = lazy(
   () => import("./features/table/pages/SearchingRuins"),
 );
-const MapOverview = lazy(() => import("./features/map/pages/MapOverview"));
 const HexMap = lazy(() => import("./features/map/pages/HexMap"));
 const RuleOverview = lazy(() => import("./features/rule/pages/RuleOverview"));
 const RuleDetail = lazy(() => import("./features/rule/pages/RuleDetail"));
@@ -37,8 +36,7 @@ const router = createBrowserRouter([
       { path: "/table/treasure", element: <TreasureTable /> },
       { path: "/table/ruins", element: <SearchingRuinsTable /> },
       { path: "/table/:id", element: <TableDetail /> },
-      { path: "/map", element: <MapOverview /> },
-      { path: "/map/hex", element: <HexMap /> },
+      { path: "/map", element: <HexMap /> },
       { path: "/helper", element: <Helper /> },
     ],
   },

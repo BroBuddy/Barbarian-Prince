@@ -7,20 +7,18 @@ function FollowerList() {
   const defaultFollower = { title: "", combat: 0, endurance: 0, payPerDay: 0 };
 
   return (
-    <div className="flex flex-col">
+    <>
       <button
-        className="text-bold pointer my-2"
+        className="text-bold pointer mt-3 mx-1"
         onClick={() => addFollower(defaultFollower)}
       >
         ➕ Follower
       </button>
 
-      <div>
-        {followers.map((follower: Follower) => (
-          <FollowerCard key={follower.id} follower={follower} />
-        ))}
-      </div>
-    </div>
+      {followers.map((follower: Follower) => (
+        <FollowerCard key={follower.id} follower={follower} />
+      ))}
+    </>
   );
 }
 

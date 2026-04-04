@@ -2,6 +2,7 @@ import useGameStore from "../store/gameStore";
 import type { Follower, FollowerTypes } from "../types/GameType";
 import ResourceSelector from "./ResourceSelector";
 import styles from "./FollowerCard.module.scss";
+import Card from "@/components/Card";
 
 const LABELS: FollowerTypes = {
   combat: "Combat",
@@ -19,7 +20,7 @@ function FollowerCard({ follower }: { follower: Follower }) {
   const { updateFollower, removeFollower } = useGameStore();
 
   return (
-    <div className={styles.followerCard}>
+    <Card title={follower.title || "Follower"}>
       <button
         className={styles.followerRemove}
         onClick={() => removeFollower(follower.id)}
@@ -28,25 +29,29 @@ function FollowerCard({ follower }: { follower: Follower }) {
         ❌
       </button>
 
-      <input
-        value={follower.title}
-        placeholder="Name"
-        onChange={(e) => updateFollower(follower.id, { title: e.target.value })}
-      />
+      <div className="mx-5">
+        <input
+          value={follower.title}
+          placeholder="Name"
+          onChange={(e) =>
+            updateFollower(follower.id, { title: e.target.value })
+          }
+        />
 
-      {(["combat", "endurance", "payPerDay"] as const).map((field) => (
-        <div key={field} className="my-2">
-          <span className="text-bold">{LABELS[field]}</span>
+        {(["combat", "endurance", "payPerDay"] as const).map((field) => (
+          <div key={field} className="my-2">
+            <span className="text-bold">{LABELS[field]}</span>
 
-          <ResourceSelector
-            max={9}
-            value={follower[field]}
-            color={STAT_COLORS[field]}
-            onChange={(val) => updateFollower(follower.id, { [field]: val })}
-          />
-        </div>
-      ))}
-    </div>
+            <ResourceSelector
+              max={9}
+              value={follower[field]}
+              color={STAT_COLORS[field]}
+              onChange={(val) => updateFollower(follower.id, { [field]: val })}
+            />
+          </div>
+        ))}
+      </div>
+    </Card>
   );
 }
 

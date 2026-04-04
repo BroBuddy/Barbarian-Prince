@@ -2,7 +2,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Preloader from "./components/Preloader";
-import CharacterOverview from "./features/game/pages/CharacterOverview";
+import GameCharacter from "./features/game/pages/GameCharacter";
 import GameFollower from "./features/game/pages/GameFollower";
 
 const Game = lazy(() => import("./features/game/pages/Game"));
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Game /> },
-      { path: "/character", element: <CharacterOverview /> },
+      { path: "/character", element: <GameCharacter /> },
       { path: "/follower", element: <GameFollower /> },
       { path: "/rule", element: <RuleOverview /> },
       { path: "/rule/:tag", element: <RuleDetail /> },

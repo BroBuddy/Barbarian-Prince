@@ -1,7 +1,7 @@
 import Card from "@/components/Card";
 import { Link } from "react-router-dom";
 
-function Game() {
+function GameOverview() {
   return (
     <>
       <Card title="Barbarian Prince">
@@ -57,4 +57,4 @@ function Game() {
   );
 }
 
-export default Game;
+export default GameOverview;

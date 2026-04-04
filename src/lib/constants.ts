@@ -21,6 +21,8 @@ export const getEmojiIcon: Record<RuleType | EventType, string> = {
   story: "📜",
   npc: "🧑",
   settlement: "🏘️",
+  optional: "✨",
+  quest: "📜",
 };
 
 export const REGION_NAMES: Record<number, string> = {

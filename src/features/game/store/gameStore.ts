@@ -51,6 +51,7 @@ type GameState = {
   setResources: (newResources: Record<string, number>) => void;
   modifyResources: (modResources: Record<string, number>) => void;
   isEmptyStore: () => boolean;
+  getTotalCombat: () => number;
 
   followers: Follower[];
   addFollower: (data: Omit<Follower, "id">) => void;
@@ -123,6 +124,15 @@ const useGameStore = create<GameState>()(
         return total === 0;
       },
 
+      getTotalCombat: () => {
+        const state = get();
+        const aliveFollowersCombat = state.followers
+          .filter((f) => f.endurance > 0)
+          .reduce((sum, f) => sum + f.combat, 0);
+
+        return state.resources.Combat + aliveFollowersCombat;
+      },
+
       // ── Followers ────────────────────────────────────────────────────────
 
       followers: [],
@@ -157,6 +167,10 @@ const useGameStore = create<GameState>()(
             };
           }),
         }));
+
+        if (data.endurance === 0) {
+          get().removeFollower(id);
+        }
       },
 
       removeFollower: (id) => {

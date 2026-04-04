@@ -15,12 +15,12 @@ const BOX_RESOURCES: BoxResource[] = [
   { name: "WitAndWiles", max: 6, color: "#a16207" },
   { name: "Food", max: 100 },
   { name: "Gold", max: 600 },
-  { name: "Day", max: 70 },
 ];
 
 const ResourceEditor = () => {
   const resources = useGameStore((state) => state.resources);
   const setResources = useGameStore((state) => state.setResources);
+  const nextDay = useGameStore((state) => state.nextDay);
 
   const handleSet = (resource: string, value: number) => {
     setResources({ [resource]: value });
@@ -28,6 +28,22 @@ const ResourceEditor = () => {
 
   return (
     <div className="flex flex-col mt-3">
+      <div className="flex items-center">
+        <button
+          onClick={nextDay}
+          className="text-white font-bold"
+          style={{
+            background: "none",
+            border: "none",
+            fontWeight: "bold",
+            marginBottom: "15px",
+            cursor: "pointer",
+          }}
+        >
+          ☀️ Next Day
+        </button>
+      </div>
+
       {BOX_RESOURCES.map(({ name, max, color }) => {
         const value = resources[name];
 

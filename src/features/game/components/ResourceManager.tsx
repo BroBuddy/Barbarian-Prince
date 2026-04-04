@@ -8,7 +8,6 @@ const resourceIcons: Record<string, string> = {
   WitAndWiles: "🧠",
   Food: "🍖",
   Gold: "💰",
-  Day: "☀️",
 };
 
 const ResourceManager = () => {

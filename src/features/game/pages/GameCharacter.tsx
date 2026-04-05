@@ -39,7 +39,7 @@ const GameCharacter = () => {
 
       <Card title="Cal Arath">
         {STAT_RESOURCES.map(({ name, icon, max, color }) => (
-          <div key={name} className="flex flex-row m-2">
+          <div key={name} className="flex flex-row m-1">
             <span className="flex items-center mr-2">{icon}</span>
 
             <div style={{ display: "flex", gap: 1, flexWrap: "wrap" }}>

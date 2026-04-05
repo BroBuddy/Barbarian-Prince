@@ -30,9 +30,9 @@ function FollowerCard({ follower }: { follower: Follower }) {
         <UserMinus />
       </button>
 
-      <div className="flex flex-col items-center mx-1">
+      <div className="flex flex-col">
         {(["combat", "endurance", "payPerDay"] as const).map((field) => (
-          <div key={field} className="flex flex-row m-1">
+          <div key={field} className="flex flex-row mb-1 mx-1">
             <span className="flex items-center mr-2">{STAT_ICONS[field]}</span>
 
             <div style={{ display: "flex", gap: 1, flexWrap: "wrap" }}>

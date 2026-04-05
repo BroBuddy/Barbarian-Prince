@@ -6,47 +6,28 @@ function GameOverview() {
     <>
       <Card title="Barbarian Prince">
         <p>
-          You are the Barbarian Prince, a lone ruler in a harsh world. Each game
-          tells a different story shaped by your choices.
+          You are the Barbarian Prince, a lone ruler cast into a harsh and
+          unforgiving world. Your kingdom is gone, your power broken—but your
+          fate is not yet sealed. Every decision you make shapes your story, and
+          every roll of the dice may lead you closer to glory… or ruin.
         </p>
         <p>
-          <strong>Goal:</strong> Complete your quest within 10 weeks. End a day
-          north of the Tragoth River with 500 gold. How you achieve this is up
-          to you… and the dice.
+          You have ten weeks to prove your worth. By the end of your journey,
+          you must stand north of the Tragoth River with no less than 500 gold
+          in your possession. Whether you achieve this through conquest,
+          cunning, exploration, or sheer luck is entirely up to you—but time is
+          never on your side.
         </p>
-      </Card>
-
-      <Card title="Rules">
         <p>
-          <strong>Core Rules:</strong>
+          Each day, you must choose how to <Link to="/rule/r203">act</Link>. You
+          may <Link to="/rule/r204">travel</Link> across dangerous lands, search
+          for <Link to="/rule/r215">food</Link> to survive, engage in{" "}
+          <Link to="/rule/r220">combat</Link> with those who oppose you, or seek
+          out <Link to="/rule/r225">treasure</Link> to build your wealth. Every
+          action consumes precious time, and every choice carries risk. Neglect
+          your supplies, and you may starve. Seek battle, and you may fall.
+          Chase riches, and you may lose everything.
         </p>
-        <ul className="mx-5">
-          <li>
-            <Link to="/rule/r203">Daily Actions</Link>
-          </li>
-          <li>
-            <Link to="/rule/r204">Travel</Link>
-          </li>
-          <li>
-            <Link to="/rule/r215">Food</Link>
-          </li>
-          <li>
-            <Link to="/rule/r220">Combat</Link>
-          </li>
-          <li>
-            <Link to="/rule/r225">Acquiring Treasure</Link>
-          </li>
-        </ul>
-        <p>
-          <strong>Advanced Rules:</strong>
-        </p>
-        <ul className="mx-5">
-          <li>
-            Read <Link to="/rule/r201">r201</Link> –{" "}
-            <Link to="/rule/r229">r229</Link> before starting, or discover them
-            during play.
-          </li>
-        </ul>
         <p>
           <Link to="/event/e001" className="text-purple">
             Start your adventure

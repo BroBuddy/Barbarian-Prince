@@ -1,5 +1,5 @@
 type TokenButtonProps = {
-  label: number;
+  label: number | string;
   isActive: boolean;
   color: string;
   onClick: () => void;
@@ -9,8 +9,8 @@ const TokenButton = ({ label, isActive, color, onClick }: TokenButtonProps) => (
   <button
     onClick={onClick}
     style={{
-      minWidth: 33,
-      height: 33,
+      minWidth: 31,
+      height: 31,
       padding: "0 5px",
       border: `2px solid ${color}`,
       borderRadius: 4,

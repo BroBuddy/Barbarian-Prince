@@ -35,6 +35,13 @@ header {
   z-index: 999;
 }
 
+select {
+  background: none;
+  border: none;
+  text-align: center;
+  color: var(--dark-grey);
+}
+
 h3 {
   font-size: 16px;
   text-transform: uppercase;

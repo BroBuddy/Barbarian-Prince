@@ -155,7 +155,12 @@ const useGameStore = create<GameState>()(
           0,
         );
 
-        return state.resources.Combat + aliveFollowersCombat;
+        return Math.max(
+          0,
+          state.resources.Combat +
+            aliveFollowersCombat -
+            state.resources.Starvation,
+        );
       },
 
       getTotalPayPerDay: () => {

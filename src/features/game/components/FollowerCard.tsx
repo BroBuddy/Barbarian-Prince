@@ -30,16 +30,8 @@ function FollowerCard({ follower }: { follower: Follower }) {
       </button>
 
       <div className="flex flex-col items-center mx-3">
-        <input
-          value={follower.title}
-          placeholder="Name"
-          onChange={(e) =>
-            updateFollower(follower.id, { title: e.target.value })
-          }
-        />
-
         {(["combat", "endurance", "payPerDay"] as const).map((field) => (
-          <div key={field} className="my-2 text-center">
+          <div key={field} className="mb-3 text-center">
             <span className="text-bold">{LABELS[field]}</span>
 
             <div

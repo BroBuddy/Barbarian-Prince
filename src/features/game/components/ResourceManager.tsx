@@ -13,7 +13,9 @@ const resourceIcons: Record<string, string> = {
 const ResourceManager = () => {
   const resources = useGameStore((state) => state.resources);
   const totalCombat = useGameStore((state) => state.getTotalCombat());
-  const displayResources = Object.entries(resources);
+  const displayResources = Object.entries(resources).filter(
+    ([key]) => key !== "Week",
+  );
 
   return (
     <div className="flex flex-row flex-wrap justify-center">

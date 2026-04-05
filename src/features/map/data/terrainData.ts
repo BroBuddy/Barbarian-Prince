@@ -222,4 +222,13 @@ export const terrainData: TerrainType[] = [
       ["e044", "e044", "e069", "e069", "e128", "e128"],
     ],
   },
+  {
+    tag: "ruins",
+    title: "Ruins",
+    lost: null,
+    event: null,
+    hunt: false,
+    fodder: false,
+    events: [],
+  },
 ];

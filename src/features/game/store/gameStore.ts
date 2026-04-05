@@ -46,6 +46,7 @@ const MAX_VALUES: Record<string, number> = {
 type GameState = {
   playerPosition: { col: number; row: number } | null;
   setPlayerPosition: (col: number, row: number) => void;
+  clearPlayerPosition: () => void;
 
   resources: Record<string, number>;
   setResources: (newResources: Record<string, number>) => void;
@@ -71,6 +72,7 @@ const useGameStore = create<GameState>()(
     (set, get) => ({
       playerPosition: null,
       setPlayerPosition: (col, row) => set({ playerPosition: { col, row } }),
+      clearPlayerPosition: () => set({ playerPosition: null }),
 
       // ── Resources ──────────────────────────────────────────────────────
 

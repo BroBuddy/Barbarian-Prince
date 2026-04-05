@@ -1,18 +1,24 @@
 import { useRef, useEffect, useCallback } from "react";
 import useGameStore from "@/features/game/store/gameStore";
 import { hexData } from "../data/hexData";
-import { loadImage, drawHex } from "../lib/mapHelper";
-
-const HEX_SIZE = 40;
-const HEX_WIDTH = 2 * HEX_SIZE;
-const HEX_HEIGHT = Math.sqrt(3) * HEX_SIZE;
-const HEX_VERTICAL_SPACING = HEX_HEIGHT;
+import { drawHex } from "../lib/drawHex";
+import { loadImage } from "../lib/loadImage";
+import {
+  HEX_WIDTH,
+  HEX_VERTICAL_SPACING,
+  HEX_SIZE,
+  HEX_HEIGHT,
+} from "../lib/hexConstants";
+import { isAdjacent } from "../lib/hexUtils";
 
 export function useHexCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const playerPosition = useGameStore((state) => state.playerPosition);
   const setPlayerPosition = useGameStore((state) => state.setPlayerPosition);
+  const clearPlayerPosition = useGameStore(
+    (state) => state.clearPlayerPosition,
+  );
 
   const scrollToMarker = useCallback((col: number, row: number) => {
     const container = containerRef.current;
@@ -62,6 +68,23 @@ export function useHexCanvas() {
             });
           } catch {
             console.warn(`Bild nicht gefunden: ${tile.terrain}.png`);
+          }
+
+          if (
+            position &&
+            !isAdjacent(position.col, position.row, cIdx, rIdx) &&
+            !(position.col === cIdx && position.row === rIdx)
+          ) {
+            offCtx.beginPath();
+            offCtx.moveTo(x + HEX_SIZE / 2, y);
+            offCtx.lineTo(x + (3 * HEX_SIZE) / 2, y);
+            offCtx.lineTo(x + HEX_WIDTH, y + HEX_HEIGHT / 2);
+            offCtx.lineTo(x + (3 * HEX_SIZE) / 2, y + HEX_HEIGHT);
+            offCtx.lineTo(x + HEX_SIZE / 2, y + HEX_HEIGHT);
+            offCtx.lineTo(x, y + HEX_HEIGHT / 2);
+            offCtx.closePath();
+            offCtx.fillStyle = "rgba(0, 0, 0, 0.95)";
+            offCtx.fill();
           }
 
           if (position?.col === cIdx && position?.row === rIdx) {
@@ -129,7 +152,14 @@ export function useHexCanvas() {
       row >= 0 &&
       row < hexData[col].length
     ) {
-      setPlayerPosition(col, row);
+      if (playerPosition?.col === col && playerPosition?.row === row) {
+        clearPlayerPosition();
+      } else if (
+        !playerPosition ||
+        isAdjacent(playerPosition.col, playerPosition.row, col, row)
+      ) {
+        setPlayerPosition(col, row);
+      }
     }
   };
 

@@ -2,18 +2,21 @@ import useGameStore from "../store/gameStore";
 import Card from "@/components/Card";
 import CharacterInventory from "../components/CharacterInventory";
 import TokenButton from "../components/TokenButton";
+import { Heart, Lightbulb, Sun, Swords, Utensils } from "lucide-react";
+import type { ReactNode } from "react";
 
 type BoxResource = {
   name: string;
+  icon: ReactNode;
   max: number;
   color?: string;
 };
 
 const STAT_RESOURCES: BoxResource[] = [
-  { name: "Combat", max: 9, color: "#b91c1c" },
-  { name: "Endurance", max: 9, color: "#15803d" },
-  { name: "Starvation", max: 9, color: "#1d4ed8" },
-  { name: "WitAndWiles", max: 6, color: "#1d4ed8" },
+  { name: "Combat", icon: <Swords />, max: 9, color: "#b91c1c" },
+  { name: "Endurance", icon: <Heart />, max: 9, color: "#15803d" },
+  { name: "Starvation", icon: <Utensils />, max: 9, color: "#1d4ed8" },
+  { name: "WitAndWiles", icon: <Lightbulb />, max: 6, color: "#1d4ed8" },
 ];
 
 const GameCharacter = () => {
@@ -29,17 +32,15 @@ const GameCharacter = () => {
     <>
       <button
         onClick={nextDay}
-        className="text-bold text-white pointer mt-5 pt-3 mx-1"
+        className="flex items-center text-bold text-white pointer mt-5 pt-3 mx-1"
       >
-        ☀️ Next Day
+        <Sun /> <span className="ml-1">Next Day</span>
       </button>
 
       <Card title="Cal Arath">
-        {STAT_RESOURCES.map(({ name, max, color }) => (
-          <div key={name} className="flex flex-col items-center m-3">
-            <span className="text-bold mb-1">
-              {name === "WitAndWiles" ? "Wit & Wiles" : name}
-            </span>
+        {STAT_RESOURCES.map(({ name, icon, max, color }) => (
+          <div key={name} className="flex flex-row m-2">
+            <span className="flex items-center mr-2">{icon}</span>
 
             <div style={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
               {Array.from({ length: max }, (_, i) => i + 1).map((val) => (

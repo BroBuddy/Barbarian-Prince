@@ -150,10 +150,10 @@ export function useHexCanvas() {
   const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     const rect = canvas.getBoundingClientRect();
     const px = e.clientX - rect.left;
     const py = e.clientY - rect.top;
-
     const col = Math.floor(px / (HEX_WIDTH * 0.75));
     const yOffset = col % 2 !== 0 ? HEX_VERTICAL_SPACING / 2 : 0;
     const row = Math.floor((py - yOffset) / HEX_VERTICAL_SPACING);

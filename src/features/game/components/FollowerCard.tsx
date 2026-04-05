@@ -3,6 +3,7 @@ import type { Follower, FollowerTypes } from "../types/GameType";
 import TokenButton from "./TokenButton";
 import styles from "./FollowerCard.module.scss";
 import Card from "@/components/Card";
+import { Coins, Heart, Swords, UserMinus } from "lucide-react";
 
 const LABELS: FollowerTypes = {
   combat: "Combat",
@@ -16,6 +17,12 @@ const STAT_COLORS = {
   payPerDay: "#a16207",
 } as const;
 
+const STAT_ICONS = {
+  combat: <Swords />,
+  endurance: <Heart />,
+  payPerDay: <Coins />,
+} as const;
+
 function FollowerCard({ follower }: { follower: Follower }) {
   const { updateFollower, removeFollower } = useGameStore();
 
@@ -26,20 +33,15 @@ function FollowerCard({ follower }: { follower: Follower }) {
         onClick={() => removeFollower(follower.id)}
         title="Entfernen"
       >
-        ❌
+        <UserMinus />
       </button>
 
-      <div className="flex flex-col items-center mx-3">
+      <div className="flex flex-col items-center mx-1">
         {(["combat", "endurance", "payPerDay"] as const).map((field) => (
-          <div key={field} className="mb-3 text-center">
-            <span className="text-bold">{LABELS[field]}</span>
+          <div key={field} className="flex flex-row m-1">
+            <span className="flex items-center mr-2">{STAT_ICONS[field]}</span>
 
-            <div
-              className="flex flex-wrap"
-              style={{
-                gap: 1,
-              }}
-            >
+            <div style={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
               {Array.from({ length: 9 }, (_, i) => i + 1).map((val) => (
                 <TokenButton
                   key={val}

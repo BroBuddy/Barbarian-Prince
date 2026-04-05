@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   getTerrainData,
   rollLost,
@@ -9,7 +9,13 @@ import {
 import type { MoveModalType } from "../types/MoveModalType";
 
 export function useMoveModal() {
-  const [state, setState] = useState<MoveModalType | null>(null);
+  const [state, _setState] = useState<MoveModalType | null>(null);
+  const stateRef = useRef<MoveModalType | null>(null);
+
+  function setState(newState: MoveModalType | null) {
+    stateRef.current = newState;
+    _setState(newState);
+  }
 
   function openModal(
     fromTag: string,
@@ -21,8 +27,10 @@ export function useMoveModal() {
     const toTerrain = getTerrainData(toTag);
     if (!fromTerrain || !toTerrain) return;
 
+    const phase = fromTerrain.lost === null ? "event_check" : "lost_check";
+
     setState({
-      phase: "lost_check",
+      phase,
       fromTerrain,
       toTerrain,
       targetCol,
@@ -31,6 +39,7 @@ export function useMoveModal() {
   }
 
   function advancePhase(): { col: number; row: number } | null {
+    const state = stateRef.current;
     if (!state) return null;
 
     if (state.phase === "lost_check") {
@@ -38,6 +47,7 @@ export function useMoveModal() {
         setState({ ...state, phase: "event_check" });
         return null;
       }
+
       const { roll, isLost } = rollLost(state.fromTerrain);
       setState({ ...state, phase: isLost ? "lost" : "event_check", roll });
       return null;
@@ -48,7 +58,9 @@ export function useMoveModal() {
         closeModal();
         return { col: state.targetCol, row: state.targetRow };
       }
+
       const { roll, hasEvent } = rollEvent(state.toTerrain);
+
       if (hasEvent) {
         const die1 = rollD6();
         const die2 = rollD6();
@@ -58,6 +70,7 @@ export function useMoveModal() {
         closeModal();
         return { col: state.targetCol, row: state.targetRow };
       }
+
       return null;
     }
 

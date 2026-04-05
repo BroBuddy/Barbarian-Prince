@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import useGameStore from "../store/gameStore";
 import Card from "@/components/Card";
 import TokenButton from "./TokenButton";
+import { BadgeCent, Beef } from "lucide-react";
 
 export type Token = { label: number };
 
@@ -73,7 +74,7 @@ const CharacterInventory = () => {
     <Card title="Inventory">
       <div className="flex flex-col mx-3">
         <div className="text-center">
-          <span className="text-bold pb-2">💰 Gold</span>
+          <BadgeCent />
 
           <div
             className="flex flex-col mt-2"
@@ -104,7 +105,7 @@ const CharacterInventory = () => {
         </div>
 
         <div className="text-center my-3">
-          <span className="text-bold pb-2">🍖 Food</span>
+          <Beef />
 
           <div
             className="flex flex-col mt-2"

@@ -1,18 +1,27 @@
 import { Link, useLocation } from "react-router-dom";
+import {
+  CalendarDays,
+  Map,
+  ScrollText,
+  UserPlus,
+  ShieldUser,
+  Castle,
+} from "lucide-react";
+import type { ReactNode } from "react";
 import styles from "./MobileNav.module.scss";
 
 type Links = {
   to: string;
-  icon: string;
+  icon: ReactNode;
 };
 
 const links: Links[] = [
-  { to: "/", icon: "📖" },
-  { to: "/rule/r203", icon: "📅" },
-  { to: "/map", icon: "🗺️" },
-  { to: "/character", icon: "🧍" },
-  { to: "/follower", icon: "🧑‍🤝‍🧑" },
-  { to: "/helper", icon: "📜" },
+  { to: "/", icon: <Castle /> },
+  { to: "/rule/r203", icon: <CalendarDays /> },
+  { to: "/map", icon: <Map /> },
+  { to: "/character", icon: <ShieldUser /> },
+  { to: "/follower", icon: <UserPlus /> },
+  { to: "/helper", icon: <ScrollText /> },
 ];
 
 const MobileNav = () => {

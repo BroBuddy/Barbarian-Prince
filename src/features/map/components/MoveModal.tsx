@@ -23,42 +23,22 @@ export function MoveModal({ state, onAdvance, onClose }: MoveModalProps) {
       <div onClick={(e) => e.stopPropagation()}>
         {state.phase === "lost_check" && (
           <Card title={`Leaving ${state.fromTerrain.title}`}>
-            {state.fromTerrain.lost ? (
-              <>
-                <p>
-                  Roll 2d6 – lost on <strong>{state.fromTerrain.lost}+</strong>
-                </p>
+            <p>
+              Roll 2d6 – lost on <strong>{state.fromTerrain.lost}+</strong>
+            </p>
 
-                <button
-                  className="bg-dark-grey rounded pointer text-white p-2 px-5"
-                  onClick={onAdvance}
-                >
-                  <span className="mr-1">🎲</span>
-                  <span>Roll</span>
-                </button>
-              </>
-            ) : (
-              <>
-                <p>Cannot be lost!</p>
-
-                <button
-                  className="bg-dark-grey rounded pointer text-white p-2 px-5"
-                  onClick={onAdvance}
-                >
-                  Next
-                </button>
-              </>
-            )}
+            <button
+              className="bg-dark-grey rounded pointer text-white p-2 px-5"
+              onClick={onAdvance}
+            >
+              <span className="mr-1">🎲</span>
+              <span>Roll</span>
+            </button>
           </Card>
         )}
 
         {state.phase === "lost" && (
           <Card title={`Lost in ${state.fromTerrain.title}`}>
-            <p>
-              <strong>Rolled:</strong>
-              <span className="ml-1">{state.roll}</span>
-            </p>
-
             <p>You stay where you are.</p>
 
             <button
@@ -72,14 +52,6 @@ export function MoveModal({ state, onAdvance, onClose }: MoveModalProps) {
 
         {state.phase === "event_check" && (
           <Card title={`Entering ${state.toTerrain.title}`}>
-            {state.roll && (
-              <p>
-                <strong>Rolled:</strong>
-                <span className="mx-1">{state.roll}</span>
-                <span>– not lost ✓</span>
-              </p>
-            )}
-
             {state.toTerrain.event ? (
               <>
                 <p>

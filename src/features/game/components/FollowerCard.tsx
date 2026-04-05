@@ -1,15 +1,9 @@
 import useGameStore from "../store/gameStore";
-import type { Follower, FollowerTypes } from "../types/GameType";
+import type { Follower } from "../types/GameType";
 import TokenButton from "./TokenButton";
 import styles from "./FollowerCard.module.scss";
 import Card from "@/components/Card";
 import { Coins, Heart, Swords, UserMinus } from "lucide-react";
-
-const LABELS: FollowerTypes = {
-  combat: "Combat",
-  endurance: "Endurance",
-  payPerDay: "Pay / Day",
-};
 
 const STAT_COLORS = {
   combat: "#b91c1c",

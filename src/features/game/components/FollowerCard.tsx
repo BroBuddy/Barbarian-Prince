@@ -1,6 +1,6 @@
 import useGameStore from "../store/gameStore";
 import type { Follower, FollowerTypes } from "../types/GameType";
-import ResourceSelector from "./ResourceSelector";
+import TokenButton from "./TokenButton";
 import styles from "./FollowerCard.module.scss";
 import Card from "@/components/Card";
 
@@ -29,7 +29,7 @@ function FollowerCard({ follower }: { follower: Follower }) {
         ❌
       </button>
 
-      <div className="mx-5">
+      <div className="flex flex-col items-center mx-3">
         <input
           value={follower.title}
           placeholder="Name"
@@ -39,15 +39,29 @@ function FollowerCard({ follower }: { follower: Follower }) {
         />
 
         {(["combat", "endurance", "payPerDay"] as const).map((field) => (
-          <div key={field} className="my-2">
+          <div key={field} className="my-2 text-center">
             <span className="text-bold">{LABELS[field]}</span>
 
-            <ResourceSelector
-              max={9}
-              value={follower[field]}
-              color={STAT_COLORS[field]}
-              onChange={(val) => updateFollower(follower.id, { [field]: val })}
-            />
+            <div
+              className="flex flex-wrap"
+              style={{
+                gap: 1,
+              }}
+            >
+              {Array.from({ length: 9 }, (_, i) => i + 1).map((val) => (
+                <TokenButton
+                  key={val}
+                  label={val}
+                  isActive={follower[field] === val}
+                  color={STAT_COLORS[field]}
+                  onClick={() =>
+                    updateFollower(follower.id, {
+                      [field]: follower[field] === val ? 0 : val,
+                    })
+                  }
+                />
+              ))}
+            </div>
           </div>
         ))}
       </div>

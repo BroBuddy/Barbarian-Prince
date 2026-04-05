@@ -1,8 +1,16 @@
 import React from "react";
 import { useHexCanvas } from "../hooks/useHexCanvas";
+import { MoveModal } from "../components/MoveModal";
 
 const HexCanvas: React.FC = () => {
-  const { canvasRef, containerRef, handleClick } = useHexCanvas();
+  const {
+    canvasRef,
+    containerRef,
+    handleClick,
+    modalState,
+    onAdvance,
+    onClose,
+  } = useHexCanvas();
 
   return (
     <div
@@ -28,6 +36,10 @@ const HexCanvas: React.FC = () => {
           WebkitTouchCallout: "none",
         }}
       />
+
+      {modalState && (
+        <MoveModal state={modalState} onAdvance={onAdvance} onClose={onClose} />
+      )}
     </div>
   );
 };

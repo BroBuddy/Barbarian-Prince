@@ -10,6 +10,7 @@ import {
   HEX_HEIGHT,
 } from "../lib/hexConstants";
 import { isAdjacent } from "../lib/hexUtils";
+import { useMoveModal } from "./useMoveModal";
 
 export function useHexCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -19,6 +20,12 @@ export function useHexCanvas() {
   const clearPlayerPosition = useGameStore(
     (state) => state.clearPlayerPosition,
   );
+  const {
+    state: modalState,
+    openModal,
+    advancePhase,
+    closeModal,
+  } = useMoveModal();
 
   const scrollToMarker = useCallback((col: number, row: number) => {
     const container = containerRef.current;
@@ -56,7 +63,12 @@ export function useHexCanvas() {
           const y = rIdx * HEX_VERTICAL_SPACING + yOffset;
 
           try {
-            const img = await loadImage(`/images/terrains/${tile.terrain}.png`);
+            const imagePath = tile.variant
+              ? `/images/terrains/${tile.terrain}-${tile.variant}.png`
+              : `/images/terrains/${tile.terrain}.png`;
+
+            const img = await loadImage(imagePath);
+
             drawHex({
               ctx: offCtx,
               x,
@@ -158,10 +170,28 @@ export function useHexCanvas() {
         !playerPosition ||
         isAdjacent(playerPosition.col, playerPosition.row, col, row)
       ) {
-        setPlayerPosition(col, row);
+        if (playerPosition) {
+          const fromTile = hexData[playerPosition.col][playerPosition.row];
+          const toTile = hexData[col][row];
+          openModal(fromTile.terrain, toTile.terrain, col, row);
+        } else {
+          setPlayerPosition(col, row);
+        }
       }
     }
   };
 
-  return { canvasRef, containerRef, handleClick };
+  function onAdvance() {
+    const result = advancePhase();
+    if (result) setPlayerPosition(result.col, result.row);
+  }
+
+  return {
+    canvasRef,
+    containerRef,
+    handleClick,
+    modalState,
+    onAdvance,
+    onClose: closeModal,
+  };
 }

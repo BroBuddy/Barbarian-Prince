@@ -14,12 +14,17 @@ type EditionType = {
 const editions: EditionType[] = [
   {
     id: "original" as Edition,
-    label: "Original",
+    label: "Original Edition",
     icon: <BookOpen size={20} />,
   },
   {
     id: "42th" as Edition,
     label: "42nd Edition",
+    icon: <Sparkles size={20} />,
+  },
+  {
+    id: "ultimate" as Edition,
+    label: "Ultimate Edition",
     icon: <Sparkles size={20} />,
   },
 ];
@@ -30,12 +35,12 @@ function GameOverview() {
   return (
     <>
       <Card title="Choose your Edition">
-        <div className="flex gap-3 mx-5 my-3">
+        <div className="flex gap-2 mx-5 my-3">
           {editions.map((e: EditionType) => (
             <button
               key={e.id}
               onClick={() => setEdition(e.id)}
-              className={`flex-1 p-4 pointer text-left transition-colors ${
+              className={`flex-1 p-2 pointer text-left ${
                 edition === e.id ? "text-red" : "text-dark-grey"
               }`}
             >

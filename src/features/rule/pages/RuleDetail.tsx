@@ -4,12 +4,14 @@ import { useHistory } from "@/hooks/useHistory";
 import { useEffect } from "react";
 import { parseLinks } from "@/lib/parseLinks";
 import TableRenderer from "@/features/events/components/TableRenderer";
-import { getRuleDataByTag } from "../services/RuleService";
+import { useRuleService } from "../services/RuleService";
 import Badge from "@/components/Badge";
 
 function RuleDetail() {
   const { tag } = useParams();
+  const { getRuleDataByTag } = useRuleService();
   const rule = getRuleDataByTag(tag as string);
+
   const { addToHistory } = useHistory();
 
   useEffect(() => {

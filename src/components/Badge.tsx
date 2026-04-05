@@ -1,9 +1,9 @@
 import { getEmojiIcon, type EmojiType } from "@/lib/constants";
-import React from "react";
+import React, { type ReactNode } from "react";
 
 type BadgeProps = {
   text: string;
-  icon?: string;
+  icon?: string | ReactNode;
   variant?: "default" | "dark";
 };
 

@@ -3,6 +3,7 @@ import Badge from "@/components/Badge";
 import { useParams } from "react-router-dom";
 import { getTravelDataById } from "../services/TableService";
 import type { Table } from "../types/TableType";
+import { SquareCheck, SquareX } from "lucide-react";
 
 function TableDetail() {
   const { id } = useParams();
@@ -15,8 +16,11 @@ function TableDetail() {
       <div className="flex flex-wrap">
         <Badge icon="🧭" text={travel.lost} />
         <Badge icon="📜" text={travel.event} />
-        <Badge icon={travel.hunt ? "✅" : "❌"} text="Hunt" />
-        <Badge icon={travel.fodder ? "✅" : "❌"} text="Fodder" />
+        <Badge icon={travel.hunt ? <SquareCheck /> : <SquareX />} text="Hunt" />
+        <Badge
+          icon={travel.fodder ? <SquareCheck /> : <SquareX />}
+          text="Fodder"
+        />
       </div>
 
       <table>

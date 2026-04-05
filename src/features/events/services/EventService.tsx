@@ -1,17 +1,17 @@
-import { eventData } from "../data/eventData";
+import { useData } from "@/context/DataContext";
 import type { Event, EventItem } from "../types/EventType";
 
-const getEventData = (): EventItem[] => {
-  if (!eventData) return [];
+export function useEventService() {
+  const { eventData } = useData();
 
-  return eventData.map(({ tag, title }) => ({
-    tag,
-    title,
-  }));
-};
+  const getEventData = (): EventItem[] => {
+    if (!eventData) return [];
+    return eventData.map(({ tag, title }) => ({ tag, title }));
+  };
 
-const getEventDataByTag = (tag: string): Event | undefined => {
-  return eventData.find((item: Event) => item.tag === tag) as Event;
-};
+  const getEventDataByTag = (tag: string): Event | undefined => {
+    return eventData.find((item: Event) => item.tag === tag) as Event;
+  };
 
-export { getEventData, getEventDataByTag };
+  return { getEventData, getEventDataByTag };
+}

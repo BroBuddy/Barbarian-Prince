@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { MoveModalType } from "../types/MoveModalType";
 import Card from "@/components/Card";
+import { Dices } from "lucide-react";
 
 interface MoveModalProps {
   state: MoveModalType;
@@ -28,11 +29,12 @@ export function MoveModal({ state, onAdvance, onClose }: MoveModalProps) {
             </p>
 
             <button
-              className="bg-dark-grey rounded pointer text-white p-2 px-5"
+              className="bg-dark-grey rounded pointer text-white p-1 px-5"
               onClick={onAdvance}
             >
-              <span className="mr-1">🎲</span>
-              <span>Roll</span>
+              <span className="mr-1">
+                <Dices />
+              </span>
             </button>
           </Card>
         )}
@@ -59,11 +61,12 @@ export function MoveModal({ state, onAdvance, onClose }: MoveModalProps) {
                 </p>
 
                 <button
-                  className="bg-dark-grey rounded pointer text-white p-2 px-5"
+                  className="bg-dark-grey rounded pointer text-white p-1 px-5"
                   onClick={onAdvance}
                 >
-                  <span className="mr-1">🎲</span>
-                  <span>Roll</span>
+                  <span className="mr-1">
+                    <Dices />
+                  </span>
                 </button>
               </>
             ) : (

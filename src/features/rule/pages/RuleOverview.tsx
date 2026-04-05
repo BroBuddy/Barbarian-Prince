@@ -1,9 +1,10 @@
 import Card from "@/components/Card";
 import { Link } from "react-router-dom";
 import type { RuleItem } from "../types/RuleType";
-import { getRuleData } from "../services/RuleService";
+import { useRuleService } from "../services/RuleService";
 
 function RuleOverview() {
+  const { getRuleData } = useRuleService();
   const rules: RuleItem[] = getRuleData();
 
   if (!rules) return null;

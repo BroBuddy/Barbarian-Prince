@@ -1,9 +1,10 @@
 import Card from "@/components/Card";
-import { getEventData } from "../services/EventService";
 import type { EventItem } from "../types/EventType";
 import { Link } from "react-router-dom";
+import { useEventService } from "../services/EventService";
 
 function EventOverview() {
+  const { getEventData } = useEventService();
   const events: EventItem[] = getEventData();
 
   if (!events) return null;

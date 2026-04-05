@@ -1,8 +1,9 @@
 import Card from "@/components/Card";
-import { type Edition, useData } from "@/context/DataContext";
 import { Link } from "react-router-dom";
 import { BookOpen, Sparkles } from "lucide-react";
 import type { ReactNode } from "react";
+import type { Edition } from "@/context/ContextType";
+import { useData } from "@/context/useData";
 
 type EditionType = {
   id: Edition;

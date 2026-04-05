@@ -19,7 +19,7 @@ function GameFollower() {
       ))}
 
       <Card title="Add Follower">
-        <div className="flex flex-wrap mx-5 my-3" style={{ gap: 1 }}>
+        <div className="flex flex-wrap mx-5 my-3" style={{ gap: 2 }}>
           {FOLLOWER_DEFINITIONS.map((follower) => (
             <TokenButton
               key={follower.title}

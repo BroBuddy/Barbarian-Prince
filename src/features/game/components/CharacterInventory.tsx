@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import useGameStore from "../store/gameStore";
 import Card from "@/components/Card";
 import TokenButton from "./TokenButton";
@@ -43,23 +43,21 @@ const CharacterInventory = () => {
   const resources = useGameStore((state) => state.resources);
   const setResources = useGameStore((state) => state.setResources);
 
-  const [goldActive, setGoldActive] = useState<RowActive>(() =>
-    valueToRowActive(GOLD_ROWS, resources.Gold),
-  );
-  const [foodActive, setFoodActive] = useState<RowActive>(() =>
-    valueToRowActive(FOOD_ROWS, resources.Food),
+  const goldActive = useMemo(
+    () => valueToRowActive(GOLD_ROWS, resources.Gold),
+    [resources.Gold],
   );
 
-  useEffect(() => {
-    setGoldActive(valueToRowActive(GOLD_ROWS, resources.Gold));
-  }, [resources.Gold]);
+  const foodActive = useMemo(
+    () => valueToRowActive(FOOD_ROWS, resources.Food),
+    [resources.Food],
+  );
 
   const handleGold = (rowIndex: number, value: number) => {
     const next = {
       ...goldActive,
       [rowIndex]: goldActive[rowIndex] === value ? null : value,
     };
-    setGoldActive(next);
     setResources({ Gold: calcTotal(next) });
   };
 
@@ -68,7 +66,6 @@ const CharacterInventory = () => {
       ...foodActive,
       [rowIndex]: foodActive[rowIndex] === value ? null : value,
     };
-    setFoodActive(next);
     setResources({ Food: calcTotal(next) });
   };
 

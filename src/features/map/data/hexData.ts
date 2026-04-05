@@ -1,6 +1,6 @@
 export type HexTile = {
   terrain: string;
-  variant?: 1 | 2 | 3;
+  variant?: 1 | 2 | 3 | 4;
   label?: string;
   rotate?: 0 | 1 | 2 | 3 | 4 | 5;
 };
@@ -154,7 +154,7 @@ const hexData: HexTile[][] = [
     { terrain: "forest" },
     { terrain: "countryside" },
     { terrain: "river", variant: 2, rotate: 1 },
-    { terrain: "river-3" },
+    { terrain: "river", variant: 3 },
     { terrain: "swamp" },
     { terrain: "forest" },
     { terrain: "swamp" },
@@ -296,7 +296,7 @@ const hexData: HexTile[][] = [
     { terrain: "countryside" },
     { terrain: "mountains" },
     { terrain: "road", variant: 2, rotate: 3 },
-    { terrain: "road-3" },
+    { terrain: "road", variant: 3 },
     { terrain: "mountains" },
     { terrain: "countryside" },
     { terrain: "countryside" },
@@ -329,7 +329,7 @@ const hexData: HexTile[][] = [
     { terrain: "mountains" },
     { terrain: "hills" },
     { terrain: "countryside" },
-    { terrain: "river-3", rotate: 1 },
+    { terrain: "river", variant: 3, rotate: 1 },
     { terrain: "river", variant: 2 },
     { terrain: "forest" },
     { terrain: "countryside" },
@@ -356,7 +356,7 @@ const hexData: HexTile[][] = [
     { terrain: "farmland" },
     { terrain: "road", variant: 2, rotate: 1 },
     { terrain: "road" },
-    { terrain: "river-4", rotate: 1 },
+    { terrain: "river", variant: 4, rotate: 1 },
     { terrain: "road", variant: 2 },
     { terrain: "river", rotate: 5 },
     { terrain: "countryside" },
@@ -393,7 +393,7 @@ const hexData: HexTile[][] = [
   ],
   [
     { terrain: "town", label: "Weshor" },
-    { terrain: "river-3", rotate: 1 },
+    { terrain: "river", variant: 3, rotate: 1 },
     { terrain: "river", variant: 2, rotate: 4 },
     { terrain: "swamp" },
     { terrain: "forest" },

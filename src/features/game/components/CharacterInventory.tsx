@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useGameStore from "../store/gameStore";
 import Card from "@/components/Card";
-import TokenGrid from "./TokenGrid";
+import TokenButton from "./TokenButton";
 
 export type Token = { label: number };
 
@@ -16,60 +16,54 @@ const FOOD_ROWS: Token[][] = [
   [1, 2, 3, 4, 5, 6, 7, 8, 9].map((v) => ({ label: v })),
 ];
 
-const allTokens = (rows: Token[][]): number[] =>
-  rows.flat().map((t) => t.label);
+type RowActive = Record<number, number | null>;
 
-const valueToActive = (
-  rows: Token[][],
-  total: number,
-): Record<number, boolean> => {
-  const active: Record<number, boolean> = {};
+const valueToRowActive = (rows: Token[][], total: number): RowActive => {
+  const active: RowActive = {};
   let remaining = total;
 
-  for (const token of allTokens(rows).sort((a, b) => b - a)) {
-    if (token <= remaining) {
-      active[token] = true;
-      remaining -= token;
+  rows.forEach((row, ri) => {
+    const sorted = [...row.map((t) => t.label)].sort((a, b) => b - a);
+    const match = sorted.find((v) => v <= remaining);
+    if (match !== undefined) {
+      active[ri] = match;
+      remaining -= match;
     } else {
-      active[token] = false;
+      active[ri] = null;
     }
-  }
+  });
 
   return active;
 };
 
-const calcTotal = (active: Record<number, boolean>): number =>
-  Object.entries(active)
-    .filter(([, on]) => on)
-    .reduce((sum, [val]) => sum + Number(val), 0);
+const calcTotal = (active: RowActive): number =>
+  Object.values(active).reduce<number>((sum, v) => sum + (v ?? 0), 0);
 
 const CharacterInventory = () => {
   const resources = useGameStore((state) => state.resources);
   const setResources = useGameStore((state) => state.setResources);
 
-  const [goldActive, setGoldActive] = useState<Record<number, boolean>>(() =>
-    valueToActive(GOLD_ROWS, resources.Gold),
+  const [goldActive, setGoldActive] = useState<RowActive>(() =>
+    valueToRowActive(GOLD_ROWS, resources.Gold),
   );
-  const [foodActive, setFoodActive] = useState<Record<number, boolean>>(() =>
-    valueToActive(FOOD_ROWS, resources.Food),
+  const [foodActive, setFoodActive] = useState<RowActive>(() =>
+    valueToRowActive(FOOD_ROWS, resources.Food),
   );
 
-  useEffect(() => {
-    setGoldActive(valueToActive(GOLD_ROWS, resources.Gold));
-  }, []);
-
-  useEffect(() => {
-    setFoodActive(valueToActive(FOOD_ROWS, resources.Food));
-  }, []);
-
-  const handleGold = (value: number) => {
-    const next = { ...goldActive, [value]: !goldActive[value] };
+  const handleGold = (rowIndex: number, value: number) => {
+    const next = {
+      ...goldActive,
+      [rowIndex]: goldActive[rowIndex] === value ? null : value,
+    };
     setGoldActive(next);
     setResources({ Gold: calcTotal(next) });
   };
 
-  const handleFood = (value: number) => {
-    const next = { ...foodActive, [value]: !foodActive[value] };
+  const handleFood = (rowIndex: number, value: number) => {
+    const next = {
+      ...foodActive,
+      [rowIndex]: foodActive[rowIndex] === value ? null : value,
+    };
     setFoodActive(next);
     setResources({ Food: calcTotal(next) });
   };
@@ -80,23 +74,63 @@ const CharacterInventory = () => {
         <div className="text-center">
           <span className="text-bold pb-2">💰 Gold</span>
 
-          <TokenGrid
-            rows={GOLD_ROWS}
-            active={goldActive}
-            color="#a16207"
-            onToggle={handleGold}
-          />
+          <div
+            className="flex flex-col mt-2"
+            style={{
+              gap: 2,
+            }}
+          >
+            {GOLD_ROWS.map((row, ri) => (
+              <div
+                key={ri}
+                className="flex flex-wrap justify-center"
+                style={{
+                  gap: 2,
+                }}
+              >
+                {row.map(({ label }) => (
+                  <TokenButton
+                    key={label}
+                    label={label}
+                    isActive={goldActive[ri] === label}
+                    color="#a16207"
+                    onClick={() => handleGold(ri, label)}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="text-center my-3">
           <span className="text-bold pb-2">🍖 Food</span>
 
-          <TokenGrid
-            rows={FOOD_ROWS}
-            active={foodActive}
-            color="#15803d"
-            onToggle={handleFood}
-          />
+          <div
+            className="flex flex-col mt-2"
+            style={{
+              gap: 2,
+            }}
+          >
+            {FOOD_ROWS.map((row, ri) => (
+              <div
+                key={ri}
+                className="flex flex-wrap justify-center"
+                style={{
+                  gap: 2,
+                }}
+              >
+                {row.map(({ label }) => (
+                  <TokenButton
+                    key={label}
+                    label={label}
+                    isActive={foodActive[ri] === label}
+                    color="#15803d"
+                    onClick={() => handleFood(ri, label)}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Card>

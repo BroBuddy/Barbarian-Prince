@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useGameStore from "../store/gameStore";
 import Card from "@/components/Card";
 import TokenButton from "./TokenButton";
@@ -49,6 +49,10 @@ const CharacterInventory = () => {
   const [foodActive, setFoodActive] = useState<RowActive>(() =>
     valueToRowActive(FOOD_ROWS, resources.Food),
   );
+
+  useEffect(() => {
+    setGoldActive(valueToRowActive(GOLD_ROWS, resources.Gold));
+  }, [resources.Gold]);
 
   const handleGold = (rowIndex: number, value: number) => {
     const next = {

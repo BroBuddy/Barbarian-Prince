@@ -58,8 +58,6 @@ export function drawHex({ ctx, x, y, size, img, label, rotate }: DrawHexType) {
   ctx.lineTo(x + size / 2, y + h);
   ctx.lineTo(x, y + h / 2);
   ctx.closePath();
-  // ctx.strokeStyle = "black";
-  // ctx.stroke();
 
   if (label) {
     ctx.save();
@@ -68,9 +66,27 @@ export function drawHex({ ctx, x, y, size, img, label, rotate }: DrawHexType) {
     ctx.textBaseline = "middle";
     ctx.strokeStyle = "black";
     ctx.lineWidth = 3;
-    ctx.strokeText(label, x + size, y + h * 0.78);
-    ctx.fillStyle = "white";
-    ctx.fillText(label, x + size, y + h * 0.78);
+
+    const words = label.split(" ");
+    const lines =
+      words.length > 1
+        ? [
+            words.slice(0, Math.ceil(words.length / 2)).join(" "),
+            words.slice(Math.ceil(words.length / 2)).join(" "),
+          ]
+        : [label];
+
+    const lineHeight = size * 0.32;
+    const startY =
+      lines.length > 1 ? y + h * 0.78 - lineHeight / 2 : y + h * 0.78;
+
+    for (const [i, line] of lines.entries()) {
+      const lineY = startY + i * lineHeight;
+      ctx.strokeText(line, x + size, lineY);
+      ctx.fillStyle = "white";
+      ctx.fillText(line, x + size, lineY);
+    }
+
     ctx.restore();
   }
 }

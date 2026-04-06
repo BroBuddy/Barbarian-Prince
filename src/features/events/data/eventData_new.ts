@@ -472,7 +472,7 @@ export const eventData: Event[] = [
     tag: "e019",
     title: "Hermit Monk",
     type: "encounter",
-    image: false,
+    image: true,
     desc: "A hermit monk (S3, E6, W0) meditates quietly in the wilderness, ignoring you.",
     note: "Without a priest/monk in party: -1 W&W for this event. On evade roll 6 'monk': hermit is not who he appears — roll 1D6: 1–3 → e020; 4–6 → e021.",
     tables: [
@@ -540,7 +540,7 @@ export const eventData: Event[] = [
     tag: "e022",
     title: "Druid",
     type: "encounter",
-    image: false,
+    image: true,
     desc: "A druid (†S4, E4, W4), usually found in forest. On 6, the druid is female. Ignores you unless you approach.",
     note: "If joined: forest guide (r205a), forages own food (r215b), may calm wolves/boar/bear/hunting cat (5–6 on 1D6). Leaves if entering town/castle/dwarf mine (except Elf Haven). In combat may use lightning bolt instead of normal strike (5–6 on 1D6; roll 1D6 wounds; auto-escapes if wounded when bolt strikes).",
     tables: [
@@ -999,7 +999,7 @@ export const eventData: Event[] = [
     tag: "e050",
     title: "Local Constabulary",
     type: "encounter",
-    image: false,
+    image: true,
     desc: "Only applies if within 3 hexes of a habitation on the map. If nearest is Ogon/Weshor: on 1–3 see e002. If nearest is Dwarf Mine: see e058. If Elf Haven: see e071. You encounter 1D6+1 officers (each S5, E4, W4). Roll 1D6: on 1–4 they are on foot (+2 to number unless in/nearest to village); on 5–6 they are mounted.",
     note: "Add +2 to roll if you have visited nearest habitation and did not escape. No bonus if escaped (you are 'wanted'). Add +1 if you have never visited. If attacked: may surrender instead — move to nearest habitation and see e060. Mounts allow escape mounted (r312); flying party may use escape flying (r313).",
     tables: [

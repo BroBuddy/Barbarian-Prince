@@ -76,20 +76,9 @@ const CharacterInventory = () => {
         <div className="text-center">
           <BadgeCent />
 
-          <div
-            className="flex flex-col mt-2"
-            style={{
-              gap: 2,
-            }}
-          >
+          <div className="flex flex-col gap-2">
             {GOLD_ROWS.map((row, ri) => (
-              <div
-                key={ri}
-                className="flex flex-wrap justify-center"
-                style={{
-                  gap: 2,
-                }}
-              >
+              <div key={ri} className="flex flex-wrap justify-center gap-1">
                 {row.map(({ label }) => (
                   <TokenButton
                     key={label}
@@ -107,20 +96,9 @@ const CharacterInventory = () => {
         <div className="text-center my-3">
           <Beef />
 
-          <div
-            className="flex flex-col mt-2"
-            style={{
-              gap: 2,
-            }}
-          >
+          <div className="flex flex-col gap-2">
             {FOOD_ROWS.map((row, ri) => (
-              <div
-                key={ri}
-                className="flex flex-wrap justify-center"
-                style={{
-                  gap: 2,
-                }}
-              >
+              <div key={ri} className="flex flex-wrap justify-center gap-1">
                 {row.map(({ label }) => (
                   <TokenButton
                     key={label}

@@ -6,7 +6,8 @@ export const ruleData: Rule[] = [
     tag: "r201",
     title: "Characters",
     type: "character",
-    desc: "Each character has Combat Skill (S), Endurance (E), and Wealth (W). Higher numbers are better. If no wealth is given, it is presumed to be zero. Followers can be voluntarily dismissed or abandoned.",
+    desc: 'Each character in the game has a Combat Skill (S), an Endurance value (E), and a Wealth (W). Each is rated numerically, with higher numbers being better. If no wealth is given, it is presumed to be zero. The characters include yourself (the Barbarian Prince, see r202), followers who join your "party," and any others encountered in the course of the game. They can be friendly or hostile, intelligent or unintelligent. When a character joins your party, note their statistics as needed. You can voluntarily dismiss or abandon members of your party if you wish (sometimes expedient when making an escape, or when food or money is short). Other characters encountered during events need not be permanently recorded.',
+    note: "You also can opt to include and track Experience or XP (r237) as a way of increasing stats and skills.",
   },
   {
     tag: "r202",

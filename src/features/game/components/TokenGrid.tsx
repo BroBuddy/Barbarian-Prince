@@ -8,9 +8,9 @@ export type TokenGridProps = {
   onToggle: (value: number) => void;
 };
 const TokenGrid = ({ rows, active, color, onToggle }: TokenGridProps) => (
-  <div className="flex flex-col items-center" style={{ gap: 2 }}>
+  <div className="flex flex-col items-center gap-1">
     {rows.map((row, ri) => (
-      <div key={ri} className="flex flex-wrap text-center" style={{ gap: 2 }}>
+      <div key={ri} className="flex flex-wrap text-center gap-1">
         {row.map(({ label }) => {
           return (
             <TokenButton

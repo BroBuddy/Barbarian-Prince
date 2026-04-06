@@ -32,7 +32,7 @@ const GameCharacter = () => {
     <>
       <button
         onClick={nextDay}
-        className="flex items-center text-bold text-white pointer mt-5 pt-3 mx-1"
+        className="flex items-center text-bold text-white pointer mt-2 pt-3 mx-1"
       >
         <Sun /> <span className="ml-1">Next Day</span>
       </button>
@@ -42,7 +42,7 @@ const GameCharacter = () => {
           <div key={name} className="flex flex-row m-1">
             <span className="flex items-center mr-2">{icon}</span>
 
-            <div style={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+            <div className="flex flex-wrap gap-1">
               {Array.from({ length: max }, (_, i) => i + 1).map((val) => (
                 <TokenButton
                   key={val}

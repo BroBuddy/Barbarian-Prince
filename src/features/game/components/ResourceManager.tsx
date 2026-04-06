@@ -29,12 +29,12 @@ const ResourceManager = () => {
   );
 
   return (
-    <div className="flex flex-row flex-wrap justify-center">
+    <div className="flex flex-row justify-around w-full">
       {displayResources.map(([key, value]) => {
         const displayValue = key === "Combat" ? totalCombat : value;
 
         return (
-          <div key={key} className="flex flex-row px-1 pb-1 pt-2 mr-1">
+          <div key={key} className="flex flex-row gap-1 py-1">
             <span>{resourceIcons[key] || ""}</span>
             <span className="text-bold ml-1">
               {key === "Day"

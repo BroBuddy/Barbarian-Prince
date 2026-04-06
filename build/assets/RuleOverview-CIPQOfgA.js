@@ -1,1 +1,0 @@
-import{t as e}from"./rule-DN02erfz.js";export{e as default};

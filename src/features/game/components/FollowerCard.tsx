@@ -35,7 +35,7 @@ function FollowerCard({ follower }: { follower: Follower }) {
           <div key={field} className="flex flex-row mb-1 mx-1">
             <span className="flex items-center mr-2">{STAT_ICONS[field]}</span>
 
-            <div style={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+            <div className="flex flex-wrap gap-1">
               {Array.from({ length: 9 }, (_, i) => i + 1).map((val) => (
                 <TokenButton
                   key={val}

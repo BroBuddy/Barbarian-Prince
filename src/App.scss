@@ -16,6 +16,7 @@
 body {
   margin: 0;
   display: flex;
+  justify-content: center;
   box-sizing: border-box;
   min-height: 100vh;
   background-color: var(--black);
@@ -28,10 +29,13 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 768px;
   z-index: 999;
 }
 

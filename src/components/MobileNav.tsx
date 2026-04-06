@@ -42,7 +42,7 @@ const MobileNav = () => {
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
-              opacity: isActive ? 0.4 : 1,
+              opacity: isActive ? 0.6 : 1,
               pointerEvents: isActive ? "none" : "auto",
               cursor: isActive ? "default" : "pointer",
             }}

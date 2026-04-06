@@ -25,8 +25,10 @@ const ResourceManager = () => {
   const resources = useGameStore((state) => state.resources);
   const totalCombat = useGameStore((state) => state.getTotalCombat());
   const displayResources = Object.entries(resources).filter(
-    ([key]) => !["Week", "Mounted"].includes(key),
+    ([key]) => !["Mounted"].includes(key),
   );
+
+  console.log(resources);
 
   return (
     <div className="flex flex-row justify-around w-full">
@@ -37,9 +39,7 @@ const ResourceManager = () => {
           <div key={key} className="flex flex-row gap-1 pt-2 pb-1">
             <span>{resourceIcons[key] || ""}</span>
             <span className="text-bold ml-1">
-              {key === "Day"
-                ? `D${getDayAndWeek(value as number).dayOfWeek} · W${getDayAndWeek(value as number).week}`
-                : displayValue}
+              {key === "Day" ? getDayAndWeek(value as number) : displayValue}
             </span>
           </div>
         );

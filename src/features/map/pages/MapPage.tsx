@@ -29,7 +29,7 @@ function MapPage() {
     >
       <div
         className=" pointer text-white bg-black rounded py-1"
-        style={{ position: "fixed", top: "80px", right: "22px", zIndex: 10 }}
+        style={{ position: "fixed", top: "80px", right: "23px", zIndex: 10 }}
       >
         <button
           onClick={() => setMidnightOpen(true)}

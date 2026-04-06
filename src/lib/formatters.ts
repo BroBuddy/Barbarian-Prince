@@ -1,7 +1,7 @@
-export function getDayAndWeek(day: number) {
-  const week = Math.ceil(day / 7);
+export function getDayAndWeek(day: number): string {
   const dayOfWeek = ((day - 1) % 7) + 1;
-  return { week, dayOfWeek };
+  const week = Math.ceil(day / 7);
+  return `D${dayOfWeek} · W${week}`;
 }
 
 export function tagToPath(tag: string): string {

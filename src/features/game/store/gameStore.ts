@@ -40,7 +40,6 @@ const MAX_VALUES: Record<string, number> = {
   Food: 100,
   Gold: 600,
   Day: 70,
-  Week: 10,
 };
 
 type GameState = {
@@ -84,7 +83,6 @@ const useGameStore = create<GameState>()(
         Food: 0,
         Gold: 0,
         Day: 1,
-        Week: 1,
         Mounted: false,
       },
 
@@ -141,7 +139,6 @@ const useGameStore = create<GameState>()(
       nextDay: () => {
         set((state) => {
           const totalPay = get().getTotalPayPerDay();
-          const nextDayNum = (state.resources.Day as number) + 1;
           const updatedResources = { ...state.resources };
 
           updatedResources.Gold = Math.max(
@@ -149,15 +146,10 @@ const useGameStore = create<GameState>()(
             (state.resources.Gold as number) - totalPay,
           );
 
-          if (nextDayNum > 7) {
-            updatedResources.Day = 1;
-            updatedResources.Week = Math.min(
-              (state.resources.Week as number) + 1,
-              MAX_VALUES.Week,
-            );
-          } else {
-            updatedResources.Day = Math.min(nextDayNum, MAX_VALUES.Day);
-          }
+          updatedResources.Day = Math.min(
+            (state.resources.Day as number) + 1,
+            MAX_VALUES.Day,
+          );
 
           return { resources: updatedResources };
         });
@@ -166,7 +158,7 @@ const useGameStore = create<GameState>()(
       isEmptyStore: () => {
         const resources = get().resources;
         const total = Object.entries(resources)
-          .filter(([key]) => !["Day", "Week", "WitAndWiles"].includes(key))
+          .filter(([key]) => !["Day", "WitAndWiles"].includes(key))
           .reduce((sum, [, value]) => Number(sum) + Number(value), 0);
 
         return total === 0;

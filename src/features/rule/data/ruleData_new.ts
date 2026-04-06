@@ -23,23 +23,41 @@ export const ruleData: Rule[] = [
     title: "Daily Actions",
     type: "action",
     desc: "At the start of each day, select one action. Followers support and help you. Normally limited to one action per day unless an event grants a bonus action.",
-    subRules: [
-      { tag: "r204", title: "Travel to a new hex" },
-      { tag: "r222", title: "Rest in current hex" },
-      { tag: "r214", title: "Search for a cache" },
-      { tag: "r208", title: "Search a Ruins" },
-      { tag: "r209", title: "Seek News & Information" },
-      { tag: "r210", title: "Seek to Hire Followers" },
-      { tag: "r211", title: "Seek Audience with Lord" },
-      { tag: "r212", title: "Make an Offering" },
-      { tag: "r223", title: "Beg" },
-      { tag: "r224", title: "Attempt Thievery" },
-      { tag: "r229", title: "Study History" },
-      { tag: "r230", title: "Visit Tavern" },
-      { tag: "r231", title: "Visit Market" },
-      { tag: "r232", title: "Borrow Money" },
-      { tag: "r233", title: "Seek Employment" },
-      { tag: "r240", title: "Combat Training" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "Actions (Any Hex)",
+        rows: [
+          ["r204", "Travel to a new hex (most common choice)"],
+          [
+            "r222",
+            "Rest in current hex to heal wounds and improve hunting (r215)",
+          ],
+          ["r214", "Search for a previously placed cache"],
+        ],
+      },
+      {
+        type: "simple-list",
+        label: "Actions (Specific Hex Types)",
+        rows: [
+          ["r208", "Search in a Ruins (ruins only)"],
+          ["r209", "Seek News & Information (village, town or castle)"],
+          ["r210", "Seek to Hire Followers (village, town or castle)"],
+          ["r211", "Seek Audience with Lord (village, town, castle or temple)"],
+          ["r212", "Make an Offering (temple)"],
+          ["r223", "Beg (village, town, castle or temple)"],
+          ["r224", "Attempt Thievery (town, castle or temple)"],
+          ["r229", "Study History (castle or temple)"],
+          [
+            "r230",
+            "Visit Tavern (village, town or castle; also after daily action in habitation)",
+          ],
+          ["r231", "Visit Market (village, town or castle)"],
+          ["r232", "Borrow Money (town only)"],
+          ["r233", "Seek Employment (village, town or castle)"],
+          ["r240", "Combat Training (town or castle)"],
+        ],
+      },
     ],
   },
 
@@ -49,13 +67,19 @@ export const ruleData: Rule[] = [
     title: "Travel",
     type: "movement",
     desc: "Move hex by hex across the map. Each time you try to leave a hex, check for getting lost (r205), then check for a travel event (r204b).",
-    subRules: [
-      { tag: "r204a", title: "Travel Speeds" },
-      { tag: "r204b", title: "Travel Events" },
-      { tag: "r204c", title: "Roads" },
-      { tag: "r204d", title: "Airborne Travel" },
-      { tag: "r204e", title: "Crossing Rivers" },
-      { tag: "r204f", title: "Travel Events & Time" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r204a", "Travel Speeds"],
+          ["r204b", "Travel Events"],
+          ["r204c", "Roads"],
+          ["r204d", "Airborne Travel"],
+          ["r204e", "Crossing Rivers"],
+          ["r204f", "Travel Events & Time"],
+        ],
+      },
     ],
     optional: true,
     linkedRules: ["r205", "r207"],
@@ -104,11 +128,17 @@ export const ruleData: Rule[] = [
     title: "Lost",
     type: "movement",
     desc: "Each time you try to leave a hex, roll 2D6 vs the Lost number for that terrain (r207). If equal or greater, you are lost and cannot travel further that day. Modify by -1 for each successive day attempting the same direction.",
-    subRules: [
-      { tag: "r205a", title: "Local Guide" },
-      { tag: "r205b", title: "Self-Guiding Moves" },
-      { tag: "r205c", title: "Airborne & Lost" },
-      { tag: "r205d", title: "Cross a River" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r205a", "Local Guide"],
+          ["r205b", "Self-Guiding Moves"],
+          ["r205c", "Airborne & Lost"],
+          ["r205d", "Cross a River"],
+        ],
+      },
     ],
     linkedRules: ["r207"],
   },
@@ -142,9 +172,15 @@ export const ruleData: Rule[] = [
     title: "Transport",
     type: "movement",
     desc: "All food, gold, and possessions must be carried. Items have a weight in 'loads'. Anything beyond capacity must be left behind or cached (r214).",
-    subRules: [
-      { tag: "r206a", title: "Loads" },
-      { tag: "r206b", title: "Transport Capacities" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r206a", "Loads"],
+          ["r206b", "Transport Capacities"],
+        ],
+      },
     ],
     linkedRules: ["r214"],
   },
@@ -275,19 +311,25 @@ export const ruleData: Rule[] = [
     type: "action",
     desc: "Spend the day trying to gain admission to the hall or court of the local ruler. Use the appropriate sub-table for the location.",
     requiresHex: ["village", "town", "castle", "temple"],
-    subRules: [
-      { tag: "r211a", title: "Audience at a Village" },
-      { tag: "r211b", title: "Audience at a Town" },
-      { tag: "r211c", title: "Audience at a Temple" },
-      { tag: "r211d", title: "Audience with Baron Huldra (hex 1212)" },
-      { tag: "r211e", title: "Audience with Count Drogat (hex 0323)" },
-      { tag: "r211f", title: "Audience with Lady Aeravir (hex 1923)" },
-      { tag: "r211g", title: "Audience at a Dwarf Mine" },
-      { tag: "r211h", title: "Audience at a Wizard's Tower" },
-      { tag: "r211i", title: "Audience at a Halfling Village" },
-      { tag: "r211j", title: "Audience at a Cloud Castle" },
-      { tag: "r211k", title: "Audience at a Giant's Castle" },
-      { tag: "r211l", title: "Audience at an Elf Haven" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r211a", "Seek an Audience at a Village"],
+          ["r211b", "Seek an Audience at a Town"],
+          ["r211c", "Seek an Audience at a Temple"],
+          ["r211d", "Seek an Audience with Baron Huldra (hex 1212)"],
+          ["r211e", "Seek an Audience with Count Drogat (hex 0323)"],
+          ["r211f", "Seek an Audience with Lady Aeravir (hex 1923)"],
+          ["r211g", "Seek an Audience at a Dwarf Mine"],
+          ["r211h", "Seek an Audience at a Wizard's Tower"],
+          ["r211i", "Seek an Audience at a Halfling Village"],
+          ["r211j", "Seek an Audience at a Cloud Castle"],
+          ["r211k", "Seek an Audience at a Giant's Castle"],
+          ["r211l", "Seek an Audience at an Elf Haven"],
+        ],
+      },
     ],
   },
   {
@@ -733,14 +775,20 @@ export const ruleData: Rule[] = [
     title: "Food",
     type: "food",
     desc: "After all actions and events, you and your party must eat their main meal. This may include hunting, using stores, or purchasing. Mounts may also require food.",
-    subRules: [
-      { tag: "r215a", title: "Food Units" },
-      { tag: "r215b", title: "Hunting and Fishing" },
-      { tag: "r215c", title: "Populated Regions & Hunting" },
-      { tag: "r215d", title: "Purchase Meals" },
-      { tag: "r215e", title: "Food Stores" },
-      { tag: "r215f", title: "Animal Fodder" },
-      { tag: "r215g", title: "Selling & Stealing Food" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r215a", "Food Units"],
+          ["r215b", "Hunting and Fishing"],
+          ["r215c", "Populated Regions & Hunting"],
+          ["r215d", "Purchase Meals"],
+          ["r215e", "Food Stores"],
+          ["r215f", "Animal Fodder"],
+          ["r215g", "Selling & Stealing Food"],
+        ],
+      },
     ],
   },
   {
@@ -791,10 +839,16 @@ export const ruleData: Rule[] = [
     title: "Starvation",
     type: "food",
     desc: "If followers are not fed, roll 2D6 for each and subtract Wit & Wiles. Result 4+: desertion. Otherwise the character suffers starvation effects.",
-    subRules: [
-      { tag: "r216a", title: "Follower Starvation" },
-      { tag: "r216b", title: "Character Starvation" },
-      { tag: "r216c", title: "Mount Starvation" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r216a", "Follower Starvation"],
+          ["r216b", "Character Starvation"],
+          ["r216c", "Mount Starvation"],
+        ],
+      },
     ],
   },
   {
@@ -827,9 +881,16 @@ export const ruleData: Rule[] = [
     tag: "r218",
     title: "Escape & Hiding",
     type: "encounter",
-    subRules: [
-      { tag: "r218a", title: "Escape" },
-      { tag: "r218b", title: "Hiding" },
+    desc: "Many times an event leads to your party escaping or hiding from characters encountered in an event.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r218a", "Escape"],
+          ["r218b", "Hiding"],
+        ],
+      },
     ],
   },
   {
@@ -857,17 +918,23 @@ export const ruleData: Rule[] = [
     tag: "r220",
     title: "Combat",
     type: "combat",
-    desc: "Combat is fought in rounds. Each round: match characters against opponents, one side strikes, apply results, then other side strikes. You can always choose to attack even if not given the option explicitly.",
-    subRules: [
-      { tag: "r220a", title: "Selecting Opponents" },
-      { tag: "r220b", title: "Strikes" },
-      { tag: "r220c", title: "Combat Table" },
-      { tag: "r220d", title: "Surprise" },
-      { tag: "r220e", title: "Escape from Combat" },
-      { tag: "r220f", title: "Routs" },
-      { tag: "r220g", title: "Defending" },
-      { tag: "r220h", title: "Mounted Combat" },
-      { tag: "r220i", title: "Ranged Combat" },
+    desc: "You may often need to fight encountered characters. Combat is fought in rounds and continues until one side escapes or is overcome. At the start of each round, you decide which of your characters will face each character encountered. After the opponents are matched against each other, all characters on one side strike, and any results applied. This is followed by all characters on the other side striking back and those results applied. You and characters in your party may strike first or second each round, depending on the event. Unless stated otherwise, you can always choose to attack, even if not given the option explicitly (see r305).",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r220a", "Selecting Opponents"],
+          ["r220b", "Strikes"],
+          ["r220c", "Combat Table"],
+          ["r220d", "Surprise"],
+          ["r220e", "Escape from Combat"],
+          ["r220f", "Routs"],
+          ["r220g", "Defending"],
+          ["r220h", "Mounted Combat"],
+          ["r220i", "Ranged Combat"],
+        ],
+      },
     ],
   },
   {

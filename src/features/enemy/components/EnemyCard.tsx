@@ -49,7 +49,8 @@ function EnemyCard({ enemy }: { enemy: Enemy }) {
                   color={STAT_COLORS[field]}
                   onClick={() =>
                     updateEnemy(enemy.id, {
-                      [field]: enemy[field] === val ? undefined : (val as any),
+                      [field]:
+                        enemy[field] === val ? undefined : (val as number),
                     })
                   }
                 />

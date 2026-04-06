@@ -64,6 +64,8 @@ type GameState = {
   addEnemy: (data: Omit<Enemy, "id">) => void;
   updateEnemy: (id: string, data: Partial<Omit<Enemy, "id">>) => void;
   removeEnemy: (id: string) => void;
+
+  resetStore: () => void;
 };
 
 const useGameStore = create<GameState>()(
@@ -285,6 +287,24 @@ const useGameStore = create<GameState>()(
         set((state) => ({
           enemies: state.enemies.filter((e) => e.id !== id),
         }));
+      },
+
+      resetStore: () => {
+        set({
+          playerPosition: null,
+          followers: [],
+          enemies: [],
+          resources: {
+            Combat: 8,
+            Endurance: 9,
+            Starvation: 0,
+            WitAndWiles: 3,
+            Food: 0,
+            Gold: 0,
+            Day: 1,
+            Mounted: false,
+          },
+        });
       },
     }),
     {

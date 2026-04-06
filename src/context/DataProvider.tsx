@@ -7,6 +7,7 @@ import { ruleData as ruleData42th } from "../features/rule/data/ruleData";
 import { ruleData as ruleDataUltimate } from "../features/rule/data/ruleData_new";
 import { DataContext } from "./DataContext";
 import type { Edition } from "@/features/game/types/GameType";
+import useGameStore from "@/features/game/store/gameStore";
 
 const eventDataMap = {
   original: eventDataOriginal,
@@ -22,9 +23,11 @@ const ruleDataMap = {
 
 export function DataProvider({ children }: { children: React.ReactNode }) {
   const [edition, setEdition] = useState<Edition>("ultimate");
+  const { resetStore } = useGameStore();
 
   useEffect(() => {
     localStorage.removeItem("barbarian-prince");
+    resetStore();
   }, [edition]);
 
   return (

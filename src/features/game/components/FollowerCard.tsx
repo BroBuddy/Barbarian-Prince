@@ -3,18 +3,20 @@ import type { Follower } from "../types/GameType";
 import TokenButton from "./TokenButton";
 import styles from "./FollowerCard.module.scss";
 import Card from "@/components/Card";
-import { Coins, Heart, Swords, UserMinus } from "lucide-react";
+import { ChessKnight, Coins, Heart, Swords, UserMinus } from "lucide-react";
 
 const STAT_COLORS = {
   combat: "#b91c1c",
   endurance: "#15803d",
   payPerDay: "#a16207",
+  mounted: "#1d4ed8",
 } as const;
 
 const STAT_ICONS = {
   combat: <Swords />,
   endurance: <Heart />,
   payPerDay: <Coins />,
+  mounted: <ChessKnight />,
 } as const;
 
 function FollowerCard({ follower }: { follower: Follower }) {
@@ -52,6 +54,26 @@ function FollowerCard({ follower }: { follower: Follower }) {
             </div>
           </div>
         ))}
+
+        <div className="flex flex-row mb-1 mx-1">
+          <span className="flex items-center mr-2">
+            {STAT_ICONS["mounted"]}
+          </span>
+
+          <div className="flex flex-wrap gap-1">
+            {[false, true].map((val) => (
+              <TokenButton
+                key={String(val)}
+                label={val ? "Yes" : "No"}
+                isActive={follower.mounted === val}
+                color={STAT_COLORS["mounted"]}
+                onClick={() =>
+                  updateFollower(follower.id, { mounted: !follower.mounted })
+                }
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </Card>
   );

@@ -2,14 +2,21 @@ import useGameStore from "../store/gameStore";
 import Card from "@/components/Card";
 import CharacterInventory from "../components/CharacterInventory";
 import TokenButton from "../components/TokenButton";
-import { Heart, Lightbulb, Sun, Swords, Utensils } from "lucide-react";
+import {
+  ChessKnight,
+  Heart,
+  Lightbulb,
+  Sun,
+  Swords,
+  Utensils,
+} from "lucide-react";
 import type { ReactNode } from "react";
 
 type BoxResource = {
   name: string;
   icon: ReactNode;
   max: number;
-  color?: string;
+  color: string;
 };
 
 const STAT_RESOURCES: BoxResource[] = [
@@ -57,6 +64,24 @@ const GameCharacter = () => {
             </div>
           </div>
         ))}
+
+        <div className="flex flex-row mb-1 mx-1">
+          <span className="flex items-center mr-2">
+            <ChessKnight />
+          </span>
+
+          <div className="flex flex-wrap gap-1">
+            {[false, true].map((val) => (
+              <TokenButton
+                key={String(val)}
+                label={val ? "Yes" : "No"}
+                isActive={resources["Mounted"] === val}
+                color="#1d4ed8"
+                onClick={() => setResources({ Mounted: val })}
+              />
+            ))}
+          </div>
+        </div>
       </Card>
 
       <CharacterInventory />

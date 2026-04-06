@@ -48,8 +48,8 @@ type GameState = {
   setPlayerPosition: (col: number, row: number) => void;
   clearPlayerPosition: () => void;
 
-  resources: Record<string, number>;
-  setResources: (newResources: Record<string, number>) => void;
+  resources: Record<string, number | boolean>;
+  setResources: (newResources: Record<string, number | boolean>) => void;
   modifyResources: (modResources: Record<string, number>) => void;
   isEmptyStore: () => boolean;
   getTotalCombat: () => number;
@@ -80,11 +80,12 @@ const useGameStore = create<GameState>()(
         Combat: 8,
         Endurance: 9,
         Starvation: 0,
-        WitAndWiles: 0,
+        WitAndWiles: 3,
         Food: 0,
         Gold: 0,
         Day: 1,
         Week: 1,
+        Mounted: false,
       },
 
       setResources: (newResources) => {
@@ -93,7 +94,16 @@ const useGameStore = create<GameState>()(
 
           Object.entries(newResources).forEach(([key, value]) => {
             if (updatedResources[key] !== undefined) {
-              updatedResources[key] = Math.max(0, value);
+              const current = updatedResources[key];
+
+              if (typeof current === "number" && typeof value === "number") {
+                updatedResources[key] = Math.max(0, value);
+              } else if (
+                typeof current === "boolean" &&
+                typeof value === "boolean"
+              ) {
+                updatedResources[key] = value;
+              }
             }
           });
 
@@ -107,11 +117,20 @@ const useGameStore = create<GameState>()(
 
           Object.entries(modResources).forEach(([key, value]) => {
             if (updatedResources[key] !== undefined) {
-              const newValue = updatedResources[key] + value;
-              updatedResources[key] = Math.max(
-                0,
-                Math.min(MAX_VALUES[key] ?? Infinity, newValue),
-              );
+              const current = updatedResources[key];
+
+              if (typeof current === "number" && typeof value === "number") {
+                const newValue = current + value;
+                updatedResources[key] = Math.max(
+                  0,
+                  Math.min(MAX_VALUES[key] ?? Infinity, newValue),
+                );
+              } else if (
+                typeof current === "boolean" &&
+                typeof value === "boolean"
+              ) {
+                updatedResources[key] = value;
+              }
             }
           });
 
@@ -122,15 +141,18 @@ const useGameStore = create<GameState>()(
       nextDay: () => {
         set((state) => {
           const totalPay = get().getTotalPayPerDay();
-          const nextDayNum = state.resources.Day + 1;
+          const nextDayNum = (state.resources.Day as number) + 1;
           const updatedResources = { ...state.resources };
 
-          updatedResources.Gold = Math.max(0, state.resources.Gold - totalPay);
+          updatedResources.Gold = Math.max(
+            0,
+            (state.resources.Gold as number) - totalPay,
+          );
 
           if (nextDayNum > 7) {
             updatedResources.Day = 1;
             updatedResources.Week = Math.min(
-              state.resources.Week + 1,
+              (state.resources.Week as number) + 1,
               MAX_VALUES.Week,
             );
           } else {
@@ -145,7 +167,7 @@ const useGameStore = create<GameState>()(
         const resources = get().resources;
         const total = Object.entries(resources)
           .filter(([key]) => !["Day", "Week", "WitAndWiles"].includes(key))
-          .reduce((sum, [, value]) => sum + value, 0);
+          .reduce((sum, [, value]) => Number(sum) + Number(value), 0);
 
         return total === 0;
       },
@@ -159,9 +181,9 @@ const useGameStore = create<GameState>()(
 
         return Math.max(
           0,
-          state.resources.Combat +
+          Number(state.resources.Combat) +
             aliveFollowersCombat -
-            state.resources.Starvation,
+            Number(state.resources.Starvation),
         );
       },
 
@@ -180,6 +202,7 @@ const useGameStore = create<GameState>()(
           combat: clamp(data.combat),
           endurance: clamp(data.endurance),
           payPerDay: clamp(data.payPerDay),
+          mounted: data.mounted,
         };
 
         set((state) => ({ followers: [follower, ...state.followers] }));
@@ -189,6 +212,7 @@ const useGameStore = create<GameState>()(
         set((state) => {
           const updatedFollowers = state.followers.map((f) => {
             if (f.id !== id) return f;
+
             return {
               ...f,
               ...(data.title !== undefined && { title: data.title.trim() }),
@@ -200,6 +224,9 @@ const useGameStore = create<GameState>()(
               }),
               ...(data.payPerDay !== undefined && {
                 payPerDay: clamp(data.payPerDay),
+              }),
+              ...(data.mounted !== undefined && {
+                mounted: data.mounted,
               }),
             };
           });

@@ -4,6 +4,7 @@ export type Follower = {
   combat: number;
   endurance: number;
   payPerDay: number;
+  mounted: boolean;
 };
 
 export type FollowerTypes = Record<

@@ -8,14 +8,16 @@ interface MidnightModalProps {
 }
 
 export function MidnightModal({ onClose }: MidnightModalProps) {
-  const { resources, modifyResources, nextDay } = useGameStore();
-  const food = resources.Food as number;
-  const gold = resources.Gold as number;
+  const { resources, modifyResources, nextDay, getTotalPayPerDay } =
+    useGameStore();
+  const totalPay = getTotalPayPerDay();
+  const foodRes = resources.Food as number;
+  const goldRes = resources.Gold as number;
 
   return (
     <Modal onClose={onClose}>
       <Card title="Midnight">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3">
           <p>Meal:</p>
           <div className="flex gap-10">
             <ChoiceButton onClick={() => modifyResources({ Starvation: 1 })}>
@@ -23,14 +25,14 @@ export function MidnightModal({ onClose }: MidnightModalProps) {
             </ChoiceButton>
 
             <ChoiceButton
-              disabled={food <= 0}
+              disabled={foodRes <= 0}
               onClick={() => modifyResources({ Food: -1 })}
             >
               1 <Beef size={22} />
             </ChoiceButton>
 
             <ChoiceButton
-              disabled={gold <= 0}
+              disabled={goldRes <= 0}
               onClick={() => modifyResources({ Gold: -1 })}
             >
               1 <BadgeCent size={22} />
@@ -38,14 +40,26 @@ export function MidnightModal({ onClose }: MidnightModalProps) {
           </div>
         </div>
 
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3">
           <p>Lodging:</p>
           <div className="flex gap-4">
             <ChoiceButton
-              disabled={gold <= 0}
+              disabled={goldRes <= 0}
               onClick={() => modifyResources({ Gold: -1 })}
             >
               1 <BadgeCent size={22} />
+            </ChoiceButton>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between mb-3">
+          <p>Followers:</p>
+          <div className="flex gap-4">
+            <ChoiceButton
+              disabled={goldRes < totalPay}
+              onClick={() => modifyResources({ Gold: -totalPay })}
+            >
+              {totalPay} <BadgeCent size={22} />
             </ChoiceButton>
           </div>
         </div>
@@ -55,7 +69,7 @@ export function MidnightModal({ onClose }: MidnightModalProps) {
             nextDay();
             onClose();
           }}
-          className="bg-dark-grey rounded pointer text-white p-2 mt-2 w-full"
+          className="bg-dark-grey rounded pointer text-white p-2 mb-2 w-full"
         >
           Advance Day
         </button>

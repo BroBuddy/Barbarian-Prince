@@ -26,7 +26,7 @@ const STAT_RESOURCES: BoxResource[] = [
   { name: "WitAndWiles", icon: <Lightbulb />, max: 6, color: "#1d4ed8" },
 ];
 
-const GameCharacter = () => {
+const CharacterPage = () => {
   const resources = useGameStore((state) => state.resources);
   const setResources = useGameStore((state) => state.setResources);
   const nextDay = useGameStore((state) => state.nextDay);
@@ -89,4 +89,4 @@ const GameCharacter = () => {
   );
 };
 
-export default GameCharacter;
+export default CharacterPage;

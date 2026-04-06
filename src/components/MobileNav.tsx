@@ -3,9 +3,10 @@ import {
   CalendarDays,
   Map,
   ScrollText,
-  UserPlus,
   ShieldUser,
   Castle,
+  Skull,
+  Users,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import styles from "./MobileNav.module.scss";
@@ -20,8 +21,9 @@ const links: Links[] = [
   { to: "/rule/r203", icon: <CalendarDays /> },
   { to: "/map", icon: <Map /> },
   { to: "/character", icon: <ShieldUser /> },
-  { to: "/follower", icon: <UserPlus /> },
-  { to: "/helper", icon: <ScrollText /> },
+  { to: "/follower", icon: <Users /> },
+  { to: "/enemy", icon: <Skull /> },
+  { to: "/sheet", icon: <ScrollText /> },
 ];
 
 const MobileNav = () => {

@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import type { TagItem } from "../pages/Helper";
+import type { TagItem } from "../pages/SheetPage";
 import { Link } from "react-router-dom";
 import { getLinkClass } from "@/lib/formatters";
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Card from "./Card";
-import type { TagItem } from "@/pages/Helper";
+import type { TagItem } from "@/pages/SheetPage";
 import { tagToPath, getLinkClass } from "@/lib/formatters";
 
 function History() {

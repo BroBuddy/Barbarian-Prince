@@ -8,7 +8,7 @@ import { parseLinks } from "@/lib/parseLinks";
 import Badge from "@/components/Badge";
 import { ParagraphImage } from "@/components/ParagraphImage";
 
-function EventDetail() {
+function EventDetailPage() {
   const { tag } = useParams();
   const { getEventDataByTag } = useEventService();
   const event = getEventDataByTag(tag as string);
@@ -48,4 +48,4 @@ function EventDetail() {
   );
 }
 
-export default EventDetail;
+export default EventDetailPage;

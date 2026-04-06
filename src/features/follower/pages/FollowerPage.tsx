@@ -5,11 +5,11 @@ import type { Follower } from "../../game/types/GameType";
 import TokenButton from "../../../components/TokenButton";
 import { followerData } from "../data/followerData";
 
-function GameFollower() {
+function FollowerPage() {
   const { followers, addFollower } = useGameStore();
 
-  const handleAdd = (followerTemplate: Omit<Follower, "id" | "payPerDay">) => {
-    addFollower({ ...followerTemplate, payPerDay: 0 });
+  const handleAdd = (followerItem: Omit<Follower, "id" | "payPerDay">) => {
+    addFollower({ ...followerItem, payPerDay: 0 });
   };
 
   return (
@@ -35,4 +35,4 @@ function GameFollower() {
   );
 }
 
-export default GameFollower;
+export default FollowerPage;

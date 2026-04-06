@@ -3,18 +3,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Preloader from "./components/Preloader";
 
-const Game = lazy(() => import("./features/game/pages/GameOverview"));
-const GameCharacter = lazy(
-  () => import("./features/character/pages/GameCharacter"),
+const GamePage = lazy(() => import("./features/game/pages/GamePage"));
+const CharacterPage = lazy(
+  () => import("./features/character/pages/CharacterPage"),
 );
-const GameFollower = lazy(
-  () => import("./features/follower/pages/GameFollower"),
+const FollowerPage = lazy(
+  () => import("./features/follower/pages/FollowerPage"),
 );
-const EventOverview = lazy(
-  () => import("./features/events/pages/EventOverview"),
+const EnemyPage = lazy(() => import("./features/enemy/pages/EnemyPage"));
+const EventPage = lazy(() => import("./features/events/pages/EventPage"));
+const EventDetailPage = lazy(
+  () => import("./features/events/pages/EventDetailPage"),
 );
-const EventDetail = lazy(() => import("./features/events/pages/EventDetail"));
-const Helper = lazy(() => import("./pages/Helper"));
 const TableOverview = lazy(
   () => import("./features/table/pages/TableOverview"),
 );
@@ -25,27 +25,31 @@ const TreasureTable = lazy(
 const SearchingRuinsTable = lazy(
   () => import("./features/table/pages/SearchingRuins"),
 );
-const HexMap = lazy(() => import("./features/map/pages/HexMap"));
-const RuleOverview = lazy(() => import("./features/rule/pages/RuleOverview"));
-const RuleDetail = lazy(() => import("./features/rule/pages/RuleDetail"));
+const MapPage = lazy(() => import("./features/map/pages/MapPage"));
+const RulePage = lazy(() => import("./features/rule/pages/RulePage"));
+const RuleDetailPage = lazy(
+  () => import("./features/rule/pages/RuleDetailPage"),
+);
+const SheetPage = lazy(() => import("./pages/SheetPage"));
 
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
-      { path: "/", element: <Game /> },
-      { path: "/character", element: <GameCharacter /> },
-      { path: "/follower", element: <GameFollower /> },
-      { path: "/rule", element: <RuleOverview /> },
-      { path: "/rule/:tag", element: <RuleDetail /> },
-      { path: "/event", element: <EventOverview /> },
-      { path: "/event/:tag", element: <EventDetail /> },
+      { path: "/", element: <GamePage /> },
+      { path: "/rule", element: <RulePage /> },
+      { path: "/rule/:tag", element: <RuleDetailPage /> },
+      { path: "/event", element: <EventPage /> },
+      { path: "/event/:tag", element: <EventDetailPage /> },
+      { path: "/map", element: <MapPage /> },
+      { path: "/character", element: <CharacterPage /> },
+      { path: "/follower", element: <FollowerPage /> },
+      { path: "/enemy", element: <EnemyPage /> },
       { path: "/table", element: <TableOverview /> },
       { path: "/table/treasure", element: <TreasureTable /> },
       { path: "/table/ruins", element: <SearchingRuinsTable /> },
       { path: "/table/:id", element: <TableDetail /> },
-      { path: "/map", element: <HexMap /> },
-      { path: "/helper", element: <Helper /> },
+      { path: "/sheet", element: <SheetPage /> },
     ],
   },
 ]);

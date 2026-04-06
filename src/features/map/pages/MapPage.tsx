@@ -1,8 +1,7 @@
-import React from "react";
 import { useHexCanvas } from "../hooks/useHexCanvas";
 import { MoveModal } from "../components/MoveModal";
 
-const HexCanvas: React.FC = () => {
+function MapPage() {
   const {
     canvasRef,
     containerRef,
@@ -42,6 +41,6 @@ const HexCanvas: React.FC = () => {
       )}
     </div>
   );
-};
+}
 
-export default HexCanvas;
+export default MapPage;

@@ -6,7 +6,7 @@ export type TagItem = {
   title: string;
 };
 
-function Helper() {
+function SheetPage() {
   return (
     <>
       <FrequentlyUsed />
@@ -15,4 +15,4 @@ function Helper() {
   );
 }
 
-export default Helper;
+export default SheetPage;

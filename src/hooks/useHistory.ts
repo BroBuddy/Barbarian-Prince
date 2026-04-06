@@ -1,4 +1,4 @@
-import type { TagItem } from "@/pages/Helper";
+import type { TagItem } from "@/pages/SheetPage";
 
 export const useHistory = () => {
   const storage: string = "barbarian-prince";

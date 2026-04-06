@@ -3,7 +3,7 @@ import type { EventItem } from "../types/EventType";
 import { Link } from "react-router-dom";
 import { useEventService } from "../services/EventService";
 
-function EventOverview() {
+function EventPage() {
   const { getEventData } = useEventService();
   const events: EventItem[] = getEventData();
 
@@ -24,4 +24,4 @@ function EventOverview() {
   );
 }
 
-export default EventOverview;
+export default EventPage;

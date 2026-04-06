@@ -4,7 +4,7 @@ import { useData } from "@/context/data/useData";
 import { editions } from "../data/editionData";
 import type { EditionType } from "../types/GameType";
 
-function GameOverview() {
+function GamePage() {
   const { edition, setEdition } = useData();
 
   return (
@@ -61,4 +61,4 @@ function GameOverview() {
   );
 }
 
-export default GameOverview;
+export default GamePage;

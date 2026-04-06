@@ -3,7 +3,7 @@ import type { Follower } from "../../game/types/GameType";
 import TokenButton from "../../../components/TokenButton";
 import styles from "./FollowerCard.module.scss";
 import Card from "@/components/Card";
-import { ChessKnight, Coins, Heart, Swords, UserMinus } from "lucide-react";
+import { ChessKnight, Coins, Heart, Swords, Trash } from "lucide-react";
 
 const STAT_COLORS = {
   combat: "#b91c1c",
@@ -27,9 +27,9 @@ function FollowerCard({ follower }: { follower: Follower }) {
       <button
         className={styles.followerRemove}
         onClick={() => removeFollower(follower.id)}
-        title="Entfernen"
+        title="Remove"
       >
-        <UserMinus />
+        <Trash />
       </button>
 
       <div className="flex flex-col">
@@ -38,17 +38,20 @@ function FollowerCard({ follower }: { follower: Follower }) {
             <span className="flex items-center mr-2">{STAT_ICONS[field]}</span>
 
             <div className="flex flex-wrap gap-1">
-              {Array.from({ length: 9 }, (_, i) => i + 1).map((val) => (
+              {Array.from(
+                { length: field === "payPerDay" ? 5 : 9 },
+                (_, i) => i + 1,
+              ).map((val) => (
                 <TokenButton
                   key={val}
                   label={val}
                   isActive={follower[field] === val}
                   color={STAT_COLORS[field]}
-                  onClick={() =>
-                    updateFollower(follower.id, {
-                      [field]: follower[field] === val ? 0 : val,
-                    })
-                  }
+                  onClick={() => {
+                    if (follower[field] !== val) {
+                      updateFollower(follower.id, { [field]: val });
+                    }
+                  }}
                 />
               ))}
             </div>
@@ -68,7 +71,9 @@ function FollowerCard({ follower }: { follower: Follower }) {
                 isActive={follower.mounted === val}
                 color={STAT_COLORS["mounted"]}
                 onClick={() =>
-                  updateFollower(follower.id, { mounted: !follower.mounted })
+                  updateFollower(follower.id, {
+                    mounted: follower.mounted === val ? false : val,
+                  })
                 }
               />
             ))}

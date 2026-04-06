@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import type { RuleItem } from "../types/RuleType";
 import { useRuleService } from "../services/RuleService";
 
-function RuleOverview() {
+function RuleDetailPage() {
   const { getRuleData } = useRuleService();
   const rules: RuleItem[] = getRuleData();
 
@@ -24,4 +24,4 @@ function RuleOverview() {
   );
 }
 
-export default RuleOverview;
+export default RuleDetailPage;

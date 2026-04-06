@@ -494,6 +494,7 @@ export const ruleData: Rule[] = [
     tag: "r207j",
     title: "Airborne",
     type: "reference",
+    note: "6: Roll on Ground Terrain Table",
     tables: [
       {
         type: "simple-list",
@@ -515,7 +516,6 @@ export const ruleData: Rule[] = [
           ["e079", "e079", "e105", "e105", "e106", "e106", "e098"],
           ["e107", "e107", "e109", "e101", "e110", "e111", "e111"],
           ["e109", "e099", "e100", "e101", "e117", "e117", "e439"],
-          ["Roll on Ground Terrain Table", "", "", "", "", "", ""],
         ],
       },
     ],

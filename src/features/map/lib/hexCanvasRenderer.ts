@@ -7,10 +7,11 @@ import {
   HEX_VERTICAL_SPACING,
 } from "./hexConstants";
 import { isAdjacent } from "./hexUtils";
+import type { HexTile } from "../data/hexData";
 
 export async function drawAllHexes(
   ctx: CanvasRenderingContext2D,
-  hexData: any[][],
+  hexData: HexTile[][],
   position?: { col: number; row: number },
 ) {
   const offscreen = document.createElement("canvas");
@@ -26,12 +27,19 @@ export async function drawAllHexes(
     for (const [rIdx, tile] of col.entries()) {
       const x = xOffset;
       const y = rIdx * HEX_VERTICAL_SPACING + yOffset;
+      const isMarkerAtPosition =
+        position?.col === cIdx && position?.row === rIdx;
+      const isHexFogOfWar =
+        position &&
+        !(position.col === cIdx && position.row === rIdx) &&
+        !isAdjacent(position.col, position.row, cIdx, rIdx);
 
       try {
         const path = tile.variant
           ? `/images/terrains/${tile.terrain}-${tile.variant}.png`
           : `/images/terrains/${tile.terrain}.png`;
         const img = await loadImage(path);
+
         drawHex({
           ctx: offCtx,
           x,
@@ -45,15 +53,11 @@ export async function drawAllHexes(
         console.warn(`Terrain not found: ${tile.terrain}`);
       }
 
-      if (
-        position &&
-        !(position.col === cIdx && position.row === rIdx) &&
-        !isAdjacent(position.col, position.row, cIdx, rIdx)
-      ) {
+      if (isHexFogOfWar) {
         drawHexOverlay(offCtx, x, y);
       }
 
-      if (position?.col === cIdx && position?.row === rIdx) {
+      if (isMarkerAtPosition) {
         await drawMarker(offCtx, x, y);
       }
     }

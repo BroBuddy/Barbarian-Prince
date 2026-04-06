@@ -70,6 +70,8 @@ export function useHexCanvas() {
     const col = Math.floor(px / (HEX_WIDTH * 0.75));
     const yOffset = col % 2 !== 0 ? HEX_VERTICAL_SPACING / 2 : 0;
     const row = Math.floor((py - yOffset) / HEX_VERTICAL_SPACING);
+    const isClickOnMarker =
+      playerPosition?.col === col && playerPosition?.row === row;
 
     if (
       col < 0 ||
@@ -79,7 +81,7 @@ export function useHexCanvas() {
     )
       return;
 
-    if (playerPosition?.col === col && playerPosition?.row === row) {
+    if (isClickOnMarker) {
       clearPlayerPosition();
       return;
     }

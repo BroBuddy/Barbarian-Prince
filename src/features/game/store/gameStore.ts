@@ -24,7 +24,7 @@ export const WEALTH_CODES: WealthCode[] = [
   "c",
 ];
 
-function clamp(value: number, min = 0, max = 9): number {
+function clamp(value: number, min = 0, max = 11): number {
   return Math.max(min, Math.min(max, value));
 }
 

@@ -42,7 +42,7 @@ function EnemyCard({ enemy }: { enemy: Enemy }) {
             <div className="flex flex-wrap gap-1">
               {(field === "wealthCode"
                 ? WEALTH_VALUES
-                : Array.from({ length: 9 }, (_, i) => i + 1)
+                : Array.from({ length: 11 }, (_, i) => i + 1)
               ).map((val) => (
                 <TokenButton
                   key={val}

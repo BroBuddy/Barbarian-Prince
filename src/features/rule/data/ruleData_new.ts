@@ -201,6 +201,324 @@ export const ruleData: Rule[] = [
     desc: "All the Travel Tables for the various types of terrain hexes and different habitation hexes are given in the Reference Booklet. Alongside each are the chances of a travel event (r204b), getting lost (r205), if hunting for food (r215b) is allowed or fodder (r215f) available for mounts.",
     optional:
       "If you are including XP (r237) as an optional rule, then you may have to add +1 to the horizontal number on the Travel table (r207) later in your adventure, so your result is 2-7 (see r238 for details).",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r207a", "Farmland"],
+          ["r207b", "Countryside"],
+          ["r207c", "Forest"],
+          ["r207d", "Hills"],
+          ["r207e", "Mountains"],
+          ["r207f", "Swamp"],
+          ["r207g", "Desert"],
+          ["r207h", "Cross River"],
+          ["r207i", "On Road"],
+          ["r207j", "Airborne"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207a",
+    title: "Farmland",
+    type: "reference",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "11+"],
+          ["Event", "8+"],
+          ["Hunt", "✅"],
+          ["Fodder", "✅"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Farmland Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e009", "e009", "e009", "e009", "e009", "e009", "e009"],
+          ["e009", "e009", "e009", "e008", "e168", "e169", "e430"],
+          ["e018", "e018", "e020", "e020", "e023", "e130", "e432"],
+          ["e003", "e004", "e128", "e197", "e017", "e017", "e075"],
+          ["e048", "e049", "e032", "e081", "e050", "e050", "e444"],
+          ["e079", "e079", "e077", "e084", "e174", "e172", "e430"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207b",
+    title: "Countryside",
+    type: "reference",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "10+"],
+          ["Event", "9+"],
+          ["Hunt", "✅"],
+          ["Fodder", "✅"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Countryside Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e009", "e004", "e005", "e008", "e003", "e021", "e430"],
+          ["e050", "e018", "e020", "e023", "e022", "e171", "e054"],
+          ["e007", "e051", "e052", "e052", "e055", "e057", "e052"],
+          ["e077", "e075", "e075", "e076", "e081", "e174", "e075"],
+          ["e065", "e067", "e068", "e069", "e070", "e084", "e064"],
+          ["e078", "e078", "e079", "e079", "e172", "e083", "e440"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207c",
+    title: "Forest",
+    type: "reference",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "9+"],
+          ["Event", "9+"],
+          ["Hunt", "✅"],
+          ["Fodder", "✅"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Forest Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e003", "e004", "e005", "e007", "e007", "e008", "e400"],
+          ["e051", "e074", "e074", "e073", "e022", "e178", "e435"],
+          ["e071", "e071", "e052", "e016", "e080", "e080", "e445"],
+          ["e076", "e075", "e084", "e083", "e083", "e170", "e082"],
+          ["e087", "e064", "e087", "e166", "e166", "e068", "e435"],
+          ["e078", "e078", "e079", "e079", "e198", "e198", "e439"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207d",
+    title: "Hills",
+    type: "reference",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "9+"],
+          ["Event", "10+"],
+          ["Hunt", "✅"],
+          ["Fodder", "✅"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Hills Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e008", "e004", "e005", "e006", "e006", "e003", "e432"],
+          ["e009", "e023", "e068", "e051", "e020", "e019", "e098"],
+          ["e028", "e028", "e058", "e070", "e055", "e056", "e400"],
+          ["e076", "e075", "e076", "e057", "e081", "e048", "e058"],
+          ["e019", "e052", "e059", "e066", "e067", "e064", "e118"],
+          ["e078", "e078", "e079", "e079", "e085", "e043", "e445"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207e",
+    title: "Mountains",
+    type: "reference",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "8+"],
+          ["Event", "9+"],
+          ["Hunt", "❌"],
+          ["Fodder", "❌"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Mountains Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e003", "e004", "e005", "e006", "e006", "e058", "e400"],
+          ["e079", "e100", "e023", "e068", "e101", "e170", "e086"],
+          ["e028", "e028", "e058", "e052", "e054", "e055", "e441"],
+          ["e078", "e098", "e099", "e079", "e088", "e059", "e439"],
+          ["e085", "e085", "e086", "e086", "e044", "e095", "e439"],
+          ["e066", "e052", "e059", "e064", "e067", "e118", "e118a"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207f",
+    title: "Swamp",
+    type: "reference",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "6+"],
+          ["Event", "10+"],
+          ["Hunt", "✅"],
+          ["Fodder", "❌"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Swamp Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e003", "e004", "e005", "e022", "e046", "e033", "e400"],
+          ["e020", "e073", "e051", "e051", "e074", "e068", "e427"],
+          ["e078", "e164", "e052", "e057", "e098", "e178", "e437"],
+          ["e091", "e091", "e092", "e092", "e094", "e094", "e082"],
+          ["e089", "e089", "e089", "e090", "e064", "e093", "e445"],
+          ["e078", "e078", "e079", "e095", "e095", "e097", "e443"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207g",
+    title: "Desert",
+    type: "reference",
+    note: "* Double needed",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "7+"],
+          ["Event", "10+"],
+          ["Hunt", "❌*"],
+          ["Fodder", "❌*"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Desert Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e019", "e129", "e128", "e051", "e023", "e068", "e400"],
+          ["e028", "e028", "e003", "e004", "e055", "e082", "e437"],
+          ["e120", "e005", "e120", "e120", "e066", "e099", "e438"],
+          ["e091", "e091", "e164", "e164", "e005", "e069", "e438"],
+          ["e078", "e064", "e121", "e121", "e121", "e021", "e439"],
+          ["e078", "e064", "e096", "e096", "e119", "e119", "e443"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207h",
+    title: "Cross River",
+    type: "reference",
+    note: "1-2: Roll on Terrain Before River Crossing",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "9+"],
+          ["Event", "10+"],
+          ["Hunt", "-"],
+          ["Fodder", "-"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Cross River Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e122", "e122", "e122", "e122", "e122", "e122", "e122"],
+          ["e051", "e123", "e123", "e057", "e057", "e083", "e431"],
+          ["e094", "e091", "e125", "e126", "e127", "e084", "e441"],
+          ["e124", "e124", "e124", "e125", "e126", "e127", "e441"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207i",
+    title: "On Road",
+    type: "reference",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "never"],
+          ["Event", "8+"],
+          ["Hunt", "-"],
+          ["Fodder", "-"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on On Road Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e018", "e020", "e023", "e168", "e168", "e168", "e442"],
+          ["e003", "e051", "e051", "e051", "e003", "e050", "e004"],
+          ["e008", "e004", "e005", "e006", "e007", "e057", "e425"],
+          ["e128", "e128", "e128", "e129", "e129", "e129", "e444"],
+          ["e048", "e049", "e081", "e081", "e058", "e021", "e440"],
+          ["e172", "e172", "e079", "e130", "e172", "e174", "e436"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r207j",
+    title: "Airborne",
+    type: "reference",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["Lost", "12+"],
+          ["Event", "10+"],
+          ["Hunt", "-"],
+          ["Fodder", "-"],
+        ],
+      },
+      {
+        type: "roll-table",
+        label: "Roll on Airborne Table (1d6)",
+        cols: ["1", "2", "3", "4", "5", "6", "7"],
+        rows: [
+          ["e102", "e102", "e103", "e103", "e104", "e104", "e117"],
+          ["e112", "e112", "e112", "e108", "e108", "e112", "e118a"],
+          ["e079", "e079", "e105", "e105", "e106", "e106", "e098"],
+          ["e107", "e107", "e109", "e101", "e110", "e111", "e111"],
+          ["e109", "e099", "e100", "e101", "e117", "e117", "e439"],
+          ["Roll on Ground Terrain Table", "", "", "", "", "", ""],
+        ],
+      },
+    ],
   },
 
   // ─── HEX ACTIONS ──────────────────────────────────────────────

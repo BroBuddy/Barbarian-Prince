@@ -1,1 +1,0 @@
-import{t as e}from"./rule-CCmS6W3e.js";export{e as default};

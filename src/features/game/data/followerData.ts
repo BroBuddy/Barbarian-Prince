@@ -1,6 +1,9 @@
 import type { Follower } from "../types/GameType";
 
-export const FOLLOWER_DEFINITIONS: Omit<Follower, "id" | "payPerDay">[] = [
+export const FOLLOWER_DEFINITIONS: Omit<
+  Follower,
+  "id" | "payPerDay" | "mounted"
+>[] = [
   { title: "Amazon", combat: 6, endurance: 5 },
   { title: "Druid", combat: 6, endurance: 7 },
   { title: "Dwarf", combat: 3, endurance: 3 },

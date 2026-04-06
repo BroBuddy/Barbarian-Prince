@@ -38,7 +38,7 @@ const ResourceManager = () => {
             <span>{resourceIcons[key] || ""}</span>
             <span className="text-bold ml-1">
               {key === "Day"
-                ? `D${getDayAndWeek(value).dayOfWeek} · W${getDayAndWeek(value).week}`
+                ? `D${getDayAndWeek(value as number).dayOfWeek} · W${getDayAndWeek(value as number).week}`
                 : displayValue}
             </span>
           </div>

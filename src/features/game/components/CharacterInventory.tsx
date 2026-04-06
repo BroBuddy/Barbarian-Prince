@@ -45,12 +45,12 @@ const CharacterInventory = () => {
   const setResources = useGameStore((state) => state.setResources);
 
   const goldActive = useMemo(
-    () => valueToRowActive(GOLD_ROWS, resources.Gold),
+    () => valueToRowActive(GOLD_ROWS, Number(resources.Gold)),
     [resources.Gold],
   );
 
   const foodActive = useMemo(
-    () => valueToRowActive(FOOD_ROWS, resources.Food),
+    () => valueToRowActive(FOOD_ROWS, Number(resources.Food)),
     [resources.Food],
   );
 

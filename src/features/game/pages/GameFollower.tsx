@@ -8,10 +8,8 @@ import { FOLLOWER_DEFINITIONS } from "../data/followerData";
 function GameFollower() {
   const { followers, addFollower } = useGameStore();
 
-  const handleAdd = (
-    followerTemplate: Omit<Follower, "id" | "payPerDay" | "mounted">,
-  ) => {
-    addFollower({ ...followerTemplate, payPerDay: 0, mounted: false });
+  const handleAdd = (followerTemplate: Omit<Follower, "id" | "payPerDay">) => {
+    addFollower({ ...followerTemplate, payPerDay: 0 });
   };
 
   return (

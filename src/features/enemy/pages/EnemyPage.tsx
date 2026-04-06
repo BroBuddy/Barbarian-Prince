@@ -8,8 +8,8 @@ import EnemyCard from "../components/EnemyCard";
 function EnemyPage() {
   const { enemies, addEnemy } = useGameStore();
 
-  const handleAdd = (enemyItem: Omit<Enemy, "id" | "wealthCode">) => {
-    addEnemy({ ...enemyItem, wealthCode: 0 });
+  const handleAdd = (enemyItem: Omit<Enemy, "id">) => {
+    addEnemy({ ...enemyItem });
   };
 
   return (

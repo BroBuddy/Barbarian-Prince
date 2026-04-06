@@ -5,7 +5,9 @@ import { Coins, Heart, Swords, Trash } from "lucide-react";
 import styles from "./EnemyCard.module.scss";
 import TokenButton from "@/components/TokenButton";
 
-const WEALTH_VALUES: number[] = [1, 2, 4, 5, 7, 10, 12, 15, 21];
+const WEALTH_VALUES: number[] = [
+  1, 2, 4, 5, 7, 10, 12, 15, 21, 25, 30, 50, 60, 70,
+];
 
 const STAT_COLORS = {
   combat: "#b91c1c",

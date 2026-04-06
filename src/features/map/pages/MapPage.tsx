@@ -1,7 +1,8 @@
 import { useHexCanvas } from "../hooks/useHexCanvas";
 import { MoveModal } from "../components/MoveModal";
-import { Sun } from "lucide-react";
-import useGameStore from "@/features/game/store/gameStore";
+import { useState } from "react";
+import { MidnightModal } from "../components/MidnightModal";
+import { Moon } from "lucide-react";
 
 function MapPage() {
   const {
@@ -12,7 +13,8 @@ function MapPage() {
     onAdvance,
     onClose,
   } = useHexCanvas();
-  const nextDay = useGameStore((state) => state.nextDay);
+
+  const [midnightOpen, setMidnightOpen] = useState<boolean>(false);
 
   return (
     <div
@@ -21,14 +23,21 @@ function MapPage() {
         height: "calc(100vh - 50px)",
         display: "flex",
         flexDirection: "column",
+        position: "relative",
+        paddingTop: "15px",
       }}
     >
-      <button
-        onClick={nextDay}
-        className="flex items-center text-bold text-white pointer mt-2 ml-5 pt-3 mx-1"
+      <div
+        className=" pointer text-white bg-black rounded py-1"
+        style={{ position: "fixed", top: "80px", right: "22px", zIndex: 10 }}
       >
-        <Sun /> <span className="ml-1">Next Day</span>
-      </button>
+        <button
+          onClick={() => setMidnightOpen(true)}
+          className="flex items-center text-white pointer"
+        >
+          <Moon />
+        </button>
+      </div>
 
       <div
         ref={containerRef}
@@ -58,6 +67,10 @@ function MapPage() {
             onAdvance={onAdvance}
             onClose={onClose}
           />
+        )}
+
+        {midnightOpen && (
+          <MidnightModal onClose={() => setMidnightOpen(false)} />
         )}
       </div>
     </div>

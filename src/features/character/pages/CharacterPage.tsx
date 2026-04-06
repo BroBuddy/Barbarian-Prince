@@ -2,14 +2,7 @@ import useGameStore from "../../game/store/gameStore";
 import Card from "@/components/Card";
 import CharacterInventory from "../components/CharacterInventory";
 import TokenButton from "../../../components/TokenButton";
-import {
-  ChessKnight,
-  Heart,
-  Lightbulb,
-  Sun,
-  Swords,
-  Utensils,
-} from "lucide-react";
+import { ChessKnight, Heart, Lightbulb, Swords, Utensils } from "lucide-react";
 import type { ReactNode } from "react";
 
 type BoxResource = {
@@ -29,7 +22,6 @@ const STAT_RESOURCES: BoxResource[] = [
 const CharacterPage = () => {
   const resources = useGameStore((state) => state.resources);
   const setResources = useGameStore((state) => state.setResources);
-  const nextDay = useGameStore((state) => state.nextDay);
 
   const handleSet = (resource: string, value: number) => {
     setResources({ [resource]: value });
@@ -37,13 +29,6 @@ const CharacterPage = () => {
 
   return (
     <>
-      <button
-        onClick={nextDay}
-        className="flex items-center text-bold text-white pointer mt-2 pt-3 mx-1"
-      >
-        <Sun /> <span className="ml-1">Next Day</span>
-      </button>
-
       <Card title="Cal Arath">
         {STAT_RESOURCES.map(({ name, icon, max, color }) => (
           <div key={name} className="flex flex-row m-1">

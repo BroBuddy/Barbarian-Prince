@@ -1,6 +1,6 @@
-import useGameStore from "../store/gameStore";
-import type { Follower } from "../types/GameType";
-import TokenButton from "./TokenButton";
+import useGameStore from "../../game/store/gameStore";
+import type { Follower } from "../../game/types/GameType";
+import TokenButton from "../../../components/TokenButton";
 import styles from "./FollowerCard.module.scss";
 import Card from "@/components/Card";
 import { ChessKnight, Coins, Heart, Swords, UserMinus } from "lucide-react";

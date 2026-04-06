@@ -1,33 +1,8 @@
 import Card from "@/components/Card";
 import { Link } from "react-router-dom";
-import { BookOpen, Sparkles } from "lucide-react";
-import type { ReactNode } from "react";
-import type { Edition } from "@/context/ContextType";
-import { useData } from "@/context/useData";
-
-type EditionType = {
-  id: Edition;
-  label: string;
-  icon: ReactNode;
-};
-
-const editions: EditionType[] = [
-  {
-    id: "original" as Edition,
-    label: "Original Edition",
-    icon: <BookOpen size={20} />,
-  },
-  {
-    id: "42th" as Edition,
-    label: "42nd Edition",
-    icon: <Sparkles size={20} />,
-  },
-  {
-    id: "ultimate" as Edition,
-    label: "Ultimate Edition",
-    icon: <Sparkles size={20} />,
-  },
-];
+import { useData } from "@/context/data/useData";
+import { editions } from "../data/editionData";
+import type { EditionType } from "../types/GameType";
 
 function GameOverview() {
   const { edition, setEdition } = useData();

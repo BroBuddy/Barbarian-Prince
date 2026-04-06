@@ -1,4 +1,4 @@
-import { useData } from "@/context/useData";
+import { useData } from "@/context/data/useData";
 import type { Event, EventItem } from "../types/EventType";
 
 export function useEventService() {

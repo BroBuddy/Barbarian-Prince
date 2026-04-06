@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import useGameStore from "../store/gameStore";
+import useGameStore from "../../game/store/gameStore";
 import Card from "@/components/Card";
-import TokenButton from "./TokenButton";
+import TokenButton from "../../../components/TokenButton";
 import { BadgeCent, Beef } from "lucide-react";
 
 export type Token = { label: number };

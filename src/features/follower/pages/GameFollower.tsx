@@ -1,9 +1,9 @@
 import Card from "@/components/Card";
 import FollowerCard from "../components/FollowerCard";
-import useGameStore from "../store/gameStore";
-import type { Follower } from "../types/GameType";
-import TokenButton from "../components/TokenButton";
-import { FOLLOWER_DEFINITIONS } from "../data/followerData";
+import useGameStore from "../../game/store/gameStore";
+import type { Follower } from "../../game/types/GameType";
+import TokenButton from "../../../components/TokenButton";
+import { followerData } from "../data/followerData";
 
 function GameFollower() {
   const { followers, addFollower } = useGameStore();
@@ -20,7 +20,7 @@ function GameFollower() {
 
       <Card title="Add Follower">
         <div className="flex flex-wrap mx-5 my-3 gap-2">
-          {FOLLOWER_DEFINITIONS.map((follower) => (
+          {followerData.map((follower) => (
             <TokenButton
               key={follower.title}
               label={follower.title}

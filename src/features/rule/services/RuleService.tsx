@@ -1,4 +1,4 @@
-import { useData } from "@/context/useData";
+import { useData } from "@/context/data/useData";
 import type { Rule, RuleItem } from "../types/RuleType";
 
 export function useRuleService() {

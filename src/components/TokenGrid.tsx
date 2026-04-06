@@ -1,4 +1,4 @@
-import type { Token } from "./CharacterInventory";
+import type { Token } from "../features/character/components/CharacterInventory";
 import TokenButton from "./TokenButton";
 
 export type TokenGridProps = {

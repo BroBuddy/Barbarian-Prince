@@ -1,3 +1,13 @@
+import type { ReactNode } from "react";
+
+export type Edition = "original" | "42th" | "ultimate";
+
+export type EditionType = {
+  id: Edition;
+  label: string;
+  icon: ReactNode;
+};
+
 export type Follower = {
   id: string;
   title: string;

@@ -4,8 +4,12 @@ import { lazy, Suspense } from "react";
 import Preloader from "./components/Preloader";
 
 const Game = lazy(() => import("./features/game/pages/GameOverview"));
-const GameCharacter = lazy(() => import("./features/game/pages/GameCharacter"));
-const GameFollower = lazy(() => import("./features/game/pages/GameFollower"));
+const GameCharacter = lazy(
+  () => import("./features/character/pages/GameCharacter"),
+);
+const GameFollower = lazy(
+  () => import("./features/follower/pages/GameFollower"),
+);
 const EventOverview = lazy(
   () => import("./features/events/pages/EventOverview"),
 );

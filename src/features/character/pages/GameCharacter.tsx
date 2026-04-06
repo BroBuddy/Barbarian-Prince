@@ -1,7 +1,7 @@
-import useGameStore from "../store/gameStore";
+import useGameStore from "../../game/store/gameStore";
 import Card from "@/components/Card";
 import CharacterInventory from "../components/CharacterInventory";
-import TokenButton from "../components/TokenButton";
+import TokenButton from "../../../components/TokenButton";
 import {
   ChessKnight,
   Heart,

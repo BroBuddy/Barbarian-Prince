@@ -12,16 +12,21 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes("node_modules")) return "vendor";
-          if (id.includes("/features/rule/data/")) return "rule-data";
-          if (id.includes("/features/rule/")) return "rule";
-
-          const dataMatch = id.match(/\/features\/events\/data\/(.+)\.ts$/);
-          if (dataMatch) {
-            const fileName = dataMatch[1];
+          const ruleMatch = id.match(/\/features\/rule\/data\/(.+)\.ts$/);
+          if (ruleMatch) {
+            const fileName = ruleMatch[1];
             return `${fileName}`;
           }
 
+          const eventMatch = id.match(/\/features\/events\/data\/(.+)\.ts$/);
+          if (eventMatch) {
+            const fileName = eventMatch[1];
+            return `${fileName}`;
+          }
+
+          if (id.includes("node_modules")) return "vendor";
+          if (id.includes("/features/rule/data/")) return "rule-data";
+          if (id.includes("/features/rule/")) return "rule";
           if (id.includes("/features/events/")) return "events";
           if (id.includes("/features/map/")) return "map";
         },

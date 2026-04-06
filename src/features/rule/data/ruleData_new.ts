@@ -7,14 +7,16 @@ export const ruleData: Rule[] = [
     title: "Characters",
     type: "character",
     desc: 'Each character in the game has a Combat Skill (S), an Endurance value (E), and a Wealth (W). Each is rated numerically, with higher numbers being better. If no wealth is given, it is presumed to be zero. The characters include yourself (the Barbarian Prince, see r202), followers who join your "party," and any others encountered in the course of the game. They can be friendly or hostile, intelligent or unintelligent. When a character joins your party, note their statistics as needed. You can voluntarily dismiss or abandon members of your party if you wish (sometimes expedient when making an escape, or when food or money is short). Other characters encountered during events need not be permanently recorded.',
-    note: "You also can opt to include and track Experience or XP (r237) as a way of increasing stats and skills.",
+    optional:
+      "You also can opt to include and track Experience or XP (r237) as a way of increasing stats and skills.",
   },
   {
     tag: "r202",
     title: "Your Character",
     type: "character",
     desc: "You are Cal Arath, Barbarian Prince, with Skill 8, Endurance 9, Wealth 4. Roll 1D3+2 for your Wit & Wiles rating.",
-    optional: true,
+    optional:
+      "You may also include Luck (r235) to change a dice roll and give the Barbarian Prince a break when he most needs it. You may also start the game with an Advantage (r236) to give you a bonus in some situations, and/or a Combat Tactic (r239) to help you in battles.",
   },
 
   // ─── DAILY ACTIONS ────────────────────────────────────────────
@@ -66,7 +68,7 @@ export const ruleData: Rule[] = [
     tag: "r204",
     title: "Travel",
     type: "movement",
-    desc: "Move hex by hex across the map. Each time you try to leave a hex, check for getting lost (r205), then check for a travel event (r204b).",
+    desc: "You travel to new hexes as a daily action (r203), moving your token across the map, hex by hex. You can’t skip a hex unless a special event allows it. Each time you try to leave a hex, you may get lost (see r205). If you don’t get lost, you may be able to travel further, depending on how you are travelling (r204a). After checking to see if you are lost, you must then check for a Travel event (r204b) in your current hex.",
     tables: [
       {
         type: "simple-list",
@@ -81,53 +83,52 @@ export const ruleData: Rule[] = [
         ],
       },
     ],
-    optional: true,
-    linkedRules: ["r205", "r207"],
   },
   {
     tag: "r204a",
     title: "Travel Speeds",
     type: "movement",
-    desc: "On foot: 1 hex/day. Wagon: 1 hex/day (roads or farmland only). Mounted: 1–2 hexes/day. Airborne: up to 3 hexes/day.",
+    desc: "Characters without mounts travel on foot at the speed of one hex per day. A wagon can also only travel one hex per day, and can only use roads or cross farmland hexes. If everyone in your party is mounted on horses, mules, or similar beasts, the party as a whole can travel either one or two hexes per day. Roads increase these travel speeds however – see r204c. If the entire party is using airborne travel (riding winged mounts or using magic), the party can instead use airborne travel up to three hexes per day.",
+    optional:
+      "Trails: When checking to see if you are Lost (r205), if you roll at least 6 less than the ‘Lost’ number shown on the Travel Table (r207) for that terrain (for example, 3 or less for ‘Forest’ where the ‘Lost’ number is 9+), you may travel one extra hex that day (if you wish) as you ‘find a trail’ or other marker. Only one extra hex per day is granted, even if you roll for a trail again the same day. Note that bonuses for maps or guides (see r205a) do apply here, and make finding a trail more likely.",
   },
   {
     tag: "r204b",
     title: "Travel Events",
     type: "movement",
-    desc: "Each day when entering a hex, remaining in one, or resting: roll 2D6 on the Travel Table (r207). If the result equals or exceeds the Event number, an event occurs.",
-    linkedRules: ["r207"],
+    desc: "Each day when you either enter a new hex, or remain in one, such as a habitation or ruins, or when you rest (r222), an event may occur. Find the terrain type you are currently in on the Travel Table (r207), read to the Event column and roll 2D6. If the total equals or exceeds the number listed, an event occurs. Roll 1D6 twice in that table then go to the event section listed.",
+    optional:
+      "If you are including XP (r237) in the game, then certain Travel Events can get more dangerous (see r238). In addition, all habitations gain a unique event (re-roll if not using such events).",
   },
   {
     tag: "r204c",
     title: "Roads",
     type: "movement",
-    desc: "Roads increase travel speed by 1 hex. On foot: up to 2 hexes/day. Mounted: up to 3 hexes/day. Use the 'On Road' table for events, then check terrain of the hex entered (with -1 to roll if a road event occurred).",
+    desc: 'Using a road increases the speed of travel by 1 hex, so you can travel up to 2 hexes by road per day on foot, or up to 3 if mounted. If you leave a hex via a road, use instead the "On Road" table on the Travel Table (r207) for new events. You must then check the Travel Table again for a possible event in the terrain entered, using the terrain of the hex (with -1 to the roll if a road event did occur) on the Travel Table.',
   },
   {
     tag: "r204d",
     title: "Airborne Travel",
     type: "movement",
-    desc: "The party flies for the entire day and lands in the last hex entered. Use the 'Airborne' table instead of terrain. In the last hex, if no airborne event occurs, check for a normal terrain event.",
+    desc: 'When airborne, the party flies for the entire day, and lands in the land hex entered to camp for the night. If your party has winged mounts, you can instead ride or "short hop" one or two hexes per day, as if you were mounted in the normal fashion, entering each hex on the ground. When flying (not short-hopping), you use the "Airborne" table on the Travel Table instead of the table for that terrain type. In the last hex you enter for the day, if no airborne travel event occurs, then you must check for a normal "terrain" type event for the hex where you land.',
   },
   {
     tag: "r204e",
     title: "Crossing Rivers",
     type: "movement",
-    desc: "Check for lost (r205) before reaching the river, then roll again for lost crossing (r205d). If successful, check for a Crossing River event. Flying ignores all river crossing checks.",
-    linkedRules: ["r205", "r205d"],
+    desc: 'If you try to travel across a river, you must first consult the Travel Table (r207) for getting to the river without getting lost (r205). If successful, then roll for the possibility of getting lost crossing the river (r205d) - see the "Crossing River" table (r207). If successful, check for a “Crossing River” travel event. If this doesn’t prevent you from crossing, you then enter the hex on the other side, check for any normal travel events for the new terrain entered. If you are flying, you can fly over a river and ignore all crossing problems (do not check for getting lost crossing the river or for ‘Crossing River’ events). If a river encounter forces you to flee, roll 1D6: 1-4: You flee back to the original hex; 5-6: You flee across the river.',
   },
   {
     tag: "r204f",
     title: "Travel Events & Time",
     type: "movement",
-    desc: "A travel event normally consumes the rest of the day. Exceptions: events resolved purely through combat where all enemies are killed, or events involving only brief talk.",
-    optional: true,
+    desc: "An event during travel normally consumes the rest of the day. You cannot move further that day unless the event allows or requires extra movement. The exceptions are events that are resolved purely through combat (r220) and you killed all those encountered, or where just talk or negotiation occurred for a few minutes. You can continue travel after if you have speed remaining and wish to continue.",
   },
   {
     tag: "r205",
     title: "Lost",
     type: "movement",
-    desc: "Each time you try to leave a hex, roll 2D6 vs the Lost number for that terrain (r207). If equal or greater, you are lost and cannot travel further that day. Modify by -1 for each successive day attempting the same direction.",
+    desc: 'Each time you attempt to leave a hex and travel to a new one, there is a danger of becoming lost. Consult the Travel Tables (r207) in the Reference Booklet and find the terrain type you are leaving. Find the "Lost" entry and roll 2D6. If the dice total equals or exceeds the number there, your party is lost. You may modify this roll by -1 for each successive day you attempt to leave the hex in the same direction. If you move more than one hex in the day, you must check for getting lost before each move. If you get lost, you cannot travel further that day. You are stuck in the hex you tried to leave. You must check for a travel event (see r204b) in the hex you are in.',
     tables: [
       {
         type: "simple-list",
@@ -140,7 +141,6 @@ export const ruleData: Rule[] = [
         ],
       },
     ],
-    linkedRules: ["r207"],
   },
   {
     tag: "r205a",
@@ -153,7 +153,6 @@ export const ruleData: Rule[] = [
     title: "Self-Guiding Moves",
     type: "movement",
     desc: "Leaving a hex via road or from any habitation: can never get lost. Raft travel (r213): can never get lost.",
-    linkedRules: ["r213"],
   },
   {
     tag: "r205c",
@@ -171,7 +170,7 @@ export const ruleData: Rule[] = [
     tag: "r206",
     title: "Transport",
     type: "movement",
-    desc: "All food, gold, and possessions must be carried. Items have a weight in 'loads'. Anything beyond capacity must be left behind or cached (r214).",
+    desc: 'When travelling, any food, gold, and possessions acquired by events must be carried. Many of these items have a weight, in "loads." You can only carry a certain number of loads. Anything else must be left behind. Objects left behind can be placed in a "cache" (see r214 for details).',
     tables: [
       {
         type: "simple-list",
@@ -182,7 +181,6 @@ export const ruleData: Rule[] = [
         ],
       },
     ],
-    linkedRules: ["r214"],
   },
   {
     tag: "r206a",
@@ -200,8 +198,9 @@ export const ruleData: Rule[] = [
     tag: "r207",
     title: "Travel Tables",
     type: "reference",
-    desc: "All travel tables for terrain and habitation hexes are in the Reference Booklet. Shows chances of travel event, getting lost, hunting availability, and fodder for mounts.",
-    linkedRules: ["r204b", "r205", "r215b", "r215f"],
+    desc: "All the Travel Tables for the various types of terrain hexes and different habitation hexes are given in the Reference Booklet. Alongside each are the chances of a travel event (r204b), getting lost (r205), if hunting for food (r215b) is allowed or fodder (r215f) available for mounts.",
+    optional:
+      "If you are including XP (r237) as an optional rule, then you may have to add +1 to the horizontal number on the Travel table (r207) later in your adventure, so your result is 2-7 (see r238 for details).",
   },
 
   // ─── HEX ACTIONS ──────────────────────────────────────────────
@@ -209,16 +208,14 @@ export const ruleData: Rule[] = [
     tag: "r208",
     title: "Searching a Ruins",
     type: "action",
-    desc: "Spend the day searching an ancient ruin. Roll 2D6 and consult the Ruins table. Special (*) events apply only in named ruins on the map (e.g. Jakor's Keep hex 0901).",
+    desc: "As a daily action, you spend the day searching an ancient and crumbling ruin with your party. To see what happens during your search, roll two dice and consult the table in the Reference Booklet. Note that there is a special event (*) depending if you are in a particular ruins marked on the map, such as Jakor’s Keep (hex 0901). If you are in an unmarked ruin, and your result indicates a *, then there is no event today.",
     requiresHex: ["ruins"],
-    optional: true,
-    linkedRules: ["r207"],
   },
   {
     tag: "r209",
     title: "Seek News & Information",
     type: "action",
-    desc: "Spend the day in taverns, streets and markets talking to locals. Roll 2D6. Subtract -1 in a village. Add +1 if you spend 5 gold or your Wit & Wiles is 5+.",
+    desc: "In this daily action, you spend the day in taverns, streets and the market, talking to locals. Roll 2D6 and consult the list below for results. If you are in a village, subtract (-1) from the dice roll. If you spend 5 gold pieces, or your Wit & Wiles is 5+, you may add +1 after you roll the dice (+1 or +2 if both).",
     requiresHex: ["village", "town", "castle"],
     tables: [
       {
@@ -969,7 +966,7 @@ export const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Combat Table",
+        label: "",
         cols: ["Total", "Wounds Inflicted"],
         rows: [
           ["3, 6, 8, 11", "1 wound"],
@@ -1034,11 +1031,17 @@ export const ruleData: Rule[] = [
     title: "Wounds & Endurance",
     type: "combat",
     desc: "Every character has an Endurance value equal to the wounds needed to kill them.",
-    subRules: [
-      { tag: "r221a", title: "Serious Wounding" },
-      { tag: "r221b", title: "Unconsciousness" },
-      { tag: "r221c", title: "Death" },
-      { tag: "r221d", title: "Magical or Undead Creatures" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r221a", "Serious Wounding"],
+          ["r221b", "Unconsciousness"],
+          ["r221c", "Death"],
+          ["r221d", "Magical or Undead Creatures"],
+        ],
+      },
     ],
   },
   {
@@ -1110,11 +1113,17 @@ export const ruleData: Rule[] = [
     type: "action",
     desc: "Takes place at night after daily action and evening meal. Spend all day preparing for full Wit & Wiles, or attempt after another action with -2 to Wit & Wiles. Can join a thieves' guild in a town (20 gold + Wit & Wiles roll).",
     requiresHex: ["town", "castle", "temple"],
-    subRules: [
-      { tag: "r224a", title: "Rob a House" },
-      { tag: "r224b", title: "Rob a Castle or Temple" },
-      { tag: "r224c", title: "Rob an Inn" },
-      { tag: "r224d", title: "Rob a Stranger" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r224a", "Rob a House"],
+          ["r224b", "Rob a Castle or Temple"],
+          ["r224c", "Rob an Inn"],
+          ["r224d", "Rob a Stranger"],
+        ],
+      },
     ],
   },
   {
@@ -1211,10 +1220,16 @@ export const ruleData: Rule[] = [
     title: "Acquiring Treasure",
     type: "treasure",
     desc: "After killing enemies, take their wealth. Compare wealth code with 1D6 roll on the Treasure Table (r226) for actual gold. Special items (letter codes A, B, C) require a second roll on r226.",
-    subRules: [
-      { tag: "r225a", title: "Special Possessions" },
-      { tag: "r225b", title: "Distributing Acquisitions" },
-      { tag: "r225c", title: "Animal Pelts and Furs" },
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r225a", "Special Possessions"],
+          ["r225b", "Distributing Acquisitions"],
+          ["r225c", "Animal Pelts and Furs"],
+        ],
+      },
     ],
     linkedRules: ["r226"],
   },
@@ -1306,13 +1321,19 @@ export const ruleData: Rule[] = [
     tag: "r228",
     title: "True Love",
     type: "special",
-    desc: "Your true love will never desert you regardless of food, money, or lodging. She shares your room (r217). You can never voluntarily abandon her. If separated, roll 2D6 each day once free: 10–11 she rejoins; 12 she died trying to find you.",
-    subRules: [
-      { tag: "r228a", title: "Advantages of Love" },
-      { tag: "r228b", title: "The Eternal Triangle" },
+    desc: 'You may fall in love with a female and vice versa. This is "true love," a rare but wonderful situation. Your true love will always accompany you until death or unavoidable circumstance parts you. Your true love will never desert you, regardless of whether money or food is properly paid, etc. In lodging (r217), she will share your room. You can never voluntarily abandon her, and she will not leave even if you order her to go! In some cases, when you are believed dead, or imprisoned, you will be forcibly parted from the rest of your followers. Your true love will also be separated from you. As soon as you are free, and reuniting is possible, at the end of each day roll 2D6. If result 10-11, your true love has finally found you, and rejoins your party. If the result is 12 exactly, you learn that she died trying to find you, or trying to protect you. When you are reunited, roll 2D6 again, if the result is 9-11 she has acquired a horse on her own journeys. If the result is 12 exactly, she has a winged mount (a Pegasus) which is able to fly (see r204d).',
+    optional:
+      "‘True Love’ can also be a way of winning the game, if optional rules are used (see r234).",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r228a", "Advantages of Love"],
+          ["r228b", "The Eternal Triangle"],
+        ],
+      },
     ],
-    optional: true,
-    linkedRules: ["r234"],
   },
   {
     tag: "r228a",
@@ -1330,10 +1351,8 @@ export const ruleData: Rule[] = [
     tag: "r229",
     title: "Study History",
     type: "action",
-    desc: "Spend the day reading ancient scrolls in a castle or temple. Roll 2D6 (+1 if Wit & Wiles 5+; +1 if wizard, monk, priest or elf in party).",
+    desc: "In this daily action, in a castle or temple, you can decide to spend the day reading through ancient scrolls, studying the history of the South and hoping to find clues to help regain your throne. Roll 2D6 (+1 if Wit & Wiles is 5+, +1 if you have a wizard, monk, priest or elf in your party):",
     requiresHex: ["castle", "temple"],
-    optional: true,
-    linkedRules: ["r234"],
     tables: [
       {
         type: "roll-table",
@@ -1367,7 +1386,7 @@ export const ruleData: Rule[] = [
     tag: "r230",
     title: "Visit Tavern",
     type: "action",
-    desc: "After any daily action (but before the evening meal) in a village, town or castle. Spend 1 gold minimum. Spend 3 gold for +1 to roll. Roll 2D6 (-1 in a village).",
+    desc: "If you are in a village, town or castle then at the end of the day, after any daily action (r203), but before your evening meal (r215), you may find a tavern to spend a few hours. Taverns are a good place to either relax and drink, or perhaps pick up some rumors and gossip from the locals. You must spend 1 gold to buy drinks, but if you spend 3 gold buying a round, add +1 to your roll. Roll 2D6 (-1 to roll if in a village):",
     requiresHex: ["village", "town", "castle"],
     tables: [
       {
@@ -1412,7 +1431,7 @@ export const ruleData: Rule[] = [
     tag: "r231",
     title: "Visit Market",
     type: "action",
-    desc: "Spend the day visiting the market. Roll 2D6 twice and apply both results (unless first roll is 2). Subtract -1 from both rolls in a village. Can also sell food or animal pelts (r215b).",
+    desc: "In this daily action, you spend the day visiting the market and attempting to buy or sell various items. Roll 2D6 twice and consult the list below for results. If you roll a 2 on your first roll however, you may not roll a second time. If you are in a village, subtract 1 from both rolls. You may also sell food, or animal pelts from hunting (r215b), at the market (except at an Elf Haven – e166). Roll 1D6, if result is equal or lower than your Wit & Wiles, you find a merchant who will buy your food at a rate of 1 gold piece for every three food units and/or any animal pelts at 2 gold pieces each.",
     requiresHex: ["village", "town", "castle"],
     tables: [
       {
@@ -1454,18 +1473,22 @@ export const ruleData: Rule[] = [
     tag: "r232",
     title: "Borrow from a Moneylender",
     type: "action",
-    desc: "Borrow 10 gold in a town. Repay 10+1D6 gold after 7 days or when leaving. Fail to repay: roll 1D6 vs Wit & Wiles. Success: avoid for one more day or flee. Failure: face lender's henchman (S7, E6, W2).",
+    desc: "As a daily action, a loan of 10 gold may be obtained from a local town moneylender. Seven days later, or when you are about to leave town, 10+1D6 gold is due as repayment. If you cannot repay on time, or if you attempt to leave town without paying, you must roll less than your Wit and Wiles on 1D6. If successful, repayment can be avoided for one more day, or you may flee town. If unsuccessful, the lender’s henchman (S7, E6, W2) will confront you – see r305. If you defeat him, you may escape from town (r218a). If you owe money to a lender in a town you have fled from, you will be wanted by constables there. If you return to the town, you must pay 50 gold in interest and fines. Even if you pay the fines no lender in that town will ever trust you for a loan again. If you return and do not pay 50 gold, you must roll 1D6 less than your Wit & Wiles each day, or be set upon by 1D6 constables with S5, E4, W4 (r305). You may surrender and be taken to debtor’s prison (e062), but if you kill a constable before surrendering, see e061 instead.",
     requiresHex: ["town"],
   },
   {
     tag: "r233",
     title: "Seek an Honest Job",
     type: "action",
-    desc: "If alone (or with a lover) in a village, town or castle, roll 1D6 vs Wit & Wiles for success. Roll 1D6 for the job available. While working no other daily action is possible except visiting a tavern (r230).",
+    desc: "As a daily action, if alone (or with a lover**) in a village, town or castle, you may try to find an honest job to earn some gold. If you roll less than your Wit & Wiles on 1D6 then you are successful. Roll 1D6 below for what is available, depending on the habitation. While working, no other daily action is possible except visiting a tavern (r230) at the end of the day. You still roll for a possible event at the habitation (r207).",
     requiresHex: ["village", "town", "castle"],
-    subRules: [{ tag: "r233a", title: "Message Delivery" }],
-    note: "* Each day on guard/patrol jobs: roll 1D6: 1–3 quiet; 4 hurt in training (1 wound); 5 thief (S4, E4, W15) r309; 6+ bandit attack 1D3+1 (S5, E4, W4) r305.",
+    note: "* Each day in the job, roll 1D6: 1-3: A quiet day – no further event; 4: Hurt in training – take 1 wound; 5: Thief – S4, E4, W15 (r309); 6+: Bandit attack - 1D3+1 in number, each S5, E4, W4 (r305). **A lover may also get a job while you are working, gaining free food and lodging. She can also earn 1 gold a day if you do. If she has S4 or higher, or any type of knowledge (such as being a gypsy, priestess or witch), then she can instead earn 2 gold per day in the habitation as a guard, healing, telling fortunes etc.",
     tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [["r233a", "Message Delivery"]],
+      },
       {
         type: "roll-table",
         label: "Village Jobs (1D6)",
@@ -1521,26 +1544,22 @@ export const ruleData: Rule[] = [
     tag: "r234",
     title: "Victory",
     type: "optional",
-    optional: true,
-    desc: "Standard victory: collect 500 gold and return across the Tragoth River within 70 days. Alternative victories: collect 5 different (Ψ) story events and return north; reach 500 XP and return north; or (fairy tale ending) have a True Love for 4 weeks and 100 gold to settle down.",
-    linkedRules: ["r235", "r237", "r228"],
+    desc: "In the original game, the only way to win Barbarian Prince was to gain 500 gold and return across the Tragoth River in 70 days (although some events also had ways to victory). This edition features many other ways to gain that gold by completing quests (r241). Note that these quests are not daily actions (r203) and can only be reached through other ‘r’ sections and actions. Completing quests can also gain XP (see r237). Also in this edition, (Ψ) symbols have been added to certain events and represent important plot and story points regarding the retaking of the Northlands throne. Instead of needing 500 gold, if you have 5 (different) such events and return across the Tragoth River in 70 days, you will know your destiny and win the game. In addition, if using Experience (r237), gaining 500XP and crossing the Tragoth River is also a victory.",
+    optional:
+      "If you would like a traditional ‘fairy tale’ ending to your game, then if you have a ‘True Love’ (r228) for 4 weeks and have 100 gold to settle down at any habitation, this could be considered a victory (albeit one where you don’t take back your throne).",
   },
   {
     tag: "r235",
     title: "Luck",
     type: "optional",
-    optional: true,
-    desc: "Start the game with 3 Luck points. Once per day, spend 1 Luck point to re-roll any dice result and use whichever result is more advantageous. Luck can be gained through XP (r237) or (Ψ) events or falling in love (r228).",
-    note: "If using Luck, it is advised to set Wit & Wiles to 3 (or 4 for an easier game) rather than rolling 1D3+2.",
-    linkedRules: ["r237", "r228"],
+    desc: "Unlike other characters in the game, you also have ‘Luck’ points. These reflect the favour of the gods and things just going your way. You start the game with 3 Luck points. Once per day (only), you can ‘spend’ 1 Luck point to re-roll a dice result, after which you must reduce your current Luck by one. You can then use either result, whichever is more advantageous to you. Luck points can be gained using XP (see r237), and you also gain 1 Luck if you have a (Ψ) event (see r234), or if you fall in love (r228). Use Luck well and sparingly – just when things get desperate for Cal Arath!",
+    note: "If you are using ‘Luck’ in your game, it is advised you start with a Wit & Wiles rating of 3 (or 4 for an easier game) rather than rolling 1D3+2, to balance this new system.",
   },
   {
     tag: "r236",
     title: "Advantages",
     type: "optional",
-    optional: true,
-    desc: "Start the game with one advantage from the list below. More can be gained through XP (r237).",
-    linkedRules: ["r237"],
+    desc: "You may start the game with one advantage from the list below. This will give a slight bonus in certain situations and might add a little thematic flavour when choosing daily actions (r203) or encounter options.",
     tables: [
       {
         type: "simple-list",
@@ -1594,9 +1613,7 @@ export const ruleData: Rule[] = [
     tag: "r237",
     title: "Experience Points (XP)",
     type: "optional",
-    optional: true,
     desc: "Cal Arath gains XP by: 5XP at end of each week; 5XP first time entering a named Castle or Ruins hex; 5XP for [Site] or (Ψ) events; XP from defeating enemies (total Skill+Endurance of defeated, doubled for magical, divided by surviving party size).",
-    linkedRules: ["r236", "r238", "r239", "r241"],
     tables: [
       {
         type: "roll-table",
@@ -1619,40 +1636,21 @@ export const ruleData: Rule[] = [
     tag: "r238",
     title: "Increased Danger",
     type: "optional",
-    optional: true,
-    desc: "If using XP (r237): from the start of Week 6, add +1 to the horizontal number on Travel Tables (r207), making result range 2–7. Characters marked with † become more dangerous — for each 100 XP you have, add +1 to both their Skill and Endurance.",
-    linkedRules: ["r237", "r207"],
+    desc: "If you are including XP (r237) in your game, then there are two modifications to balance the difficulty. From the start of Week 6, you add +1 to the horizontal number on the Travel tables (r207) in the Reference Booklet, so your result range is now 2-7. The encounters in the ‘7’ column tend to be more dangerous as they will occur later in your adventures when you have some followers and increased your abilities. In addition, if you encounter characters marked with † in the Event Booklet they become more dangerous. For each 100XP you have, you then add +1 to both the Skill and Endurance of these characters.",
   },
   {
     tag: "r239",
     title: "Combat Tactics",
     type: "optional",
-    optional: true,
-    desc: "Start with 1 Combat Tactic chosen from r345–r348. Each tactic can only be used once per combat. Additional tactics can be gained through XP (r237) or Training (r240). The number in brackets at the start of a tactic indicates how many tactics you must already have before gaining it.",
-    linkedRules: [
-      "r237",
-      "r240",
-      "r345",
-      "r346",
-      "r347",
-      "r348",
-      "r349",
-      "r350",
-      "r351",
-      "r352",
-      "r353",
-      "r354",
-    ],
+    desc: "These rules increase your options in combat and might keep Cal Arath alive a little longer. A Combat Tactic represents your fighting abilities when in battle and allows you to gain some small bonus – if you use them at the right time. Each Combat Tactic can only be used once per combat. You begin the game with 1 Combat Tactic of r345 - r348. Other Combat Tactics can be learnt through gaining XP (r237) or Training (r240). See r345 to r354 for complete descriptions of each Combat Tactic available. The number in brackets at the start of a Tactic indicates you must already have that number of Combat Tactics before being able to gain it.",
   },
   {
     tag: "r240",
     title: "Combat Training",
     type: "action",
-    optional: true,
     desc: "Daily action in a town or castle. Costs 4 gold/day (town) or 5 gold/day (castle). Roll 2D6 each day and add to a running total. If you roll 11 or 12, instead of adding, take 1D6 wounds. Total reaches 30: gain a new Combat Tactic (r239). Total reaches 6× current Skill: raise Skill by +1. Maximum +3 Skill from training.",
     requiresHex: ["town", "castle", "dwarf-mine", "elf-haven"],
     note: "Can also train at a Dwarf Mine (with a dwarf in party) or Elf Haven (with an elf in party) for 3 gold/day. If employed at a castle and have a quiet day, training costs nothing on a roll of 5–6.",
-    linkedRules: ["r239"],
   },
 
   // ─── QUESTS ───────────────────────────────────────────────────
@@ -1660,23 +1658,32 @@ export const ruleData: Rule[] = [
     tag: "r241",
     title: "Completing a Quest",
     type: "quest",
-    desc: "Quests are not daily actions and can only be accessed from another section. Roll 1D6 and consult the appropriate table. 'Investigate' quests require a daily action rolling 1D6 + Wit & Wiles until the target number is reached. Rolling a 6 on any Investigate roll ends the trail — quest fails.",
-    subRules: [
-      { tag: "r241a", title: "Quest for a Village" },
-      { tag: "r241b", title: "Quest for a Town" },
-      { tag: "r241c", title: "Quest for a Temple" },
-      { tag: "r241d", title: "Quest for Baron Huldra (hex 1212)" },
-      { tag: "r241e", title: "Quest for Count Drogat (hex 0323)" },
-      { tag: "r241f", title: "Quest for Lady Aeravir (hex 1923)" },
-      { tag: "r241g", title: "Quest for a Dwarf Lord" },
-      { tag: "r241h", title: "Quest for a Wizard" },
-      { tag: "r241i", title: "Quest for a Halfling Village" },
-      { tag: "r241j", title: "Quest for a Hawk Lord" },
-      { tag: "r241k", title: "Quest for a Giant Chieftain" },
-      { tag: "r241l", title: "Quest for the Elf King" },
-      { tag: "r241m", title: "Quest for a Thieves' Guild" },
-      { tag: "r241n", title: "Quest for a Tavern" },
-      { tag: "r241o", title: "Quest for a Merchant" },
+    desc: "You have been asked to undertake a quest. Note that these are not daily actions (r203) and you can only access these tables from another section. Roll 1D6 and consult the appropriate table below:",
+    note: "Some quests need you to ‘Investigate’, followed by a number in brackets. This is a daily action (r203) in the habitation where you roll 1D6 and add your Wit & Wiles. When you reach the number given (after possibly several days) you have completed the Investigation. If you ever roll a 6 on this action however, you cannot roll further – the trail has run dry, you cannot find clues, are exposed etc – and you fail the quest.",
+    optional:
+      "Completing some Quests can also gain you XP (r237) and is noted below.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r241a", "Quest for a Village"],
+          ["r241b", "Quest for a Town"],
+          ["r241c", "Quest for a Temple"],
+          ["r241d", "Quest for Baron Huldra (hex 1212)"],
+          ["r241e", "Quest for Count Drogat (hex 0323)"],
+          ["r241f", "Quest for Lady Aeravir (hex 1923)"],
+          ["r241g", "Quest for a Dwarf Lord"],
+          ["r241h", "Quest for a Wizard"],
+          ["r241i", "Quest for a Halfling Village"],
+          ["r241j", "Quest for a Hawk Lord"],
+          ["r241k", "Quest for a Giant Chieftain"],
+          ["r241l", "Quest for the Elf King"],
+          ["r241m", "Quest for a Thieves' Guild"],
+          ["r241n", "Quest for a Tavern"],
+          ["r241o", "Quest for a Merchant"],
+        ],
+      },
     ],
   },
   {
@@ -2140,9 +2147,8 @@ export const ruleData: Rule[] = [
     tag: "r242",
     title: "Armor",
     type: "optional",
-    optional: true,
-    desc: "Armor absorbs wounds before Endurance is affected. After any combat where armor absorbed wounds, roll 1D6: 1 destroyed; 2 must be repaired before use again; 3–6 unaffected. Armor counts as loads (r206). Only the Barbarian Prince may purchase armor.",
-    note: "Characters in your party or that you encounter may wear armor, but it is already factored into their Skill and Endurance.",
+    desc: "Using these optional rules requires a little book-keeping but might make combat easier to survive. Armor can absorb wounds in combat before your Endurance starts to be affected. At the end of a combat, if the armor took any wounds, you must roll 1D6 for the armor: 1: The armor is destroyed; 2: The armor must be repaired before it can be used again; 3-6: The armor is unaffected by the combat. Armor is also heavy and counts towards the loads (r206) you carry. Armor can be purchased (and repaired) at a blacksmith when you Visit the Market (r231). There are three types of armor:",
+    note: "You may only purchase armor for yourself as the Barbarian Prince (although you may purchase multiple sets in case of damage) and can obviously only wear one set of armor at a time! Characters in your party or that you encounter might be wearing armor, but it will already be factored into their Skill and Endurance.",
     tables: [
       {
         type: "simple-list",
@@ -2427,17 +2433,35 @@ export const ruleData: Rule[] = [
     tag: "r340",
     title: "Looter",
     type: "encounter",
-    desc: "Characters look like they need money. Let them pass (encounter ends; roll 1D6 on a 6 you gain news from nearest habitation) or try to convince them to join. If you try: roll 1D6 — if Wit & Wiles equals or exceeds the roll, they join as long as they get an equal share of new gold. If you deny their share or fail to convince them: 1–2 they attack you personally (r220, first strike); 3–4 they attack your party (r330); 5–6 they depart angry.",
+    desc: "Character(s) encountered look like they are in need of money. You can let them pass (encounter ends but roll 1D6 and on a 6 you gain news - see event for nearest habitation) or try to convince them to join you. If you try to convince them, roll 1D6. If your Wit & Wiles equals or exceeds the roll, they will join your party and remain as long as they get an equal share in any new gold you acquire (each gets as least as much as you). If you deny them their share, or fail to convince them to join, they may become hostile, roll 1D6:",
+    tables: [
+      {
+        type: "roll-table",
+        label: "",
+        cols: ["Roll", "Result"],
+        rows: [
+          [
+            "1-2",
+            "They attack you personally in combat (r220), and have the first strike.",
+          ],
+          [
+            "3-4",
+            "They attack your party in combat (r220); see r330 for situation.",
+          ],
+          ["5-6", "They depart angry, but without fighting, event ends."],
+        ],
+      },
+    ],
   },
   {
     tag: "r341",
     title: "Conversation",
     type: "encounter",
-    desc: "Extended talking — you cannot travel further today and unfinished daily actions cannot be completed. Roll 2D6 for the result.",
+    desc: "In an extended period of talking, you gradually discover the interests and attitudes of the character(s) you encountered. This takes a good deal of time, you cannot travel any further today, and any other daily actions unfinished cannot be completed either. For the results of the talk, roll 2D6:",
     tables: [
       {
         type: "roll-table",
-        label: "Conversation Results",
+        label: "",
         cols: ["Roll", "Result"],
         rows: [
           [
@@ -2471,7 +2495,7 @@ export const ruleData: Rule[] = [
     tag: "r342",
     title: "General Inquiry",
     type: "encounter",
-    desc: "You are unsure of attitudes and make some general inquiries. Roll 2D6.",
+    desc: "You are unsure of attitudes, and make some general inquiries to determine what these encountered characters seem interested in. Roll 2D6:",
     tables: [
       {
         type: "roll-table",
@@ -2506,13 +2530,13 @@ export const ruleData: Rule[] = [
     tag: "r343",
     title: "Victim Selection",
     type: "encounter",
-    desc: "One character in your party is the victim of the attack. If alone, you are the target. Otherwise, select characters one by one in any order. For each, roll 1D6 — on a '6' that character is the target. Continue until the target is selected.",
+    desc: 'One character in your party is the victim or target of the attack. If your party is just you, then you are the target. Otherwise, select characters in your party one by one, in any order you choose. When you select a character, roll 1D6. If the result is "6" that character is the target, otherwise select another character and try again. Continue going through the characters in your party again if necessary, until the target is selected.',
   },
   {
     tag: "r344",
     title: "Pursued",
     type: "encounter",
-    desc: "Encountered characters give chase. Roll 2D6 + Wit & Wiles - total characters on both sides. Add +1 in forest, mountains or habitation hex; -1 in swamp, desert or farmland. Result 8+: escaped (r218). Result 7: repeat roll with -1 (pursuers catching up). Result 6 or less: caught, must fight (r306).",
+    desc: "The encountered characters give chase! Roll 2D6 and add your Wit & Wiles, then subtract the total number of characters on both sides. Finally, add +1 if in a forest, mountains or habitation hex, or -1 if in a swamp, desert or farmland hex. If the final total is 8+, then you have successfully escaped (r218); if the total is 7, you must repeat the roll but with an additional -1 modifier as your pursuers are catching up; if the total is 6 or less, you are caught by your pursuers and must fight (r306).",
   },
 
   // ─── COMBAT TACTICS ───────────────────────────────────────────
@@ -2520,70 +2544,70 @@ export const ruleData: Rule[] = [
     tag: "r345",
     title: "Parry",
     type: "combat",
-    optional: true,
-    desc: "(0) Add +3 to your Skill when defending in one combat round against a Character with Skill 6 or less.",
+    optional:
+      "(0) Add +3 to your Skill when defending in one combat round against a Character with Skill 6 or less.",
   },
   {
     tag: "r346",
     title: "Quick Thrust",
     type: "combat",
-    optional: true,
-    desc: "(0) Add +2 to your Skill when attacking in one combat round against a Character with Skill 6 or less.",
+    optional:
+      "(0) Add +2 to your Skill when attacking in one combat round against a Character with Skill 6 or less.",
   },
   {
     tag: "r347",
     title: "Block",
     type: "combat",
-    optional: true,
-    desc: "(0) Ignore up to 2 wounds caused by a single successful strike of an attacking Character with Skill 6 or less.",
+    optional:
+      "(0) Ignore up to 2 wounds caused by a single successful strike of an attacking Character with Skill 6 or less.",
   },
   {
     tag: "r348",
     title: "Swift Strike",
     type: "combat",
-    optional: true,
-    desc: "(0) Strike twice in one combat round against a Character with Skill 6 or less.",
+    optional:
+      "(0) Strike twice in one combat round against a Character with Skill 6 or less.",
   },
   {
     tag: "r349",
     title: "Stamina",
     type: "combat",
-    optional: true,
-    desc: "(1) Ignore all negative modifiers to your Skill due to wounds for 3 combat rounds; then take 1 wound.",
+    optional:
+      "(1) Ignore all negative modifiers to your Skill due to wounds for 3 combat rounds; then take 1 wound.",
   },
   {
     tag: "r350",
     title: "Feint",
     type: "combat",
-    optional: true,
-    desc: "(2) Add +3 to your Skill when defending in one combat round against all Characters with Skill 7 or less.",
+    optional:
+      "(2) Add +3 to your Skill when defending in one combat round against all Characters with Skill 7 or less.",
   },
   {
     tag: "r351",
     title: "Vicious Strike",
     type: "combat",
-    optional: true,
-    desc: "(2) Add +2 wounds to a single successful strike you make against a Character with a Skill of 7 or less.",
+    optional:
+      "(2) Add +2 wounds to a single successful strike you make against a Character with a Skill of 7 or less.",
   },
   {
     tag: "r352",
     title: "Blade Mastery",
     type: "combat",
-    optional: true,
-    desc: "(3) Add +2 to your Skill for one combat round against all Characters with Skill 8 or less.",
+    optional:
+      "(3) Add +2 to your Skill for one combat round against all Characters with Skill 8 or less.",
   },
   {
     tag: "r353",
     title: "Dodge",
     type: "combat",
-    optional: true,
-    desc: "(3) Ignore all wounds caused by a single successful strike of an attacking Character with Skill 8 or less.",
+    optional:
+      "(3) Ignore all wounds caused by a single successful strike of an attacking Character with Skill 8 or less.",
   },
   {
     tag: "r354",
     title: "Battle Fury",
     type: "combat",
-    optional: true,
-    desc: "(4) Add +2 to your Skill when attacking in this combat but take 1 wound at the end of each combat round. Due to your fury you ignore all negative modifiers due to your wounds.",
+    optional:
+      "(4) Add +2 to your Skill when attacking in this combat but take 1 wound at the end of each combat round. Due to your fury you ignore all negative modifiers due to your wounds.",
   },
 ];

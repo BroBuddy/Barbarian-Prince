@@ -6,8 +6,8 @@ export const eventData: Event[] = [
     title: "The Adventure Begins",
     type: "story",
     image: true,
-    desc: "Evil events have overtaken your Northlands Kingdom. Collect 500 gold pieces to raise an army and retake your throne within ten weeks.",
-    note: "Roll 1D6 for starting location. After arrival, consult e399 then r203 for available actions.",
+    desc: "Now consult r202 to determine your starting attributes (r201) as Cal Arath, the Barbarian Prince, and then return to this event. To escape the mercenary royal guard, your loyal servant Ogab has smuggled you into a merchant caravan to the southern border. Roll 1D6 to see where the caravan takes you (while poor Ogab faces the hostile royal guards back home): 1: Ogon (hex 0101); 2: hex 0701; 3: Ruins of Jakor's Keep (hex 0901); 4: hex 1301; 5: Weshor (hex 1501); 6: hex 1801. Now, as dawn rises, you roll out of the merchant wagons into a ditch. You stop to study a scroll that Ogab has given you (see e399, then return here), dust off your clothes, loosen your",
+    note: "If you finish actions for a day on a hex north of the Tragoth River, then after any normal events are concluded, but before you take your evening meal (r215), roll 1D6 (-1 to roll if in Jakor’s Keep, +1 to roll if in Ogon or Weshor): 0: e045; 1-3: No event; 4-7: Mercenary royal guards find you - see e002.",
     tables: [
       {
         type: "simple-list",
@@ -38,8 +38,8 @@ export const eventData: Event[] = [
     title: "Mercenary Royal Guardsmen",
     type: "encounter",
     image: true,
-    desc: "Mercenary thugs dressed as royal guardsmen ride toward you. Roll 1D6+1 for number of men (each S5, E4, W4), then roll 1D6 for special condition.",
-    note: "If entire party has mounts add +1 to evade roll. Flying party may use r313 instead.",
+    desc: "Mercenary thugs, dressed by the Northern usurpers as their royal guardsmen, are riding swiftly on horses towards you! Roll 1D6+1 (1D3+1 if this event takes place during the first week of your adventure) for the number of men (each is S5, E4, W4), and then roll another 1D6:",
+    note: "If you encounter Ogab or Volk after they have been already killed in the game, encounter them again as normal. Strange and dark magic must be at work...",
     tables: [
       {
         type: "simple-list",

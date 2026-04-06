@@ -6,10 +6,9 @@ export interface Rule {
   type: RuleType;
   desc?: string;
   note?: string;
-  optional?: boolean;
+  optional?: string;
   linkedRules?: string[];
   tables?: TableType[];
-  subRules?: RuleItem[];
   requiresHex?: string[];
 }
 

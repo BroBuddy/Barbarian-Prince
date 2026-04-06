@@ -39,7 +39,7 @@ function EventDetail() {
       {event.note && (
         <p>
           <em>
-            <span className="text-purple mr-1">Important Note:</span>
+            <span className="text-purple mr-1">Note:</span>
             {parseLinks(event.note as string)}
           </em>
         </p>

@@ -101,6 +101,12 @@ img {
   max-width: 100%;
 }
 
+.optional {
+  border: 1px solid var(--dark-grey);
+  border-radius: 8px;
+  padding: 0 8px;
+}
+
 .rounded {
   border-radius: 8px;
 }

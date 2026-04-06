@@ -25,7 +25,17 @@ function RuleDetail() {
   return (
     <Card title={rule.title} tag={rule.tag}>
       {rule.type && <Badge text={rule.type} icon={rule.type} />}
+
       {rule.desc && <p>{parseLinks(rule.desc as string)}</p>}
+
+      {rule.optional && (
+        <p>
+          <em>
+            <span className="text-purple mr-1">Optional:</span>
+            {parseLinks(rule.optional as string)}
+          </em>
+        </p>
+      )}
 
       {rule.tables?.map((table, index) => (
         <TableRenderer key={index} table={table} />
@@ -34,7 +44,7 @@ function RuleDetail() {
       {rule.note && (
         <p>
           <em>
-            <span className="text-purple mr-1">Important Note:</span>
+            <span className="text-purple mr-1">Note:</span>
             {parseLinks(rule.note as string)}
           </em>
         </p>

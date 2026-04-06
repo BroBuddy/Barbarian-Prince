@@ -21,7 +21,7 @@ const ruleDataMap = {
 };
 
 export function DataProvider({ children }: { children: React.ReactNode }) {
-  const [edition, setEdition] = useState<Edition>("original");
+  const [edition, setEdition] = useState<Edition>("ultimate");
 
   useEffect(() => {
     localStorage.removeItem("barbarian-prince");

@@ -13,7 +13,15 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("node_modules")) return "vendor";
+          if (id.includes("/features/rule/data/")) return "rule-data";
           if (id.includes("/features/rule/")) return "rule";
+
+          const dataMatch = id.match(/\/features\/events\/data\/(.+)\.ts$/);
+          if (dataMatch) {
+            const fileName = dataMatch[1];
+            return `${fileName}`;
+          }
+
           if (id.includes("/features/events/")) return "events";
           if (id.includes("/features/map/")) return "map";
         },

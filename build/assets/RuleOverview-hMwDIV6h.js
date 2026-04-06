@@ -1,1 +1,0 @@
-import{t as e}from"./rule-CPIy0PXD.js";export{e as default};

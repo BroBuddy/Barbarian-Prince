@@ -1,0 +1,1 @@
+import{t as e}from"./rule-CmtJWmE_.js";export{e as default};

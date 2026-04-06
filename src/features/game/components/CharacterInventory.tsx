@@ -7,7 +7,7 @@ import { BadgeCent, Beef } from "lucide-react";
 export type Token = { label: number };
 
 const GOLD_ROWS: Token[][] = [
-  [100, 200, 300, 400, 500, 600].map((v) => ({ label: v })),
+  [100, 200, 300, 400, 500].map((v) => ({ label: v })),
   [10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => ({ label: v })),
   [1, 2, 3, 4, 5, 6, 7, 8, 9].map((v) => ({ label: v })),
 ];

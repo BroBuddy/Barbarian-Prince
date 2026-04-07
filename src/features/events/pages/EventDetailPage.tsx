@@ -7,8 +7,9 @@ import { useEffect } from "react";
 import { parseLinks } from "@/lib/parseLinks";
 import Badge from "@/components/Badge";
 import { ParagraphImage } from "@/components/ParagraphImage";
-import { Backpack } from "lucide-react";
+import { Backpack, Skull } from "lucide-react";
 import useGameStore from "@/features/game/store/gameStore";
+import type { WealthCode } from "@/features/game/types/GameType";
 
 function EventDetailPage() {
   const { tag } = useParams();
@@ -17,9 +18,22 @@ function EventDetailPage() {
   const { addToHistory } = useHistory();
   const { addBackpackItem } = useGameStore();
   const eventIsItem = event?.type === "item";
+  const eventIsEnemy = event?.type === "combat";
+  const { addEnemy } = useGameStore();
 
-  const handleAdd = () => {
+  const handleAddItem = () => {
     addBackpackItem(event?.title);
+  };
+
+  const handleAddEnemy = () => {
+    const defaultEnemy = {
+      title: event?.title as string,
+      combat: 0,
+      endurance: 0,
+      wealthCode: 0 as WealthCode,
+    };
+
+    addEnemy(defaultEnemy);
   };
 
   useEffect(() => {
@@ -33,8 +47,22 @@ function EventDetailPage() {
   return (
     <Card title={event.title} tag={event.tag}>
       {eventIsItem && (
-        <button className="cardBtn" onClick={() => handleAdd()} title="Add">
+        <button
+          className="cardBtn"
+          onClick={() => handleAddItem()}
+          title="Add item"
+        >
           <Backpack />
+        </button>
+      )}
+
+      {eventIsEnemy && (
+        <button
+          className="cardBtn"
+          onClick={() => handleAddEnemy()}
+          title="Add enemy"
+        >
+          <Skull />
         </button>
       )}
 

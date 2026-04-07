@@ -1,0 +1,1 @@
+import{t as e}from"./rule-D7FT64h7.js";export{e as default};

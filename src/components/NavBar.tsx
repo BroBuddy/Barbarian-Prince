@@ -18,12 +18,11 @@ type Links = {
 
 const links: Links[] = [
   { to: "/", icon: <Castle /> },
-  { to: "/rule/r203", icon: <CalendarDays /> },
-  { to: "/map", icon: <Map /> },
+  { to: "/sheet", icon: <ScrollText /> },
   { to: "/character", icon: <ShieldUser /> },
   { to: "/follower", icon: <Users /> },
   { to: "/enemy", icon: <Skull /> },
-  { to: "/sheet", icon: <ScrollText /> },
+  { to: "/map", icon: <Map /> },
 ];
 
 const NavBar = () => {

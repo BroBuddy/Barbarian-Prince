@@ -2,7 +2,8 @@ import { useHexCanvas } from "../hooks/useHexCanvas";
 import { MoveModal } from "../components/MoveModal";
 import { useState } from "react";
 import { MidnightModal } from "../components/MidnightModal";
-import { Moon } from "lucide-react";
+import { CalendarDays, Moon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function MapPage() {
   const {
@@ -31,14 +32,31 @@ function MapPage() {
         className="pointer text-white bg-black rounded py-1"
         style={{
           position: "absolute",
-          bottom: "40px",
-          right: "23px",
+          bottom: "50px",
+          left: "23px",
+          zIndex: 10,
+        }}
+      >
+        <Link
+          to="/rule/r203"
+          className="flex p-1 px-2 items-center text-white pointer"
+        >
+          <CalendarDays />
+        </Link>
+      </div>
+
+      <div
+        className="pointer text-white bg-black rounded py-1"
+        style={{
+          position: "absolute",
+          bottom: "50px",
+          right: "21px",
           zIndex: 10,
         }}
       >
         <button
           onClick={() => setMidnightOpen(true)}
-          className="flex items-center text-white pointer"
+          className="flex p-1 px-2 items-center text-white pointer"
         >
           <Moon />
         </button>

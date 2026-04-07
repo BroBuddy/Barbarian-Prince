@@ -17,8 +17,13 @@ export const valueToRowActive = (rows: Token[][], total: number): RowActive => {
   const active: RowActive = {};
   let remaining = total;
 
-  rows.forEach((row, ri) => {
-    const sorted = [...row.map((t) => t.label)].sort((a, b) => b - a);
+  const sortedIndices = rows
+    .map((row, i) => ({ i, max: Math.max(...row.map((t) => t.label)) }))
+    .sort((a, b) => b.max - a.max)
+    .map((x) => x.i);
+
+  sortedIndices.forEach((ri) => {
+    const sorted = [...rows[ri].map((t) => t.label)].sort((a, b) => b - a);
     const match = sorted.find((v) => v <= remaining);
     if (match !== undefined) {
       active[ri] = match;

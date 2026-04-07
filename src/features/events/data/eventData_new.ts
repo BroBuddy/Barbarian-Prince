@@ -2002,11 +2002,11 @@ export const eventData: Event[] = [
     title: "Castle in the Clouds",
     type: "location",
     image: true,
-    desc: "You see an enormous and incredible castle floating in the clouds. May fly past ending the event or investigate — roll 1D6.",
+    desc: "You see an enormous and incredible castle floating in the clouds. You may fly past, ending the event, or if you decide to investigate, roll 1D6:",
     tables: [
       {
         type: "simple-list",
-        label: "Castle Type (1D6)",
+        label: "Roll (1D6)",
         rows: [
           ["1–2", "e118a – Cloud Giant's Castle"],
           ["3", "The castle is deserted — may search it as a ruin (r208)"],
@@ -2017,16 +2017,62 @@ export const eventData: Event[] = [
     ],
   },
   {
+    tag: "e117a",
+    title: "Hawk-man Castle",
+    type: "location",
+    image: false,
+    desc: "[Site] Unless brought here (e108), roll 1D6; if the roll exceeds your Wit & Wiles you are captured (e062) by Hawk-men guards. Otherwise, you are allowed to enter their magnificent castle. Due to the remote nature of the castle, you cannot attempt actions normally allowed at a castle (r203) but can seek an audience with the Hawk Lord who rules there (r211j). Like any castle, you must spend the normal amounts for food (r215) and lodging (r217). Anyone you meet in the castle will be Hawk-men.",
+  },
+  {
+    tag: "e117b",
+    title: "Audience with Hawk Lord",
+    type: "location",
+    image: false,
+    desc: "You are brought before the mighty Lord of the castle. Roll 1D6:",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Roll (1D6)",
+        rows: [
+          [
+            "1",
+            "He is insulted and orders you thrown in a cell - see e063 immediately.",
+          ],
+          [
+            "2",
+            "He hears your story, but is unconcerned by the problems in the north. However, you are free to seek audiences with him again.",
+          ],
+          [
+            "3",
+            "He hears your story and holds a feast for your party, giving you free food and lodging tonight, as his guests. You are free to seek audiences with him again.",
+          ],
+          [
+            "4",
+            "The Hawk Lord holds a feast for you tonight as his guests so you have free food and lodging for your party. During the feast, the King discusses with you some information you may find useful – see e147. You may not seek an audience again.",
+          ],
+          [
+            "5",
+            "The Hawk Lord agrees to help your campaign. You are feasted and lodged tonight, and tomorrow given a bodyguard of 1D6 Hawk-men each S7, E5, W4 who join your party at no cost but will leave if you ever enter a habitation. You may not seek an audience again.",
+          ],
+          [
+            "6+",
+            "On hearing you are alive he reveals that he was an old friend of your father. The Hawk Lord immediately forms an advance war party and will lead it himself! The Lord is S8, E8, W60, and has with him 6 Hawk-men, each S7, E5, W4. You are fed and lodged tonight at a huge feast, then fly north starting tomorrow. If you return to a hex north of the Tragoth River you win the game.",
+          ],
+        ],
+      },
+    ],
+  },
+  {
     tag: "e118",
     title: "Giant",
     type: "encounter",
-    image: false,
-    desc: "You encounter a 12-foot tall giant (†S9, E8, W10) with a large bushy beard and a very big club. Giants are normally hostile but this one could be reasonable.",
-    note: "The giant is too big to ride a mount so cannot use mounted travel (r204) while in your party. Eats double normal food (r215) each day and must have his own room if lodging at a habitation (r217). Roll 1D6 — on 6 he reveals the location of a castle (e118a) in the closest mountain hex.",
+    image: true,
+    desc: "You encounter a 12-foot tall giant (†S9, E8, W10), with a large, bushy beard and a very big club. Giants are normally hostile but this one could be reasonable? Your options are:",
+    note: "The giant is too big to ride a mount, so you can't use mounted travel (r204) while he is with your party. He also eats double the normal amount of food (r215) each day and must have his own room if lodging at a habitation (r217). Roll 1D6 - on a ‘6’, he reveals the location of a castle (e118a) in the closest mountain hex.",
     tables: [
       {
         type: "roll-table",
-        label: "Encounter Options (1D6)",
+        label: "",
         cols: ["Roll", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape flying r313", "surprise r301"],
@@ -2035,6 +2081,45 @@ export const eventData: Event[] = [
           ["4", "pass r328", "hide r317", "attack r305"],
           ["5", "attacked r306", "hide r319", "attacked r306"],
           ["6", "surprised r308", "hide r320", "attacked r306"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e118a",
+    title: "Giant’s Castle",
+    type: "encounter",
+    image: false,
+    desc: "[Site] You discover an enormous castle inhabited by giants. Roll 1D6 (with -1 to roll if you have a giant in your party) and unless the result is less than your Wit & Wiles, you are captured (e062) by giant guards. Otherwise, you are allowed to enter... Due to the remote nature of the castle, you cannot attempt actions normally allowed (r203) but can seek an audience with the Giant Chieftain who rules there (r211k) or rob him (r224b). In this castle you need only spend half the normal amounts for food (r215) and lodging (r217) as the castle (and food served) is so big!",
+  },
+  {
+    tag: "e118b",
+    title: "Audience with Giant Chieftain",
+    type: "encounter",
+    image: true,
+    desc: "You have an audience with the bad-tempered Giant Chieftain of the castle. Roll 1D6 for the result, and add +1 if you have a giant in your party:",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Roll (1D6)",
+        rows: [
+          ["1-2", "He roars with glee at your plight, see e062 immediately."],
+          [
+            "3",
+            "He hears your story, but remains stone-faced, unwilling or unable to help. However, you are free to seek audiences with him again.",
+          ],
+          [
+            "4",
+            "He hears your pleas with some favour, and gives you a purse of 50 gold. You cannot seek another audience with him.",
+          ],
+          [
+            "5",
+            "He hears your story with interest and tells you of rumours of a lost giant treasure – see e147. You cannot seek another audience with him.",
+          ],
+          [
+            "6+",
+            "If your party includes a giant, he will support your cause. If not, he dismisses you and refuses any further audiences. If he supports you, he will give you a magical treasure (see e195) and one of his trusted giants (S9, E8, W10) to join your party. You cannot seek another audience with him.",
+          ],
         ],
       },
     ],
@@ -2076,8 +2161,8 @@ export const eventData: Event[] = [
     title: "Knight at the Bridge",
     type: "combat",
     image: true,
-    desc: "You find a small bridge to cross the river. A knight in armour (S8, E8, W30) stands at the opposite end challenging any who wish to cross. You can only cross if you personally engage him in combat (r220). May refuse combat and end travel for the day but roll 1D6 for each character with you — on 6 they desert due to your cowardice.",
-    note: "If engaging in combat: roll 1D6 at start of each round — you strike first on 4+, otherwise knight strikes first. If either you or the knight is knocked unconscious the duel ends. May give up combat and end travel after any round without needing to escape (r220e). If you are knocked unconscious: crossing is prohibited and travel ends for the day. If knight is knocked unconscious: may leave him and continue travel, or halt for the day, treat his wounds and allow him to join you. No wages need be paid but food (r215) and lodging (r217) must be supplied.",
+    desc: "You find a small bridge to cross the river. However, a knight in armour (S8, E8, W30) stands at the opposite end, challenging any who wish to cross. You can only cross if you personally engage him in combat (r220). You may refuse the combat and end travel for the day, but roll 1D6 for each character with you, a 6 indicates he deserts due to your cowardice. If you engage in combat, roll 1D6 at the start of each round, you strike first if the roll is 4+, otherwise the knight strikes first. If either you or the knight is knocked unconscious, the duel ends.",
+    note: "You may give up the combat and end travel for the day after any round without needing to escape (r220e). If you are knocked unconscious, crossing is prohibited, and travel ends for the day. If the knight is knocked unconscious you can leave him here and continue to travel, or you can halt for the day, treat his wounds, and allow him to join you. No wages need be paid, but food (r215) and lodging (r217) must be supplied.",
   },
   {
     tag: "e124",
@@ -2126,7 +2211,8 @@ export const eventData: Event[] = [
     title: "Merchant",
     type: "encounter",
     image: true,
-    desc: "You meet a friendly merchant. May pass him ending the encounter or stop to chat and barter. If you stop: roll 2D6 and consult below. May also attack the merchant striking first in combat (r220). Merchant (S2, E3, W60) has 1D6-2 henchmen (each S5, E4, W4). If in a habitation: at end of each combat round roll 1D6 — on 5+ 1D6+1 local guards arrive to defend the merchant (each S4, E4, W4). May surrender to the guards (e063).",
+    desc: "You meet a friendly merchant. You can either pass him, ending this encounter, or you can stop to chat and barter. If you stop, roll 2D6 and consult below:",
+    note: "You may also attack the merchant, striking first in combat (r220). The merchant (S2, E3, W60) has 1D6-2 henchmen (each S5, E4, W4). If in a habitation, at the end of a combat round roll 1D6 - on 5+, 1D6+1 local guards arrive to defend the merchant (each S4, E4, W4). You may surrender to the guards (see e063).",
     tables: [
       {
         type: "simple-list",
@@ -2217,7 +2303,7 @@ export const eventData: Event[] = [
     tag: "e130",
     title: "Meet a High Lord",
     type: "encounter",
-    image: false,
+    image: true,
     desc: "You meet a high and powerful lord of the Southlands. If at a habitation: it is the local lord. If not: roll 1D6 for identity. The Lord has a retinue of 2D6+1 guards (each S6, E6, W4).",
     note: "If arrested: jailed at Lord's residence — appropriate castle, nearest temple for High Priest or nearest town for Mayor. Advance time by 1 day. If gaining audience: Baron Huldra→e152; Count Drogat→e161; Lady Aeravir→e160; High Priest→e155; Town Mayor→e156. May alternatively rob the Lord (wealth 100, or 110 if Count Drogat or Lady Aeravir) — if you do you can never enter the town/temple/castle hex where they rule without being arrested and sentenced to death (e061). Hirelings result: may bribe guards with 10 gold for an audience instead. If all guards killed while Lord watches: Lord must grant you an audience.",
     tables: [
@@ -2326,19 +2412,38 @@ export const eventData: Event[] = [
     title: "Hidden Treasures",
     type: "treasure",
     image: false,
-    desc: "You uncover the remains of an old decaying palace treasure room undiscovered for many years. Roll 1D6 — if the result is lower than your W&W see e136a; otherwise roll 1D6 for the contents.",
-    note: "e136a Northland Banners: You notice that the banners within the treasure room match those of your royal House of Arath! Roll 1D6 for what you discover: 1→Memories of ancient and noble battles (Ψ); 2–3→e034 (+1 to 1D6 roll); 4→e186a; 5→e194; 6→A shade appears before you — see e200.",
+    desc: "ou uncover the remains of an old and decaying palace treasure room, its contents undiscovered for many years. Roll 1D6 and if the result is lower than your Wit & Wiles, see e136a, otherwise roll 1D6 for the contents:",
     tables: [
       {
         type: "simple-list",
-        label: "Contents (1D6)",
+        label: "",
         rows: [
-          ["1", "e037 – Broken Chest"],
-          ["2", "e038 – Cache under Stone"],
-          ["3", "e039 – Treasure Chest"],
-          ["4", "e044 – High Altar"],
+          ["1", "e037"],
+          ["2", "e038"],
+          ["3", "e039"],
+          ["4", "e044"],
           ["5", "500 gold"],
           ["6", "Nothing"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e136a",
+    title: "Northland Banners",
+    type: "treasure",
+    image: false,
+    desc: "You notice that the banners within the treasure room match those of your royal House of Arath! Roll 1D6 for what you discover:",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["1", "Memories of ancient and noble battles (Ψ)"],
+          ["2-3", "e034 (with +1 to 1D6 roll)"],
+          ["4", "e186a"],
+          ["5", "e194"],
+          ["6", "A shade appears before you– see e200."],
         ],
       },
     ],
@@ -2456,24 +2561,24 @@ export const eventData: Event[] = [
     title: "The Secret of Baron Huldra",
     type: "story",
     image: false,
-    desc: "You learn that the Baron of Huldra is actually a double bastard and has imprisoned the true heir to the castle with a Tribe of the Bear hill clan in the Wredrock Badlands (hex 1611).",
-    note: "To rescue the heir and install him as rightful Baron at Huldra: travel to hex 1611 and defeat the hill tribe. Requires magician/wizard/witch (to cast a spell) plus one of: magic sword (e186), shield of light (e193), charisma talisman (e189), bear pelt cloak (e084), or death mist potion (e190). Alternatively fight through guards — surprise attack (r220) on 3D6+1 guards (each S4, E5, W2) then escape (r218) with the true heir (S5, E7, W0). Once at Huldra Castle: seek audience (r211) and roll 10+ to reveal heir and depose baron, or make a sneak surprise attack (r220) on 6 bodyguards (each S6, E6, W4) then fight the imposter Baron (S6, E8, strikes first). If successful: new Baron marches his army with you to the Northlands — you win the game!",
+    desc: "You learn that the Baron of Huldra is actually a double bastard, and has imprisoned the true heir to the castle with a ‘Tribe of the Bear’ hill clan in the Wredrock Badlands (hex 1611). You can attempt to rescue the heir and install him as the rightful Baron at Huldra if you wish. To do so, you must travel to hex 1611 and defeat the hill tribe. This requires that you have a magician, wizard or witch in your party (to cast a spell); that you have a magic sword (e186) or shield of light (e193) to impress the tribesmen, or a charisma talisman (e189) or wear the pelt of a bear as a cloak (e084) to walk among them, or a death mist potion (e190) to kill them. Alternatively, you can simply fight through the guards of the heir, making a surprise attack in combat (r220) on them, roll 3D6+1 for the number of guards, each of which is S4, E5, W2; you then escape (r218) from the hex with the true heir who is S5, E7, W0. You must then travel with the heir, and if you reach Huldra Castle, your party and the heir have two options. First, you can seek an audience with the current Baron (r211), and if you roll a ‘10’ or higher (after any modifiers) you can reveal the true heir at the audience and depose the current Baron instantly. Alternatively, you can make a sneak attack on the Baron at night, surprising in combat (r220) his traditional six bodyguards, each of which is S6, E6, W4 and then go on to attack the imposter Baron, who is S6, E8, and who strikes first in combat.",
+    note: "If you succeed in disposing of the original Baron, the heir will take the throne and will return the favour by marching his army with you back to the Northlands, to help you regain your throne. You have won the game, due to the aid of the new Baron Huldra!",
   },
   {
     tag: "e145",
     title: "The Secret of Lady Aeravir",
     type: "story",
     image: true,
-    desc: "The Lady of Aeravir Castle is the priestess of a local temple cult that requires virginity. You discover that she is actually quite promiscuous and can use this to your advantage if you gain an audience with her.",
-    note: "Add +1 when attempting to gain an audience (r211) with her. If successful: may roll twice for the results of the audience and choose either result. However the Lady dislikes being blackmailed — you must escape from the hex (r218a) at the end of the day when you use this secret knowledge. You can then never return to Aeravir castle.",
+    desc: "The Lady of Aeravir Castle is the priestess of a local temple cult that requires virginity. You discover that she is actually quite promiscuous and can use this to your advantage if you gain an audience with her. Add +1 when attempting to gain an audience (r211) with her and if successful, you can roll twice for the results of the audience and choose either result.",
+    note: "However, the Lady dislikes being blackmailed, and you must escape from the hex (r218a) at the end of the day when you use this secret knowledge. You can then never return to Aeravir castle.",
   },
   {
     tag: "e146",
     title: "The Secret of Count Drogat",
     type: "story",
     image: true,
-    desc: "You learn that Count Drogat, Lord of Drogat Castle, is actually an undead creature who lives from the suffering, pain and death of others. He is very vulnerable to foulbane, a rare plant which can only be purchased from the druids at Duffyd Temple (hex 2018) for 1 gold piece.",
-    note: "Using foulbane: add +1 when trying to gain an audience (r211) with Count Drogat and if you do gain an audience may ignore the first audience result and try again (must abide by second result). May also use foulbane in Drogat Castle to help rob the Count of his personal jewels (r224b, +2 to W&W for the roll). If fail the roll: confronted by 1D6+1 skeleton guards (each S5, E4*). If pass the roll or kill the skeletons: escape (r218) with wealth 110 but can never return to the castle hex.",
+    desc: "You learn that Count Drogat, Lord of Drogat Castle, is actually an undead creature who lives from the suffering, pain, and death of others. This explains why he so often tortures and dismembers felons in his realm, and often goes into rages that leave his lands in a reign of terror. However, he is very vulnerable to foulbane, a rare plant which can only be purchased from the druids at Duffyd Temple (hex 2018) for 1 gold piece. Using the foulbane, when you try to gain an audience (r211) with Count Drogat add +1 to your roll, and if you do gain an audience may ignore the first audience result die roll and try again. However, you must abide by the second result.",
+    note: "Finally, you can use the foulbane in Drogat Castle to help rob the Count of his personal jewels - see r224b, but add +2 to your Wit & Wiles for the roll. If you fail the roll, you are confronted by 1D6+1 skeleton guards (each S5, E4*). If you pass the Wit & Wiles roll or kill the skeletons, you escape from the hex (r218) with wealth 110, but can never return to the castle hex (due to the Count's anger).",
   },
   {
     tag: "e147",
@@ -2538,11 +2643,11 @@ export const eventData: Event[] = [
     title: "Audience with Baron Huldra",
     type: "npc",
     image: false,
-    desc: "You are allowed a semi-private interview with the ruler of Huldra Castle. Roll 1D6 for the result, adding +1 to the result if you are wearing a bear-pelt cloak.",
+    desc: "You are allowed a semi-private interview with the ruler of Huldra Castle. Roll 1D6 for the result, adding +1 to the result if you are wearing a bear-pelt cloak:",
     tables: [
       {
         type: "simple-list",
-        label: "Audience Result (1D6, +1 with bear-pelt cloak)",
+        label: "",
         rows: [
           [
             "1",
@@ -2577,8 +2682,7 @@ export const eventData: Event[] = [
     title: "Master of the Household",
     type: "event",
     image: false,
-    desc: "You encounter the Master of the Household who prevents you from receiving an audience. If you bribe him you can try for an audience on some future day. Otherwise he takes a dislike to you and you can never attempt to seek an audience (r211) in this hex again.",
-    note: "Bribe amount: 6 gold if in a village; 10 gold if in a town or castle; 5 gold donation to the needy in a temple; 1 food unit in a halfling village (e070).",
+    desc: "You encounter the Master of the Household, who prevents you from receiving an audience. If you bribe him, you can try for an audience on some future day. Otherwise, he takes a dislike to you, and you can never attempt to seek an audience (r211) in this hex again. The bribe is 6 gold if in a village or 10 gold if in a town or castle. In a temple, you must instead ‘donate’ 5 gold to the needy. In a halfling village (e070), the Master just requires 1 food unit!",
   },
   {
     tag: "e154",
@@ -2814,8 +2918,7 @@ export const eventData: Event[] = [
     title: "Slave Market",
     type: "encounter",
     image: true,
-    desc: "You see slaves at the auction block. May purchase some or attempt to free them by attacking the slavers (r303). There are 5 guards (each S5, E4, W4) led by a despicable fat hunchback (S7, E6, W70). If you kill the slavers and free the slaves: you will be a 'wanted' man here if at a habitation.",
-    note: "Porter slaves: available at 1D6 gold per porter (each S1, E2). Need not be paid wages and will function even if not fed (r215) but each day without food reduces carrying capacity by 2. When capacity reaches zero they die. Slave girls: available at 2D6 gold each (each S1, E2) — functions as a Gift of Charm (e182) as long as she is fed. If not fed: loses ability until fed for as many days as missed meals (normal starvation risks apply each day). For each girl bought: roll 2D6 — on 12 you fall in love and free her (r228). Old warrior: roll 1D6 for price in gold (+2 if you didn't buy any porters or slave girls). If bought: joins as willing party member at no pay. Roll 1D6+1 for his Skill and again for Endurance.",
+    desc: "You see slaves at the auction block. You can purchase some (see below), or attempt to free them by attacking the slavers (r303). There are 5 guards (each S5, E4, W4), led by a despicable, fat hunchback (S7, E6, W70). If you kill the slavers and free the slaves, you will be a ‘wanted’ man here if at a habitation. Porter slaves (see r206) are available at 1D6 gold per porter, and each S1, E2. These slaves need not be paid wages, and will function even if not fed (r215), but each day without food reduces their carrying capacity by 2 as normal. When their capacity reaches zero they die. Slave girls (each S1, E2) are available at 2D6 gold each. A slave girl functions as a Gift of Charm (e182) and can be given as such, as long as she is fed (r215). Slave girls who are not fed lose the ability until they are fed for as many days as they missed meals (and each day without food for the girl, normal starvation risks apply). Finally, for each girl bought, roll 2D6. If the result is ‘12’ you fall in love and free her, see r228. Finally, you find an old warrior. Only you spot his hidden qualities. Roll 1D6 to establish the price in gold. Add +2 to this price if you didn't buy any porters or slave girls. If you buy him, he becomes a willing member of your party at no pay as soon as you free him. Roll 1D6+1 for his Skill and again for Endurance.",
   },
   {
     tag: "e164",
@@ -2875,13 +2978,19 @@ export const eventData: Event[] = [
     title: "Elf Haven",
     type: "location",
     image: true,
-    desc: "You discover an enchanted hidden castle inhabited by elves. Roll 1D6 (-1 if elf/druid/magician/wizard/witch in party, +1 if dwarf in party). If result equals or exceeds W&W: elves deem you unworthy and your entire party is arrested (e060). Otherwise you may visit the Haven.",
-    note: "If you can visit: treat Haven like a castle (r203). Food (r215) and lodging (r217) free if elf in party. Cannot Seek News (r209) and no Tavern (r230). May Study (r229) with +1 to the roll. Hired followers (r210) will be elves. May Seek Audience (r211l) with the Elf King. If you fight elves here: must escape the Haven (r218). On later returns: must roll again for permission. Will always be arrested if you entered combat with any elves last time (e060, -1 to roll).",
+    desc: "[Site] You discover an enchanted, hidden castle inhabited by elves. Roll 1D6 with -1 to the roll if your party includes an elf, druid, magician, wizard, or witch, and +1 if your party includes a dwarf. If the roll equals or exceeds your Wit & Wiles, the elves decide you are unworthy, and your entire party including yourself are arrested see e060. Otherwise, you may visit the Haven. If you can visit, treat the Haven like a castle marked on the map for all purposes, including daily actions (r203). Food (r215) and lodging (r217) are free if you have an elf in your party. Due to the reclusive nature of the Haven, you cannot Seek News (r209) and there is no Tavern (r230). You can Study (r229) here (with +1 to the roll). Any followers hired here (r210) will be elves. You may also try to Seek an Audience (r211l) with the rather indifferent Elf King who rules here. If you fight elves here, you must escape the Haven (r218).",
+    note: "If you return to the Haven later in the game, you must roll again to see if the elves still give you permission to visit or arrest you (see above). They will always arrest you if you entered combat with any elves last time you were at the Haven (see e060 with -1 to roll).",
+  },
+  {
+    tag: "e166a",
+    title: "Audience with Elf King",
+    type: "location",
+    image: false,
+    desc: "You have a private discussion with the King of the woodland realm. You may not attempt to seek an audience here again. Roll 1D6 (add +1 to roll if you have an elf in your party):",
     tables: [
       {
         type: "simple-list",
-        label:
-          "Audience with Elf King (1D6, +1 if elf in party, one attempt only)",
+        label: "",
         rows: [
           [
             "1",
@@ -2920,8 +3029,7 @@ export const eventData: Event[] = [
     title: "The Warrior's Heart",
     type: "story",
     image: true,
-    desc: "You learn the ruins of the Dead Plains are of an ancient civilisation that might contain a legendary artifact named The Warrior's Heart. It is said that any army that carries the Heart is so mighty it can win any battle.",
-    note: "If you travel to The Dead Plains Ruins (hex 0206): as a daily action (r203) you can enter the inner tombs by either your party having a total Skill of 20 or more to remove heavy columns, or find another way in by rolling 1D6 less than your W&W score. Once inside: explore the ruins as a daily action, roll 2D6 (+1 if dwarf or wizard in party, +2 if both, +1 if you made the W&W roll to enter). If you retrieve the Warrior's Heart: increases both Skill and Endurance of everyone in your party by +1 and you now only need 300 gold in total to win the game (Ψ).",
+    desc: "You learn the ruins of the Dead Plains are of an ancient civilization that might contain a legendary artifact named ‘The Warrior’s Heart’. It is said that any army that carries the Heart is so mighty it can win any battle. Could this be the way of reclaiming your throne? If you travel to The Dead Plains Ruins (hex 0206), as a daily action (r203) you can enter the inner tombs by either your party having a total Skill of 20 or more to remove heavy columns from the entrance, or find another way in rolling 1D6 less than your Wit & Wiles score. Once inside you find yourself in a massive, arched hallway lit dimly by burning torches. Several arched doorways lead from it and into darkness... To explore the ruins as a daily action (r204), roll 2D6 (with +1 to the roll if there is a dwarf or wizard in your party, +2 if both, +1 if you made the Wit & Wiles roll above):",
     tables: [
       {
         type: "simple-list",
@@ -3016,7 +3124,7 @@ export const eventData: Event[] = [
     type: "encounter",
     image: true,
     desc: "You have met a gypsy. Roll 1D6: on 1–3 a male rogue (S5, E4, W7); on 4–6 a female dancer (S3, E4, W5). Roll 1D6 to see if the gypsy is alone: on 1–3 alone; on 4 you have encountered a brother and sister (encounter both); on 5–6 the gypsy is part of a gypsy caravan (see e172b for additional gypsies).",
-    note: "Thief: gypsy attempts to pick your pocket — roll 1D6: if less than W&W you catch them in the attempt (r305); if greater than W&W lose half your wealth. If gypsy joins your party: may have your fortune told (e172a, once only) and gain +1 to W&W when selecting a Thievery action (r224). Female gypsy dancer: on 5–6 you become lovers (r228). e172b Gypsy Caravan: roll 1D3+1 for number of caravans each containing 1D3 additional gypsies (each S4, E4, W4). If encounter does not end in combat: may join the caravan. If at a habitation: roll 1D6 — on 1–3 gypsies are part of a carnival (e199) for the next 1D6 days. Gypsies share their food with you first then you must provide food for them on alternate days.",
+    note: "*Thief – the gypsy attempts to pick your pocket. Roll 1D6: If you roll less than your Wit & Wiles, you catch them in the attempt – see r305. If you roll greater than your Wit & Wiles, lose half your wealth. ** If your party has mounts, you may use escape mounted (r312) instead of rolling for an evade option. If the gypsy joins your party you may also opt to have your fortune told (see e172a, once only) and you gain +1 to your Wit & Wiles when selecting a ‘Thievery’ action (r224). Finally, if a gypsy dancer joins your party, roll 1D6 and on a 5-6 you become lovers (r228).",
     tables: [
       {
         type: "roll-table",
@@ -3031,6 +3139,16 @@ export const eventData: Event[] = [
           ["6", "attacked r306", "hide r317", "battle r330"],
         ],
       },
+    ],
+  },
+  {
+    tag: "e172a",
+    title: "Fortune-teller",
+    type: "encounter",
+    image: true,
+    desc: "The gypsy offers to tell your fortune in a crystal ball for 5 gold. If you accept, roll 1D6:",
+    note: "After the reading, you may choose to roll on the Talk option on e172 again, or end the event.",
+    tables: [
       {
         type: "simple-list",
         label: "Fortune Telling (1D6, costs 5 gold)",
@@ -3056,6 +3174,14 @@ export const eventData: Event[] = [
         ],
       },
     ],
+  },
+  {
+    tag: "e172b",
+    title: "Gypsy Caravan",
+    type: "encounter",
+    image: false,
+    desc: "The gypsies are part of a caravan of colored wagons. Roll 1D3+1 for the number of caravans, each containing 1D3 additional gypsies (each S4, E4, W4). If the above encounter does not end incombat, you may join the caravan. If at a habitation, roll 1D6 and on 1-3, the gypsies are part of a carnival (see e199) for the next 1D6 days. After this time, or if you have encountered the caravan on the road, roll randomly the road direction they are travelling at a speed of 1hex/day. If you have a travel encounter (r207), the gypsies will fight alongside your party. At the end of each day, roll 1D6 and on a 6, see e053. Gypsy tradition means that they will share their food with you first, and then you must provide food for them, on alternate days. If you will not or cannot, then you must leave the caravan or they attack you (r306).",
+    note: "If you reach a habitation (except a temple) roll 1D6 again (as above) to see if the gypsies stay and put on a carnival (e199) for a few days. You may decide to leave the caravan at any time, either on the road or at a habitation.",
   },
   {
     tag: "e173",

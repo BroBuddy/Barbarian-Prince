@@ -62,7 +62,7 @@ const hexData: HexTile[][] = [
     { terrain: "forest" },
   ],
   [
-    { terrain: "mountains" },
+    { terrain: "mountains", label: "(0301)" },
     { terrain: "forest" },
     { terrain: "river", variant: 2, rotate: 5 },
     { terrain: "forest" },
@@ -117,7 +117,7 @@ const hexData: HexTile[][] = [
     { terrain: "farmland" },
   ],
   [
-    { terrain: "forest" },
+    { terrain: "forest", label: "(0501)" },
     { terrain: "countryside" },
     { terrain: "river", variant: 2, label: "Tragoth River", rotate: 5 },
     { terrain: "mountains", variant: 2 },
@@ -172,7 +172,7 @@ const hexData: HexTile[][] = [
     { terrain: "countryside" },
   ],
   [
-    { terrain: "countryside" },
+    { terrain: "countryside", label: "(0701)" },
     { terrain: "river", variant: 2, rotate: 2 },
     { terrain: "countryside" },
     { terrain: "mountains", variant: 2 },
@@ -282,7 +282,7 @@ const hexData: HexTile[][] = [
     { terrain: "hills" },
   ],
   [
-    { terrain: "hills" },
+    { terrain: "hills", label: "(1101)" },
     { terrain: "river", variant: 2, rotate: 2 },
     { terrain: "hills" },
     { terrain: "swamp" },
@@ -337,7 +337,7 @@ const hexData: HexTile[][] = [
     { terrain: "mountains" },
   ],
   [
-    { terrain: "countryside" },
+    { terrain: "countryside", label: "(1301)" },
     { terrain: "river", rotate: 1 },
     { terrain: "swamp" },
     { terrain: "river", label: "Nesser River", rotate: 1 },
@@ -447,7 +447,7 @@ const hexData: HexTile[][] = [
     { terrain: "river", variant: 2, rotate: 5 },
   ],
   [
-    { terrain: "hills" },
+    { terrain: "hills", label: "(1701)" },
     { terrain: "river", rotate: 2 },
     { terrain: "hills" },
     { terrain: "mountains" },
@@ -502,7 +502,7 @@ const hexData: HexTile[][] = [
     { terrain: "river", variant: 4, rotate: 2 },
   ],
   [
-    { terrain: "mountains" },
+    { terrain: "mountains", label: "(1901)" },
     { terrain: "river", variant: 2, rotate: 2 },
     { terrain: "mountains" },
     { terrain: "mountains", variant: 2, label: "North Pass" },

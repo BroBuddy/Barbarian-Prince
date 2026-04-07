@@ -33,14 +33,12 @@ function FollowerCard({ follower }: { follower: Follower }) {
       </button>
 
       <div className="flex flex-col">
-        {(["combat", "endurance", "payPerDay"] as const).map((field) => (
+        {(["combat", "endurance"] as const).map((field) => (
           <div key={field} className="flex flex-row mb-1 mx-1">
             <span className="flex items-center mr-2">{STAT_ICONS[field]}</span>
 
             <div className="flex flex-wrap gap-2">
-              {Array.from({ length: field === "payPerDay" ? 5 : 9 }, (_, i) =>
-                field === "payPerDay" ? i : i + 1,
-              ).map((val) => (
+              {Array.from({ length: 9 }, (_, i) => i + 1).map((val) => (
                 <TokenButton
                   key={val}
                   label={val}
@@ -57,12 +55,32 @@ function FollowerCard({ follower }: { follower: Follower }) {
           </div>
         ))}
 
-        <div className="flex flex-row mb-1 mx-1">
+        <div className="flex flex-row mb-1 mx-1 items-center">
           <span className="flex items-center mr-2">
+            {STAT_ICONS["payPerDay"]}
+          </span>
+
+          <div className="flex gap-2">
+            {Array.from({ length: 5 }, (_, i) => i).map((val) => (
+              <TokenButton
+                key={val}
+                label={val}
+                isActive={follower.payPerDay === val}
+                color={STAT_COLORS["payPerDay"]}
+                onClick={() => {
+                  if (follower.payPerDay !== val) {
+                    updateFollower(follower.id, { payPerDay: val });
+                  }
+                }}
+              />
+            ))}
+          </div>
+
+          <span className="flex items-center ml-8 mr-2">
             {STAT_ICONS["mounted"]}
           </span>
 
-          <div className="flex flex-wrap gap-1">
+          <div className="flex gap-1">
             {[false, true].map((val) => (
               <TokenButton
                 key={String(val)}

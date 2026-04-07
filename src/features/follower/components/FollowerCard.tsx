@@ -1,7 +1,6 @@
 import useGameStore from "../../game/store/gameStore";
 import type { Follower } from "../../game/types/GameType";
 import TokenButton from "../../../components/TokenButton";
-import styles from "./FollowerCard.module.scss";
 import Card from "@/components/Card";
 import { ChessKnight, Coins, Heart, Swords, Trash } from "lucide-react";
 
@@ -25,7 +24,7 @@ function FollowerCard({ follower }: { follower: Follower }) {
   return (
     <Card title={follower.title || "Follower"}>
       <button
-        className={styles.followerRemove}
+        className="cardBtn"
         onClick={() => removeFollower(follower.id)}
         title="Remove"
       >

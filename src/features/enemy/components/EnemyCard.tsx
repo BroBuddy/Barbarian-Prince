@@ -2,7 +2,6 @@ import Card from "@/components/Card";
 import useGameStore from "@/features/game/store/gameStore";
 import type { Enemy } from "@/features/game/types/GameType";
 import { Coins, Heart, Swords, Trash } from "lucide-react";
-import styles from "./EnemyCard.module.scss";
 import TokenButton from "@/components/TokenButton";
 
 const WEALTH_VALUES: number[] = [
@@ -27,7 +26,7 @@ function EnemyCard({ enemy }: { enemy: Enemy }) {
   return (
     <Card title={enemy.title || "Enemy"}>
       <button
-        className={styles.enemyRemove}
+        className="cardBtn"
         onClick={() => removeEnemy(enemy.id)}
         title="Remove"
       >

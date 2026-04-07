@@ -12,7 +12,7 @@ import {
 
 export type Token = { label: number };
 
-const CharacterInventory = () => {
+const CharacterResources = () => {
   const resources = useGameStore((state) => state.resources);
   const setResources = useGameStore((state) => state.setResources);
 
@@ -43,7 +43,7 @@ const CharacterInventory = () => {
   };
 
   return (
-    <Card title="Inventory">
+    <Card title="Resources">
       <div className="flex flex-col">
         <div className="flex flex-col gap-2 mx-1">
           {GOLD_ROWS.map((row, ri) => (
@@ -91,4 +91,4 @@ const CharacterInventory = () => {
   );
 };
 
-export default CharacterInventory;
+export default CharacterResources;

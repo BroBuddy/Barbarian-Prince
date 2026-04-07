@@ -1,9 +1,10 @@
 import useGameStore from "../../game/store/gameStore";
 import Card from "@/components/Card";
-import CharacterInventory from "../components/CharacterInventory";
+import CharacterResources from "../components/CharacterResources";
 import TokenButton from "../../../components/TokenButton";
 import { ChessKnight, Heart, Lightbulb, Swords, Utensils } from "lucide-react";
 import type { ReactNode } from "react";
+import CharacterBackpack from "../components/CharacterBackpack";
 
 type BoxResource = {
   name: string;
@@ -69,7 +70,8 @@ const CharacterPage = () => {
         </div>
       </Card>
 
-      <CharacterInventory />
+      <CharacterResources />
+      <CharacterBackpack />
     </>
   );
 };

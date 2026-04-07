@@ -55,6 +55,11 @@ type GameState = {
   getTotalPayPerDay: () => number;
   nextDay: () => void;
 
+  backpack: { id: string; text: string }[];
+  addBackpackItem: () => void;
+  updateBackpackItem: (id: string, text: string) => void;
+  removeBackpackItem: (id: string) => void;
+
   followers: Follower[];
   addFollower: (data: Omit<Follower, "id">) => void;
   updateFollower: (id: string, data: Partial<Omit<Follower, "id">>) => void;
@@ -185,6 +190,30 @@ const useGameStore = create<GameState>()(
         return get().followers.reduce((sum, f) => sum + f.payPerDay, 0);
       },
 
+      // ── Backpack ──────────────────────────────────────────────────────
+
+      backpack: [],
+
+      addBackpackItem: () => {
+        set((state) => ({
+          backpack: [...state.backpack, { id: crypto.randomUUID(), text: "" }],
+        }));
+      },
+
+      updateBackpackItem: (id, text) => {
+        set((state) => ({
+          backpack: state.backpack.map((item) =>
+            item.id === id ? { ...item, text: text.trim() } : item,
+          ),
+        }));
+      },
+
+      removeBackpackItem: (id) => {
+        set((state) => ({
+          backpack: state.backpack.filter((item) => item.id !== id),
+        }));
+      },
+
       // ── Followers ──────────────────────────────────────────────────────
 
       followers: [],
@@ -292,8 +321,6 @@ const useGameStore = create<GameState>()(
       resetStore: () => {
         set({
           playerPosition: null,
-          followers: [],
-          enemies: [],
           resources: {
             Combat: 8,
             Endurance: 9,
@@ -304,6 +331,9 @@ const useGameStore = create<GameState>()(
             Day: 1,
             Mounted: false,
           },
+          backpack: [],
+          followers: [],
+          enemies: [],
         });
       },
     }),

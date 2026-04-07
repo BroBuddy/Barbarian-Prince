@@ -1,4 +1,4 @@
-import type { Token } from "@/features/character/components/CharacterInventory";
+import type { Token } from "@/features/character/components/CharacterResources";
 
 export const GOLD_ROWS: Token[][] = [
   [1, 2, 3, 4, 5, 6, 7, 8, 9].map((v) => ({ label: v })),

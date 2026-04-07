@@ -28,8 +28,11 @@ function FollowerPage() {
 
       <div className="pointer" onClick={() => handleAdd()}>
         <Card>
-          <div className="flex justify-center my-1">
+          <div className="flex justify-center items-center">
             <Plus size={30} />
+            <span className="text-dark-grey text-bold text-xl ml-1">
+              Follower
+            </span>
           </div>
         </Card>
       </div>

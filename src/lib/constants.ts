@@ -14,13 +14,11 @@ export const getEmojiIcon: Record<RuleType | EventType, string> = {
   reference: "📋",
   special: "✨",
   location: "📍",
-  weather: "🌦️",
   magic: "🔮",
   item: "🎒",
   event: "📖",
   story: "📜",
   npc: "🧑",
-  settlement: "🏘️",
   optional: "✨",
   quest: "📜",
 };

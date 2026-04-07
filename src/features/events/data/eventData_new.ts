@@ -592,6 +592,13 @@ export const eventData: Event[] = [
     ],
   },
   {
+    tag: "e023a",
+    title: "Wizard Fireballs",
+    type: "combat",
+    image: false,
+    desc: "In combat (r220), the wizard may use fireballs, instead of making a normal strike. Before each strike by the wizard, roll 1D6. If the result is 5-6, he strikes with a fireball spell. When the spell strikes, roll 1D3 for the number of wounds each character in the opposing party suffers (your party if in combat against the wizard). If the wizard is striking against you and has been wounded, he automatically escapes when the fireball strikes. Otherwise he remains and the battle continues.",
+  },
+  {
     tag: "e024",
     title: "Wizard Attack",
     type: "combat",
@@ -633,7 +640,7 @@ export const eventData: Event[] = [
   {
     tag: "e027",
     title: "Ancient Treasure",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "You find an ancient long-lost treasure (r225), wealth 110.",
     note: "Roll 1D6: on 1–2 it is protected by a trap (r227, applied to a random character — r343).",
@@ -690,7 +697,7 @@ export const eventData: Event[] = [
   {
     tag: "e031",
     title: "Looted Tomb",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "You find the partially looted tomb of a long dead prince. Under his sarcophagus is a secret compartment with a trap lock. Roll 1D6 — if W&W exceeds roll, you outwit the trap; otherwise see r227. Either way you find wealth 50 and a Gift of Charm (e182).",
     note: "The Gift of Charm is very old — roll 1D6, on 5–6 it turns to dust and is worthless.",
@@ -738,7 +745,7 @@ export const eventData: Event[] = [
   {
     tag: "e037",
     title: "Broken Chest",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "You find an old chest with a broken and cracked lid. Sorting through old mouldering cloths, roll 1D6 to see what you find.",
     tables: [
@@ -759,7 +766,7 @@ export const eventData: Event[] = [
   {
     tag: "e038",
     title: "Cache under Stone",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "You overturn a stone slab uncovering an old cache of rotting food and other items. Roll 1D6 to see what you find.",
     tables: [
@@ -780,7 +787,7 @@ export const eventData: Event[] = [
   {
     tag: "e039",
     title: "Treasure Chest",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "You find a locked chest that may be trapped. Roll 1D6 — on 3–6 it has a trap lock (r227). If survived and opened, roll 1D6 — on 6 the chest is empty, otherwise wealth 60.",
     note: "If a Pegasus winged mount (e188) would be found: instead roll 1D6 and consult Treasure Table A (r225).",
@@ -788,7 +795,7 @@ export const eventData: Event[] = [
   {
     tag: "e040",
     title: "Trapped Chest",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "A locked treasure chest protected by a trap. May ignore it or attempt to open. Roll 1D6 — if result exceeds W&W the trap is sprung (r227). If survived: roll 1D6 for wealth code.",
     note: "If result includes Pegasus winged mount (e188): instead it is a Pegasus talisman. Any magician/wizard/witch/priest/druid in party can use it to call an actual Pegasus (e188) as your mount (r204d).",
@@ -1309,10 +1316,54 @@ export const eventData: Event[] = [
             "1–2",
             "e023 – Wizard (but with 1D6 henchmen and wealth 110 instead)",
           ],
-          ["3–4", "e016 – Magician's Home (choose your approach)"],
+          ["3–4", "e016"],
+          ["5–6", "e068a"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "e068a",
+    title: "Wizard Tower",
+    type: "location",
+    image: true,
+    desc: "A great tower looms before you. It is just like a castle for food (r215) and lodging (r217). However, the ruling wizard is jealous, and will tolerate no rivals. Any magicians, wizards or witches in your party are captured unless you elect to have your whole party escape (r218) from the hex. If you stay, on subsequent days you can study (r229) or seek an audience with the wizard (r211h). You cannot seek news (r209), hire followers (r210) or visit a tavern (r230) or market (r231) here. You may also attempt to rescue any followers captured by the wizard like a robbery (see r224b).",
+  },
+  {
+    tag: "e068b",
+    title: "Audience with Wizard Lord",
+    type: "encounter",
+    image: false,
+    desc: "You discover a wizard's home. Roll 1D6 to determine what you find.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "Abode Type (1D6)",
+        rows: [
+          ["0", "He is angered by your interruptions – see e062"],
           [
-            "5–6",
-            "e068a – Wizard Tower: like a castle for food (r215) and lodging (r217). Ruling wizard tolerates no rivals — any magicians/wizards/witches in party are captured unless whole party escapes (r218). May study (r229) or seek audience (r211h). Cannot seek news (r209), hire (r210), visit tavern (r230) or market (r231). May attempt to rescue captured followers like a robbery (r224b)",
+            "1",
+            "He hears your story, but remains stone-faced, unwilling or unable to help.",
+          ],
+          [
+            "2",
+            "He listens to your story and offers you clues that might help your quest – see e147",
+          ],
+          [
+            "3",
+            "He hears your story and gives you a magical gift to help you – see e195.",
+          ],
+          [
+            "4",
+            "He listens with interest and shares with you legends of lost ages – see e176.",
+          ],
+          [
+            "5",
+            "He decides to help you in your quest but only if you help him. If you agree then he gives you his raven ‘familiar’ that adds +1 to your Wit & Wiles whilst with you. The wizard also enchants your sword – see e186. In return, when you receive any further magical objects (e183-e196), roll 1D6. On a 5-6, the wizard wants it for his collection and the raven vanishes with the object.",
+          ],
+          [
+            "6",
+            "The wizard listens to your story with growing anger. Upon learning the names of the northern usurpers he declares that they were the very ones who did him ill deeds many years ago. He immediately uses his powerful magic to transport you and his army to the Northland capital to retake your throne. You immediately win the game.",
           ],
         ],
       },
@@ -1855,28 +1906,28 @@ export const eventData: Event[] = [
   {
     tag: "e102",
     title: "Light Rainstorm",
-    type: "weather",
+    type: "encounter",
     image: false,
     desc: "You must land immediately and cannot travel further today due to heavy cloud cover and bad weather. Roll 1D6 for each character in your party — on 6 the character catches cold and suffers 1 wound.",
   },
   {
     tag: "e103",
     title: "Bad Headwinds",
-    type: "weather",
+    type: "encounter",
     image: false,
     desc: "You cannot move faster than two hexes flying today. If this event occurs after you have travelled to the third hex today: you must land in the last hex (second hex entered) instead and end your travel there.",
   },
   {
     tag: "e104",
     title: "Good Tailwinds",
-    type: "weather",
+    type: "encounter",
     image: false,
     desc: "There is a gentle breeze blowing and the skies ahead are clear and bright. You can fly one extra hex today if you wish. Normal travel rules (r204) apply when moving.",
   },
   {
     tag: "e105",
     title: "Storm Clouds Ahead",
-    type: "weather",
+    type: "encounter",
     image: true,
     desc: "You can land immediately in the hex you just entered and avoid any risk. Alternatively if you continue flying today: before checking for lost or a travel event, roll 1D6 for what happens.",
     tables: [
@@ -1899,7 +1950,7 @@ export const eventData: Event[] = [
   {
     tag: "e106",
     title: "Heavy Overcast",
-    type: "weather",
+    type: "encounter",
     image: false,
     desc: "Thick black clouds obscure your vision and you realise you are becoming lost. Roll 1D6 for a random direction and move one hex in that direction. Roll 1D6 for each additional character or un-ridden mount in your party — on 6 that character/mount disappears into the overcast and is lost. The overcast skies force you and the remainder of your party to land in the new hex — no further travel today.",
   },
@@ -2410,7 +2461,7 @@ export const eventData: Event[] = [
   {
     tag: "e136",
     title: "Hidden Treasures",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "ou uncover the remains of an old and decaying palace treasure room, its contents undiscovered for many years. Roll 1D6 and if the result is lower than your Wit & Wiles, see e136a, otherwise roll 1D6 for the contents:",
     tables: [
@@ -2431,7 +2482,7 @@ export const eventData: Event[] = [
   {
     tag: "e136a",
     title: "Northland Banners",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "You notice that the banners within the treasure room match those of your royal House of Arath! Roll 1D6 for what you discover:",
     tables: [
@@ -2493,7 +2544,7 @@ export const eventData: Event[] = [
   {
     tag: "e139",
     title: "Minor Treasure",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "In a small dusty room with only a glimmer of light through a crack in the roof you uncover a minor treasure. Roll 1D6 for what you find.",
     tables: [
@@ -2514,7 +2565,7 @@ export const eventData: Event[] = [
   {
     tag: "e140",
     title: "Magic Box",
-    type: "treasure",
+    type: "encounter",
     image: true,
     desc: "You find a strange magic box inscribed with ancient runes and symbols. Can only be opened if you have a magician/wizard/witch in your party or if you gain an audience with a wizard (e068b). Until then you can carry it with you as it is relatively light. Once such a person is in your party you can open it — roll 1D6.",
     tables: [
@@ -2543,7 +2594,7 @@ export const eventData: Event[] = [
   {
     tag: "e142",
     title: "Precious Gems",
-    type: "treasure",
+    type: "encounter",
     image: false,
     desc: "The box contains a pouch of gems total worth wealth 200 (consult for wealth 100 twice). There are 1D6+2 gems — divide up the total wealth by this number to find out how much each gem is worth (round down).",
     note: "If you have a magician/wizard/witch in your party: they also recognise one as a vision gem — see e041.",

@@ -14,14 +14,11 @@ export type EventType =
   | "encounter"
   | "combat"
   | "location"
-  | "treasure"
-  | "weather"
   | "magic"
   | "item"
   | "event"
   | "story"
-  | "npc"
-  | "settlement";
+  | "npc";
 
 export type TableType = SimpleListTableType | RollTableType;
 

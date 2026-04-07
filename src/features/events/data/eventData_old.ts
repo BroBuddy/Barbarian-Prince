@@ -414,13 +414,13 @@ export const eventData: Event[] = [
   {
     tag: "e025",
     title: "Wizard Advice",
-    type: "treasure",
+    type: "encounter",
     desc: "The wizard, now a member of your party, confides during the evening meal that he knows of a valuable treasure. According to his information, the treasure is in a certain direction (roll one die: 1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW) and a certain distance away (roll one die for distance in hexes). Once you reach that hex, consult e026 for how to find the treasure.",
   },
   {
     tag: "e026",
     title: "Search for Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You believe you have found the proper location of a treasure. You must spend one day searching for the precise spot, as if you were trying to find a cache (see r214). At the end of that day, roll one die.",
     tables: [
       {
@@ -442,7 +442,7 @@ export const eventData: Event[] = [
   {
     tag: "e027",
     title: "Ancient Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You find an ancient treasure, long lost. It is wealth code 110 — see r225.",
   },
   {
@@ -468,7 +468,7 @@ export const eventData: Event[] = [
   {
     tag: "e029",
     title: "Danger and Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You sense that both danger and treasures are near. Roll one die and see that event.",
     tables: [
       {
@@ -494,7 +494,7 @@ export const eventData: Event[] = [
   {
     tag: "e031",
     title: "Looted Tomb",
-    type: "treasure",
+    type: "encounter",
     desc: "You find a partially looted tomb of a dead Prince. Under his sarcophagus you find a secret compartment, but it has a trap lock. Roll one die — if your wit & wiles exceed the die roll, you have outwitted the trap, otherwise see r227 for injuries it may inflict. In either case, you find a treasure with wealth code 50, plus a Gift of Charm (e182). However, the Gift of Charm is very old — roll one die, if the result is 5 or 6 it turns to dust as you lift it from the compartment, and is therefore worthless.",
   },
   {
@@ -558,7 +558,7 @@ export const eventData: Event[] = [
   {
     tag: "e037",
     title: "Broken Chest",
-    type: "treasure",
+    type: "encounter",
     desc: "You find a chest with a broken and cracked lid. Sorting through old mouldering cloths, you find an item — roll one die.",
     tables: [
       {
@@ -578,7 +578,7 @@ export const eventData: Event[] = [
   {
     tag: "e038",
     title: "Cache under Stone",
-    type: "treasure",
+    type: "encounter",
     desc: "By chance you overturn a stone slab, jumping back as it crashes to the ground. You see that it uncovers an old cache of rotting food and other items. Roll one die.",
     tables: [
       {
@@ -598,13 +598,13 @@ export const eventData: Event[] = [
   {
     tag: "e039",
     title: "Treasure Chest",
-    type: "treasure",
+    type: "encounter",
     desc: "You find a locked chest. You know the lock may be trapped. If you decide to open it, roll one die — if the result is 3 or higher it does have a trap lock, see r227. If you survive the trap (if any) and open the chest, roll one die. If the result is 6 the chest is empty, otherwise it has a treasure with a wealth of 60. This may include a special possession, but if that possession is a pegasus winged mount, it is actually an item with a pegasus emblem — roll again with one die and consult line A on the Treasure Table (r225) for the actual item found.",
   },
   {
     tag: "e040",
     title: "Treasure Chest (trapped)",
-    type: "treasure",
+    type: "encounter",
     desc: "You find a locked treasure chest protected by a trap. You can either ignore it, or attempt to open it anyway. If you try to open it, roll one die — if the die roll exceeds your wit & wiles you have bungled and sprung the trap, see r227. If you survive the sprung trap (if any), you can now open it — roll one die to determine the wealth code of the contents: 1→5; 2→25; 3→50; 4→60; 5→70; 6→100. See r225 for details. Any result that includes a pegasus winged mount as a possession is actually a pegasus talisman — whenever you have any magician, wizard, witch, priest or monk in your party, they can help you use the talisman to call upon an actual pegasus winged mount (see r204).",
   },
   {
@@ -1147,13 +1147,13 @@ export const eventData: Event[] = [
   {
     tag: "e078",
     title: "Bad Going",
-    type: "weather",
+    type: "encounter",
     desc: "Ignore this event unless your party is travelling on mounts without wings (r204) such as horses. Ignore this event regardless of mounts if your party travelled along a road, or entered a village, castle or temple. Terrain is difficult for horses. You must either halt for the day to explore alternate routes, or you risk injuries. If you continue normal travel today, roll one die and subtract three (-3). If the result is 1 or more, that many horses have broken legs or thrown shoes, and are lost as mounts after the move. This may require you to reorganize transport loads (r206) and/or cache items you are carrying (r214). If this event occurs after your last travel move for the day, the difficult terrain applies for any travel (r204) on the following day. If some other action (r203) than travel is selected for tomorrow, you are presumed to explore alternate routes in the course of that other action, thus ending this event.",
   },
   {
     tag: "e079",
     title: "Heavy Rains",
-    type: "weather",
+    type: "encounter",
     desc: "Cold, driving rains hinder man and beast. You must stop moving today, and roll one die for each character in your party. If the result is 5 or 6, the character catches cold, and suffers one wound. At the start of tomorrow, roll one die. A result of 4 or higher means the rains continue — if you use any mounts they may catch pneumonia, roll once for each, they fall sick and die on a 5 or 6. You can lead animals at walking speed, including animals used to transport loads (r206) without risk. If you travel at all (r204) any characters who haven't yet caught cold must risk it. At the start of the day after tomorrow the weather will clear and the rain will stop, unless this event occurs again in the meantime.",
   },
   {
@@ -1218,13 +1218,13 @@ export const eventData: Event[] = [
   {
     tag: "e085",
     title: "Narrow Ledges",
-    type: "weather",
+    type: "encounter",
     desc: "Your party is passing along narrow ledges and paths that overhang cliffs that plunge into deep gorges. Roll two dice for each character on foot in the party — if a 12 is rolled that character slips and falls to his death. Roll one die for each mount in your party without wings — a 6 means the mount stumbles and falls to its death, carrying away any rider and loads on it. If you entered the hex mounted, your entire party must be considered on mounts for this purpose. If you personally slip, or your mount falls over the edge, you are presumed to catch a ledge somewhere down the cliff and survive, but roll one die and add one (+1) for the number of wounds suffered in the fall. Next roll one die to see if your party finds you — a 5 or higher indicates they do, and the wounds are the only effect. Any lower roll means the rest of your party does not find you, and disappears with all the mounts, possessions and wealth they were carrying.",
   },
   {
     tag: "e086",
     title: "High Pass",
-    type: "weather",
+    type: "encounter",
     desc: "In order to leave the hex by any direction except that which you entered, you must travel through a very high, alpine pass. On your next travel action (r204) — unless you leave by the hex you entered — you must take the high pass as long as you aren't lost. When you travel the high pass, roll two dice for the effects of high winds, sub-freezing temperatures, snow, etc.",
     tables: [
       {
@@ -1248,13 +1248,13 @@ export const eventData: Event[] = [
   {
     tag: "e087",
     title: "Impassable Woods",
-    type: "weather",
+    type: "encounter",
     desc: "You find the forest becomes thicker and thicker along this route, until further travel is impossible. You can only leave this hex by travelling to the hex from which you came (r204). In other words, any further moves must be backwards. However, if entered from another direction this hex could be passable.",
   },
   {
     tag: "e088",
     title: "Rock Fall",
-    type: "weather",
+    type: "encounter",
     desc: "As you travel along through a steep-sided gorge a rock fall begins, threatening your entire party. Roll one die for each character; mounts without riders are rolled for separately.",
     tables: [
       {
@@ -1277,13 +1277,13 @@ export const eventData: Event[] = [
   {
     tag: "e089",
     title: "Impassable Morass",
-    type: "weather",
+    type: "encounter",
     desc: "You discover the swamp turns into an impassable morass of weeds, quicksand, water and muck. You can leave this hex only by moving to the hex you came from (r204). In other words, your next move must be backwards. However, the hex might be passable if entered from another direction. Only this particular route is blocked.",
   },
   {
     tag: "e090",
     title: "Quicksand",
-    type: "weather",
+    type: "encounter",
     desc: "Your party stumbles into quicksand. Roll one die for each character or mount. If a character is riding a mount, you can either roll for both together as a character, or the character can sacrifice the mount and its load in order to jump from it to safety.",
     tables: [
       {
@@ -1319,13 +1319,13 @@ export const eventData: Event[] = [
   {
     tag: "e092",
     title: "Flood",
-    type: "weather",
+    type: "encounter",
     desc: "Rains swell the water level of the marsh and cause flooding. You and your party are stranded on a small knoll, unable to travel further today. At the start of tomorrow, roll one die. If the result is 5 or higher, the waters subside so you can travel again (r204), otherwise you remain stranded and cannot make any travel (r204), escape (r218) or follow (r219) actions that day. Keep on rolling the die at the start of each day until travel is possible once more.",
   },
   {
     tag: "e093",
     title: "Poison Plants",
-    type: "weather",
+    type: "encounter",
     desc: "You notice poison plants around you today, often a sign of greater evil. You cannot hunt for food (r215) today. Roll one die for an additional event.",
     tables: [
       {
@@ -1397,7 +1397,7 @@ export const eventData: Event[] = [
   {
     tag: "e097",
     title: "Marsh Gas and Rot",
-    type: "weather",
+    type: "encounter",
     desc: "Your entire party has unwittingly travelled into an area full of flesh-rot disease and mind-destroying marsh gas. Roll one die for each character. If a 1 results the character escapes; any other result means the character dies a mindless and raving idiot while his flesh rots from his bones before his eyes. Roll for yourself first, since if you die the game ends, regardless of the fate of the rest in your party.",
   },
   {
@@ -1491,25 +1491,25 @@ export const eventData: Event[] = [
   {
     tag: "e102",
     title: "Light Rainstorm",
-    type: "weather",
+    type: "encounter",
     desc: "You must land immediately, and cannot travel further today due to low ceiling, heavy cloud cover, and bad weather.",
   },
   {
     tag: "e103",
     title: "Bad Headwinds",
-    type: "weather",
+    type: "encounter",
     desc: "You cannot move faster than two hexes flying today. If this event occurs after you have travelled to the third hex today, you must land in the last hex (second hex entered) instead, and end your travel there.",
   },
   {
     tag: "e104",
     title: "Good Tailwinds",
-    type: "weather",
+    type: "encounter",
     desc: "You can fly one extra hex today if you wish. Normal travel rules (r204) apply when moving into this extra fourth hex.",
   },
   {
     tag: "e105",
     title: "Storm Clouds Ahead",
-    type: "weather",
+    type: "encounter",
     desc: "You can land immediately, in the hex you just entered, and avoid any risk. Alternately, if you continue flying today, before checking for lost or a travel event, roll one die for what happens as you try to fly on.",
     tables: [
       {
@@ -1528,13 +1528,13 @@ export const eventData: Event[] = [
   {
     tag: "e105a",
     title: "Violent Weather",
-    type: "weather",
+    type: "encounter",
     desc: "Your party is blown out of control by gigantic winds. Roll one die for the direction you are blown (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW) instead of making your normal travel move, then roll one die again and halve the number (round fractions up) for the number of hexes you are blown. You crash into the final hex — your flying mount is killed and you roll one die for wounds suffered. All other members of your party are blown off course and lost to you.",
   },
   {
     tag: "e106",
     title: "Heavy Overcast",
-    type: "weather",
+    type: "encounter",
     desc: "Thick, black clouds obscure your vision. You realize you are becoming lost. Roll one die for direction (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW), and move one hex in that direction. Now roll one die for each additional character or unridden mount in your party — a 6 means that character or mount disappears into the overcast and is lost from your party. Finally, the overcast will force you and the remainder of your party to land in the new hex — no further travel today is possible.",
   },
   {
@@ -1644,19 +1644,19 @@ export const eventData: Event[] = [
   {
     tag: "e119",
     title: "Flash Flood",
-    type: "weather",
+    type: "encounter",
     desc: "Your party is travelling down a shallow depression, a wadi. Suddenly there is a roaring, and a wall of water rushes toward you. Rains elsewhere have caused a flash flood. Roll one die for each member of your party — 5 or 6 means the character can't scramble up the bank fast enough, and is carried away by the flood. This includes the character, any mount, and any wealth or possessions. Those carried away are permanently lost. If you are carried away in the flood, any mount of yours is killed, roll one die for the number of wounds you suffer, and you can only rescue one load of material from that which you were carrying (r206). All the rest is lost, and you are so far separated from your party that they give you up for dead and disappear also.",
   },
   {
     tag: "e120",
     title: "Exhaustion",
-    type: "weather",
+    type: "encounter",
     desc: "The burning days and freezing nights sap the strength of your party. Mounts cannot be ridden, and the load capacity of all men and mounts (r206) is halved. Each character in your party suffers one wound. No rest or healing of wounds (r222) is allowed until you leave the desert, or are in an oasis hex. Mounts recover normal abilities whenever you leave the desert and rest one day, or rest a day at an oasis.",
   },
   {
     tag: "e121",
     title: "Sunstroke",
-    type: "weather",
+    type: "encounter",
     desc: "The heat of the sun is unexpected. Roll one die for each character and mount in your party — a 6 means they or it collapses from sunstroke. Mounts that collapse must be left to die. Characters that collapse must be carried if possible, even if that means other loads must be abandoned (see r206). If you suffer sunstroke, other characters in the party will carry you if possible, otherwise they leave you behind and disappear. If you suffer sunstroke and are not carried for the rest of the day, you suffer wounds equal to one die roll, and revive in time for the evening meal (r215) — however, you are unable to hunt. If your party continues carrying any sunstroke victims, there is no special effect except that sunstroke victims cannot participate in hunting. All characters recover from sunstroke at the evening meal.",
   },
   {
@@ -1883,7 +1883,7 @@ export const eventData: Event[] = [
   {
     tag: "e136",
     title: "Hidden Treasures",
-    type: "treasure",
+    type: "encounter",
     desc: "You uncover the remains of a palace treasure room. Roll one die for the contents.",
     tables: [
       {
@@ -1943,7 +1943,7 @@ export const eventData: Event[] = [
   {
     tag: "e139",
     title: "Minor Treasures",
-    type: "treasure",
+    type: "encounter",
     desc: "You uncover a minor treasure. Roll one die.",
     tables: [
       {
@@ -1963,7 +1963,7 @@ export const eventData: Event[] = [
   {
     tag: "e140",
     title: "Magic Box",
-    type: "treasure",
+    type: "encounter",
     desc: "You find a magic box. You can only open it if you have a magician, wizard or witch in your party. Until then, you can carry it with you, since it is relatively light. Once such a person is in your party, you can open it and examine the contents. Roll one die.",
     tables: [
       {
@@ -1989,7 +1989,7 @@ export const eventData: Event[] = [
   {
     tag: "e142",
     title: "Gems",
-    type: "treasure",
+    type: "encounter",
     desc: "The box contains a horde of gems worth wealth 200 (consult r225 for wealth 100 twice). If you have a magician, wizard or witch in your party they also recognize one as a vision gem — see e041.",
   },
   {
@@ -2019,7 +2019,7 @@ export const eventData: Event[] = [
   {
     tag: "e147",
     title: "Clue to Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You gain information about a nearby treasure. Roll one die for direction (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW) and roll another die for the distance in hexes in that direction where the treasure lies. When you reach that hex, and spend a day searching for it like a cache (r214), you can then roll two dice to see what you find.",
     tables: [
       {

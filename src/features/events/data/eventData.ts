@@ -256,7 +256,7 @@ const eventData: Event[] = [
   {
     tag: "e009",
     title: "Farm",
-    type: "settlement",
+    type: "location",
     image: true,
     desc: "You spot a small farm ahead. You may detour around it, but that will consume the rest of the day, ending all travel for today. Alternately, you can go up to it. If you decide to approach the farm, first roll 1d6: under your wit & wiles, you may roll on the table below first, then choose to make a friendly approach or a raid; equal to or over your wit & wiles, you must choose a friendly approach or raid first and then roll on the table below. If you select a raid and remain in this hex at the end of the day, you may be attacked by a vengeful mob tomorrow morning, before you have a chance to select your daily action. At that time, roll 1d6: on a 5 or more, see e017; on a 4 or less, there is no mob or event.",
     tables: [
@@ -281,7 +281,7 @@ const eventData: Event[] = [
   {
     tag: "e010",
     title: "Starving Farmer",
-    type: "settlement",
+    type: "location",
     image: true,
     desc: "",
     tables: [
@@ -302,7 +302,7 @@ const eventData: Event[] = [
   {
     tag: "e011",
     title: "Peaceful Farmer",
-    type: "settlement",
+    type: "location",
     image: true,
     desc: "",
     tables: [
@@ -323,7 +323,7 @@ const eventData: Event[] = [
   {
     tag: "e012",
     title: "Farmer with Protector",
-    type: "settlement",
+    type: "location",
     desc: "",
     tables: [
       {
@@ -343,7 +343,7 @@ const eventData: Event[] = [
   {
     tag: "e013",
     title: "Rich Peasant Family",
-    type: "settlement",
+    type: "location",
     image: true,
     desc: "",
     tables: [
@@ -364,7 +364,7 @@ const eventData: Event[] = [
   {
     tag: "e014",
     title: "Hostile Reaver Clan",
-    type: "settlement",
+    type: "location",
     image: true,
     desc: "The hostile clan is composed of a leader (ev5 cs5 wc10) and 1d6+2 clan members (ev4 cs4 wc4).",
     tables: [
@@ -385,7 +385,7 @@ const eventData: Event[] = [
   {
     tag: "e015",
     title: "Friendly Reaver Clan",
-    type: "settlement",
+    type: "location",
     desc: "The friendly clan is composed of a leader (ev4 cs5 wc7) and 1d6+1 clan members (ev4 cs4 wc4).",
     tables: [
       {
@@ -638,13 +638,13 @@ const eventData: Event[] = [
   {
     tag: "e026",
     title: "Search for Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You believe you have found the proper location of a treasure. You now must spend one day searching for the precise spot. At the end of that day, roll 1d6: 1–2: the information was bogus and you found nothing; 3: e027; 4: e028; 5: e029; 6: clues suggest the treasure is in a random adjacent hex (r204g) – after you arrive there, roll on this event again.",
   },
   {
     tag: "e027",
     title: "Ancient Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You find an ancient treasure (wc110), long thought to be lost; see r225. Roll 1d6: on a 1 or 2, it is protected by a trap (r227).",
   },
   {
@@ -657,7 +657,7 @@ const eventData: Event[] = [
   {
     tag: "e029",
     title: "Danger & Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You sense that both danger and treasure are close at hand. Roll 1d6: 1: e028; 2: e032; 3: e036; 4: e037; 5: e038; 6: e044.",
   },
   {
@@ -669,7 +669,7 @@ const eventData: Event[] = [
   {
     tag: "e031",
     title: "Looted Burial Chamber",
-    type: "treasure",
+    type: "encounter",
     desc: "You find the partially looted burial chamber of a long-dead prince. Under his tomb you find an undiscovered secret compartment, but it has a trap lock. Roll 1d6: under your wit & wiles, you have outwitted the trap; equal to or over your wit & wiles, see r227 for the injuries it may inflict. If you survive the trap (if any), you find a treasure worth wc50 and a decayed enamel box holding a very old Gift of Charm (e182) – roll 1d6: on a 5 or 6, the gift crumbles into worthless dust as you lift it from the box; on a 4 or less, the Gift of Charm is still good.",
   },
   {
@@ -720,25 +720,25 @@ const eventData: Event[] = [
   {
     tag: "e037",
     title: "Broken Chest",
-    type: "treasure",
+    type: "encounter",
     desc: "You find a chest with a broken and cracked lid. Sorting through old mouldering cloths, roll 1d6 to see what you find: 1: e180; 2: e181; 3: e182; 4: e184; 5: e186; 6: e189.",
   },
   {
     tag: "e038",
     title: "Cache Under Stone",
-    type: "treasure",
+    type: "encounter",
     desc: "By chance, you overturn a stone slab. Jumping back as it crashes to the ground, you see you've uncovered an old cache of rotting food and other items. Roll 1d6 to see if there's anything of value here: 1: e180; 2: e181; 3: e182; 4: e185; 5: e187; 6: e190.",
   },
   {
     tag: "e039",
     title: "Treasure Chest",
-    type: "treasure",
+    type: "encounter",
     desc: "You find a locked chest and know that it may be trapped. If you decide to open it, roll 1d6: on a 3 or more, it does have a trap lock (r227). If you survive the trap (if any), and open the chest, roll 1d6: on a 6, the chest is empty; on a 5 or less, it contains a treasure worth wc60 (see r225 for details) – the treasure may include a special possession (if you roll a pegasus winged mount, it is instead an item with a winged pegasus emblem; roll 1d6 again and refer to Line A of the Treasure Table for the actual item found).",
   },
   {
     tag: "e040",
     title: "Treasure Chest",
-    type: "treasure",
+    type: "encounter",
     desc: "You find a locked treasure chest protected by a trap. You can either ignore it or attempt to open it anyway. If you try to open it, roll 1d6: if you roll over your wit & wiles, you have bungled and sprung the trap (r227). If you survive the sprung trap (if any), and open the chest, roll 1d6 to determine the wealth code of the contents (see r225 for details): 1: wc5; 2: wc25; 3: wc50; 4: wc60; 5: wc70; 6: wc100. Any result that includes a pegasus winged mount as a possession actually is a pegasus talisman, which you can keep. Whenever you have any magician, wizard, witch, priest, or monk in your party, they can help you use the talisman to call upon an actual pegasus (e188), which will immediately appear and serve as your mount (see r204d for details on airborne travel).",
   },
   {
@@ -1349,7 +1349,7 @@ const eventData: Event[] = [
   {
     tag: "e079",
     title: "Heavy Rains",
-    type: "weather",
+    type: "encounter",
     desc: "Cold, driving rains hinder man and beast. You must stop moving today and roll 1d6 for each character in your party: on a 5 or 6, the character catches cold and suffers one wound. At the start of tomorrow, roll 1d6: on a 4 or more, the rains continue. If you have any mounts they may catch pneumonia – roll once for each: on a 5 or 6, they fall sick and die. You can lead animals at walking speed, including animals used to transport loads (see r206) without risk. If you travel at all, any characters who haven't yet caught cold must risk it. At the start of the day after tomorrow, the weather will clear and the rain will stop, unless this event occurs again in the meantime.",
   },
   {
@@ -1511,7 +1511,7 @@ const eventData: Event[] = [
   {
     tag: "e092",
     title: "Flood",
-    type: "weather",
+    type: "encounter",
     desc: "Rains swell the waters of the marsh. You and your party are stranded on a small knoll, unable to travel further today. In the morning, roll 1d6: on a 5 or 6, the waters subside and you can travel again (r204); on a 4 or less, you remain stranded and cannot make any travel, escape (r218), or follow (r219) actions that day, nor hunt (r215). Continue to roll the die at the start of each day until travel is possible once more.",
   },
   {
@@ -1690,38 +1690,38 @@ const eventData: Event[] = [
   {
     tag: "e102",
     title: "Light Rainstorm",
-    type: "weather",
+    type: "encounter",
     desc: "You must land immediately, and cannot travel further today due to heavy cloud cover and bad weather.",
   },
   {
     tag: "e103",
     title: "Bad Headwinds",
-    type: "weather",
+    type: "encounter",
     desc: "You cannot move faster than two hexes while flying today. If this event occurs after you have travelled to the third hex today, you must land in the last hex (second hex entered) instead, and end your travel there.",
   },
   {
     tag: "e104",
     title: "Good Tailwinds",
-    type: "weather",
+    type: "encounter",
     desc: "You can fly one extra hex today if you wish. Normal travel rules (r204) apply when moving into this extra fourth hex.",
   },
   {
     tag: "e105",
     title: "Storm Clouds Ahead",
-    type: "weather",
+    type: "encounter",
     image: true,
     desc: "You can land immediately, in the hex you just entered, and avoid any risk. Alternately, if you continue flying today (assuming you have any airborne travel remaining), before checking for lost or a travel event (r204), roll 1d6 for what happens as you try to fly on: 1: e103; 2: e102; 3: e079; 4–5: no effect; 6: e105a.",
   },
   {
     tag: "e105a",
     title: "Violent Weather",
-    type: "weather",
+    type: "encounter",
     desc: "Your party is blown out of control by massive winds and end up 1d3 hexes away (see r204g for the direction). When you crash land in the last hex, your flying mount is killed and you suffer 1d6 wounds. All other followers are blown off course and lost permanently.",
   },
   {
     tag: "e106",
     title: "Heavy Overcast",
-    type: "weather",
+    type: "encounter",
     desc: "Thick clouds obscure your vision. You realize you are becoming lost. Roll for a random heading (r204g) and move 1 hex in that direction. Now roll 1d6 for each additional character or unridden mount in your party: on a 6, that character/mount disappears into the fog and is lost from your party. Finally, the dark sky will force you and the remainder of your party to land in the new hex; no further travel today is possible.",
   },
   {
@@ -1893,7 +1893,7 @@ const eventData: Event[] = [
   {
     tag: "e119",
     title: "Flash Flood",
-    type: "weather",
+    type: "encounter",
     desc: "Your party is travelling down into a valley when suddenly you hear a roar as a wall of water rushes toward you. Rains elsewhere have caused a flash flood! Roll 1d6 for each member of your party: on a 5 or 6, the character can't scramble up the embankment fast enough, and is carried away by the rushing water and permanently lost, along with any mount, wealth, and possessions he was carrying. If you are washed away in the flood, you suffer 1d6 wounds, any mount you were riding is killed, and you can only salvage 1 load from whatever you were carrying (r206). All the rest is lost, and you are so far separated from your party that they give you up for dead and go on their own way.",
   },
   {
@@ -1905,7 +1905,7 @@ const eventData: Event[] = [
   {
     tag: "e121",
     title: "Sunstroke",
-    type: "weather",
+    type: "encounter",
     desc: "The heat of the sun is unexpected. Roll 1d6 for each character and mount in your party: on a 6, they collapse from sunstroke. Collapsed mounts must be left to die, but characters that collapse must be carried, if possible, even if it means other loads must be abandoned (see r206). Should you suffer sunstroke, other characters in the party will carry you, if possible; otherwise, they will have to leave you behind. If you suffer sunstroke and are not carried for the rest of the day, you suffer 1d6 wounds, and revive in time for the evening meal (r215), but you cannot hunt today. If your party carries any sunstroke victims, there is no effect except that sunstroke victims cannot participate in hunting. All characters recover from sunstroke for the evening meal.",
   },
   {
@@ -2151,7 +2151,7 @@ const eventData: Event[] = [
   {
     tag: "e136",
     title: "Hidden Treasures",
-    type: "treasure",
+    type: "encounter",
     desc: "You uncover the remains of an old and decaying palace treasure room.",
     tables: [
       {
@@ -2215,7 +2215,7 @@ const eventData: Event[] = [
   {
     tag: "e139",
     title: "Minor Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You uncover a minor treasure.",
     tables: [
       {
@@ -2264,7 +2264,7 @@ const eventData: Event[] = [
   {
     tag: "e142",
     title: "Gems",
-    type: "treasure",
+    type: "encounter",
     desc: "The box contains a horde of gems worth wc200 (roll for wealth 100 twice). If you have a magician, witch, or wizard in your party, they also recognize a vision gem (e041) amongst the horde.",
   },
   {
@@ -2298,7 +2298,7 @@ const eventData: Event[] = [
   {
     tag: "e147",
     title: "Clue to Treasure",
-    type: "treasure",
+    type: "encounter",
     desc: "You gain information about a nearby treasure 1d6 hexes away in a random direction (r204G). When you reach that hex and spend a day searching for it like a cache (r214), roll 2d6 on the table below.",
     tables: [
       {
@@ -2603,7 +2603,7 @@ const eventData: Event[] = [
   {
     tag: "e163",
     title: "Slave Market",
-    type: "settlement",
+    type: "location",
     image: true,
     desc: "You can purchase slaves at the auction block. Porter slaves (r206) are available for 1d6 gold per porter — they need no wages and will function even if not fed (r215), but each day without food halves their carrying capacity (rounded down); when capacity reaches zero, they die. Slave girls are available for 2d6+2 gold each; each functions as a Gift of Charm (e182) as long as she is fed properly (r215). Slave girls who are not fed lose this ability until fed regularly for as many days as they missed meals; normal starvation risks (r216) apply each day without food. For each girl bought, roll 2d6: on a 12 exactly, you fall for her, freeing her as your true love (r228). Finally, on the market you find an old warrior available for 1d6 gold (add +2 to his price if you did not already buy porters or slave girls). If you buy and free him, he becomes a willing party member at no pay. Roll 1d6+1 for his combat skill and 1d6+1 for his endurance.",
   },
@@ -2747,7 +2747,7 @@ const eventData: Event[] = [
   {
     tag: "e168",
     title: "Roadside Inn",
-    type: "settlement",
+    type: "location",
     image: true,
     desc: "You happen upon a small but lively inn. Food (r215) and lodging (r217) are both on offer. Roll 1d6: on a 4 or more, the inn also has stables. You may Visit the Tavern (r294) here, and the innkeeper will sell you 2 food units per 1 gold piece before you leave.",
   },
@@ -2881,7 +2881,7 @@ const eventData: Event[] = [
   {
     tag: "e175",
     title: "Apothecary",
-    type: "settlement",
+    type: "location",
     desc: "You have found the shop of an apothecary. He will also buy any of the listed items for half (½) their listed price. When you use any concoction bought from the apothecary, roll 1d6: on a 1, it is a dud and does nothing.",
     tables: [
       {
@@ -3135,7 +3135,7 @@ const eventData: Event[] = [
   {
     tag: "e195",
     title: "Magical Possessions",
-    type: "treasure",
+    type: "encounter",
     desc: "Roll 2d6 for the specific item.",
     tables: [
       {
@@ -3167,7 +3167,7 @@ const eventData: Event[] = [
   {
     tag: "e197",
     title: "Animal Trainer",
-    type: "settlement",
+    type: "location",
     image: true,
     desc: "You have found a clever trainer of animals that may have some to sell to you. Roll 1d6 for the animals on sale today (roll twice at a castle).",
     tables: [

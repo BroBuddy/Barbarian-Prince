@@ -27,12 +27,12 @@ function CharacterBackpack() {
 
   return (
     <Card title="Backpack">
-      <button className="cardBtn" onClick={() => handleAdd()} title="Remove">
+      <button className="cardBtn" onClick={() => handleAdd()} title="Add">
         <Plus />
       </button>
 
       {backpack.length === 0 && (
-        <p className="text-center">Backpack is empty yet.</p>
+        <p className="text-center">Your backpack is empty.</p>
       )}
 
       <ul className="mx-2 mt-3">
@@ -43,9 +43,10 @@ function CharacterBackpack() {
           >
             {editingId === item.id ? (
               <>
-                <button onClick={() => handleSave(item.id)} title="Speichern">
+                <button onClick={() => handleSave(item.id)} title="Save">
                   <Check size={20} />
                 </button>
+
                 <input
                   className="input w-30"
                   value={draft}
@@ -58,14 +59,16 @@ function CharacterBackpack() {
               <>
                 <button
                   onClick={() => handleEdit(item.id, item.text)}
-                  title="Bearbeiten"
+                  title="Edit"
                 >
                   <Pencil size={20} />
                 </button>
+
                 <span className="w-30">{item.text}</span>
+
                 <button
                   onClick={() => removeBackpackItem(item.id)}
-                  title="Entfernen"
+                  title="Remove"
                 >
                   <Trash size={20} />
                 </button>

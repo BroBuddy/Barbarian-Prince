@@ -21,6 +21,7 @@ function MapPage() {
     <div
       style={{
         width: "100%",
+        maxWidth: "768px",
         height: "calc(100vh - 50px)",
         display: "flex",
         flexDirection: "column",
@@ -31,9 +32,9 @@ function MapPage() {
       <div
         className="pointer text-white bg-black rounded py-1"
         style={{
-          position: "absolute",
-          bottom: "50px",
-          left: "23px",
+          position: "fixed",
+          bottom: "55px",
+          left: "calc(max(0px, (100vw - 768px) / 2) + 23px)",
           zIndex: 10,
         }}
       >
@@ -48,9 +49,9 @@ function MapPage() {
       <div
         className="pointer text-white bg-black rounded py-1"
         style={{
-          position: "absolute",
-          bottom: "50px",
-          right: "21px",
+          position: "fixed",
+          bottom: "55px",
+          right: "calc(max(0px, (100vw - 768px) / 2) + 21px)",
           zIndex: 10,
         }}
       >

@@ -39,24 +39,28 @@ function EnemyCard({ enemy }: { enemy: Enemy }) {
           <div key={field} className="flex flex-row mb-1 mx-1">
             <span className="flex items-center mr-2">{STAT_ICONS[field]}</span>
 
-            <div className="flex flex-wrap gap-1">
-              {(field === "wealthCode"
-                ? WEALTH_VALUES
-                : Array.from({ length: 11 }, (_, i) => i + 1)
-              ).map((val) => (
-                <TokenButton
-                  key={val}
-                  label={val}
-                  isActive={enemy[field] === val}
-                  color={STAT_COLORS[field]}
-                  onClick={() =>
-                    updateEnemy(enemy.id, {
-                      [field]:
-                        enemy[field] === val ? undefined : (val as number),
-                    })
-                  }
-                />
-              ))}
+            <div
+              style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
+            >
+              <div className="flex gap-2" style={{ width: "max-content" }}>
+                {(field === "wealthCode"
+                  ? WEALTH_VALUES
+                  : Array.from({ length: 12 }, (_, i) => i + 1)
+                ).map((val) => (
+                  <TokenButton
+                    key={val}
+                    label={val}
+                    isActive={enemy[field] === val}
+                    color={STAT_COLORS[field]}
+                    onClick={() =>
+                      updateEnemy(enemy.id, {
+                        [field]:
+                          enemy[field] === val ? undefined : (val as number),
+                      })
+                    }
+                  />
+                ))}
+              </div>
             </div>
           </div>
         ))}

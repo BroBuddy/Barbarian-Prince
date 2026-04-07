@@ -37,7 +37,7 @@ function FollowerCard({ follower }: { follower: Follower }) {
           <div key={field} className="flex flex-row mb-1 mx-1">
             <span className="flex items-center mr-2">{STAT_ICONS[field]}</span>
 
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap gap-2">
               {Array.from({ length: field === "payPerDay" ? 5 : 9 }, (_, i) =>
                 field === "payPerDay" ? i : i + 1,
               ).map((val) => (

@@ -28,18 +28,20 @@ function GamePage() {
 
       <Card title="Barbarian Prince">
         <p>
-          You are the Barbarian Prince, a lone ruler cast into a harsh and
-          unforgiving world. Your kingdom is gone, your power broken—but your
-          fate is not yet sealed. Every decision you make shapes your story, and
-          every roll of the dice may lead you closer to glory… or ruin.
-        </p>
-        <p>
-          You have ten weeks to prove your worth. By the end of your journey,
-          you must stand north of the Tragoth River with no less than
-          <strong className="mx-1">500 gold</strong>
-          in your possession. Whether you achieve this through conquest,
-          cunning, exploration, or sheer luck is entirely up to you—but time is
-          never on your side.
+          <em>
+            "Evil events have overtaken your Northlands Kingdom. Your father,
+            old King Hendryc Arath, is dead - assassinated by rivals to the
+            throne, led by your own evil brother. These usurpers now hold the
+            palace with their mercenary royal guard. You have escaped to the
+            south and must collect <strong>500 gold</strong> pieces to raise an
+            army to smash them and retake your heritage. Furthermore, the
+            usurpers have powerful friends overseas and in the Cult of Dark
+            Wizards of the South. If you can't return across the Tragoth River
+            to take them out in ten weeks, their allies will arm and you will
+            lose your kingdom forever. The way will not be easy, but you have
+            your stubborn Northlands will and your great sword ‘Bonebiter’ to
+            aid you in your quest..."
+          </em>
         </p>
         <p>
           Each day, you must choose how to <Link to="/rule/r203">act</Link>. You

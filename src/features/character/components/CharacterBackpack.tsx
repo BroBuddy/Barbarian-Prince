@@ -51,6 +51,7 @@ function CharacterBackpack() {
                   className="input w-30"
                   value={draft}
                   autoFocus
+                  maxLength={25}
                   onChange={(e) => setDraft(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSave(item.id)}
                 />

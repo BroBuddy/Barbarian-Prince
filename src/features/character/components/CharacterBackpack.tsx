@@ -35,11 +35,11 @@ function CharacterBackpack() {
         <p className="text-center">Backpack is empty yet.</p>
       )}
 
-      <ul className="mx-2">
+      <ul className="mx-2 mt-3">
         {backpack.map((item) => (
           <li
             key={item.id}
-            className="flex flex-row items-center  justify-between w-full gap-2"
+            className="flex flex-row items-center my-2 justify-between w-full"
           >
             {editingId === item.id ? (
               <>

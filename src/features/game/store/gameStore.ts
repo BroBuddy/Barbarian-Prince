@@ -38,7 +38,7 @@ const MAX_VALUES: Record<string, number> = {
   Starvation: 9,
   WitAndWiles: 6,
   Food: 100,
-  Gold: 600,
+  Gold: 500,
   Day: 70,
 };
 
@@ -56,7 +56,7 @@ type GameState = {
   nextDay: () => void;
 
   backpack: { id: string; text: string }[];
-  addBackpackItem: () => void;
+  addBackpackItem: (item?: string) => void;
   updateBackpackItem: (id: string, text: string) => void;
   removeBackpackItem: (id: string) => void;
 
@@ -194,9 +194,12 @@ const useGameStore = create<GameState>()(
 
       backpack: [],
 
-      addBackpackItem: () => {
+      addBackpackItem: (item) => {
         set((state) => ({
-          backpack: [...state.backpack, { id: crypto.randomUUID(), text: "" }],
+          backpack: [
+            ...state.backpack,
+            { id: crypto.randomUUID(), text: item ?? "" },
+          ],
         }));
       },
 

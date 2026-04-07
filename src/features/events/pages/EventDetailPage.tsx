@@ -7,12 +7,20 @@ import { useEffect } from "react";
 import { parseLinks } from "@/lib/parseLinks";
 import Badge from "@/components/Badge";
 import { ParagraphImage } from "@/components/ParagraphImage";
+import { Plus } from "lucide-react";
+import useGameStore from "@/features/game/store/gameStore";
 
 function EventDetailPage() {
   const { tag } = useParams();
   const { getEventDataByTag } = useEventService();
   const event = getEventDataByTag(tag as string);
   const { addToHistory } = useHistory();
+  const { addBackpackItem } = useGameStore();
+  const eventIsItem = event?.type === "item";
+
+  const handleAdd = () => {
+    addBackpackItem(event?.title);
+  };
 
   useEffect(() => {
     if (!event) return;
@@ -24,6 +32,12 @@ function EventDetailPage() {
 
   return (
     <Card title={event.title} tag={event.tag}>
+      {eventIsItem && (
+        <button className="cardBtn" onClick={() => handleAdd()} title="Add">
+          <Plus />
+        </button>
+      )}
+
       {event.type && <Badge text={event.type} icon={event.type} />}
 
       <div style={{ overflow: "hidden" }}>

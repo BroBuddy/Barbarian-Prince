@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useLayoutEffect } from "react";
 import Header from "./components/Header";
 import "./App.scss";
+import NavBar from "./components/NavBar";
 
 function App() {
   const location = useLocation();
@@ -14,9 +15,11 @@ function App() {
     <>
       <Header />
 
-      <div className="pt-15">
+      <div className="pt-5 mt-2">
         <Outlet />
       </div>
+
+      <NavBar />
     </>
   );
 }

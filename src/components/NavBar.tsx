@@ -9,7 +9,7 @@ import {
   Users,
 } from "lucide-react";
 import type { ReactNode } from "react";
-import styles from "./MobileNav.module.scss";
+import styles from "./NavBar.module.scss";
 
 type Links = {
   to: string;
@@ -26,7 +26,7 @@ const links: Links[] = [
   { to: "/sheet", icon: <ScrollText /> },
 ];
 
-const MobileNav = () => {
+const NavBar = () => {
   const location = useLocation();
 
   return (
@@ -56,4 +56,4 @@ const MobileNav = () => {
   );
 };
 
-export default MobileNav;
+export default NavBar;

@@ -2,14 +2,22 @@ import Card from "@/components/Card";
 import FollowerCard from "../components/FollowerCard";
 import useGameStore from "../../game/store/gameStore";
 import type { Follower } from "../../game/types/GameType";
-import TokenButton from "../../../components/TokenButton";
-import { followerData } from "../data/followerData";
+import { Plus } from "lucide-react";
 
 function FollowerPage() {
   const { followers, addFollower } = useGameStore();
+  const followerPos = followers.length + 1;
 
-  const handleAdd = (followerItem: Omit<Follower, "id" | "payPerDay">) => {
-    addFollower({ ...followerItem, payPerDay: 0 });
+  const handleAdd = () => {
+    const defaultFollower = {
+      title: `#${followerPos} Follower`,
+      combat: 0,
+      endurance: 0,
+      payPerDay: 0,
+      mounted: false,
+    };
+
+    addFollower(defaultFollower);
   };
 
   return (
@@ -18,19 +26,13 @@ function FollowerPage() {
         <FollowerCard key={follower.id} follower={follower} />
       ))}
 
-      <Card title="Add Follower">
-        <div className="flex flex-wrap mx-5 my-3 gap-2">
-          {followerData.map((follower) => (
-            <TokenButton
-              key={follower.title}
-              label={follower.title}
-              isActive={false}
-              color="#1d4ed8"
-              onClick={() => handleAdd(follower)}
-            />
-          ))}
-        </div>
-      </Card>
+      <div className="pointer" onClick={() => handleAdd()}>
+        <Card>
+          <div className="flex justify-center my-1">
+            <Plus size={30} />
+          </div>
+        </Card>
+      </div>
     </>
   );
 }

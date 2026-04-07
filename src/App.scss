@@ -28,6 +28,16 @@ body {
   padding: 0 0 45px 0;
 }
 
+nav,
+header {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 768px;
+  z-index: 999;
+}
+
 header {
   background-color: var(--light-grey);
   box-sizing: border-box;
@@ -35,13 +45,11 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 768px;
-  z-index: 999;
+}
+
+nav {
+  bottom: 0;
 }
 
 select {

@@ -28,8 +28,6 @@ const ResourceManager = () => {
     ([key]) => !["Mounted"].includes(key),
   );
 
-  console.log(resources);
-
   return (
     <div className="flex flex-row justify-around w-full">
       {displayResources.map(([key, value]) => {

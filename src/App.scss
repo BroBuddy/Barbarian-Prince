@@ -30,26 +30,26 @@ body {
 
 nav,
 header {
+  background-color: var(--black);
+  box-sizing: border-box;
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
   max-width: 768px;
+  width: 100%;
   z-index: 999;
 }
 
 header {
-  background-color: var(--black);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   top: 0;
+  padding: 2px 20px;
 }
 
 nav {
   bottom: 0;
+  padding: 4px 20px;
 }
 
 select {

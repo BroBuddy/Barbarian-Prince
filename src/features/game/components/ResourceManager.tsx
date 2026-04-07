@@ -34,7 +34,7 @@ const ResourceManager = () => {
         const displayValue = key === "Combat" ? totalCombat : value;
 
         return (
-          <div key={key} className="flex flex-row gap-1 pt-2 text-white pb-1">
+          <div key={key} className="flex flex-row pt-2 text-white pb-1">
             <span>{resourceIcons[key] || ""}</span>
             <span className="text-bold ml-1">
               {key === "Day" ? getDayAndWeek(value as number) : displayValue}

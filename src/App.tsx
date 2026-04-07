@@ -15,7 +15,7 @@ function App() {
     <>
       <Header />
 
-      <div className="pt-5 mt-2">
+      <div className="pt-5">
         <Outlet />
       </div>
 

@@ -28,6 +28,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     localStorage.removeItem("barbarian-prince");
     resetStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [edition]);
 
   return (

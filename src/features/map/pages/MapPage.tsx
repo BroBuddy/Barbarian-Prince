@@ -2,7 +2,7 @@ import { useHexCanvas } from "../hooks/useHexCanvas";
 import { MoveModal } from "../components/MoveModal";
 import { useState } from "react";
 import { MidnightModal } from "../components/MidnightModal";
-import { CalendarDays, Moon } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function MapPage() {
@@ -41,7 +41,7 @@ function MapPage() {
           to="/rule/r203"
           className="flex p-1 px-2 items-center text-white pointer"
         >
-          <CalendarDays />
+          <Sun />
         </Link>
       </div>
 

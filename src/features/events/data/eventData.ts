@@ -3476,4 +3476,4 @@ const eventData: Event[] = [
   },
 ];
 
-export { eventData };
+export default eventData;

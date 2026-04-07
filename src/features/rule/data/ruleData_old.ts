@@ -1,6 +1,6 @@
 import type { Rule } from "../types/RuleType";
 
-export const ruleData: Rule[] = [
+const ruleData: Rule[] = [
   {
     tag: "r201",
     title: "Characters",
@@ -1727,3 +1727,5 @@ export const ruleData: Rule[] = [
     desc: "One character in your party is the victim or target of the attack. If your party is just you, then you are the target. Otherwise select characters in your party one by one in any order you choose. When you select a character, roll 1d6. If the result is '6' that character is the target. Otherwise select another character and try again. Continue going through the characters in your party more than once if necessary, until the target is selected.",
   },
 ];
+
+export default ruleData;

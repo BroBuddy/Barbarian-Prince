@@ -1,6 +1,6 @@
 import type { Event } from "../types/EventType";
 
-export const eventData: Event[] = [
+const eventData: Event[] = [
   {
     tag: "e001",
     title: "The Adventure Begins",
@@ -2450,3 +2450,5 @@ export const eventData: Event[] = [
     ],
   },
 ];
+
+export default eventData;

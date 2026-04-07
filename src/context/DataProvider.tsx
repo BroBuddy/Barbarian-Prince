@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { eventData as eventDataOriginal } from "../features/events/data/eventData_old";
-import { eventData as eventData42th } from "../features/events/data/eventData";
-import { eventData as eventDataUltimate } from "../features/events/data/eventData_new";
-import { ruleData as ruleDataOriginal } from "../features/rule/data/ruleData_old";
-import { ruleData as ruleData42th } from "../features/rule/data/ruleData";
-import { ruleData as ruleDataUltimate } from "../features/rule/data/ruleData_new";
+import eventDataOriginal from "../features/events/data/eventData_old";
+import eventData42th from "../features/events/data/eventData";
+import eventDataUltimate from "../features/events/data/eventData_new";
+import ruleDataOriginal from "../features/rule/data/ruleData_old";
+import ruleData42th from "../features/rule/data/ruleData";
+import ruleDataUltimate from "../features/rule/data/ruleData_new";
 import { DataContext } from "./DataContext";
 import type { Edition } from "@/features/game/types/GameType";
 import useGameStore from "@/features/game/store/gameStore";

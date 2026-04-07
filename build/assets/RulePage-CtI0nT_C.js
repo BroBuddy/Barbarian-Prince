@@ -1,0 +1,1 @@
+import{t as e}from"./rule-HbPOvIfE.js";export{e as default};

@@ -1,6 +1,6 @@
 import type { Event } from "../types/EventType";
 
-export const eventData: Event[] = [
+const eventData: Event[] = [
   {
     tag: "e001",
     title: "The Adventure Begins",
@@ -36,7 +36,7 @@ export const eventData: Event[] = [
   {
     tag: "e002",
     title: "Mercenary Royal Guardsmen",
-    type: "encounter",
+    type: "combat",
     image: true,
     desc: "Mercenary thugs, dressed by the Northern usurpers as their royal guardsmen, are riding swiftly on horses towards you! Roll 1D6+1 (1D3+1 if this event takes place during the first week of your adventure) for the number of men (each is S5, E4, W4), and then roll another 1D6:",
     note: "If you encounter Ogab or Volk after they have been already killed in the game, encounter them again as normal. Strange and dark magic must be at work...",
@@ -74,7 +74,7 @@ export const eventData: Event[] = [
   {
     tag: "e003",
     title: "Swordsman",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "You meet an intriguing swordsman adventurer (†S6, E6, W7) on horseback. On 5–6, the adventurer is a swordswoman.",
     note: "Add +1 W&W for Talk. If joined: on 6 they have news (see nearest habitation event). Swordswoman: on 6, she becomes your lover (r228). Flying party may use r313 for evade.",
@@ -97,7 +97,7 @@ export const eventData: Event[] = [
   {
     tag: "e004",
     title: "Mercenary Band",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A small mercenary band approaches. Leader (†S6, E6, W50) mounted. Roll 1D6 for number of troopers (each S5, E4, W4). 1–2 troopers are mounted, otherwise on foot.",
     note: "Roll 1D6 first — on 1 (1–3 north of Tragoth) see e002 instead. Talk: may pay 10 gold bribe (r322) to dismiss. Mounts/flying give evade bonuses.",
@@ -120,7 +120,7 @@ export const eventData: Event[] = [
   {
     tag: "e005",
     title: "Amazons",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A group of 1D3+1 tough Amazon warriors (each S6, E5, W4) approach. They are blood-sisters — hire, serve, and desert together. Never suffer more than -1 combat penalty when wounded.",
     note: "If Amazons join: on 6, one becomes your lover (r228). Mounts allow escape mounted (r312) instead.",
@@ -143,7 +143,7 @@ export const eventData: Event[] = [
   {
     tag: "e006",
     title: "Dwarf",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "You encounter a Dwarf warrior (†S6, E7, W21) with a long beard and large axe. Roll 1D6 to determine if alone or accompanied.",
     note: "Add +1 to encounter roll if dwarf is alone. If joined: acts as mountain guide (r205a), reveals ancient Mine location. Mounts allow escape mounted (r312).",
@@ -188,7 +188,7 @@ export const eventData: Event[] = [
   {
     tag: "e007",
     title: "Elf",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "You encounter a wise Elf (†S5, E5, W15). On 5–6 the Elf is female. Roll 1D6 for additional characteristics. All Elves gain +1S in ranged combat. Subtract -1 W&W in this event.",
     note: "Add +2 to roll in forest hex. If joined: +1 W&W, forest guide (r205a). Female elf: on 6, becomes your lover (r228). Non-forest: may use escape mounted (r312).",
@@ -231,7 +231,7 @@ export const eventData: Event[] = [
   {
     tag: "e008",
     title: "Halfling",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "You encounter a stout halfling (S3 / S4 ranged, E6, W4). You may attack, talk, or pass. In battle, after each round on 2–6 the halfling escapes. Killing him in a halfling village marks you as 'wanted'.",
     note: "Talking ends all further travel today. Giving food allows rolling twice and choosing result.",
@@ -255,7 +255,7 @@ export const eventData: Event[] = [
   {
     tag: "e009",
     title: "Farm",
-    type: "encounter",
+    type: "location",
     image: true,
     desc: "You spot a small farm. Detour around it (ends travel) or approach with a friendly or raid intent. May preview farm type by rolling under W&W on 1D6 before deciding.",
     note: "After a raid, if you remain in the hex, roll 1D6 next morning — on 5+ see e017 (vengeful mob).",
@@ -280,7 +280,7 @@ export const eventData: Event[] = [
   {
     tag: "e010",
     title: "Starving Farmer",
-    type: "event",
+    type: "encounter",
     image: true,
     desc: "The farmer's harvest has failed and his family is starving.",
     tables: [
@@ -304,7 +304,7 @@ export const eventData: Event[] = [
   {
     tag: "e011",
     title: "Peaceful Farmer",
-    type: "event",
+    type: "encounter",
     image: true,
     desc: "The farmer is generous and welcoming.",
     tables: [
@@ -448,7 +448,7 @@ export const eventData: Event[] = [
   {
     tag: "e018",
     title: "Priest",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A local priest (S3, E3, W25; priestess on 5–6) rides on a donkey. Seems aloof but may be afraid. May let him pass or choose an option.",
     note: "If killed: on 5–6 he curses you with 'Unholy Mark' — roll for each follower, desert if roll > W&W. All monks/priests refuse to join. No audience (r211) at marked temples. Remove by Offering (r212) rolling 9+. If joined: magical/undead -1S vs party, heals 1 wound/day, +1 to Offering rolls (r212).",
@@ -471,7 +471,7 @@ export const eventData: Event[] = [
   {
     tag: "e019",
     title: "Hermit Monk",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A hermit monk (S3, E6, W0) meditates quietly in the wilderness, ignoring you.",
     note: "Without a priest/monk in party: -1 W&W for this event. On evade roll 6 'monk': hermit is not who he appears — roll 1D6: 1–3 → e020; 4–6 → e021.",
@@ -494,7 +494,7 @@ export const eventData: Event[] = [
   {
     tag: "e020",
     title: "Traveling Monk",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A travelling monk (S4, E5, W4) is eager to talk. On 5–6 he is accompanied by another monk of equal abilities. Add +1 W&W to Talk rolls as the monk is eager to help.",
     tables: [
@@ -516,7 +516,7 @@ export const eventData: Event[] = [
   {
     tag: "e021",
     title: "Warrior Monks",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A party of grim-faced warrior monks (each S6, E6, W10) with weapons and armour. Roll 2D6 and halve (round up) for number. On 4+ they are all mounted on horses.",
     note: "If party has mounts and monks do not: may use escape mounted (r312). If party can fly: may use escape flying (r313).",
@@ -539,7 +539,7 @@ export const eventData: Event[] = [
   {
     tag: "e022",
     title: "Druid",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A druid (†S4, E4, W4), usually found in forest. On 6, the druid is female. Ignores you unless you approach.",
     note: "If joined: forest guide (r205a), forages own food (r215b), may calm wolves/boar/bear/hunting cat (5–6 on 1D6). Leaves if entering town/castle/dwarf mine (except Elf Haven). In combat may use lightning bolt instead of normal strike (5–6 on 1D6; roll 1D6 wounds; auto-escapes if wounded when bolt strikes).",
@@ -571,7 +571,7 @@ export const eventData: Event[] = [
   {
     tag: "e023",
     title: "Wizard",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A wizard (†S4, E4, W60) with a henchman (S5, E4, W4). On 3–6 both are mounted. On 1, the wizard is a Dark Wizard — see e024 (Ψ). In combat may use fireball spells (e023a).",
     note: "If joined: wizard reveals treasure location — roll 1D6 direction and distance in hexes, then see e026. Roll 3 on talk or 4 on any column triggers e024.",
@@ -594,14 +594,14 @@ export const eventData: Event[] = [
   {
     tag: "e023a",
     title: "Wizard Fireballs",
-    type: "combat",
+    type: "magic",
     image: false,
     desc: "In combat (r220), the wizard may use fireballs, instead of making a normal strike. Before each strike by the wizard, roll 1D6. If the result is 5-6, he strikes with a fireball spell. When the spell strikes, roll 1D3 for the number of wounds each character in the opposing party suffers (your party if in combat against the wizard). If the wizard is striking against you and has been wounded, he automatically escapes when the fireball strikes. Otherwise he remains and the battle continues.",
   },
   {
     tag: "e024",
     title: "Wizard Attack",
-    type: "combat",
+    type: "magic",
     image: false,
     desc: "The wizard attempts to enslave you and your party. Roll 1D6; if result exceeds W&W (equals or exceeds if Dark Wizard), all followers become slaves and lose wealth/mounts. If failed, party may escape (r218) or attack (r305). Wizard may use fireballs (e023a).",
     note: "If enslaved, roll again — if result exceeds W&W, you too are captured. Lose all possessions. Each day: random direction travel, 1D6 direction, on 1 reach tower (e068a) → dungeon (e062). Every 3 days enslaved: 1 wound. End of each day: roll 1D6 — on 6 escape (r218), on 1 caught (+1 wound).",
@@ -609,7 +609,7 @@ export const eventData: Event[] = [
   {
     tag: "e025",
     title: "Wizard's Apprentice",
-    type: "encounter",
+    type: "event",
     image: true,
     desc: "The wizard's young apprentice (S3, E4, W7) wants to leave the tower. Will join freely, brings a magic item (Treasure Table B, r226) and may know treasure clues (e026, -1 to roll). Acts as wizard on 5–6 (1D6).",
     note: "If you let him join, must escape tower (r218a). Roll 1D6 — if higher than W&W, wizard sends fireballs after you (e023). Cannot return to Wizard's Tower.",
@@ -617,7 +617,7 @@ export const eventData: Event[] = [
   {
     tag: "e026",
     title: "Search for Treasure",
-    type: "event",
+    type: "encounter",
     image: false,
     desc: "You believe you have found the location of a treasure. Spend one day searching like a cache (r214), then roll 1D6 for result.",
     tables: [
@@ -640,7 +640,7 @@ export const eventData: Event[] = [
   {
     tag: "e027",
     title: "Ancient Treasure",
-    type: "encounter",
+    type: "event",
     image: false,
     desc: "You find an ancient long-lost treasure (r225), wealth 110.",
     note: "Roll 1D6: on 1–2 it is protected by a trap (r227, applied to a random character — r343).",
@@ -669,7 +669,7 @@ export const eventData: Event[] = [
   {
     tag: "e029",
     title: "Danger & Treasure",
-    type: "event",
+    type: "encounter",
     image: false,
     desc: "Exploring dark tunnels you sense both danger and treasure nearby. Roll 1D6 (twice and choose if a dwarf is with you).",
     tables: [
@@ -697,7 +697,7 @@ export const eventData: Event[] = [
   {
     tag: "e031",
     title: "Looted Tomb",
-    type: "encounter",
+    type: "event",
     image: false,
     desc: "You find the partially looted tomb of a long dead prince. Under his sarcophagus is a secret compartment with a trap lock. Roll 1D6 — if W&W exceeds roll, you outwit the trap; otherwise see r227. Either way you find wealth 50 and a Gift of Charm (e182).",
     note: "The Gift of Charm is very old — roll 1D6, on 5–6 it turns to dust and is worthless.",
@@ -787,7 +787,7 @@ export const eventData: Event[] = [
   {
     tag: "e039",
     title: "Treasure Chest",
-    type: "encounter",
+    type: "event",
     image: false,
     desc: "You find a locked chest that may be trapped. Roll 1D6 — on 3–6 it has a trap lock (r227). If survived and opened, roll 1D6 — on 6 the chest is empty, otherwise wealth 60.",
     note: "If a Pegasus winged mount (e188) would be found: instead roll 1D6 and consult Treasure Table A (r225).",
@@ -957,7 +957,7 @@ export const eventData: Event[] = [
   {
     tag: "e048",
     title: "Fugitive",
-    type: "encounter",
+    type: "npc",
     image: false,
     desc: "Someone trying to avoid local justice. Will join as ally but deserts if you encounter Constables (e050) unless you fight and kill them, or whenever you enter any town, castle or temple. If Constables met in a town/castle: must escape immediately (r218). May alternatively fight the fugitive (r300).",
     note: "Roll 1D6 for identity.",
@@ -997,7 +997,7 @@ export const eventData: Event[] = [
   {
     tag: "e049",
     title: "Traveling Minstrel",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A bard (S2, E3, W4; female on 5–6). May ignore or invite to dinner (r215). If fed, he sings — roll 1D6 for each follower: on 4+ they will not desert regardless of today's events or food/lodging. After songs may start a conversation (r341).",
     note: "If joined: may use desertion prevention once per day and you need not buy drinks at tavern (r230). Female bard: on 5+ becomes your lover (r228).",
@@ -1005,7 +1005,7 @@ export const eventData: Event[] = [
   {
     tag: "e050",
     title: "Local Constabulary",
-    type: "encounter",
+    type: "combat",
     image: true,
     desc: "Only applies if within 3 hexes of a habitation on the map. If nearest is Ogon/Weshor: on 1–3 see e002. If nearest is Dwarf Mine: see e058. If Elf Haven: see e071. You encounter 1D6+1 officers (each S5, E4, W4). Roll 1D6: on 1–4 they are on foot (+2 to number unless in/nearest to village); on 5–6 they are mounted.",
     note: "Add +2 to roll if you have visited nearest habitation and did not escape. No bonus if escaped (you are 'wanted'). Add +1 if you have never visited. If attacked: may surrender instead — move to nearest habitation and see e060. Mounts allow escape mounted (r312); flying party may use escape flying (r313).",
@@ -1037,7 +1037,7 @@ export const eventData: Event[] = [
   {
     tag: "e052",
     title: "Goblins",
-    type: "encounter",
+    type: "combat",
     image: true,
     desc: "You sight a band of Goblins in the distance. Roll 2D6 for number (each S3, E3, W1) led by a Hobgoblin (†S6, E5, W5). You saw them first — may fight (r303), escape (r218) or follow (r219).",
     note: "If following: after move (r219) roll 1D6 — if exceeds W&W, goblins discover you and attack (your party strikes first, r220). If not discovered: roll 1D6 for destination — 1→e054; 2–6→e053.",
@@ -1092,7 +1092,7 @@ export const eventData: Event[] = [
   {
     tag: "e055",
     title: "Orcs",
-    type: "encounter",
+    type: "combat",
     image: false,
     desc: "You sight a band of Orcs. Roll 2D6 for number — one is orc chieftain (†S5, E6, W7), rest are warriors (S4, E5, W1). May fight (r303), escape (r218) or follow (r219). Roll 1D6: on 1–2 orcs have a captive — if killed and rescued, captive joins as ally (r334).",
     note: "Captive identity (1D6, W0, 1 wound): 1→e003; 2→e006; 3→e049; 4→e069; 5→e172; 6→e073. If following: after move roll 1D6 — if exceeds W&W, orcs discover you (party strikes first, r220). If not: roll 1D6 — 1→e056; 2–6→e053. At campsite: may escape to adjacent hex (r218) or make surprise attack (r220).",
@@ -1116,7 +1116,7 @@ export const eventData: Event[] = [
   {
     tag: "e058",
     title: "Band of Dwarves",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "A group of 1D6+1 dwarf warriors (each S5, E6, W10) with long beards and sharp axes. If your party is smaller: you spot them first and may follow (r219), hide (r218b), escape (r218a) or encounter normally. If equal or larger: they see you first and you must choose an encounter option.",
     note: "If following: after move (r219) roll 1D6 — if equals or exceeds W&W, dwarves discover you and strike first (r220). If not: roll 1D6 — 1→e059; 2–6→e053. Mounts allow escape mounted (r312).",
@@ -1177,7 +1177,7 @@ export const eventData: Event[] = [
   {
     tag: "e060",
     title: "Arrested",
-    type: "event",
+    type: "encounter",
     image: false,
     desc: "You and your party are arrested by an overwhelming force and cannot resist. You are put into jail. Roll 1D6 for the gravity of the offence.",
     tables: [
@@ -1199,7 +1199,7 @@ export const eventData: Event[] = [
   {
     tag: "e061",
     title: "Marked for Death",
-    type: "event",
+    type: "encounter",
     image: true,
     desc: "You have committed a very grave offence and the death penalty is demanded. You and your party are imprisoned with all money, possessions and mounts confiscated. Food and lodging provided while awaiting execution. Roll 1D6 at start of each day.",
     note: "Escape: roll 1D6 for each other party member — 1–2 they escape with you; 3–6 unable or already executed. Use escape rules (r218) for destination. Escape takes the entire day.",
@@ -1221,7 +1221,7 @@ export const eventData: Event[] = [
   {
     tag: "e062",
     title: "Thrown in the Dungeon",
-    type: "event",
+    type: "encounter",
     image: true,
     desc: "You are thrown into a deep dark dungeon. All other party members are imprisoned or sold as slaves and permanently lost (unless a lover, r228). All wealth, possessions and mounts lost. Food and lodging of a sort provided. Every full week in dungeon inflicts 1 poisoned wound due to unhealthy conditions.",
     note: "Escape takes the entire day. After escape must find food for evening meal (r215).",
@@ -1243,7 +1243,7 @@ export const eventData: Event[] = [
   {
     tag: "e063",
     title: "Imprisoned",
-    type: "event",
+    type: "encounter",
     image: false,
     desc: "You and your party are imprisoned. All money, possessions and mounts confiscated and lost. Food and lodging of sorts provided. Roll 1D6 at start of each day (+1 per full week imprisoned).",
     note: "If you escape: roll 1D6 for each party member — on 5–6 they escape with you, otherwise lost. Use escape rules (r218). Escape takes the entire day, after which must find food for evening meal (r215). On roll of 1: see e062a.",
@@ -1372,7 +1372,7 @@ export const eventData: Event[] = [
   {
     tag: "e069",
     title: "Wounded Warrior",
-    type: "encounter",
+    type: "npc",
     image: false,
     desc: "You come across a heroic fighter near death. He was S7, E6, W0 but has four wounds. If you remain with him while he rests and heals, or bring him along while he heals, he will join your party as an ally at no cost except food (r215) and lodging (r217). Will not desert due to starvation (r216a).",
   },
@@ -1860,7 +1860,7 @@ export const eventData: Event[] = [
   {
     tag: "e100",
     title: "Griffon",
-    type: "encounter",
+    type: "npc",
     image: false,
     desc: "You meet a winged griffon (†S8, E6, W12). The griffon is intelligent and could serve as both a party member and a winged mount. However griffons are normally quite independent and ferocious and this one looks especially unfriendly.",
     note: "After choosing your option: roll 1D6 — on 6 the griffon has a mate nearby (identical stats) who joins for your encounter. If joined: adds +1 to hunting score and can feed itself without using your food stores (r215). Will leave if you enter any habitation hex. If griffon killed: may remove its claws as a trophy (1 load). Especially valued by Lady Aeravir of Aeravir Castle and may help gain an audience. Claws worth 25 gold and can be sold to any merchant or in any town/castle/temple.",
@@ -1883,7 +1883,7 @@ export const eventData: Event[] = [
   {
     tag: "e101",
     title: "Harpies",
-    type: "encounter",
+    type: "npc",
     image: false,
     desc: "You encounter harpies, bird-women each with S5 (S6 when defending against an attack), E4, W4. Roll 1D6 for number encountered: 1–3→1; 4–5→2; 6→3.",
     note: "Cannot choose Talk option if you have a priest/monk/elf/halfling in your party unless dismissed. If harpies join: their wings allow airborne travel without a winged mount and they travel like a normal mount. If entering a habitation: roll 1D6 before evening meal — on 1–4 see e017 and cannot stay unless you dismiss the harpies.",
@@ -1989,7 +1989,7 @@ export const eventData: Event[] = [
   {
     tag: "e111",
     title: "Storm Demon",
-    type: "combat",
+    type: "encounter",
     image: true,
     desc: "You encounter a powerful Demon of storms that attacks your party. If you have any magicians/wizards/witches/druids/priests/monks in your party: each can attempt to stop the demon by rolling 1D6 — on 6 the demon attack is blocked; any other result means their magic has no effect.",
     note: "If unable to block the attack: your entire party is blown away to be lost or killed. You crash in a random adjacent hex where your winged mount is killed and you roll 1D6 for wounds suffered. Your wealth and possessions you carried are intact but the rest of your party is lost.",
@@ -2116,7 +2116,7 @@ export const eventData: Event[] = [
   {
     tag: "e118",
     title: "Giant",
-    type: "encounter",
+    type: "npc",
     image: true,
     desc: "You encounter a 12-foot tall giant (†S9, E8, W10), with a large, bushy beard and a very big club. Giants are normally hostile but this one could be reasonable? Your options are:",
     note: "The giant is too big to ride a mount, so you can't use mounted travel (r204) while he is with your party. He also eats double the normal amount of food (r215) each day and must have his own room if lodging at a habitation (r217). Roll 1D6 - on a ‘6’, he reveals the location of a castle (e118a) in the closest mountain hex.",
@@ -2218,7 +2218,7 @@ export const eventData: Event[] = [
   {
     tag: "e124",
     title: "Raft",
-    type: "event",
+    type: "encounter",
     image: false,
     desc: "You cross the river using a quickly built raft. Roll 1D6 to determine if an unfortunate event occurs during the crossing.",
     tables: [
@@ -2692,7 +2692,7 @@ export const eventData: Event[] = [
   {
     tag: "e152",
     title: "Audience with Baron Huldra",
-    type: "npc",
+    type: "event",
     image: false,
     desc: "You are allowed a semi-private interview with the ruler of Huldra Castle. Roll 1D6 for the result, adding +1 to the result if you are wearing a bear-pelt cloak:",
     tables: [
@@ -2773,7 +2773,7 @@ export const eventData: Event[] = [
   {
     tag: "e155",
     title: "Audience with High Priest",
-    type: "npc",
+    type: "event",
     image: true,
     desc: "You have a private discussion with the wise high priest of the temple. Roll 1D6.",
     tables: [
@@ -2809,7 +2809,7 @@ export const eventData: Event[] = [
   {
     tag: "e156",
     title: "Audience with Town Mayor",
-    type: "npc",
+    type: "event",
     image: true,
     desc: "You have private discussions with the mayor of the town. Roll 1D6.",
     tables: [
@@ -2868,7 +2868,7 @@ export const eventData: Event[] = [
   {
     tag: "e160",
     title: "Audience with Lady Aeravir",
-    type: "npc",
+    type: "event",
     image: false,
     desc: "You are allowed a semi-private interview with the ruler of Aeravir Castle. Roll 1D6 for the result.",
     tables: [
@@ -2907,7 +2907,7 @@ export const eventData: Event[] = [
   {
     tag: "e161",
     title: "Audience with Count Drogat",
-    type: "npc",
+    type: "event",
     image: false,
     desc: "You are allowed a semi-private interview with the fearsome ruler of Drogat Castle. Roll 1D6 for the result, adding +1 if you have a Troll skin and give it to the Count.",
     tables: [
@@ -3321,7 +3321,7 @@ export const eventData: Event[] = [
   {
     tag: "e177",
     title: "Audience with Village Elder",
-    type: "npc",
+    type: "event",
     image: true,
     desc: "You have a mostly private discussion with the wise elder of the village. Roll 1D6.",
     tables: [
@@ -4439,7 +4439,7 @@ export const eventData: Event[] = [
   {
     tag: "e439",
     title: "Huge Nest",
-    type: "event",
+    type: "encounter",
     image: false,
     desc: "You discover an enormous nest of branches and lichen and inside is a very large egg. Roll 1D6.",
     note: "If the young creature joins your party: it is half the usual Skill and Endurance (round up) and is too small to function as a winged mount. You also find treasure worth W12 in the nest.",
@@ -4479,7 +4479,7 @@ export const eventData: Event[] = [
   {
     tag: "e442",
     title: "Tax Collector",
-    type: "encounter",
+    type: "combat",
     image: false,
     desc: "A mounted tax collector (S3, E3, W70) for the local lord rides up to you. He has 1D6 rough-looking guards (each S6, E5, W4) although these men are not mounted. The haughty tax collector sniffs at you and demands that you immediately pay 10% of your gold in taxes!",
     note: "You can fight (r302) the collector, try to bribe him with 20 gold (r322) or give him the gold he demands. If you kill the tax collector: you will be wanted at the nearest town or castle. If the nearest habitation is a village however: you are something of a hero and always get free food (r215) and lodging (r217) there.",
@@ -4556,3 +4556,5 @@ export const eventData: Event[] = [
     ],
   },
 ];
+
+export default eventData;

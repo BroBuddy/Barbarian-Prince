@@ -1,6 +1,6 @@
 import type { Rule } from "../types/RuleType";
 
-export const ruleData: Rule[] = [
+const ruleData: Rule[] = [
   // ─── CHARACTERS ───────────────────────────────────────────────
   {
     tag: "r201",
@@ -3106,3 +3106,5 @@ export const ruleData: Rule[] = [
       "(4) Add +2 to your Skill when attacking in this combat but take 1 wound at the end of each combat round. Due to your fury you ignore all negative modifiers due to your wounds.",
   },
 ];
+
+export default ruleData;

@@ -1,0 +1,1 @@
+import{u as e}from"./events-DC0SkA5H.js";var t=e(),n=({label:e,isActive:n,color:r,onClick:i})=>(0,t.jsx)(`button`,{onClick:i,style:{minWidth:30,height:30,padding:`0 5px`,border:`2px solid ${r}`,borderRadius:5,backgroundColor:n?r:`transparent`,color:n?`#fff`:r,fontSize:11,fontWeight:`bold`,cursor:`pointer`},children:e});export{n as t};

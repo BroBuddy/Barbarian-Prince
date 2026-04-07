@@ -2373,4 +2373,4 @@ const ruleData: Rule[] = [
   },
 ];
 
-export { ruleData };
+export default ruleData;

@@ -34,7 +34,7 @@ const CharacterPage = () => {
           <div key={name} className="flex flex-row m-1">
             <span className="flex items-center mr-2">{icon}</span>
 
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap gap-2">
               {Array.from({ length: max }, (_, i) => i + 1).map((val) => (
                 <TokenButton
                   key={val}
@@ -55,7 +55,7 @@ const CharacterPage = () => {
             <ChessKnight />
           </span>
 
-          <div className="flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-2">
             {[false, true].map((val) => (
               <TokenButton
                 key={String(val)}

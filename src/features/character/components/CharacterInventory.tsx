@@ -3,42 +3,14 @@ import useGameStore from "../../game/store/gameStore";
 import Card from "@/components/Card";
 import TokenButton from "../../../components/TokenButton";
 import { BadgeCent, Beef } from "lucide-react";
+import {
+  valueToRowActive,
+  GOLD_ROWS,
+  FOOD_ROWS,
+  calcTotal,
+} from "@/features/map/lib/inventoryUtils";
 
 export type Token = { label: number };
-
-const GOLD_ROWS: Token[][] = [
-  [100, 200, 300, 400, 500].map((v) => ({ label: v })),
-  [10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => ({ label: v })),
-  [1, 2, 3, 4, 5, 6, 7, 8, 9].map((v) => ({ label: v })),
-];
-
-const FOOD_ROWS: Token[][] = [
-  [10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => ({ label: v })),
-  [1, 2, 3, 4, 5, 6, 7, 8, 9].map((v) => ({ label: v })),
-];
-
-type RowActive = Record<number, number | null>;
-
-const valueToRowActive = (rows: Token[][], total: number): RowActive => {
-  const active: RowActive = {};
-  let remaining = total;
-
-  rows.forEach((row, ri) => {
-    const sorted = [...row.map((t) => t.label)].sort((a, b) => b - a);
-    const match = sorted.find((v) => v <= remaining);
-    if (match !== undefined) {
-      active[ri] = match;
-      remaining -= match;
-    } else {
-      active[ri] = null;
-    }
-  });
-
-  return active;
-};
-
-const calcTotal = (active: RowActive): number =>
-  Object.values(active).reduce<number>((sum, v) => sum + (v ?? 0), 0);
 
 const CharacterInventory = () => {
   const resources = useGameStore((state) => state.resources);
@@ -72,13 +44,14 @@ const CharacterInventory = () => {
 
   return (
     <Card title="Inventory">
-      <div className="flex flex-col mx-3">
-        <div className="text-center">
-          <BadgeCent />
+      <div className="flex flex-col">
+        <div className="flex flex-col gap-2 mx-1">
+          {GOLD_ROWS.map((row, ri) => (
+            <div key={ri} className="flex flex-row items-center gap-5">
+              {ri === 0 && <BadgeCent />}
+              {ri !== 0 && <div style={{ width: "24px" }} />}
 
-          <div className="flex flex-col gap-2">
-            {GOLD_ROWS.map((row, ri) => (
-              <div key={ri} className="flex flex-wrap justify-center gap-1">
+              <div className="flex flex-wrap gap-2">
                 {row.map(({ label }) => (
                   <TokenButton
                     key={label}
@@ -89,16 +62,17 @@ const CharacterInventory = () => {
                   />
                 ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        <div className="text-center my-3">
-          <Beef />
+        <div className="flex flex-col gap-2 my-2 mx-1">
+          {FOOD_ROWS.map((row, ri) => (
+            <div key={ri} className="flex flex-row items-center gap-5">
+              {ri === 0 && <Beef />}
 
-          <div className="flex flex-col gap-2">
-            {FOOD_ROWS.map((row, ri) => (
-              <div key={ri} className="flex flex-wrap justify-center gap-1">
+              {ri !== 0 && <div style={{ width: "24px" }} />}
+              <div className="flex flex-wrap gap-2">
                 {row.map(({ label }) => (
                   <TokenButton
                     key={label}
@@ -109,8 +83,8 @@ const CharacterInventory = () => {
                   />
                 ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </Card>

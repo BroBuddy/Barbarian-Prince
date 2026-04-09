@@ -10,11 +10,11 @@ function RuleDetailPage() {
   if (!rules) return null;
 
   return (
-    <Card title="Rules">
+    <Card title={`${rules.length} Rules`}>
       <div className="flex flex-wrap gap-3">
-        {rules.map((item) => {
+        {rules.map((item: RuleItem, index: number) => {
           return (
-            <div key={item.tag} className="mx-2 w-4">
+            <div key={index} className="mx-2 w-4">
               <Link to={`/rule/${item.tag}`}>{item.tag.toUpperCase()}</Link>
             </div>
           );

@@ -11,10 +11,10 @@ function EventPage() {
 
   return (
     <Card title="Events">
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap gap-3">
         {events.map((item) => {
           return (
-            <div key={item.tag} className="m-1 w-5">
+            <div key={item.tag} className="mx-2 w-4">
               <Link to={`/event/${item.tag}`}>{item.tag.toUpperCase()}</Link>
             </div>
           );

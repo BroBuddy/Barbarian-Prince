@@ -11,10 +11,10 @@ function RuleDetailPage() {
 
   return (
     <Card title="Rules">
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap gap-3">
         {rules.map((item) => {
           return (
-            <div key={item.tag} className="m-1 w-5">
+            <div key={item.tag} className="mx-2 w-4">
               <Link to={`/rule/${item.tag}`}>{item.tag.toUpperCase()}</Link>
             </div>
           );

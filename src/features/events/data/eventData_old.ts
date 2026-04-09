@@ -4,7 +4,8 @@ const eventData: Event[] = [
   {
     tag: "e001",
     title: "The Adventure Begins",
-    type: "event",
+    type: "story",
+    image: true,
     desc: "Evil events have overtaken your Northlands Kingdom. Your father, the old king, is dead - assassinated by rivals to the throne. These usurpers now hold the palace with their mercenary royal guard. You have escaped, and must collect 500 gold pieces to raise a force to smash them and retake your heritage. Furthermore, the usurpers have powerful friends overseas. If you can't return to take them out in ten weeks, their allies will arm and you will lose your kingdom forever. Now consult r201 to determine the starting attributes (r202) of yourself as the Barbarian Prince, and then return to this event and read the paragraph below: To escape the mercenary royal guard, your loyal body servant Ogab smuggled you into a merchant caravan to the southern border.",
     note: "If you finish actions for a day on any hex north of the Tragoth River, the mercenary royal guardsmen may find you. See e002 after normal events are concluded, but before you take your evening meal (r215).",
     tables: [
@@ -26,6 +27,7 @@ const eventData: Event[] = [
     tag: "e002",
     title: "Mercenary Royal Guardsmen",
     type: "combat",
+    image: true,
     desc: "Roll one die, subtract three (-3), then add one (+1) if you are in Ogon (0101) or Weshor (1501). If the result is one (1) or more, this event occurs. If the result is zero (0) or less, no event occurs. Mercenary thugs, dressed by the usurpers as their royal guardsmen, are riding toward you! Roll one die for the number of men, each of which has combat skill 5, endurance 4, wealth 4.",
     note: "If your entire party has mounts, add one (+1) to die roll. If your party all have winged mounts and/or flying ability, you can use a flying escape (r313) instead of rolling for the evade option.",
     tables: [
@@ -48,7 +50,8 @@ const eventData: Event[] = [
   {
     tag: "e003",
     title: "Swordsman",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You meet a swordsman adventurer. He is mounted on a horse with combat skill 6, endurance 6, and wealth 7. Sitting there on his horse he takes an active interest in your party.",
     note: "If your party all have winged mounts and/or flying ability, you can use a flying escape (r313) instead of rolling for the evade option.",
     tables: [
@@ -71,6 +74,7 @@ const eventData: Event[] = [
     tag: "e004",
     title: "Mercenary Band",
     type: "combat",
+    image: true,
     desc: "You observe a small band of mercenaries approaching. The leader is mounted on a horse, with combat skill 6, endurance 6, wealth 50. Roll one die for the number of men with him, each having combat skill 5, endurance 4, wealth 4. Troopers are mounted if there are one or two, on foot otherwise.",
     note: "If your party has any mounts, add one (+1) to your die roll for the evade option, results higher than 6 are considered 6. If your party all have winged mounts and/or flying ability, you can use a flying escape (r313) instead.",
     tables: [
@@ -92,7 +96,8 @@ const eventData: Event[] = [
   {
     tag: "e005",
     title: "Amazons",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You see a group of Amazon warriors approaching, all on foot. The number in the group is one die roll plus one (+1). All are combat skill 6, endurance 5, wealth 4. They are blood-sisters, and will always hire out together, serve together, and if any are abandoned or left behind all will desert you.",
     note: "If your party has mounts, you may use escape mounted (r312) instead of rolling the die when using the evade option.",
     tables: [
@@ -114,7 +119,8 @@ const eventData: Event[] = [
   {
     tag: "e006",
     title: "Dwarf",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter a Dwarf Warrior with combat skill 6, endurance 7, and wealth 21. First select one of the three options below (talk, evade, fight). Then, before rolling a die to resolve the option, first roll one die to see if he is alone or accompanied by friends.",
     note: "If Dwarf(s) join your party, they will reveal the location of ancient Mines. Roll one die for direction (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW) and a second for distance in hexes. At the mines roll one die: 1-2→e059; 3-4→e064; 5→e056; 6→e028.",
     tables: [
@@ -147,7 +153,8 @@ const eventData: Event[] = [
   {
     tag: "e007",
     title: "Elf",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter an Elf on foot, with combat skill 5, endurance 5, wealth 15. After you select your option, roll one die to determine his additional characteristics. Due to the greater wisdom of Elves, subtract one (-1) from your own wit & wiles throughout this event. However, if the Elf joins your party, add one (+1) to your wit & wiles while he is in the party.",
     note: "If the event occurs in a forest, add two (+2) to the die roll. If the party is not in forest, you may use escape mounted (r312) instead of rolling the die for the evade option.",
     tables: [
@@ -186,7 +193,8 @@ const eventData: Event[] = [
   {
     tag: "e008",
     title: "Halfling",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter a halfling with combat skill 3, endurance 6, and wealth 4. You can attack him, talk with him, or pass by and end the encounter. If you attack, you strike first in combat (r220), but after each round roll one die — a 2 or higher means the halfling has escaped into the brush if still alive. If you pause to talk, you cannot travel further today and any other daily actions still undone will remain undone.",
     tables: [
       {
@@ -212,6 +220,7 @@ const eventData: Event[] = [
     tag: "e009",
     title: "Farm",
     type: "location",
+    image: true,
     desc: "You spot a small farm ahead. You may detour around it (consuming the rest of the day), or you can approach. If you approach, decide whether to make it a friendly approach or a raid before rolling. If you select a raid and remain in this hex at the end of today, you may be attacked by a revengeful mob tomorrow morning — roll one die, if 5 or higher see e017.",
     tables: [
       {
@@ -235,12 +244,14 @@ const eventData: Event[] = [
     tag: "e010",
     title: "Starving Farmer",
     type: "location",
+    image: true,
     desc: "Friendly Approach: farmer had a ruined harvest, his family is now starving. He begs the charity of 5 food units from you. If you refuse this although you have them, all your followers are disgusted — roll one die for each at the start of tomorrow, a 3 or higher means that follower deserts you. If you grant the charity, or don't have 5 food units, there is no special event and the encounter ends. Ratag: farmer and his family are quickly killed, no combat necessary, but you find he was poor and starving — no food or money are gained.",
   },
   {
     tag: "e011",
     title: "Peaceful Farmer",
     type: "location",
+    image: true,
     desc: "Friendly Approach: farmer is generous, provides food and lodging for your entire party tonight at no cost. Tomorrow morning, he will sell you food units at the rate of 4 units per gold piece, and will sell as much as you wish to buy. Finally, when you leave the hex, roll one die — if the result is 6 the farmer's youngest son joins you for the adventurous life. He is combat skill 3, endurance 4, wealth 0, and can act as a guide within two hexes of the location of the farm. Ratag: farmer and his family fight back. Together they count as combat skill 4, endurance 7, wealth 1, see r330 for combat situation. If you kill them all, you gain four times (4x) one die roll in food units as plunder.",
   },
   {
@@ -253,12 +264,14 @@ const eventData: Event[] = [
     tag: "e013",
     title: "Rich Peasant Family",
     type: "location",
+    image: true,
     desc: "Friendly Approach: family provides food and lodging as if you are in town (see r215 and r217 for costs), with the same penalties if you refuse to pay. Family may have stables — roll one die, result of 4 or more means they do. If they have stables, roll again for number of horses available for sale, then roll one die and double it for the price per horse. They also sell food at 2 food units per gold piece, unlimited. Ratag: family has four retainers (CS 4, End 4, Wealth 1 each). Fight them (r306), then if you win fight the family itself (r305; overall CS 5, End 6, Wealth 30). If you kill everyone, gain six times (6x) one die roll in food units as bonus plunder.",
   },
   {
     tag: "e014",
     title: "Hostile Reaver Clan",
     type: "combat",
+    image: true,
     desc: "Roll one die and add two (+2) for the number of clan members. The leader is combat skill 5, endurance 5, wealth 10; other clan members are combat skill 4, endurance 4, wealth 4. Friendly Approach: if clan equals or outnumbers your party, they will attempt a surprise attack (r307). If you outnumber the clan, they bar the house and bid you pass on. You can pass on or make general inquiries (r342) — but any reavers who do not join your party will automatically attempt a surprise attack (r307), while those who joined will not participate. Ratag: battle between your party and the clan — see r330.",
   },
   {
@@ -271,6 +284,7 @@ const eventData: Event[] = [
     tag: "e016",
     title: "Magician's Home",
     type: "location",
+    image: true,
     desc: "Friendly Approach: magician insists you stay the night and tell him of your adventures to date. You must provide your own food for the day. He may be willing to discuss joining your party (CS 3, End 5) — see r342 if you wish to try. If you don't, or do and avoid combat, he will give you a magic gift — roll once on line B of the Treasure Table (r226). Ratag: magician calls upon his powers to defeat and destroy your party. Roll one die for the number of wounds you suffer, one of which is poisoned. All followers die or flee. You must abandon everything you cannot carry yourself, saving only your mount and its loads. If you have the Resistance Talisman (e184) you can stop his powers and destroy the magician — roll one die for his wealth code: 1→5; 2-3→25; 4-5→60; 6→110.",
   },
   {
@@ -282,7 +296,8 @@ const eventData: Event[] = [
   {
     tag: "e018",
     title: "Priest",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter a local Priest riding on a donkey (equivalent to a horse as a mount), with combat skill 3, endurance 3, wealth 25. He seems aloof and not disposed to conversation, but he may be afraid of you. You can let him pass, ending this encounter, or select one of the two options below.",
     note: "If you fight the Priest and kill him, roll one die — on a 5 or 6 he casts upon you the 'mark of Cain'. Roll one die for each follower; any time the roll is greater than your wit & wiles that follower deserts immediately. All Monks and Priests in future will recognise the mark and will not join your party. You can never attempt an audience (r211) with the high priest of any temple marked on the map.",
     tables: [
@@ -304,7 +319,8 @@ const eventData: Event[] = [
   {
     tag: "e019",
     title: "Hermit Monk",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter a hermit monk meditating in the wilderness, with combat skill 3, endurance 6, wealth 0. He seems to be ignoring you.",
     note: "Unless a priest or monk is with your party, reduce your wit & wiles by one (-1) temporarily when resolving plead comrades options — hermit monks listen poorly. On evade roll of 6, the monk is not what he seemed — see e022, select a new option, and resolve the event accordingly.",
     tables: [
@@ -326,7 +342,8 @@ const eventData: Event[] = [
   {
     tag: "e020",
     title: "Travelling Monk",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter a travelling monk, who has combat skill 4, endurance 5, wealth 4. Roll one die — if the result is 5 or 6 he is accompanied by a companion monk of equal abilities. He seems eager to talk.",
     tables: [
       {
@@ -347,7 +364,8 @@ const eventData: Event[] = [
   {
     tag: "e021",
     title: "Warrior Monks",
-    type: "combat",
+    type: "npc",
+    image: true,
     desc: "You encounter a party of monks belonging to a powerful military order, who have weapons and armor. Each monk is combat skill 6, endurance 6, wealth 10. Roll two dice and halve the total (rounding fractions up) for the number in the group. Roll one die again — if the result is 4 or higher they are all mounted as well.",
     note: "If your party has mounts and the warrior monks do not, you may use escape mounted (r312) instead of rolling the die for the evade option. If your party all have winged mounts and/or flying ability, you can use a flying escape (r313) instead.",
     tables: [
@@ -369,7 +387,7 @@ const eventData: Event[] = [
   {
     tag: "e022",
     title: "Monks — Reference",
-    type: "event",
+    type: "encounter",
     desc: "You have encountered a monk or monks. Roll one die again for the event.",
     tables: [
       {
@@ -386,7 +404,8 @@ const eventData: Event[] = [
   {
     tag: "e023",
     title: "Wizard",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You meet a Wizard with combat skill 4, endurance 4, and wealth 60. A henchman with combat skill 5, endurance 4, and wealth 4 accompanies him. Roll one die — if the result is 3 or higher, they are mounted on horses. The wizard seems old, but still active and perhaps quite powerful.",
     note: "If the wizard joins your party, see also e025. Wizard Fireballs: before each strike by the wizard in combat (r220), roll one die. If the result is 5 or 6, he strikes with a fireball spell — roll one die for the number of wounds each character in your party suffers. If the wizard has any wounds, he will automatically escape when the fireball strikes.",
     tables: [
@@ -415,6 +434,7 @@ const eventData: Event[] = [
     tag: "e025",
     title: "Wizard Advice",
     type: "encounter",
+    image: true,
     desc: "The wizard, now a member of your party, confides during the evening meal that he knows of a valuable treasure. According to his information, the treasure is in a certain direction (roll one die: 1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW) and a certain distance away (roll one die for distance in hexes). Once you reach that hex, consult e026 for how to find the treasure.",
   },
   {
@@ -449,6 +469,7 @@ const eventData: Event[] = [
     tag: "e028",
     title: "Cave Tombs",
     type: "location",
+    image: true,
     desc: "Amid the howling winds on a craggy cliff you find caves, and within the caves the tombs of an ancient race. You can decide to avoid them, ending this event, or you can continue inward and investigate the tombs.",
     tables: [
       {
@@ -501,6 +522,7 @@ const eventData: Event[] = [
     tag: "e032",
     title: "Ghosts",
     type: "combat",
+    image: true,
     desc: "A group of ghosts surprise you in combat (r220). Roll one die and add one (+1) for the number of ghosts, each of which is combat value 4, endurance 2. They are guarding an ancient altar. If you kill all the ghosts, you can investigate the altar if you wish.",
     tables: [
       {
@@ -527,12 +549,14 @@ const eventData: Event[] = [
     tag: "e034",
     title: "Spectre of the Inner Tomb",
     type: "combat",
+    image: true,
     desc: "Looking around the atrium of an old tomb, you notice a hidden passage to the interior. You pass within, but it is a long hall, taking the rest of the day to explore. You sense the presence of a Spectre. You can either retreat now, or continue. If you retreat, the event ends. If you continue, at the end of the day, before the evening meal, you finally reach the inner tomb and find the Spectre. It has combat value 7, endurance 3, but is only hurt by poison wounds (normal wounds have no effect) or by wounds from a magic sword. Any priest, monk, magician, wizard, or witch will have magical weapons that are poison to the Spectre. If you kill the Spectre, roll one die to determine the wealth code of the treasure it guarded: 1→5; 2→12; 3-4→25; 5→60; 6→110. See r225 for details.",
   },
   {
     tag: "e035",
     title: "Spell of Chaos",
     type: "magic",
+    image: true,
     desc: "A guardian spell of chaos is activated as your party passes within. You and your entire party become mindless idiots. All wander away, so you lose all followers and possessions except for your own mount, and any wealth and possessions you personally carry. You do not eat an evening meal, and begin to suffer the effects of starvation (r216). At the start of tomorrow, roll one die and subtract one (-1) for the number of days you remain mindless and wandering. If the result is zero, you have recovered. If the result is any other number, each day roll one die for the direction you wander (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW), at one hex per day. You have no travelling events while wandering, and will not eat. When your mind finally returns, you can begin to function normally again at the start of the next day.",
   },
   {
@@ -611,6 +635,7 @@ const eventData: Event[] = [
     tag: "e041",
     title: "Vision Gem",
     type: "magic",
+    image: true,
     desc: "You find a large, fixed stone with multiple facets. You gaze into it without thinking, and find you can look elsewhere. Roll one die for what you discover.",
     tables: [
       {
@@ -649,6 +674,7 @@ const eventData: Event[] = [
     tag: "e043",
     title: "Small Altar",
     type: "magic",
+    image: true,
     desc: "You find a small altar, on which is displayed an item — roll one die. However, there is also a magic spell shimmering around the altar. If your party includes a magician, wizard, or witch you can determine the nature of the spell by rolling one die. Otherwise, you only discover the spell by actually risking it to reach the altar. Alternately, you can avoid the altar and end this event without ever trying to recover the item.",
     tables: [
       {
@@ -691,6 +717,7 @@ const eventData: Event[] = [
     tag: "e044",
     title: "High Altar",
     type: "magic",
+    image: true,
     desc: "You find a high altar of godly power. If any character in your party is a priest or monk, he will know the invocations to use at this altar. You may ask him to make the invocation and roll one die to see what happens. If you don't ask him, or your party lacks such a follower, the event ends.",
     tables: [
       {
@@ -726,6 +753,7 @@ const eventData: Event[] = [
     tag: "e045",
     title: "Arch of Travel",
     type: "magic",
+    image: true,
     desc: "You find a metal-banded archway inscribed with runes. If any character in your party is a magician, wizard or witch the runes can be read, and the arch used if you wish. Otherwise, the event ends. If you can use the arch, you can travel through it instead of making a normal daily travel action (see r204). Travel through the arch allows you to make a magical transfer to any other hex on the map, as you wish. However, you travel forward in time as well — roll one die for the number of extra days which pass, advance the time track by that many days and continue play. You cannot get lost by travelling through the arch. As long as your party continues to have a magician, wizard or witch you can return to this hex and use the arch again and again. However, arch travel is only one-way, from the arch to another hex — you cannot travel from any hex to the arch.",
   },
   {
@@ -738,12 +766,13 @@ const eventData: Event[] = [
     tag: "e047",
     title: "Mirror of Reversal",
     type: "combat",
+    image: true,
     desc: "You see an old mirror, and looking into it, discover yourself twisted into evil shape. This thing leaps from the mirror and attacks you, getting the first strike in combat (r220). It has the same combat skill and endurance as yourself, and has the same possessions and gold. If you have any followers, you can call for their aid in the battle, but for each strike a follower makes, roll one die — a 5 or 6 means the follower strikes you by accident (mistaking you for your double). If you kill the mirror-thing, the battle ends, and you permanently add one (+1) to your wit & wiles, due to gaining a fuller understanding of yourself in this contest. In addition, you will double your possessions and wealth, by gaining that of the mirror-thing.",
   },
   {
     tag: "e048",
     title: "Fugitive",
-    type: "encounter",
+    type: "npc",
     desc: "You encounter a person trying to avoid local justice. He or she will join your party as an ally, but will desert whenever you encounter any Constables (unless your party elects to fight them and kills them all) or whenever you enter any town, castle or temple. Instead, you can immediately elect to fight the character encountered — see r300. Roll one die to see exactly who you meet.",
     tables: [
       {
@@ -781,13 +810,15 @@ const eventData: Event[] = [
   {
     tag: "e049",
     title: "Travelling Minstrel",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You meet a musician. You can ignore him and end this event, or invite him to dinner (r215). In the latter case, you must give him one food unit or he deserts, but if fed he'll sing a tale that night that prevents any of your party from deserting, no matter what events happened today, even if your followers are not properly fed or lodged. After the songs and the meal, you may start a conversation if you wish — see r341. If he ends up joining your party, his ability to prevent desertions can be used just once more during the game, on any day you wish.",
   },
   {
     tag: "e050",
     title: "Local Constabulary",
     type: "combat",
+    image: true,
     desc: "This event only applies if you are within three (3) hexes of a town, castle, or temple. Otherwise there is no event. If the nearest town/castle/temple is Ogon (0101) or Weshor (1501), see e002 instead. You encounter local law enforcement officers. First roll one die to see if they are mounted (5 or higher = mounted). Next roll one die for how many you encounter, adding one (+1) to the roll if they are mounted, or three (+3) if they are on foot. Each constable is combat skill 5, endurance 4, wealth 4. Now select your option and roll the die. Add two (+2) to the die roll if you have visited the nearest town/castle/temple before and did not leave by an escape (r218). If you have never visited the nearest town/castle/temple before, add one (+1) to the die roll.",
     note: "If your party has mounts and the constabulary does not, you may use escape mounted (r312) instead of rolling the die for the evade option. If your party all have winged mounts and/or flying ability, you can use a flying escape (r313) instead.",
     tables: [
@@ -818,6 +849,7 @@ const eventData: Event[] = [
     tag: "e052",
     title: "Goblins",
     type: "combat",
+    image: true,
     desc: "You sight a band of Goblins in the distance. Roll two dice for the number in the band, each is combat skill 3, endurance 3, wealth 1. In addition, they are led by an additional Hobgoblin with combat skill 6, endurance 5, wealth 5. You saw them first, so you can either escape (r218) from the area, or attempt to follow them (r219). If you follow them, after the follow movement (r219) roll one die. If the result exceeds your wit & wiles the band discovers you and attacks, but your party will get the first strike in combat (r220).",
     tables: [
       {
@@ -878,6 +910,7 @@ const eventData: Event[] = [
     tag: "e054",
     title: "Goblin Keep",
     type: "location",
+    image: true,
     desc: "You see a fortified tower keep of a Goblin King. The area is swarming with hundreds of Goblins. You decide you should escape, but a band of Goblins has already seen you. They charge forward with screams and howls. If you are unable to escape from this hex for any reason (see r218) or decide not to resist, you are captured — see e061. If you try to escape, first make your escape move (r218). Then roll one die to see if you elude the pursuing Goblins. If your wit & wiles is greater than the die roll, you lose them and the event ends. Otherwise, you must either surrender (go to e061 and return to the keep hex), or fight them. If you fight, roll one die three times for the number of Goblins (each CS 3, End 3, Wealth 1), plus one Hobgoblin leader (CS 6, End 5, Wealth 4). You can strike first in combat (r220). You cannot escape from combat — you must kill or be killed. If you return to the hex with the Goblin King's keep any time later in the game, you will be captured automatically — see e061.",
   },
   {
@@ -906,12 +939,14 @@ const eventData: Event[] = [
     tag: "e057",
     title: "Troll",
     type: "combat",
+    image: true,
     desc: "A huge stone-skinned Troll confronts your party. Roll one die — if the troll exceeds your wit & wiles, it strikes first in combat (r220), otherwise you strike first. The Troll is combat skill 8, endurance 8, wealth 15. Furthermore, the Troll's skin has regenerative properties — it automatically cures one wound at the end of each combat round you fight against it. If you kill the troll, its stone-skin is a valuable item. Whenever you have an opportunity to buy food at a town, castle, temple, or from merchants you can sell the skin for 50 gold. It is also known that Count Drogat of Drogat Castle will treasure the gift should you manage to get a personal audience with him.",
   },
   {
     tag: "e058",
     title: "Band of Dwarves",
-    type: "encounter",
+    type: "combat",
+    image: true,
     desc: "You encounter a group of dwarves. Each dwarf is combat skill 5, endurance 6, wealth 10. Roll one die and add one (+1) for the number of dwarves in the band. If your party has fewer members than the dwarf band, you spot them first, and can either follow them (r219), hide or escape from them (r218) as you wish, or meet them using one of the three options below. If your party is equal in size or larger, they spot you first and you must meet them.",
     note: "If following: after follow movement (r219) roll one die. If the result equals or exceeds your wit & wiles the dwarves discover you and attack, striking first in combat (r220). If they don't discover you, roll one die for their destination.",
     tables: [
@@ -942,6 +977,7 @@ const eventData: Event[] = [
     tag: "e059",
     title: "Dwarf Mines",
     type: "location",
+    image: true,
     desc: "You see a great underground castle inhabited by Dwarves. Dwarven constables and patrols intercept your party. Roll one die. If the die roll exceeds your wit & wiles, you and your party are arrested immediately — see e060. Otherwise, you are passed, and enter the castle mines. There you can undertake any actions and activities normally allowed in a castle (r203). This includes seeking an audience with the Dwarf King who rules there (r211, use Huldra Castle table). Like any castle, you must spend the normal amounts for food (r215) and lodging (r217).",
   },
   {
@@ -972,12 +1008,14 @@ const eventData: Event[] = [
     tag: "e061",
     title: "Marked for Death",
     type: "event",
+    image: true,
     desc: "You and your party have committed a very grave offence. The death penalty is demanded. Until then, you and your party are imprisoned. All your money, possessions and mounts are confiscated and permanently lost. You are provided with food and lodging while in prison. At the start of each day in prison roll one die: 1 means you manage to escape (see below for details), 6 means you must finally meet the headsman and are put to death. Any other die roll means you continue to languish in prison. Escapes: if you escape from prison, roll one die for each other character in your party who were imprisoned near you: 1-2 = they are part of the escape and join you; 3-6 = they are unable to join the escape, or have already been executed. Now that the size of your party is determined, use the escape rules (r218) to determine where you end up. The escape takes the entire day, after it you must prepare for the evening meal (r215).",
   },
   {
     tag: "e062",
     title: "Thrown in the Dungeon",
     type: "event",
+    image: true,
     desc: "You are thrown into a deep dungeon. Other members of your party are imprisoned or sold as slaves, and therefore are permanently lost (unless a lover, see r228). You lose all your wealth, possessions and mounts. While in the dungeon, you are provided with food and lodging (of a sort). At the start of each day in the dungeon roll two dice — a result of 2 or 3 means you escape (see r218) that day, any other result means you continue to languish in captivity. Every full week (seven days) you spend in the Dungeon inflicts one poisoned wound on you, due to unhealthy conditions, disease, and gradual weakness and starvation. If you escape, it takes the entire day. After it, you must find food for your evening meal (r215).",
   },
   {
@@ -990,6 +1028,7 @@ const eventData: Event[] = [
     tag: "e064",
     title: "Ruins",
     type: "location",
+    image: true,
     desc: "You discover hidden ruins. You can undertake a search action in them (r208) on any following day you are in the hex, just as if they were ruins marked on the map.",
   },
   {
@@ -1002,6 +1041,7 @@ const eventData: Event[] = [
     tag: "e066",
     title: "Secret Temple",
     type: "location",
+    image: true,
     desc: "You find a secret temple, of an obscure and feared cult. Before you can do anything a large group of guardian monks surrounds you. Roll one die — if the result equals or exceeds your wit & wiles you and your party are arrested, see e060 and subtract one (-1) from the die roll when resolving that event. If the result is less than your wit & wiles you talk your way past the guardians, and you can stay at the temple as if it were a normal temple marked on the map. Thus the rules for food (r215) and lodging (r217) at a temple apply, as well as your ability to undertake daily actions allowed at a temple (r203). If you later return to this temple, the guardians will continue to permit you free entrance, with no new die rolls needed. However, if you kill anyone while in this temple hex, or escape from it, the next time you enter, you must begin this event afresh, including a new die roll.",
   },
   {
@@ -1048,6 +1088,7 @@ const eventData: Event[] = [
     tag: "e068a",
     title: "Wizard Tower",
     type: "location",
+    image: true,
     desc: "A great wizard's tower looms before you. It is just like a castle for all game purposes, including food (r215) and lodging (r217). However, the ruling wizard is jealous, and will tolerate no rivals. Any magicians, wizards or witches in your party will either desert or be arrested, unless you elect to have your whole party escape (r218) from the hex. If you stay, on subsequent days you can perform any daily actions normally allowed at a castle (r203), but if you seek an audience with the ruler (r211) use the temple and high priest tables.",
   },
   {
@@ -1060,12 +1101,14 @@ const eventData: Event[] = [
     tag: "e070",
     title: "Halfling Town",
     type: "location",
+    image: true,
     desc: "You come across a hidden and unknown town of halflings. You can undertake any normal actions (r203) in this town, but normal rules for food (r215) and lodging (r217) apply. However, halflings have a great love of gossip, news and new faces — any day you spend doing a seek news and information action (r209), you and your party will be wined and dined so much that you need not buy any food for your evening meal. If you kill any character while in the halfling town, or must escape from the town, for the rest of the game the halflings will dislike you. You will no longer be wined and dined when seeking news and information. Any time you seek news and information (r209), hire followers (r210), or seek an audience (r211) in the town, you must suffer an extra minus one (-1) to your dice roll when resolving these actions.",
   },
   {
     tag: "e071",
     title: "Elven Band",
-    type: "encounter",
+    type: "combat",
+    image: true,
     desc: "You encounter a band of elves. Roll one die and add one (+1) for the number of elves in the band. Each elf is combat skill 5, endurance 4, and wealth 7. You have three options.",
     note: "If your party includes an elf, subtract one (-1) from your die roll. If your party includes a dwarf, add one (+1) to your die roll.",
     tables: [
@@ -1106,7 +1149,8 @@ const eventData: Event[] = [
   {
     tag: "e073",
     title: "Witch",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter a witch with combat skill 1, endurance 3, wealth 5. Roll one die — if it exceeds your wit & wiles she is hostile; if the roll is equal she ignores you and the event ends; if the roll is less she is friendly. Hostile Witch: your party must escape (r218) immediately. Roll one die for each character in the party, including yourself — if a 6 occurs the character was turned into a frog before he or she escaped, and is lost. If you are turned into a frog, any lover, magician, wizard, or friendly witch surviving in your party can turn you back. Otherwise, you will remain a frog for years, and lose the game.",
     tables: [
       {
@@ -1124,11 +1168,13 @@ const eventData: Event[] = [
     tag: "e074",
     title: "Spiders",
     type: "combat",
+    image: true,
     desc: "Giant spiders trap you — roll one die for the number of spiders. Their webs trap your party, and the combat skill of each character is reduced by one. Each spider has combat skill 4, endurance 3, and inflicts only poisoned wounds. It is very likely that you are surprised also — see r309.",
   },
   {
     tag: "e075",
     title: "Wolves",
+    image: true,
     type: "combat",
     desc: "This event is postponed until after you finish your evening meal (r215). Ignore this event if in any town, castle or temple. At night a hunting pack of wolves attacks your party. Roll three dice for the number of wolves, each of which is combat skill 3, endurance 3. They may surprise you — see r309. At the end of each combat round, if any wolves are still left alive, one of your mounts will be killed by the wolves. Since materials being transported (r206) by the mount have been unloaded for the night, only the mount itself is lost, not what it carries. You cannot escape from the wolf attack.",
   },
@@ -1142,6 +1188,7 @@ const eventData: Event[] = [
     tag: "e077",
     title: "Herd of Wild Horses",
     type: "event",
+    image: true,
     desc: "Ignore this event if you are in a town, castle, temple or swamp hex. You surprise a herd of wild horses. Each character in your party can capture one, giving you that many additional mounts. However, you must spend tomorrow resting (r203) in order to train the captures. If you have a magician, wizard or witch in your party, that character can cast a spell that trains the animals instantly — no extra day of rest is needed.",
   },
   {
@@ -1160,6 +1207,7 @@ const eventData: Event[] = [
     tag: "e080",
     title: "Pixies",
     type: "magic",
+    image: true,
     desc: "A group of small, flying sprites called pixies appear and dance around you and your party. Unless you have a magician, wizard, witch, elf or halfling in your party they will dance away and end the encounter. If your party includes any one of these characters, the pixies may stop to grant you a boon — roll one die.",
     tables: [
       {
@@ -1179,6 +1227,7 @@ const eventData: Event[] = [
     tag: "e081",
     title: "Mounted Patrol",
     type: "combat",
+    image: true,
     desc: "You encounter a mounted patrol of soldiers. Roll one die for the number in the patrol, each of which is combat skill 6, endurance 5, wealth 4. One of the men is the leader, and has wealth 10 instead.",
     note: "If your party all have winged mounts and/or flying ability, you can use a flying escape (r313) instead of rolling for the evade option.",
     tables: [
@@ -1201,6 +1250,7 @@ const eventData: Event[] = [
     tag: "e082",
     title: "Spectre",
     type: "magic",
+    image: true,
     desc: "An unearthly spectre from the astral plane appears in the midst of your party, casting a hideous miasma in all directions. One character in your party is the spectre's victim (r343 — magicians, wizards, witches, priests and monks must be first choices as victims). The victim is turned to smoke and taken by the spectre to the astral plane, never to be seen again. If you are the victim, you are lost and the game ends. However, a spectre is a magical being, and can be stopped using any possession that protects against magic attacks or injury.",
   },
   {
@@ -1213,6 +1263,7 @@ const eventData: Event[] = [
     tag: "e084",
     title: "Bear Comes to Dinner",
     type: "combat",
+    image: true,
     desc: "Ignore this event if you are in a town, castle, temple, friendly farm, in desert, or guest of any character who provides a free meal. You are about to sit down for a meal when a large, black bear wanders into your campsite. The bear will randomly attack one character (r343) after another in your party until all are killed, the bear is killed, or you escape. The bear strikes first in combat (r220), and has combat skill 5, endurance 5.",
   },
   {
@@ -1225,6 +1276,7 @@ const eventData: Event[] = [
     tag: "e086",
     title: "High Pass",
     type: "encounter",
+    image: true,
     desc: "In order to leave the hex by any direction except that which you entered, you must travel through a very high, alpine pass. On your next travel action (r204) — unless you leave by the hex you entered — you must take the high pass as long as you aren't lost. When you travel the high pass, roll two dice for the effects of high winds, sub-freezing temperatures, snow, etc.",
     tables: [
       {
@@ -1249,12 +1301,14 @@ const eventData: Event[] = [
     tag: "e087",
     title: "Impassable Woods",
     type: "encounter",
+    image: true,
     desc: "You find the forest becomes thicker and thicker along this route, until further travel is impossible. You can only leave this hex by travelling to the hex from which you came (r204). In other words, any further moves must be backwards. However, if entered from another direction this hex could be passable.",
   },
   {
     tag: "e088",
     title: "Rock Fall",
     type: "encounter",
+    image: true,
     desc: "As you travel along through a steep-sided gorge a rock fall begins, threatening your entire party. Roll one die for each character; mounts without riders are rolled for separately.",
     tables: [
       {
@@ -1284,6 +1338,7 @@ const eventData: Event[] = [
     tag: "e090",
     title: "Quicksand",
     type: "encounter",
+    image: true,
     desc: "Your party stumbles into quicksand. Roll one die for each character or mount. If a character is riding a mount, you can either roll for both together as a character, or the character can sacrifice the mount and its load in order to jump from it to safety.",
     tables: [
       {
@@ -1314,6 +1369,7 @@ const eventData: Event[] = [
     tag: "e091",
     title: "Poison Snake",
     type: "combat",
+    image: true,
     desc: "Your party unknowingly walks over the lair of a poison snake. One character (use r343 to select victim) suffers snakebite poison wounds — roll one die for the number of poison wounds received.",
   },
   {
@@ -1345,6 +1401,7 @@ const eventData: Event[] = [
     tag: "e094",
     title: "Crocodiles",
     type: "combat",
+    image: true,
     desc: "Very large and very hungry crocodiles attack your party. Roll one die for the number of crocodiles, each of which is combat skill 4, endurance 6. If you are in a swamp, you cannot escape from them in battle. The crocs always strike first in combat (r220), and in swamp achieve surprise as well.",
   },
   {
@@ -1404,6 +1461,7 @@ const eventData: Event[] = [
     tag: "e098",
     title: "Dragon",
     type: "combat",
+    image: true,
     desc: "You encounter a huge, winged, fire-breathing Dragon with combat skill 10 and endurance 11. Roll one die — if the result is 1 or 2 you have found it at its lair, which has wealth 110 and wealth 60 both. With any other roll, it has only wealth 30. If you must fight it in combat (r220) you cannot escape.",
     note: "If you kill the Dragon, the Dragon's eye is greatly valued by high priests of the temples throughout the land, and may be of assistance in gaining an audience. Carrying the Dragon's eye counts as one load for transport purposes (r206).",
     tables: [
@@ -1426,6 +1484,7 @@ const eventData: Event[] = [
     tag: "e099",
     title: "Roc",
     type: "combat",
+    image: true,
     desc: "You encounter the Roc, a gigantic bird, which swoops down on your party. The roc is combat skill 9, endurance 8, and wealth 10.",
     note: "If you kill the Roc, you can cut off its beak and transport it as one load (r206). Count Drogat of Drogat Castle especially prizes this item, and it may help you gain an audience with him. In addition, the beak can be sold to any merchant, or in any town, castle, or temple whenever you buy food. The beak is worth 35 gold.",
     tables: [
@@ -1447,7 +1506,8 @@ const eventData: Event[] = [
   {
     tag: "e100",
     title: "Griffon",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You meet a winged Griffon, which has combat skill 7, endurance 6, wealth 12. The Griffon is intelligent, and could serve both as a member of your party and as a winged mount for another character. However, Griffons are normally quite independent and ferocious, and this one looks especially unfriendly, if not hostile!",
     note: "If you kill the Griffon, you can remove its claws and carry them as an extra possession. They are especially valued by Lady Aeravir of Aeravir Castle, and may help you gain an audience with her.",
     tables: [
@@ -1469,7 +1529,8 @@ const eventData: Event[] = [
   {
     tag: "e101",
     title: "Harpy",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter a Harpy, a bird-woman with combat skill 5, endurance 4, and wealth 4. Harpies are known as dirty, nasty things, but occasionally have allied with humans for mutual gain.",
     note: "If the Harpy joins your party, she has her own wings, and can travel airborne without a winged mount if desired. She also counts as travelling on a normal mount because the wings allow her to make long airlifted hops as well.",
     tables: [
@@ -1510,6 +1571,7 @@ const eventData: Event[] = [
     tag: "e105",
     title: "Storm Clouds Ahead",
     type: "encounter",
+    image: true,
     desc: "You can land immediately, in the hex you just entered, and avoid any risk. Alternately, if you continue flying today, before checking for lost or a travel event, roll one die for what happens as you try to fly on.",
     tables: [
       {
@@ -1559,18 +1621,21 @@ const eventData: Event[] = [
     tag: "e110",
     title: "Air Spirit",
     type: "magic",
+    image: true,
     desc: "You encounter an air spirit, but will only recognize it if a magician, wizard, witch, priest or monk is in your party. If you can't recognize it, this event ends. If you recognize it, you can attempt communication if you wish. To talk to the air spirit, roll one die. If the roll equals or exceeds your wit & wiles, communication fails — the air spirit becomes confused and blows you off course. Roll one die for the direction (1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW) and then roll one die for the number of hexes you are blown in that direction. Move your party to this new hex, and continue with your daily actions (r203). If the die roll is less than your wit & wiles, you successfully talk with the air spirit. It will help you in your journey — roll two dice, and move up to that many hexes immediately, without risk of getting lost, and with no new travel events except for the last hex (where a normal travel event must be determined).",
   },
   {
     tag: "e111",
     title: "Storm Demon",
     type: "magic",
+    image: true,
     desc: "You encounter a powerful Demon of storms, which attacks your party. If you have any magicians, wizards, witches, priests, or monks in your party, each can attempt to stop the demon by rolling one die — a 6 means the demon attack is blocked, any other result means no effect on the attack. If you are unable to block the attack, your entire party is blown away to be lost or killed. You crash in an adjacent hex (roll one die to determine which one: 1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW), where your winged mount is killed, and you roll one die for the number of wounds suffered. Your wealth and possessions you carried are intact, but that of the rest of your party is lost.",
   },
   {
     tag: "e112",
     title: "Meet Eagle Clan",
     type: "encounter",
+    image: true,
     desc: "While airborne you encounter eagles in flight. Roll one die for the number of eagles, each is combat skill 4, endurance 3, and wealth 1. If your party has a character type or mount other than humans, elves, and/or pegasus mounts, you must select the evade or fight option. Wizards, witches, magicians, priests and monks are presumed human unless specified as some other race when first encountered.",
     note: "If you select follow, see r319 for procedure for a follow move today, and then consult the event listed. If you elect to follow, you must abandon all members of your party without winged mounts or ability to fly.",
     tables: [
@@ -1622,7 +1687,8 @@ const eventData: Event[] = [
   {
     tag: "e118",
     title: "Giant",
-    type: "encounter",
+    type: "npc",
+    image: true,
     desc: "You encounter a 12-foot tall giant, carrying a very big club. He is combat skill 9, endurance 8, wealth 10.",
     note: "If the giant joins your party, he is too big to be carried on any mount, so you can't use mounted travel (r204) while he is with your party. In addition, he eats double the normal amount of food (r215) each day.",
     tables: [
@@ -1669,6 +1735,7 @@ const eventData: Event[] = [
     tag: "e123",
     title: "Knight at the Bridge",
     type: "combat",
+    image: true,
     desc: "You find a small bridge that will permit crossing the river. However, a knight in armour stands at the opposite end, challenging any who wish to cross. You can only cross if you personally engage him in combat (r220) — the knight is combat skill 8, endurance 8, wealth 30. You may refuse the combat and end travel for the day, but roll one die for each character in your party — a 6 indicates he deserts due to your cowardice. If you engage in combat, roll one die at the start of each round — you strike first if the roll is 4 or more, the knight strikes first if the roll is 3 or less. If either you or the knight is knocked unconscious, the duel ends. If you are knocked unconscious crossing is prohibited, and travel ends for the day. If the knight is knocked unconscious you can either leave him here and continue to travel, or you can halt for the day, treat his wounds, and allow him to join your party (no wages need be paid, but food r215 and lodging r217 must be supplied). You may give up the combat and end travel for the day after any combat round, without invoking the usual escape procedure.",
   },
   {
@@ -1712,6 +1779,7 @@ const eventData: Event[] = [
     tag: "e128",
     title: "Merchant",
     type: "encounter",
+    image: true,
     desc: "You meet a friendly merchant. You can either pass by and ignore him, ending this encounter, or you can stop to chat and barter. If you stop, roll two dice and consult the chart below.",
     tables: [
       {
@@ -1758,6 +1826,7 @@ const eventData: Event[] = [
     tag: "e129",
     title: "Merchant Caravan",
     type: "encounter",
+    image: true,
     desc: "You meet a merchant caravan camped for the night. You may halt for the day with them to talk and trade, or you can ignore them and end this event. If you stop, roll two dice and consult the chart below.",
     tables: [
       {
@@ -1807,6 +1876,7 @@ const eventData: Event[] = [
     tag: "e130",
     title: "Meet a High Lord",
     type: "encounter",
+    image: true,
     desc: "You meet a high and powerful lord of the land. The Lord has a bodyguard — roll two dice and add one (+1) for the number of guards, each of which is combat skill 6, endurance 6.",
     note: "If arrested, you are jailed at the Lord's residence — either the appropriate castle, nearest temple for the High Priest, or nearest town for Mayor. Advance time by one day. If you achieve an audience, roll one die for Baron Huldra: 1-2→nothing; 3-4→e150; 5→e151; 6→e152. For Count Drogat see e161; Lady Aeravir see e160; High Priest see e155; Town Mayor see e156. Any inquiry result that normally allows hiring instead permits you to bribe the bodyguards with 10 gold for an audience. If you fight and kill all the guards, the Lord must automatically grant you an audience.",
     tables: [
@@ -1924,6 +1994,7 @@ const eventData: Event[] = [
     tag: "e138",
     title: "Unclean",
     type: "combat",
+    image: true,
     desc: "The ruins are unclean, and have horrible, gruesome creatures populating them. Roll one die for what you encounter. If you survive this encounter, you can immediately consult r208 again to continue your search today, or you can end the searching for the day and have your evening meal (r215).",
     tables: [
       {
@@ -1964,6 +2035,7 @@ const eventData: Event[] = [
     tag: "e140",
     title: "Magic Box",
     type: "encounter",
+    image: true,
     desc: "You find a magic box. You can only open it if you have a magician, wizard or witch in your party. Until then, you can carry it with you, since it is relatively light. Once such a person is in your party, you can open it and examine the contents. Roll one die.",
     tables: [
       {
@@ -2008,12 +2080,14 @@ const eventData: Event[] = [
     tag: "e145",
     title: "Secret of Lady Aeravir",
     type: "event",
+    image: true,
     desc: "The Lady of Aeravir Castle is the priestess of a local temple cult that requires virginity. You discover that she is actually quite promiscuous, and can use this to advantage if you gain an audience with her. Add one (+1) when attempting to gain an audience (r211) with her, and if you gain it, you can roll twice for the results of the audience and select whichever result you prefer most. However, the Lady dislikes blackmail — you must escape from the hex at the end of the day when you use this secret knowledge. You can never return.",
   },
   {
     tag: "e146",
     title: "The Secret of Count Drogat",
     type: "event",
+    image: true,
     desc: "You learn that Count Drogat, lord of Drogat Castle, is actually an undead creature who lives from the suffering, pain, and death of others. This explains why he so often tortures and dismembers felons in his realm, and often goes into rages that leave his lands in a reign of terror. However, he is very vulnerable to foulbane, a rare plant which can only be purchased from the food merchants at Duffyd Temple (hex 2018) for 1 gold piece. Using the foulbane, when you attempt to gain an audience (r211) with Count Drogat you add one (+1) to your dice roll, and if you gain an audience you can ignore the first audience result die roll and try again if you wish — however, you must abide by the second result regardless of what it is. Finally, using the foulbane in Drogat Castle you can spend a day, instead of a normal daily action, in arranging for a special theft of the Count's personal jewels. At the end of the day you escape from the hex (r218) with wealth 110, but can never return to the castle hex due to the Count's anger. In the process of the theft you might acquire magic items (part of the wealth 110).",
   },
   {
@@ -2063,6 +2137,7 @@ const eventData: Event[] = [
     tag: "e151",
     title: "Find Favour",
     type: "event",
+    image: true,
     desc: "You gain an audience and are heard favourably. Your entire party is given food (r215) and lodging (r217) free tonight. Tomorrow you are given a gift of gold — roll one die and multiply by 100 for the amount — plus an escort of cavalryman that guides you and remains with you during the day you leave the hex. The escort is so strong that you will automatically defeat and kill anything you meet in combat, without using the normal combat procedure.",
   },
   {
@@ -2080,7 +2155,8 @@ const eventData: Event[] = [
   {
     tag: "e154",
     title: "Meet Lord's Daughter",
-    type: "event",
+    type: "encounter",
+    image: true,
     desc: "You meet the ruler's beautiful daughter. Roll one die for her attitude.",
     tables: [
       {
@@ -2114,7 +2190,8 @@ const eventData: Event[] = [
   {
     tag: "e155",
     title: "Audience with High Priest",
-    type: "event",
+    type: "encounter",
+    image: true,
     desc: "You have private discussion with the high priest. Roll one die.",
     tables: [
       {
@@ -2149,7 +2226,8 @@ const eventData: Event[] = [
   {
     tag: "e156",
     title: "Audience with Town Mayor",
-    type: "event",
+    type: "encounter",
+    image: true,
     desc: "You have private discussions with the mayor. Roll one die.",
     tables: [
       {
@@ -2191,12 +2269,14 @@ const eventData: Event[] = [
     tag: "e158",
     title: "Hostile Guards",
     type: "combat",
+    image: true,
     desc: "You leave the rest of your party in an atrium, and are then confronted by two hostile guards. Each is combat skill 5, endurance 6, and wealth 7. If you pay 20 gold as a bribe they will let you pass — roll again on the appropriate seeking audience table (r211). Otherwise, they will attack you, getting the first strike in combat (r220). Regardless of whether you win or lose, the combat means you must immediately escape from this hex (r218).",
   },
   {
     tag: "e159",
     title: "Must Purify Yourself",
     type: "event",
+    image: true,
     desc: "You must make an offering at a temple (r212) before you can attempt another audience in this hex. The offering must be made at any temple. This result does not prevent you from attempting audiences elsewhere before making this offering. If you do make the required offering, and then try for another audience in this hex, your devotion is noted and you can add two (+2) to the dice roll when seeking the audience (r211).",
   },
   {
@@ -2297,6 +2377,7 @@ const eventData: Event[] = [
     tag: "e163",
     title: "Slave Market",
     type: "location",
+    image: true,
     desc: "You can purchase slaves at the auction block. Porter slaves are available — roll one die to establish cost in gold per porter. These slaves need not be paid wages, and will function even if not fed (r215), but each day without food halves their carrying capacity (round fractions down). When their capacity reaches zero they die. See r206 to use porters. Slave girls are available — roll two dice and add two (+2) for the cost of each. Each slave girl functions as a Gift of Charm (e182) as long as she is fed properly (r215), and can be given as such. Slave girls who are not fed lose this ability until they are fed regularly for as many days as they missed meals. For each girl you buy, roll two dice — if the result is 12 exactly you fall in love, freeing her to be your mate, see r228. Finally, in the market you find an old warrior — only you spot his hidden qualities. Roll one die to establish the price in gold, adding two (+2) if you didn't buy any porters or slave girls. If you buy him, he becomes a willing member of your party at no pay as soon as you free him. Then roll one die to determine his combat skill and one to determine his endurance.",
   },
   {
@@ -2315,6 +2396,7 @@ const eventData: Event[] = [
     tag: "e166",
     title: "Elven Castle",
     type: "location",
+    image: true,
     desc: "You discover a hidden castle inhabited by elves. Roll one die, subtracting one (-1) if your party includes an elf, magician, wizard, or witch, and adding one (+1) if your party includes a dwarf. If the roll equals or exceeds your wit & wiles, the elves decide you are unworthy — your entire party including yourself are arrested, see e060. Otherwise, you may visit the castle. If you can visit, treat the castle like a normal castle marked on the map for all purposes, including selection of daily actions (r203), food (r215), and lodging (r217). Any followers hired in the castle (r210) will be elves. If you return to the hex later in the game, you must roll again to see if the elves still give you permission to visit, or arrest you.",
   },
   {
@@ -2333,6 +2415,7 @@ const eventData: Event[] = [
     tag: "e182",
     title: "Gift of Charm",
     type: "item",
+    image: true,
     desc: "This is a small item of no real value, but with a magic aura. You can give this gift to any character(s) you encounter as part of any talk or talk option. When you use it, you can then roll a second and a third time for that option, and select whichever result you prefer. Once given away, the gift is gone and useless unless the receiver later fights you in combat and you kill him. Then you can recover the gift as part of the defeated's possessions.",
   },
   {
@@ -2357,6 +2440,7 @@ const eventData: Event[] = [
     tag: "e186",
     title: "Magic Sword",
     type: "item",
+    image: true,
     desc: "A character can carry this special sword among his weapons. The magic sword adds one (+1) to the combat skill of the character with it. In addition, the blade's magic means that every wound it inflicts counts as poisoned too.",
   },
   {
@@ -2369,6 +2453,7 @@ const eventData: Event[] = [
     tag: "e188",
     title: "Pegasus Mount",
     type: "item",
+    image: true,
     desc: "You have acquired a pegasus — a winged horse that allows you to travel airborne. The pegasus is like a normal mount in all other respects, including the same transport ability (r206), food requirements (r215), and lodging when in towns, castles, or temples (r217). You can use the pegasus as a normal mount on the ground, if desired.",
   },
   {
@@ -2422,6 +2507,7 @@ const eventData: Event[] = [
     tag: "e194",
     title: "Royal Helm of the Northlands",
     type: "item",
+    image: true,
     desc: "This ancient and sacred treasure has long been lost. Myths and tales still relate the great exploits of its wearers. Now you hold this treasure that gives you automatic and indisputable right to the Northlands throne. If you return to either Ogon (0101) or Weshor (1501) towns with the helm, you will be instantly hailed as the rightful King of the Northlands, and win the game. In the meantime, possession of the helm increases your stature and self-confidence, so increase your wit & wiles by one (+1).",
   },
   {

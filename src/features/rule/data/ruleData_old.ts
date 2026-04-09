@@ -475,7 +475,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "News & Information (2d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "No news of note, nothing seems to be happening."],
           [
@@ -525,7 +525,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Hire Followers (2d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           [
             "2",
@@ -569,7 +569,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Audience at any Town (2d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Grievously insult the town council; e062."],
           ["3", "Slanderous aside about mayor's wife blamed on you; e060."],
@@ -584,7 +584,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Audience at any Temple (2d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Anger temple guards; e063."],
           ["3", "Priestess resents a lewd remark; e060."],
@@ -604,7 +604,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Audience with Baron of Huldra Castle (1212) (2d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "Audience permanently refused, cannot try again."],
           ["3", "Meet Baron's Daughter; e154."],
@@ -621,7 +621,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Audience with Count Drogat of Drogat Castle (0323) (2d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "You are the Count's next victim; e061."],
           ["3", "Captain of the Guard dislikes your haircut; e062."],
@@ -641,7 +641,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Audience with Lady Aeravir of Aeravir Castle (1923) (2d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "You insult the Lady's dignity; arrested e060."],
           ["3", "Must purify yourself first; e159."],
@@ -671,7 +671,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Temple Offering (2d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           [
             "2",
@@ -758,7 +758,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Recovering a Cache (1d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["1–4", "Cache found intact; recover all items placed there."],
           [
@@ -779,71 +779,56 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Food Units (r215a)",
+        label: "",
         rows: [
-          ["1 food unit", "Feeds 1 man for 1 day"],
-          ["Mounts (cannot forage)", "2 units/day"],
-          [
-            "Desert hex (no oasis)",
-            "Food requirement doubles for men and mounts",
-          ],
-        ],
-      },
-      {
-        type: "simple-list",
-        label: "Hunting Eligible Terrain (r215b)",
-        rows: [
-          ["Farmland", "Yes (event check required, r215c)"],
-          ["Countryside", "Yes"],
-          ["Forest", "Yes"],
-          ["Hills", "Yes"],
-          ["Swamp", "Yes"],
-          ["Mountains / Desert", "No"],
-          ["Hex with town, castle, or temple", "Prohibited"],
-        ],
-      },
-      {
-        type: "simple-list",
-        label: "Hunting Formula (r215b)",
-        rows: [
-          ["Hunter's score", "Combat skill + ½ current endurance (round down)"],
-          ["Result", "Hunter's score minus 2d6 roll = food units gained"],
-          ["Guide bonus", "+1 to score if hunter can act as guide"],
-          [
-            "Resting party",
-            "Each additional hunter adds +1; each additional guide adds +1 extra",
-          ],
-          [
-            "Roll of 12",
-            "Hunter is hurt regardless; roll 1d6 for wounds suffered",
-          ],
-        ],
-      },
-      {
-        type: "simple-list",
-        label: "Purchased Meals (r215d)",
-        rows: [
-          ["Per character", "1 gold/day"],
-          ["Per mount (stables)", "1 gold/day"],
-        ],
-      },
-      {
-        type: "simple-list",
-        label: "Animal Fodder (r215f)",
-        rows: [
-          [
-            "Farmland, Countryside, Forest, Hills",
-            "Animals forage freely; no cost",
-          ],
-          [
-            "Town/Castle/Temple (full day)",
-            "Must stable; 1 gold/animal or provide 2 food units/animal",
-          ],
-          ["Swamp", "Cannot forage"],
+          ["r215a", "Food Units"],
+          ["r215b", "Hunting"],
+          ["r215c", "Populated Regions and Hunting"],
+          ["r215d", "Purchased Meals"],
+          ["r215e", "Food Stores"],
+          ["r215f", "Animal Fodder"],
         ],
       },
     ],
     note: "Food stores cost 1 gold per unit when purchased in a town, castle, or village (only if you spent the entire day there). Cost of food is separate from lodging (r217).",
+  },
+  {
+    tag: "r215a",
+    title: "Food Units",
+    type: "food",
+    desc: "For convenience, food is counted in “units.” Each unit is sufficient to feed one man for one day. Mounts require two units per day if they are unable to forage for their own fodder. If there is no water available (in a desert hex with no oasis) then the food requirement doubles for men and mounts, to represent the need to carry water supplies also.",
+  },
+  {
+    tag: "r215b",
+    title: "Hunting",
+    type: "food",
+    desc: "If you are in a farmland, countryside, forest, hill or swamp hex you can hunt for food. Any one character in your party can be the hunter. Total his combat skill and half (1⁄2) his current endurance (his endurance minus wounds), round fractions down, and then subtract from that the roll of two dice. The result is the number of food units gained by hunting. If the character can act as a guide, add one to the total. If the total is zero or less, then the hunting was unsuccessful. If the dice roll was “12” exactly, the hunter himself was hurt, regardless of success or failure, roll one die for the number of wounds he suffered. If knocked unconscious or killed, the hunt automatically fails and the hunter dies unless hunting with others.",
+    note: "If your party rested today in the hex, you can send additional characters to hunt. Each additional character hunting adds one (+1) to the skill + endurance level of your hunt. The actual skill and endurance of the additional hunters is not counted. However, if the additional hunters are guides, for each guide, add one (+1) extra as well.",
+  },
+  {
+    tag: "r215c",
+    title: "Populated Regions and Hunting",
+    type: "food",
+    desc: "If you hunt in a farmland hex, each time roll one die for a possible event, which occurs after the hunt is finished, but before the evening meal is eaten: 1, 2, 3, 4-nothing; 5-peasant mob in pursuit, see e017; 6-pursued by constabulary, see e050 add two (+2) to the die roll in that event.",
+    note: "Hunting is prohibited in any hex with a town, castle, or temple.",
+  },
+  {
+    tag: "r215d",
+    title: "Purchased Meals",
+    type: "food",
+    desc: "If you are in a town, castle, or village you can purchase food for each character in your party. Normal cost is 1 gold piece per character for food that day. Animals cost 1 gold piece per day to feed at the stables of the town/ castle/village. If you don’t purchase food, you must eat stores, as hunting is prohibited in these hexes.",
+  },
+  {
+    tag: "r215e",
+    title: "Food Stores",
+    type: "food",
+    desc: "Food units can be stored and transported (r206) by yourself, other characters, and/or mounts. Food stores can be purchased in a town, castle or village for 1 gold piece per food unit, but only if you spent the entire day in the hex. Each food unit is one (1), load to transport.",
+  },
+  {
+    tag: "r215f",
+    title: "Animal Fodder",
+    type: "food",
+    desc: "Animals can graze and eat fodder for themselves in any terrain where hunting is possible except swamps (i.e., in farmland, countryside, forest, or hills). No hunting, stores or purchases are necessary. If you spend the entire day in a town, castle or temple hex you must stable your animals which cost one (1) gold piece for food, unless you provide the stable with food stores (two units per animal) to feed them.",
   },
   {
     tag: "r216",
@@ -853,83 +838,56 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Follower Starvation (r216a)",
+        label: "Starvation Sections",
         rows: [
-          [
-            "Desertion check",
-            "Roll 2d6 per follower, subtract Wit & Wiles. Result 4+ = deserts.",
-          ],
-          [
-            "Withholding food",
-            "Cannot withhold from followers unless you also go without. If insufficient, either all go without or share equally.",
-          ],
-        ],
-      },
-      {
-        type: "simple-list",
-        label: "Character Starvation Effects (r216b)",
-        rows: [
-          [
-            "1 day without food",
-            "Next day: carry capacity halved (round down), combat skill -1",
-          ],
-          [
-            "2+ days without food",
-            "Each further day reduces capacity and skill again",
-          ],
-          [
-            "Recovery",
-            "Each normal meal eliminates effect of 1 starvation day; double meal eliminates 2 days",
-          ],
-          ["Limit", "A character cannot die of starvation within the game"],
-        ],
-      },
-      {
-        type: "simple-list",
-        label: "Mount Starvation (r216c)",
-        rows: [
-          ["Effect", "Carry capacity halved per starvation day"],
-          ["Death", "When carry capacity reaches zero, mount dies"],
-          ["Winged mount", "Unable to fly if starving"],
-          ["Recovery", "Fully recovers as soon as it receives a normal meal"],
+          ["r216a", "Follower Starvation"],
+          ["r216b", "Character Starvation Effects"],
+          ["r216c", "Mount Starvation"],
         ],
       },
     ],
   },
   {
-    tag: "r217",
-    title: "Lodging in Towns, Castles and Temples",
+    tag: "r216",
+    title: "Starvation",
     type: "food",
-    desc: "If your party finishes the day in a town, castle or temple hex, after eating you normally buy lodging. Each room costs 1 gold piece per night. Animals are placed in stables at 1 gold piece per mount.",
+    desc: "If you cannot provide food each day for characters or mounts, starvation will affect their loyalty and performance.",
     tables: [
       {
         type: "simple-list",
-        label: "Room Requirements",
+        label: "",
         rows: [
-          ["Barbarian Prince", "1 private room"],
-          [
-            "Priests, monks, magicians, wizards, witches",
-            "1 private room each",
-          ],
-          ["Other followers", "Can share, 2 per room"],
-          ["Mounts", "1 gold/mount for stabling"],
-        ],
-      },
-      {
-        type: "simple-list",
-        label: "Skipping Lodging",
-        rows: [
-          [
-            "Desertion check",
-            "Roll 2d6 per character, subtract Wit & Wiles. Result 4+ = deserts.",
-          ],
-          [
-            "Mount theft",
-            "Roll 1d6 per unstabled mount. Result 4+ = stolen permanently.",
-          ],
+          ["r216a", "Follower Starvation"],
+          ["r216b", "Character Starvation Effects"],
+          ["r216c", "Mount Starvation"],
         ],
       },
     ],
+  },
+  {
+    tag: "r216a",
+    title: "Follower Starvation",
+    type: "food",
+    desc: "If followers are not fed, they may desert. Roll two dice for each follower, and subtract your wit & wiles from the total. If the result is 4 or more the character deserts your party. Otherwise he stays and suffers from the character starvation effects (see r216b below). If you have food units, or money to purchase it (in a town, castle or temple) you cannot voluntarily withhold food from your followers unless you go without yourself as well. If there is insufficient food for all, either you withhold it from all (including yourself) or share out what is available to all (this prevents the effects of character starvation in r216b, but does not eliminate the risk of desertion described above).",
+  },
+  {
+    tag: "r216b",
+    title: "Character Starvation Effects",
+    type: "food",
+    desc: "If a character goes, without food for a day, on the following day his ability to carry loads (r206) is halved, with fractions rounded down, and his combat skill is reduced by one. If he goes without food again, load carrying and combat skill is reduced again. When food is available and eaten again, each day’s normal meal also eliminates the effect of one day of starvation. A double meal can be eaten to eliminate the effect of two days of starvation, but triple or larger meals have no additional effect. A character cannot die of starvation within the scope of the game, but after a certain point progressive starvation makes him nearly worthless!",
+  },
+  {
+    tag: "r216c",
+    title: "Mount Starvation",
+    type: "food",
+    desc: "If animals (mounts) in the party go without food, their carrying capacity is halved for each day of starvation, just like characters. When carrying capacity reaches zero, the mount dies. If a winged mount goes without food, it is unable to fly. Unlike characters, as soon as a mount gets a normal meal, it recovers from all starvation effects.",
+  },
+  {
+    tag: "r217",
+    title: "Lodging in Towns, Castles and Temples",
+    type: "food",
+    desc: "If your party finishes the day in a town, castle or temple hex, after eating you normally buy lodging for your party. Each room costs 1 gold piece for the night. You and any priests, monks, magicians, wizards, or witches in your party each require a single room. All other followers can share, two per room, if you wish. Animals are placed in stables at one gold piece per mount.",
+    note: "If you decide to not purchase rooms (due to lack of funds, or a desire to save money), you must roll two dice for each character in your party, and then subtract your wit & wiles from the result. If the total is “4” or more, the character deserts - he refuses to serve such a penurious leader! If a mount is without stables, roll one die for each mount, a 4 or higher means thieves steal the mount during the night, it is permanently lost.",
   },
   {
     tag: "r218",
@@ -939,74 +897,72 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Escape (r218a)",
+        label: "",
         rows: [
-          ["Direction", "Roll 1d6: 1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW"],
-          [
-            "Result",
-            "Party moves to that adjacent hex for the rest of the day. No new event for entering.",
-          ],
-          [
-            "River",
-            "Cannot escape across a river (re-roll), unless entire party has winged mounts.",
-          ],
-          ["Map edge", "Cannot escape off the map; re-roll."],
-        ],
-      },
-      {
-        type: "simple-list",
-        label: "Hiding (r218b)",
-        rows: [
-          [
-            "Location",
-            "Remain in the hex of the event for the rest of the day.",
-          ],
-          [
-            "Restrictions",
-            "No further travel or actions. Cannot hunt for food.",
-          ],
-          ["Mounts", "Can forage for fodder in eligible terrain while hiding."],
-          ["Lodging/Food", "Still eat (r215) and lodge (r217) normally."],
+          ["r218a", "Escape"],
+          ["r218b", "Hiding"],
         ],
       },
     ],
   },
   {
+    tag: "r218a",
+    title: "Escape",
+    type: "special",
+    desc: "When your party escapes, you move randomly to one of the six adjacent hexes. Roll one die to determine which direction to go: 1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW. Your party is now in that hex for the rest of the day. No new event occurs because you have entered that hex, but any events still pending must be determined, and after all event effects are resolved, you must eat for the day (r215). ",
+    note: "Escapes across a river are prohibited, roll again for another route. However, if your entire party has winged mounts able to fly, you can fly over the river and escape that way, do not roll again. Similarly, you cannot escape off the map, roll again for a different direction.",
+  },
+  {
+    tag: "r218b",
+    title: "Hiding",
+    type: "special",
+    desc: "Sometimes your party escapes an encounter by hiding. In this case, you remain in the hex of the event, but are hiding there for the rest of the day. No further travel is possible, nor can you do any other actions. You cannot hunt for food (r215) while hiding, but mounts can forage for their fodder (r215) in the right types of terrain. While in hiding you still eat (r215) and lodge (r217) normally in a town, castle or temple.",
+  },
+  {
     tag: "r219",
     title: "Following",
     type: "special",
-    desc: "In some events you may secretly follow or 'trail' encountered characters. Mounted characters require your party to be mounted to follow; winged flying characters require winged mounts.",
-    tables: [
-      {
-        type: "simple-list",
-        label: "Following Procedure",
-        rows: [
-          ["Direction", "Roll 1d6: 1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW"],
-          [
-            "Movement",
-            "Party moves to that hex; all remaining travel or actions for the day end.",
-          ],
-          [
-            "Next step",
-            "Consult the event that permitted following for what happens next.",
-          ],
-          [
-            "Second follow",
-            "Roll 1d6 again for direction if required to follow a second time.",
-          ],
-          [
-            "End of day",
-            "Must either attack (r306) or abandon the chase and make camp (r215).",
-          ],
-        ],
-      },
-    ],
+    desc: "In some events, you may secretly follow, or “trail” the characters you encounter. If you encounter mounted characters, your party must be mounted to follow; if you encountered winged, flying characters your party must have winged mounts to follow. When you follow, roll one die to determine which direction the chase will lead: 1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW. Your party moves to that hex during the day. All remaining normal travel or actions during the day are ended (even if uncompleted) because you are following instead. Next, consult the event that permitted following to see what happens next. This normally requires another die or dice roll.",
+    note: "Sometimes after you follow characters to one hex, you may be required to follow them again before the day ends. In this case, roll the die once more for direction. Unless events indicate otherwise, after a day following the characters you must either attack them in combat (r306) or leave them alone and abandon the chase in order to make your own camp and have your evening meal (r215).",
   },
   {
     tag: "r220",
     title: "Combat",
     type: "combat",
     desc: "Combat is fought in rounds and continues until one side escapes or is wiped out. At the start of each round, decide which of your characters faces each encountered character.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r220a", "Combat Procedure"],
+          ["r220b", "Selecting Opponents"],
+          ["r220c", "Strikes"],
+          ["r220d", "Surprise"],
+          ["r220e", "Escape"],
+          ["r220f", "Routs"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r220a",
+    title: "Combat Procedure",
+    type: "combat",
+    desc: "Combat is fought in rounds, and continues until one side escapes or is wiped out. At the start of each round, you decide which of your characters will face each character encountered. After the opponents are matched against each other, then all characters on one side strike, and results are applied, followed by all characters on the other side striking back, and results are applied. You and your characters may strike first or second each round, depending on the circumstances of the event.",
+  },
+  {
+    tag: "r220b",
+    title: "Selecting Opponents",
+    type: "combat",
+    desc: "Each character in your party is matched against one encountered character. Each should select a different enemy. If one side has extra characters, you decide which the extra face. They can all face one opponent, or each can face a different one, provided each character has at least one opponent to face.",
+  },
+  {
+    tag: "r220c",
+    title: "Strikes",
+    type: "combat",
+    desc: "When facing multiple opponents, a character can strike at only one each round, but can select which one to strike against. If two or more characters both face an opponent, both strike at him, but each strike is resolved separately. To resolve a strike, take the combat skill of the striker, and subtract from it the combat skill of the target character. If the target has better skill, the result will be a negative number. Next roll two dice, and add the result of the skill comparison to the dice roll. Finally, add or subtract any special modifiers that apply to the total. These special modifiers are:",
+    note: "Take the total that results, and consult the Combat Table (r220c). If one of the listed numbers has occurred, the target suffers the number of wounds indicated. If a number results that is not listed on the combat table, the strike missed and no wounds are inflicted. Example: A Dwarf (combat skill 6, endurance 7) strikes at the Barbarian Prince (combat skill 8, endurance 9) who has one wound. The Dwarf takes his 6 skill, subtracts the Prince’s 8, for “-2”, then rolls two dice and gets a “10”. No special modifiers apply, so the overall result is 8, which means one wound. The Prince now has two wounds, when it is his turn to strike back. The Prince rolls “7”, so his calculation is 8-6+7-1=8, and thus also inflicts one wound. Note that the two wounds of the Prince caused the “-1” special modifier to be applied.",
     tables: [
       {
         type: "simple-list",
@@ -1035,25 +991,25 @@ const ruleData: Rule[] = [
           ["Any other", "Miss — no wounds"],
         ],
       },
-      {
-        type: "simple-list",
-        label: "Special Combat Rules",
-        rows: [
-          [
-            "Surprise (r220d)",
-            "Surprised side gets one free bonus strike; then strikes first each round.",
-          ],
-          [
-            "Escape (r220e)",
-            "Instead of striking, roll 1d6. Result 4+ = successful escape (r218). Either all or none escape.",
-          ],
-          [
-            "Rout (r220f)",
-            "Each time you kill an enemy, roll 1d6. Result 6 = enemy routs and flees (no wealth taken). Characters with combat skill or endurance 9+ never rout.",
-          ],
-        ],
-      },
     ],
+  },
+  {
+    tag: "r220b",
+    title: "Surprise",
+    type: "combat",
+    desc: "If characters achieve surprise in combat, they are allowed one “free” bonus strike at the start of the combat. Then, when the first round starts, the characters with surprise strike first each round.",
+  },
+  {
+    tag: "r220e",
+    title: "Escape",
+    type: "combat",
+    desc: "In a round of battle, instead of striking with characters you may attempt to flee (escape) the battle. Either all or none escape, you cannot leave some behind. When an escape attempt occurs, none of your characters strike. Instead, roll one die. A “4” or higher result allows a successful escape; see r218. If anything else occurs, the battle continues. You can attempt to escape as often as you wish, until you finally succeed.",
+  },
+  {
+    tag: "r220f",
+    title: "Routs",
+    type: "combat",
+    desc: "You can attempt to frighten your enemy into running away from the combat, if you wish. Each time you kill one character in the enemy group, after you finish all strikes, you roll one die. If a “6” occurs the enemy routs, and the battle ends. All surviving enemy characters flee and disappear, so you can’t take their wealth. Otherwise, it is just as if you killed them all. Opposing characters with a combat skill or endurance of 9 or higher are never subject to rout, they will always fight to the death.",
   },
   {
     tag: "r221",
@@ -1066,15 +1022,15 @@ const ruleData: Rule[] = [
         label: "Wound Thresholds",
         rows: [
           [
-            "Serious Wound (r221a)",
+            "Serious Wound",
             "Wounds ≥ half endurance → combat strike modifiers apply",
           ],
           [
-            "Unconscious (r221b)",
+            "Unconscious",
             "Wounds = endurance − 1 → combat skill becomes 0, totally helpless",
           ],
           [
-            "Death (r221c)",
+            "Death",
             "Wounds ≥ endurance → character dies. If the Prince dies, game over.",
           ],
         ],
@@ -1216,7 +1172,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Trap Lock Results (1d6)",
-        cols: ["Roll", "Result"],
+        cols: ["🎲", "Result"],
         rows: [
           ["1", "Poison needle — inflicts 1 poisoned wound."],
           ["2", "Burning acid explodes — roll 1d6 for wounds suffered."],
@@ -1279,7 +1235,7 @@ const ruleData: Rule[] = [
       {
         type: "roll-table",
         label: "Raft Travel Events (2d6)",
-        cols: ["Roll", "Event"],
+        cols: ["🎲", "Event"],
         rows: [
           ["2", "e125"],
           ["3", "e126"],
@@ -1292,6 +1248,32 @@ const ruleData: Rule[] = [
           ["10", "e094"],
           ["11", "e091"],
           ["12", "e126"],
+        ],
+      },
+    ],
+  },
+  {
+    tag: "r231",
+    title: "Travelling Event References",
+    type: "reference",
+    desc: "When the Travel Table (r201) or an event references one of these numbers, find the appropriate number on the list, roll one die, and read across to get the appropriate event section.",
+  },
+  {
+    tag: "r232",
+    title: "Raft Travel Reference",
+    type: "reference",
+    tables: [
+      {
+        type: "roll-table",
+        label: "",
+        cols: ["🎲", "Event"],
+        rows: [
+          ["1", "e003"],
+          ["2", "e004"],
+          ["3", "e005"],
+          ["4", "e006"],
+          ["5", "e007"],
+          ["6", "e008"],
         ],
       },
     ],
@@ -1490,8 +1472,8 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Battle Reference (2d6)",
-        cols: ["Roll", "Section"],
+        label: "Roll (2d6)",
+        cols: ["🎲", "Section"],
         rows: [
           ["2 or less", "r310"],
           ["3", "r309"],
@@ -1512,12 +1494,13 @@ const ruleData: Rule[] = [
     tag: "r331",
     title: "Bribe to Join",
     type: "encounter",
-    desc: "Characters encountered are looking for easy money. They will join your party if you pay the gold requested. If paid and joined, they remain until you fail to give them an equal share of any new gold acquired (at least as much as you get yourself), or until any member of your party is abandoned or killed — at which point they immediately abandon your party.",
+    desc: "Characters encountered are looking for easy money. They will join your party if you pay the gold requested. If you don’t pay, roll one die:",
+    note: "If they are paid and do join, they will remain until you fail to give them an equal share of any new gold acquired (equal share is at least as much as you get yourself), or until any member of your party is abandoned or killed. If either of these happens, even if in the midst of combat, these unreliable mercenaries will immediately abandon your party and disappear!",
     tables: [
       {
         type: "roll-table",
-        label: "If You Don't Pay (1d6)",
-        cols: ["Roll", "Result"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Result"],
         rows: [
           ["1–3", "Characters ignore you and event ends."],
           ["4", "r321"],
@@ -1531,12 +1514,12 @@ const ruleData: Rule[] = [
     tag: "r332",
     title: "Bribe to Hire",
     type: "encounter",
-    desc: "Character(s) will hire as henchmen for 2 gold per day, provided you pay them the bonus in gold they request. Daily pay starts tomorrow. Characters remain as long as they are paid or until you abandon them. If more than one character is encountered, you must hire all or none as a group — the bonus is paid to the group as a whole. If you abandon one of the group, all will leave.",
+    desc: "Character(s) will hire as henchmen for 2 gold per day, provided you pay them the bonus in gold they request. Daily pay starts tomorrow. The characters will remain in your party as long as they are paid, or until you abandon them. If more than one character is encountered, you must hire all or none as a group. The bonus is paid to the group as a whole. If you abandon one of the group, all will leave, they only work as a group. If you don’t hire them, roll one die:",
     tables: [
       {
         type: "roll-table",
-        label: "If You Don't Hire (1d6)",
-        cols: ["Roll", "Result"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Result"],
         rows: [
           ["1–2", "Characters ignore you and event ends."],
           ["3", "r321"],
@@ -1551,12 +1534,12 @@ const ruleData: Rule[] = [
     tag: "r333",
     title: "Hirelings",
     type: "encounter",
-    desc: "Character(s) encountered need a job. They will hire on with your party at 2 gold per day, provided you pay today's wages right now. They remain as long as they are paid every day at the evening meal (r215). If more than one, you can hire some or all as desired.",
+    desc: "Character(s) encountered need a job! They will hire on with your party at 2 gold per day, provided you pay today’s wages right now. They will remain with your party as long as they are paid every day at the evening meal (r215). If there is more than one, you can hire some or all, as desired. If you don’t hire any of them, roll one die:",
     tables: [
       {
         type: "roll-table",
-        label: "If You Don't Hire Any (1d6)",
-        cols: ["Roll", "Result"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Result"],
         rows: [
           ["1–4", "r325"],
           ["5", "r326"],
@@ -1587,12 +1570,12 @@ const ruleData: Rule[] = [
     tag: "r337",
     title: "Plead Comrades",
     type: "encounter",
-    desc: "The character(s) encountered look unsavory but willing to talk — you try to convince them to join your party. Roll 1d6. If your Wit & Wiles exceeds the roll, they join as followers.",
+    desc: "The character(s) encountered look unsavory, but willing to talk - you try to convince them to join your party. Roll one die, if your wit & wiles exceed the roll, they join as followers. Otherwise, roll one die again:",
     tables: [
       {
         type: "roll-table",
-        label: "If You Fail to Convince (1d6)",
-        cols: ["Roll", "Result"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Result"],
         rows: [
           ["1", "r325"],
           ["2", "r330"],
@@ -1613,12 +1596,12 @@ const ruleData: Rule[] = [
     tag: "r339",
     title: "Convince Hirelings",
     type: "encounter",
-    desc: "Character(s) encountered look askance at you and will pass you by (event ends) unless you stop to talk. If you stop to talk, roll 1d6. If your Wit & Wiles exceeds the die roll, they join at 2 gold per day with today's pay due right now. You can hire some instead of all if desired.",
+    desc: "Character(s) encountered look askance at you, and will pass you by (event ends) unless you stop to talk. If you stop to talk, you decide you should convince them to join your party as henchmen. Roll one die; if your wit & wiles exceeds the die roll, they will join at 2 gold pieces per day, with today’s pay due right now. You can hire some instead of all if you desire. If you stopped to talk, but failed to convince them to join as hirelings, roll one die to determine their attitude:",
     tables: [
       {
         type: "roll-table",
-        label: "If You Stopped to Talk but Failed (1d6)",
-        cols: ["Roll", "Result"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Result"],
         rows: [
           ["1–3", "r325"],
           ["4–6", "r330"],
@@ -1630,12 +1613,12 @@ const ruleData: Rule[] = [
     tag: "r340",
     title: "Looter",
     type: "encounter",
-    desc: "Character(s) encountered look like they are in need of money. You can let them pass (encounter ends) or try to convince them to join you. If you try, roll 1d6. If your Wit & Wiles equals or exceeds the die roll, they join your party and remain as long as each gets an equal share of any new gold acquired (at least as much as you get yourself).",
+    desc: "Character(s) encountered look like they are in need of money. You can let them pass (encounter ends) or try to convince them to join you. If you try to convince them, roll one die. If your wit & wiles equals or exceeds the die roll, they will join your party. They will remain as long as they get an equal share in any new gold you acquire (i.e., each gets as least as much as you). If you deny them their share, it is as if you failed to convince them to join, see below. If you fail to convince them to join (or later deny them an equal share in gold) they may become hostile, roll one die:",
     tables: [
       {
         type: "roll-table",
-        label: "If You Fail to Convince (or Later Deny Their Share) (1d6)",
-        cols: ["Roll", "Result"],
+        label: "Roll (1d6)",
+        cols: ["🎲", "Result"],
         rows: [
           [
             "1–2",
@@ -1654,12 +1637,12 @@ const ruleData: Rule[] = [
     tag: "r341",
     title: "Conversation",
     type: "encounter",
-    desc: "In an extended period of talking, you gradually discover the interests and attitudes of the character(s) encountered. This takes a good deal of time — you cannot travel any further today and any other unfinished daily actions cannot be completed. Roll 2d6 for the results of the talk.",
+    desc: "In an extended period of talking, you gradually discover the interests and attitudes of the character(s) you encountered. This takes a good deal of time, you cannot travel any further today, and any other daily actions unfinished cannot be completed either. For the results of the talk, roll two dice:",
     tables: [
       {
         type: "roll-table",
-        label: "Conversation Results (2d6)",
-        cols: ["Roll", "Result"],
+        label: "Roll (2d6)",
+        cols: ["🎲", "Result"],
         rows: [
           [
             "2",
@@ -1692,12 +1675,12 @@ const ruleData: Rule[] = [
     tag: "r342",
     title: "General Inquiry",
     type: "encounter",
-    desc: "You are unsure of attitudes and make some general inquiries to determine what these encountered characters seem interested in. Roll 2d6.",
+    desc: "You are unsure of attitudes, and make some general inquiries to determine what these encountered characters seem interested in. Roll two dice:",
     tables: [
       {
         type: "roll-table",
-        label: "General Inquiry Results (2d6)",
-        cols: ["Roll", "Result"],
+        label: "Roll (2d6)",
+        cols: ["🎲", "Result"],
         rows: [
           ["2", "You unwittingly give insult; see r309."],
           ["3", "You are forced into combat unwillingly; see r330."],

@@ -23,7 +23,7 @@ function RuleDetail() {
   if (!rule) return null;
 
   return (
-    <Card title={rule.title} tag={rule.tag}>
+    <Card title={rule.title}>
       {rule.type && <Badge text={rule.type} icon={rule.type} />}
 
       {rule.desc && <p>{parseLinks(rule.desc as string)}</p>}

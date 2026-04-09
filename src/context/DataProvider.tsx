@@ -36,8 +36,8 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
       value={{
         edition,
         setEdition,
-        eventData: eventDataMap[edition],
-        ruleData: ruleDataMap[edition],
+        eventData: eventDataMap[edition] ?? [],
+        ruleData: ruleDataMap[edition] ?? [],
       }}
     >
       {children}

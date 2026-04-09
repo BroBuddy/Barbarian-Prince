@@ -3437,7 +3437,6 @@ const eventData: Event[] = [
     type: "event",
     desc: "A cart driver asks your party for help unloading and loading crates tomorrow. If you agree to help, then postpone the remainder of this event until tomorrow, when this will count as your daily action. You finish just in time for the evening meal (r215); before leaving, the cart driver gives you gold as thanks, and heads out onto the road. Roll 1d6 for the total payment: 1: wc7; 2–3: wc10; 4–5: wc15; 6: wc21.",
   },
-
   {
     tag: "e200",
     title: "Shadows of the North",

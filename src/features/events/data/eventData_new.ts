@@ -59,7 +59,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Negotiate", "Evade*", "Fight"],
+        cols: ["🎲", "Negotiate", "Evade*", "Fight"],
         rows: [
           ["1", "pass r327", "attacked r307", "surprise r300"],
           ["2", "pass r328", "attack r306", "surprise r301"],
@@ -82,7 +82,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade**", "Fight"],
+        cols: ["🎲", "Talk*", "Evade**", "Fight"],
         rows: [
           ["1", "ally r334", "escape mounted r312", "surprise r303"],
           ["2", "converse r341", "escape r315", "attack r304"],
@@ -105,7 +105,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade**", "Fight"],
+        cols: ["🎲", "Talk*", "Evade**", "Fight"],
         rows: [
           ["1", "conversation r341", "hide r319", "surprise r301"],
           ["2", "bribe to hire (20) r332", "pass r328", "surprise r302"],
@@ -128,7 +128,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade**", "Fight"],
+        cols: ["🎲", "Talk*", "Evade**", "Fight"],
         rows: [
           ["1", "conversation r341", "escape r311", "surprise r302"],
           ["2", "hirelings r338", "escape r314", "surprise r303"],
@@ -162,7 +162,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6, +1 if alone)",
-        cols: ["Roll", "Talk*", "Evade**", "Fight"],
+        cols: ["🎲", "Talk*", "Evade**", "Fight"],
         rows: [
           ["1", "surprised r308", "bribe (5) r322", "surprised r308"],
           ["2", "bribe to hire (10) r332", "pass r328", "attacked r306"],
@@ -214,7 +214,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6, +2 in forest)",
-        cols: ["Roll", "Talk", "Evade**", "Fight"],
+        cols: ["🎲", "Talk", "Evade**", "Fight"],
         rows: [
           ["1", "inquiry r342", "hide r317", "surprise r302"],
           ["2", "conversation r341", "hide r318", "attack r305"],
@@ -456,7 +456,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Fight"],
+        cols: ["🎲", "Talk*", "Fight"],
         rows: [
           ["1", "plead comrades r336", "surprise r301"],
           ["2", "plead comrades r336", "surprise r303"],
@@ -479,7 +479,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade", "Fight"],
+        cols: ["🎲", "Talk*", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "pass r325", "attack r305"],
           ["2", "conversation r341", "pass r325", "attack r305"],
@@ -501,7 +501,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade", "Fight"],
+        cols: ["🎲", "Talk*", "Evade", "Fight"],
         rows: [
           ["1", "conversation r341", "pass r325", "surprise r302"],
           ["2", "conversation r341", "pass r325", "attack r304"],
@@ -524,7 +524,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk", "Evade*", "Fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "conversation r341", "pass r325", "surprise r301"],
           ["2", "inquiry r342", "hide r317", "surprise r302"],
@@ -556,7 +556,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Fight**"],
+        cols: ["🎲", "Talk*", "Fight**"],
         rows: [
           ["1", "plead comrades r336", "surprise r301"],
           ["2", "plead comrades r336", "surprise r303"],
@@ -579,7 +579,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade", "Fight"],
+        cols: ["🎲", "Talk*", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "pass r325", "attack r305"],
           ["2", "inquiry r342", "pass r325", "attacked r306"],
@@ -1013,7 +1013,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk", "Evade*", "Fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "surprised r308", "attacked r306", "surprised r308"],
           ["2", "**attacked r306", "hide r320", "**attacked r307"],
@@ -1124,7 +1124,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk", "Evade*", "Fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape r311", "surprise r302"],
           ["2", "bribe-join (30) r331", "escape r314", "surprise r303"],
@@ -1425,7 +1425,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade**", "Fight"],
+        cols: ["🎲", "Talk*", "Evade**", "Fight"],
         rows: [
           ["0", "follow – see note", "pass r325", "surprise r301"],
           ["1", "inquiry r342", "escape-fly r313", "surprise r302"],
@@ -1561,7 +1561,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk", "Evade*", "Fight"],
+        cols: ["🎲", "Talk", "Evade*", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape mounted r312", "surprise r302"],
           ["2", "pass r327", "escape mounted r312", "attack r305"],
@@ -1821,7 +1821,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6, +2 in lair)",
-        cols: ["Roll", "Talk", "Evade", "Fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "**pass r329", "escape flying r313", "surprise r302"],
           ["2", "**pass r329", "escape r315", "surprise r303"],
@@ -1845,7 +1845,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Evade", "Fight"],
+        cols: ["🎲", "Evade", "Fight"],
         rows: [
           ["1", "escape flying r313", "surprise r301"],
           ["2", "escape flying r313", "surprise r303"],
@@ -1868,7 +1868,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk**", "Evade", "Fight"],
+        cols: ["🎲", "Talk**", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape-fly r313", "surprise r303"],
           ["2", "plead comrades r337", "escape r315", "attack r305"],
@@ -1891,7 +1891,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade", "Fight"],
+        cols: ["🎲", "Talk*", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape-fly r313", "surprise r302"],
           ["2", "pass r329", "pass r325", "attack r304"],
@@ -2005,7 +2005,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Evade", "Follow*", "Fight"],
+        cols: ["🎲", "Evade", "Follow*", "Fight"],
         rows: [
           ["1", "pass r325", "ambush e113", "attack r304"],
           ["2", "pass r325", "hunt e114", "attacked r305"],
@@ -2124,7 +2124,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "",
-        cols: ["Roll", "Talk", "Evade", "Fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "escape flying r313", "surprise r301"],
           ["2", "plead comrades r337", "escape mounted r312", "surprise r302"],
@@ -2372,7 +2372,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk", "Evade", "Fight"],
+        cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "pass r327", "escape mounted r312", "surprise r303"],
           ["2", "pass r329", "escape r314", "attack r305"],
@@ -3180,7 +3180,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk", "Evade**", "Fight"],
+        cols: ["🎲", "Talk", "Evade**", "Fight"],
         rows: [
           ["1", "conversation r341", "escape r311", "surprise r302"],
           ["2", "conversation r341", "escape r314", "surprise r303"],
@@ -3724,7 +3724,7 @@ const eventData: Event[] = [
     tag: "e200",
     title: "The Shade of King Hendryc",
     type: "story",
-    image: true,
+    image: false,
     desc: "(Ψ) The ghostly apparition of an old King appears before you but with shock you realise that the shade is actually your poor dead father reaching out from beyond the grave. Although overcome with grief your heart is strengthened with his wisdom. Before fading back into the shadows King Hendryc enchants your faithful broadsword Bonebiter so that it is now magical (e186). He also shares some ancient knowledge — roll 1D6.",
     tables: [
       {
@@ -4370,7 +4370,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6, +1 if elf in party)",
-        cols: ["Roll", "Talk*", "Evade", "Fight"],
+        cols: ["🎲", "Talk*", "Evade", "Fight"],
         rows: [
           ["1", "surprised r308", "escape mtd r312", "surprised r308"],
           ["2", "attacked r306", "pass r328", "attacked r306"],
@@ -4393,7 +4393,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Evade*", "Fight"],
+        cols: ["🎲", "Evade*", "Fight"],
         rows: [
           ["0–1", "surprise r303", "surprise r300"],
           ["2", "attack r306", "surprise r301"],
@@ -4424,7 +4424,7 @@ const eventData: Event[] = [
       {
         type: "roll-table",
         label: "Encounter Options (1D6)",
-        cols: ["Roll", "Talk*", "Evade**", "Fight"],
+        cols: ["🎲", "Talk*", "Evade**", "Fight"],
         rows: [
           ["1", "conversation r341", "escape r311", "surprise r302"],
           ["2", "hirelings r338", "escape r314", "surprise r303"],

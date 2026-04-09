@@ -1,0 +1,1 @@
+import{t as e}from"./rule-CsVpohQg.js";export{e as default};

@@ -65,7 +65,6 @@ function MapPage() {
 
       <div
         ref={containerRef}
-        className="bg-black"
         style={{
           flex: 1,
           overflow: "auto",

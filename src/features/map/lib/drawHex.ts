@@ -11,6 +11,8 @@ interface DrawHexType {
 export function drawHex({ ctx, x, y, size, img, label, rotate }: DrawHexType) {
   const w = 2 * size;
   const h = Math.sqrt(3) * size;
+  const textColor = "#000";
+  const fillColor = "#fff";
 
   ctx.save();
   ctx.beginPath();
@@ -49,7 +51,7 @@ export function drawHex({ ctx, x, y, size, img, label, rotate }: DrawHexType) {
     ctx.font = `bold ${size * 0.3}px sans-serif`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = textColor;
     ctx.lineWidth = 3;
 
     const words = label.split(" ");
@@ -68,7 +70,7 @@ export function drawHex({ ctx, x, y, size, img, label, rotate }: DrawHexType) {
     for (const [i, line] of lines.entries()) {
       const lineY = startY + i * lineHeight;
       ctx.strokeText(line, x + size, lineY);
-      ctx.fillStyle = "white";
+      ctx.fillStyle = fillColor;
       ctx.fillText(line, x + size, lineY);
     }
 

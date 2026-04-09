@@ -1814,7 +1814,7 @@ const eventData: Event[] = [
     tag: "e098",
     title: "Dragon",
     type: "encounter",
-    image: false,
+    image: true,
     desc: "You encounter an enormous winged fire-breathing dragon (†S12, E12). Roll 1D6: on 1–2 you have found the dragon in its lair [Site] with wealth 110 and wealth 60; on 3–6 it has only wealth 30. Add +2 to encounter roll if in the dragon's lair.",
     note: "In combat (r220): cannot escape (r218). Before combat starts: roll 1D6 for each other party member — on 1 they flee in fear and desert you (unless a lover, r228). If dragon killed: a dragon's eye is valued by high priests and may help gain an audience. Worth 20 gold each, counts as 1 load (r206), can be sold to any merchant or in any town/castle/temple. Asleep: may attack (r303), escape (r218) or try to steal treasure — roll 1D6: if exceeds W&W dragon awakes (r306); if equal cannot get any but may try again; if less than W&W steal Wealth 25. On talk roll of 1: if dragon amused by your charm it gives you a clue (e147).",
     tables: [
@@ -1838,7 +1838,7 @@ const eventData: Event[] = [
     tag: "e099",
     title: "Roc",
     type: "encounter",
-    image: false,
+    image: true,
     desc: "You encounter a roc (†S10, E8), a gigantic bird that swoops down on your party. May choose to evade, fight or attempt to tame it. To tame: sacrifice 4 food units or a mount as bait, then roll 1D6 and add W&W (+2 if wizard/magician/druid/witch in party).",
     note: "Taming result: 2–8 roc attacks (r306); 9–10 roc grabs food and flies away; 11+ roc is tamed and acts as a mount for up to 2 characters but will not enter any habitation hex. May forage for food at night and does not require normal food. If roc killed: may cut off its beak as a trophy (1 load, r206). Count Drogat especially prizes it and may help gain an audience. Beak worth 35 gold and can be sold to any merchant or in any town/castle/temple.",
     tables: [
@@ -1861,7 +1861,7 @@ const eventData: Event[] = [
     tag: "e100",
     title: "Griffon",
     type: "npc",
-    image: false,
+    image: true,
     desc: "You meet a winged griffon (†S8, E6, W12). The griffon is intelligent and could serve as both a party member and a winged mount. However griffons are normally quite independent and ferocious and this one looks especially unfriendly.",
     note: "After choosing your option: roll 1D6 — on 6 the griffon has a mate nearby (identical stats) who joins for your encounter. If joined: adds +1 to hunting score and can feed itself without using your food stores (r215). Will leave if you enter any habitation hex. If griffon killed: may remove its claws as a trophy (1 load). Especially valued by Lady Aeravir of Aeravir Castle and may help gain an audience. Claws worth 25 gold and can be sold to any merchant or in any town/castle/temple.",
     tables: [
@@ -1884,7 +1884,7 @@ const eventData: Event[] = [
     tag: "e101",
     title: "Harpies",
     type: "npc",
-    image: false,
+    image: true,
     desc: "You encounter harpies, bird-women each with S5 (S6 when defending against an attack), E4, W4. Roll 1D6 for number encountered: 1–3→1; 4–5→2; 6→3.",
     note: "Cannot choose Talk option if you have a priest/monk/elf/halfling in your party unless dismissed. If harpies join: their wings allow airborne travel without a winged mount and they travel like a normal mount. If entering a habitation: roll 1D6 before evening meal — on 1–4 see e017 and cannot stay unless you dismiss the harpies.",
     tables: [

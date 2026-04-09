@@ -12,7 +12,7 @@ function SheetPage() {
   return (
     <>
       <Card title="Booklets">
-        <div className="flex flex-col my-2 pt-1 gap-7">
+        <div className="flex flex-col my-1 pt-2 gap-8">
           <Link to="/rule">
             <span className="m-2 text-red w-4">Rxxx</span>
             <span className="my-2 text-black">Rules</span>

@@ -15,7 +15,9 @@ function EventPage() {
         {events.map((item) => {
           return (
             <div key={item.tag} className="mx-2 w-4">
-              <Link to={`/event/${item.tag}`}>{item.tag.toUpperCase()}</Link>
+              <Link to={`/event/${item.tag}`} className="text-purple">
+                {item.tag.toUpperCase()}
+              </Link>
             </div>
           );
         })}

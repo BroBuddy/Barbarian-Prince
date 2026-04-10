@@ -1,13 +1,21 @@
 type TokenButtonProps = {
   label: number | string;
-  isActive: boolean;
+  isActive?: boolean;
   color: string;
+  disabled?: boolean;
   onClick: () => void;
 };
 
-const TokenButton = ({ label, isActive, color, onClick }: TokenButtonProps) => (
+const TokenButton = ({
+  label,
+  isActive,
+  color,
+  disabled,
+  onClick,
+}: TokenButtonProps) => (
   <button
     onClick={onClick}
+    disabled={disabled}
     style={{
       minWidth: 30,
       height: 30,
@@ -18,7 +26,8 @@ const TokenButton = ({ label, isActive, color, onClick }: TokenButtonProps) => (
       color: isActive ? "#fff" : color,
       fontSize: 11,
       fontWeight: "bold",
-      cursor: "pointer",
+      cursor: disabled ? "not-allowed" : "pointer",
+      opacity: disabled ? 0.35 : 1,
     }}
   >
     {label}

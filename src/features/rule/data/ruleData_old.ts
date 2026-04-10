@@ -202,7 +202,7 @@ const ruleData: Rule[] = [
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e009", "e009", "e009", "e009", "e009", "e009"],
@@ -227,7 +227,7 @@ const ruleData: Rule[] = [
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e003", "e004", "e005", "e006", "e007", "e008"],
@@ -252,7 +252,7 @@ const ruleData: Rule[] = [
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e003", "e004", "e005", "e006", "e007", "e008"],
@@ -277,7 +277,7 @@ const ruleData: Rule[] = [
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e003", "e004", "e005", "e006", "e007", "e008"],
@@ -302,7 +302,7 @@ const ruleData: Rule[] = [
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e003", "e004", "e005", "e006", "e007", "e008"],
@@ -327,7 +327,7 @@ const ruleData: Rule[] = [
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e003", "e004", "e005", "e006", "e007", "e008"],
@@ -352,7 +352,7 @@ const ruleData: Rule[] = [
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e022", "e129", "e128", "e051", "e023", "e068"],
@@ -373,11 +373,11 @@ const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: Never"], ["Event: 9+"], ["Hunt: -"], ["Fodder: -"]],
+        rows: [["Lost: Never"], ["Event: 9+"], ["Hunt: ❌"], ["Fodder: ❌"]],
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e018", "e022", "e023", "e073", "e009", "e009"],
@@ -398,11 +398,11 @@ const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 12+"], ["Event: 10+"], ["Hunt: -"], ["Fodder: -"]],
+        rows: [["Lost: 12+"], ["Event: 10+"], ["Hunt: ❌"], ["Fodder: ❌"]],
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e102", "e102", "e103", "e103", "e104", "e104"],
@@ -423,11 +423,11 @@ const ruleData: Rule[] = [
       {
         type: "simple-list",
         label: "",
-        rows: [["Lost: 8+"], ["Event: 10+"], ["Hunt: -"], ["Fodder: -"]],
+        rows: [["Lost: 8+"], ["Event: 10+"], ["Hunt: ❌"], ["Fodder: ❌"]],
       },
       {
         type: "roll-table",
-        label: "Roll Twice (1d6)",
+        label: "Matrix (6x6)",
         cols: ["1", "2", "3", "4", "5", "6"],
         rows: [
           ["e003", "e004", "e005", "e006", "e007", "e008"],
@@ -474,7 +474,7 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "News & Information (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "No news of note, nothing seems to be happening."],
@@ -524,7 +524,7 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Hire Followers (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           [
@@ -563,12 +563,31 @@ const ruleData: Rule[] = [
   {
     tag: "r211",
     title: "Seeking an Audience with the Local Lord",
-    type: "action",
+    type: "encounter",
     desc: "Spend the day trying to gain admission to the hall or court for an interview with the town mayor, high priest, or castle lord. Roll 2d6 and consult the appropriate table.",
     tables: [
       {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r211a", "Audience at any Town"],
+          ["r211b", "Audience at any Temple"],
+          ["r211c", "Audience with Baron of Huldra Castle"],
+          ["r211d", "Audience with Count Drogat of Drogat Castle"],
+          ["r211e", "Audience with Lady Aeravir of Aeravir Castle"],
+        ],
+      },
+    ],
+    note: "Temple modifier: +1 if party includes priests or monks. -2 if party includes magicians, wizards, or witches (or dismiss them first). Huldra Castle modifier: +1 if you dismiss any wizard, magician, or witch to take service with the Baron.",
+  },
+  {
+    tag: "r211a",
+    title: "Audience at any Town",
+    type: "encounter",
+    tables: [
+      {
         type: "roll-table",
-        label: "Audience at any Town (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "Grievously insult the town council; e062."],
@@ -581,9 +600,16 @@ const ruleData: Rule[] = [
           ["12", "Audience permitted; e156."],
         ],
       },
+    ],
+  },
+  {
+    tag: "r211b",
+    title: "Audience at any Temple",
+    type: "encounter",
+    tables: [
       {
         type: "roll-table",
-        label: "Audience at any Temple (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "Anger temple guards; e063."],
@@ -601,9 +627,16 @@ const ruleData: Rule[] = [
           ["11+", "Audience permitted; e155."],
         ],
       },
+    ],
+  },
+  {
+    tag: "r211c",
+    title: "Audience with Baron of Huldra Castle",
+    type: "encounter",
+    tables: [
       {
         type: "roll-table",
-        label: "Audience with Baron of Huldra Castle (1212) (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "Audience permanently refused, cannot try again."],
@@ -618,9 +651,16 @@ const ruleData: Rule[] = [
           ["13+", "Baron becomes your Noble ally; e152."],
         ],
       },
+    ],
+  },
+  {
+    tag: "r211d",
+    title: "Audience with Count Drogat of Drogat Castle",
+    type: "encounter",
+    tables: [
       {
         type: "roll-table",
-        label: "Audience with Count Drogat of Drogat Castle (0323) (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "You are the Count's next victim; e061."],
@@ -638,9 +678,16 @@ const ruleData: Rule[] = [
           ["11+", "Audience granted with Count; e161."],
         ],
       },
+    ],
+  },
+  {
+    tag: "r211e",
+    title: "Audience with Lady Aeravir of Aeravir Castle",
+    type: "encounter",
+    tables: [
       {
         type: "roll-table",
-        label: "Audience with Lady Aeravir of Aeravir Castle (1923) (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["2", "You insult the Lady's dignity; arrested e060."],
@@ -660,7 +707,6 @@ const ruleData: Rule[] = [
         ],
       },
     ],
-    note: "Temple modifier: +1 if party includes priests or monks. -2 if party includes magicians, wizards, or witches (or dismiss them first). Huldra Castle modifier: +1 if you dismiss any wizard, magician, or witch to take service with the Baron.",
   },
   {
     tag: "r212",
@@ -670,7 +716,7 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Temple Offering (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Result"],
         rows: [
           [
@@ -757,7 +803,7 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Recovering a Cache (1d6)",
+        label: "ROll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["1–4", "Cache found intact; recover all items placed there."],
@@ -829,23 +875,6 @@ const ruleData: Rule[] = [
     title: "Animal Fodder",
     type: "food",
     desc: "Animals can graze and eat fodder for themselves in any terrain where hunting is possible except swamps (i.e., in farmland, countryside, forest, or hills). No hunting, stores or purchases are necessary. If you spend the entire day in a town, castle or temple hex you must stable your animals which cost one (1) gold piece for food, unless you provide the stable with food stores (two units per animal) to feed them.",
-  },
-  {
-    tag: "r216",
-    title: "Starvation",
-    type: "food",
-    desc: "If you cannot provide food each day for characters or mounts, starvation will affect their loyalty and performance.",
-    tables: [
-      {
-        type: "simple-list",
-        label: "Starvation Sections",
-        rows: [
-          ["r216a", "Follower Starvation"],
-          ["r216b", "Character Starvation Effects"],
-          ["r216c", "Mount Starvation"],
-        ],
-      },
-    ],
   },
   {
     tag: "r216",
@@ -1171,7 +1200,7 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Trap Lock Results (1d6)",
+        label: "Roll (1d6)",
         cols: ["🎲", "Result"],
         rows: [
           ["1", "Poison needle — inflicts 1 poisoned wound."],
@@ -1234,7 +1263,7 @@ const ruleData: Rule[] = [
     tables: [
       {
         type: "roll-table",
-        label: "Raft Travel Events (2d6)",
+        label: "Roll (2d6)",
         cols: ["🎲", "Event"],
         rows: [
           ["2", "e125"],
@@ -1556,7 +1585,7 @@ const ruleData: Rule[] = [
   },
   {
     tag: "r335",
-    title: "Escapee",
+    title: "Escape",
     type: "encounter",
     desc: "Character(s) encountered are fleeing someone. They will join your party if you permit it at no cost to you (other than food and lodging), but will disappear whenever you enter any town, castle or temple hex.",
   },

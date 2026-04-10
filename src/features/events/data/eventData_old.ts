@@ -73,7 +73,7 @@ const eventData: Event[] = [
   {
     tag: "e004",
     title: "Mercenary Band",
-    type: "combat",
+    type: "npc",
     image: true,
     desc: "You observe a small band of mercenaries approaching. The leader is mounted on a horse, with combat skill 6, endurance 6, wealth 50. Roll one die for the number of men with him, each having combat skill 5, endurance 4, wealth 4. Troopers are mounted if there are one or two, on foot otherwise.",
     note: "If your party has any mounts, add one (+1) to your die roll for the evade option, results higher than 6 are considered 6. If your party all have winged mounts and/or flying ability, you can use a flying escape (r313) instead.",
@@ -136,7 +136,7 @@ const eventData: Event[] = [
       },
       {
         type: "roll-table",
-        label: "Options (add +1 if Dwarf is alone)",
+        label: "Roll (1d6 — add +1 if Dwarf is alone)",
         cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "surprised r308", "bribe (5) r322", "surprised r308"],
@@ -175,7 +175,7 @@ const eventData: Event[] = [
       },
       {
         type: "roll-table",
-        label: "Options",
+        label: "Roll (1d6)",
         cols: ["🎲", "Talk", "Evade", "Fight"],
         rows: [
           ["1", "inquiry r342", "hide r317", "surprise r302"],
@@ -199,7 +199,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Talk result (1d6)",
+        label: "Roll (1d6)",
         rows: [
           [
             "1",
@@ -225,17 +225,17 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Farm type (2d6)",
+        label: "Roll (2d6)",
         rows: [
-          ["2-3", "e012 — Farmer with Protector"],
-          ["4", "e011 — Peaceful Farmer"],
-          ["5", "e014 — Hostile Reaver Clan"],
-          ["6", "e010 — Starving Farmer"],
-          ["7", "e011 — Peaceful Farmer"],
-          ["8", "e013 — Rich Peasant Family"],
-          ["9", "e015 — Friendly Reaver Clan"],
-          ["10", "e012 — Farmer with Protector"],
-          ["11-12", "e016 — Magician's Home"],
+          ["2-3", "e012"],
+          ["4", "e011"],
+          ["5", "e014"],
+          ["6", "e010"],
+          ["7", "e011"],
+          ["8", "e013"],
+          ["9", "e015"],
+          ["10", "e012"],
+          ["11-12", "e016"],
         ],
       },
     ],
@@ -245,47 +245,155 @@ const eventData: Event[] = [
     title: "Starving Farmer",
     type: "location",
     image: true,
-    desc: "Friendly Approach: farmer had a ruined harvest, his family is now starving. He begs the charity of 5 food units from you. If you refuse this although you have them, all your followers are disgusted — roll one die for each at the start of tomorrow, a 3 or higher means that follower deserts you. If you grant the charity, or don't have 5 food units, there is no special event and the encounter ends. Ratag: farmer and his family are quickly killed, no combat necessary, but you find he was poor and starving — no food or money are gained.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          [
+            "Friendly Approach",
+            "Farmer had a ruined harvest, his family is now starving. He begs the charity of 5 food units from you. If you refuse this although you have them, all your followers are disgusted by your evil temper, roll one die for each at the start of tomorrow, a 3 or higher means that follower deserts you. If you grant the charity, or don’t have 5 food units, there is no special event and the encounter ends.",
+          ],
+          [
+            "Raid",
+            "Farmer and his family are quickly killed, no combat is necessary, but you find he was poor and starving, no food or money are gained.",
+          ],
+        ],
+      },
+    ],
   },
   {
     tag: "e011",
     title: "Peaceful Farmer",
     type: "location",
     image: true,
-    desc: "Friendly Approach: farmer is generous, provides food and lodging for your entire party tonight at no cost. Tomorrow morning, he will sell you food units at the rate of 4 units per gold piece, and will sell as much as you wish to buy. Finally, when you leave the hex, roll one die — if the result is 6 the farmer's youngest son joins you for the adventurous life. He is combat skill 3, endurance 4, wealth 0, and can act as a guide within two hexes of the location of the farm. Ratag: farmer and his family fight back. Together they count as combat skill 4, endurance 7, wealth 1, see r330 for combat situation. If you kill them all, you gain four times (4x) one die roll in food units as plunder.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          [
+            "Friendly Approach",
+            "Farmer is generous, provides food and lodging for your entire party tonight at no cost. Tomorrow morning, he will sell you food units at the rate of 4 units per gold piece, and will sell as much as you wish to buy. Finally, when you finally leave the hex, roll one die, if the result is 6 the farmer’s youngest son joins you for the adventurous life. He is combat skill 3, endurance 4, wealth 0, and can act as a guide within two hexes of the location of the farm.",
+          ],
+          [
+            "Raid",
+            "Farmer and his family fight back. Together they count as combat skill 4, endurance 7, wealth 1, see r330 for combat situation. If you kill them all, you gain four times (4x) one die roll in food units as plunder.",
+          ],
+        ],
+      },
+    ],
   },
   {
     tag: "e012",
     title: "Farmer with Protector",
     type: "location",
-    desc: "Friendly Approach: farmer warns you off his land, but will sell you food at 2 units per gold piece, in any quantity you desire. Regardless of whether you buy or not, the event will then end. Ratag: farmer and his family bolt doors and send smoke signals. Farmer and family count as combat skill 4, endurance 7, wealth 2 — your party strikes first (r220). After each round roll one die — a 3 or higher means the Protector arrives with his men and strikes first on the next round. The Protector is combat skill 6, endurance 5, wealth 25; his four men are each combat skill 5, endurance 5, wealth 4. If you kill all opponents, find the farmer's hidden treasure — see e040.",
+    note: "If you kill all your opponents in the raid, you can find the treasure the farmer tried to hide, see e040.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          [
+            "Friendly Approach",
+            "Farmer warns you off his land, but will sell you food at 2 units per gold piece, in any quantity you desire. Regardless of whether you buy or not, the event will then end and you continue on your way.",
+          ],
+          [
+            "Raid",
+            "Farmer and his family bolt doors and send smoke signals, Farmer and family count combat skill 4, endurance 7, wealth 2 in combat (r220) where your party strikes first. However, after each round roll one die, a “3” or higher means the Protector arrives with his men. If they arrive, on the next round they strike first. They are five men strong, the Protector himself is combat skill 6, endurance 5, wealth 25, and his four men each are combat skill 5, endurance 5, wealth 4.",
+          ],
+        ],
+      },
+    ],
   },
   {
     tag: "e013",
     title: "Rich Peasant Family",
     type: "location",
     image: true,
-    desc: "Friendly Approach: family provides food and lodging as if you are in town (see r215 and r217 for costs), with the same penalties if you refuse to pay. Family may have stables — roll one die, result of 4 or more means they do. If they have stables, roll again for number of horses available for sale, then roll one die and double it for the price per horse. They also sell food at 2 food units per gold piece, unlimited. Ratag: family has four retainers (CS 4, End 4, Wealth 1 each). Fight them (r306), then if you win fight the family itself (r305; overall CS 5, End 6, Wealth 30). If you kill everyone, gain six times (6x) one die roll in food units as bonus plunder.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          [
+            "Friendly Approach",
+            "Family provides food and lodging as if you are in town (see r215 food and r217 lodging for costs), with the same penalties if you refuse to pay. Family may have stables, roll one die, result of “4” or more means they do. If they have stables, roll again for number of horses available for sale, then roll one die again and double it for the price per horse. They will sell horses at this rate, and will also sell food at 2 food units per gold piece (an unlimited amount of food is for sale).",
+          ],
+          [
+            "Raid",
+            "Family has four retainers, each with combat skill 4, endurance 4, wealth 1. You must fight these in combat (r306), and if you kill them, then you must fight a second battle against the family itself (r305), which overall has a combat skill of 5, endurance 6, wealth 30. If you kill everyone, then you gain six times (6x) one die roll in food units as bonus plunder.",
+          ],
+        ],
+      },
+    ],
   },
   {
     tag: "e014",
     title: "Hostile Reaver Clan",
     type: "combat",
     image: true,
-    desc: "Roll one die and add two (+2) for the number of clan members. The leader is combat skill 5, endurance 5, wealth 10; other clan members are combat skill 4, endurance 4, wealth 4. Friendly Approach: if clan equals or outnumbers your party, they will attempt a surprise attack (r307). If you outnumber the clan, they bar the house and bid you pass on. You can pass on or make general inquiries (r342) — but any reavers who do not join your party will automatically attempt a surprise attack (r307), while those who joined will not participate. Ratag: battle between your party and the clan — see r330.",
+    desc: "Roll one die and add two (+2) for the number of clan members. The leader is combat skill 5, endurance 5, wealth 10; other clan members are combat skill 4, endurance 4, wealth 4.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          [
+            "Friendly Approach",
+            "If clan equals or outnumbers your party, they will attempt a surprise attack, see r307. If you outnumber the clan, they will bar the house and bid you pass on. You can then either pass on, or make general inquiries. If you select the latter, see r342, but any reavers who do not join your party will automatically attempt a surprise attack, see r307. If they do, those reavers who joined will not participate in that combat.",
+          ],
+          [
+            "Raid",
+            "There is a battle between your party and the clan, see r330.",
+          ],
+        ],
+      },
+    ],
   },
   {
     tag: "e015",
     title: "Friendly Reaver Clan",
     type: "encounter",
-    desc: "Roll one die and add one (+1) for the number of clan members. The leader is combat skill 5, endurance 4, wealth 7; other clan members are combat skill 4, endurance 4, wealth 4. Friendly Approach: clan leader will discuss terms with you (r342). Unless combat results, he will also sell food at 2 units per gold piece and horses at 6 gold pieces each, regardless of whether he joins your party or not. Ratag: there is a battle between your party and the clan — see r330.",
+    desc: "Roll one die and add one (+1) for the number of clan members. The leader is combat skill 5, endurance 4, wealth 7; other clan members are combat skill 4, endurance 4, wealth 4.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          [
+            "Friendly Approach",
+            "Clan leader will discuss terms with you, see r342. Unless combat results, he will also sell food at 2 units per gold piece, and horses at 6 gold pieces each, regardless of whether he joins your party or not.",
+          ],
+          [
+            "Raid",
+            "There is a battle between your party and the clan, see r330.",
+          ],
+        ],
+      },
+    ],
   },
   {
     tag: "e016",
     title: "Magician's Home",
     type: "location",
     image: true,
-    desc: "Friendly Approach: magician insists you stay the night and tell him of your adventures to date. You must provide your own food for the day. He may be willing to discuss joining your party (CS 3, End 5) — see r342 if you wish to try. If you don't, or do and avoid combat, he will give you a magic gift — roll once on line B of the Treasure Table (r226). Ratag: magician calls upon his powers to defeat and destroy your party. Roll one die for the number of wounds you suffer, one of which is poisoned. All followers die or flee. You must abandon everything you cannot carry yourself, saving only your mount and its loads. If you have the Resistance Talisman (e184) you can stop his powers and destroy the magician — roll one die for his wealth code: 1→5; 2-3→25; 4-5→60; 6→110.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          [
+            "Friendly Approach",
+            "Magician insists you stay the night and tell him of your adventures to date. You must provide your own food for the day. He may be willing to discuss joining your party (CS 3, End 5) — see r342 if you wish to try. If you don't, or do and avoid combat, he will give you a magic gift — roll once on line B of the Treasure Table (r226).",
+          ],
+          [
+            "Raid",
+            "Magician calls upon his powers to defeat and destroy your party. Roll one die for the number of wounds you suffer, one of which is poisoned. All followers die or flee. You must abandon everything you cannot carry yourself, saving only your mount and its loads. If you have the Resistance Talisman (e184) you can stop his powers and destroy the magician — roll one die for his wealth code: 1→5; 2-3→25; 4-5→60; 6→110.",
+          ],
+        ],
+      },
+    ],
   },
   {
     tag: "e017",
@@ -1052,13 +1160,13 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Inside the mines (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e059 — Dwarf Mines (still inhabited)"],
-          ["2", "e051 — Bandits"],
-          ["3", "e046 — Gateway to Darkness"],
-          ["4", "e045 — Arch of Travel"],
-          ["5-6", "e028 — Cave Tombs"],
+          ["1", "e059"],
+          ["2", "e051"],
+          ["3", "e046"],
+          ["4", "e045"],
+          ["5-6", "e028"],
         ],
       },
     ],
@@ -1071,15 +1179,12 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Type (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1-2", "e023 — Wizard"],
-          ["3", "e024 — Wizard Attack"],
-          [
-            "4",
-            "e016 — Magician's Home (roll 1d6: even = friendly approach, odd = raid)",
-          ],
-          ["5-6", "e068a — Wizard Tower"],
+          ["1-2", "e023"],
+          ["3", "e024"],
+          ["4", "e016 (roll 1d6: even = friendly approach, odd = raid)"],
+          ["5-6", "e068a"],
         ],
       },
     ],
@@ -1137,11 +1242,11 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Destination (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e165 — Elven Town"],
-          ["2", "e166 — Elven Castle"],
-          ["3-6", "e053 — Campsite"],
+          ["1", "e165"],
+          ["2", "e166"],
+          ["3-6", "e053"],
         ],
       },
     ],
@@ -1155,7 +1260,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Friendly witch actions (1d6)",
+        label: "Roll (1d6)",
         rows: [
           ["1-2", "Joins your party as an ally (r334)"],
           ["3-4", "Can be hired to join your party (r333)"],
@@ -1212,7 +1317,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Boon (1d6)",
+        label: "Roll (1d6)",
         rows: [
           ["1", "Nothing of use"],
           ["2", "Advice — see e025"],
@@ -1281,7 +1386,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Weather effects (2d6)",
+        label: "Roll (2d6)",
         rows: [
           ["7 or less", "No effect — travel is not hindered"],
           ["8", "Each character in party suffers 1 wound due to cold"],
@@ -1313,7 +1418,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Rock fall result (1d6)",
+        label: "Roll (1d6)",
         rows: [
           ["1-4", "Rocks miss — no effect"],
           [
@@ -1343,7 +1448,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Quicksand result (1d6)",
+        label: "Roll (1d6)",
         rows: [
           [
             "1-3",
@@ -1386,12 +1491,12 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Additional event (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e034 — Spectre of the Inner Tomb"],
-          ["2", "e032 — Ghosts"],
-          ["3", "e033 — Warrior Wraiths"],
-          ["4", "e074 — Spiders"],
+          ["1", "e034"],
+          ["2", "e032"],
+          ["3", "e033"],
+          ["4", "e074"],
           ["5-6", "No additional event"],
         ],
       },
@@ -1412,7 +1517,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Mount condition (1d6)",
+        label: "Roll (1d6)",
         rows: [
           ["1-4", "Mount still in fair condition — no special effect"],
           [
@@ -1435,7 +1540,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Daily mount roll (1d6)",
+        label: "Roll (1d6)",
         rows: [
           ["1", "Mount recovering — do not roll any further for it"],
           [
@@ -1576,13 +1681,13 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Continue flying (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e103 — Bad Headwinds"],
-          ["2", "e102 — Light Rainstorm"],
-          ["3", "e079 — Heavy Rains"],
+          ["1", "e103"],
+          ["2", "e102"],
+          ["3", "e079"],
           ["4-5", "No effect"],
-          ["6", "e105a — Violent Weather"],
+          ["6", "e105a"],
         ],
       },
     ],
@@ -1746,13 +1851,13 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Crossing incident (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1-2", "Nothing — crossing uneventful"],
-          ["3", "e094 — Crocodiles"],
-          ["4", "e125 — Raft Overturns"],
-          ["5", "e126 — Raft Caught in Current"],
-          ["6", "e127 — Raft in Rough Water"],
+          ["1-2", "Nothing"],
+          ["3", "e094"],
+          ["4", "e125"],
+          ["5", "e126"],
+          ["6", "e127"],
         ],
       },
     ],
@@ -1938,14 +2043,14 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Inscription meaning (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e042 — Alcove of Sending"],
-          ["2", "e043 — Small Altar"],
-          ["3", "e044 — High Altar"],
-          ["4", "e045 — Arch of Travel"],
-          ["5", "e046 — Gateway to Darkness"],
-          ["6", "e047 — Mirror of Reversal"],
+          ["1", "e042"],
+          ["2", "e043"],
+          ["3", "e044"],
+          ["4", "e045"],
+          ["5", "e046"],
+          ["6", "e047"],
         ],
       },
     ],
@@ -1958,12 +2063,12 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Contents (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e037 — Broken Chest"],
-          ["2", "e038 — Cache under Stone"],
-          ["3", "e039 — Treasure Chest"],
-          ["4", "e044 — High Altar"],
+          ["1", "e037"],
+          ["2", "e038"],
+          ["3", "e039"],
+          ["4", "e044"],
           ["5", "500 gold"],
           ["6", "Nothing"],
         ],
@@ -1978,14 +2083,14 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Inhabitants (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e032 — Ghosts"],
-          ["2", "e051 — Bandits"],
-          ["3", "e052 — Goblins"],
-          ["4", "e055 — Orcs"],
-          ["5", "e057 — Troll"],
-          ["6", "e082 — Spectre"],
+          ["1", "e032"],
+          ["2", "e051"],
+          ["3", "e052"],
+          ["4", "e055"],
+          ["5", "e057"],
+          ["6", "e082"],
         ],
       },
     ],
@@ -1999,14 +2104,14 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Creature (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e032 — Ghosts"],
-          ["2", "e033 — Warrior Wraiths"],
-          ["3", "e034 — Spectre of the Inner Tomb"],
-          ["4", "e056 — Orc Tower patrol"],
-          ["5", "e082 — Spectre"],
-          ["6", "e098 — Dragon"],
+          ["1", "e032"],
+          ["2", "e033"],
+          ["3", "e034"],
+          ["4", "e056"],
+          ["5", "e082"],
+          ["6", "e098"],
         ],
       },
     ],
@@ -2019,14 +2124,14 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Treasure (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "Wealth 25"],
-          ["2", "Wealth 60"],
-          ["3", "e038 — Cache under Stone"],
-          ["4", "e039 — Treasure Chest"],
-          ["5", "e040 — Treasure Chest (trapped)"],
-          ["6", "e140 — Magic Box"],
+          ["1", "r226 — Wealth 25"],
+          ["2", "r226 — Wealth 60"],
+          ["3", "e038"],
+          ["4", "e039"],
+          ["5", "e040"],
+          ["6", "e140"],
         ],
       },
     ],
@@ -2040,13 +2145,13 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Contents (1d6)",
+        label: "Roll (1d6)",
         rows: [
-          ["1", "e141 — Hydra's Teeth"],
-          ["2", "e142 — Gems"],
-          ["3", "Wealth 60"],
-          ["4", "Wealth 110"],
-          ["5", "e195 — Magic Possession"],
+          ["1", "e141"],
+          ["2", "e142"],
+          ["3", "r226 — Wealth 60"],
+          ["4", "r226 — Wealth 110"],
+          ["5", "e195"],
           ["6", "Nothing but rubbish"],
         ],
       },
@@ -2098,19 +2203,19 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "What you find (2d6)",
+        label: "Roll (2d6)",
         rows: [
-          ["2", "e066 — Secret Temple"],
-          ["3", "e037 — Broken Chest"],
-          ["4", "e038 — Cache under Stone"],
-          ["5", "e039 — Treasure Chest"],
-          ["6", "e040 — Treasure Chest (trapped)"],
-          ["7", "e030 — Mummies (1 gold piece)"],
-          ["8", "Wealth 110 (see r225)"],
-          ["9", "e139 — Minor Treasures"],
-          ["10", "e140 — Magic Box"],
-          ["11", "e136 — Hidden Treasures"],
-          ["12", "e054 — Goblin Keep"],
+          ["2", "e066"],
+          ["3", "e037"],
+          ["4", "e038"],
+          ["5", "e039"],
+          ["6", "e040"],
+          ["7", "e030"],
+          ["8", "r226 — Wealth 110"],
+          ["9", "e139"],
+          ["10", "e140"],
+          ["11", "e136"],
+          ["12", "e054"],
         ],
       },
     ],
@@ -2161,7 +2266,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Her attitude (1d6)",
+        label: "Roll (1d6)",
         rows: [
           [
             "1-2",
@@ -2196,7 +2301,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Audience result (1d6)",
+        label: "Roll (1d6)",
         rows: [
           ["1", "He is insulted — see e060 immediately"],
           [
@@ -2232,7 +2337,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Audience result (1d6)",
+        label: "Roll (1d6)",
         rows: [
           ["1", "He is insulted — see e060 immediately"],
           [
@@ -2287,7 +2392,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Audience result (1d6)",
+        label: "Roll (1d6)",
         rows: [
           [
             "1",
@@ -2325,7 +2430,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Audience result (1d6)",
+        label: "Roll (1d6)",
         rows: [
           [
             "1",
@@ -2363,7 +2468,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Secret (1d6)",
+        label: "Roll (1d6)",
         rows: [
           ["1-2", "e143 — Secret of the Temples"],
           ["3-4", "e144 — Secret of Baron Huldra"],
@@ -2476,7 +2581,7 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Ring result (2d6)",
+        label: "Roll (2d6)",
         rows: [
           ["2-8", "Blow warded by ring — ignore wounds"],
           [
@@ -2518,19 +2623,19 @@ const eventData: Event[] = [
     tables: [
       {
         type: "simple-list",
-        label: "Item (2d6)",
+        label: "Roll (2d6)",
         rows: [
-          ["2", "e191 — Resistance Ring"],
-          ["3", "e186 — Magic Sword"],
-          ["4", "e182 — Gift of Charm"],
-          ["5", "e184 — Resistance Talisman"],
-          ["6", "e181 — Cure Poison Vial"],
-          ["7", "e180 — Healing Potion"],
-          ["8", "e185 — Poison Drug"],
-          ["9", "e193 — Shield of Light"],
-          ["10", "e183 — Endurance Sash"],
-          ["11", "e189 — Charisma Talisman"],
-          ["12", "e192 — Resurrection Necklace"],
+          ["2", "e191"],
+          ["3", "e186"],
+          ["4", "e182"],
+          ["5", "e184"],
+          ["6", "e181"],
+          ["7", "e180"],
+          ["8", "e185"],
+          ["9", "e193"],
+          ["10", "e183"],
+          ["11", "e189"],
+          ["12", "e192"],
         ],
       },
     ],

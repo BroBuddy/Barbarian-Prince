@@ -3,11 +3,11 @@ import Card from "@/components/Card";
 import TokenButton from "@/components/TokenButton";
 import { BadgeCent, Beef } from "lucide-react";
 
-const GOLD_STEPS = [-100, -10, -1, 1, 10, 100];
-const FOOD_STEPS = [-10, -1, 1, 10];
+const GOLD_STEPS: number[] = [-100, -10, -1, 1, 10, 100];
+const FOOD_STEPS: number[] = [-100, -10, -1, 1, 10, 100];
 
-const MAX_GOLD = 500;
-const MAX_FOOD = 90;
+const MAX_GOLD: number = 500;
+const MAX_FOOD: number = 90;
 
 const CharacterResources = () => {
   const resources = useGameStore((state) => state.resources);
@@ -17,22 +17,22 @@ const CharacterResources = () => {
   const food = Number(resources.Food);
 
   const handleGold = (delta: number) => {
-    setResources({ Gold: Math.max(0, Number(resources.Gold) + delta) });
+    setResources({ Gold: Math.min(MAX_GOLD, Math.max(0, gold + delta)) });
   };
 
   const handleFood = (delta: number) => {
-    setResources({ Food: Math.max(0, Number(resources.Food) + delta) });
+    setResources({ Food: Math.min(MAX_FOOD, Math.max(0, food + delta)) });
   };
 
   const isGoldDisabled = (step: number) =>
-    (step > 0 && gold >= MAX_GOLD) || (step < 0 && gold <= 0);
+    (step > 0 && gold + step > MAX_GOLD) || (step < 0 && gold + step < 0);
 
   const isFoodDisabled = (step: number) =>
-    (step > 0 && food >= MAX_FOOD) || (step < 0 && food <= 0);
+    (step > 0 && food + step > MAX_FOOD) || (step < 0 && food + step < 0);
 
   return (
     <Card title="Resources">
-      <div className="flex flex-col gap-4 mx-1">
+      <div className="flex flex-col gap-4 mx-1 mb-1">
         <div className="flex items-center gap-8">
           <BadgeCent />
 

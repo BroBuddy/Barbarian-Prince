@@ -1,5 +1,6 @@
-import type { Token } from "../features/character/components/CharacterResources";
 import TokenButton from "./TokenButton";
+
+export type Token = { label: number };
 
 export type TokenGridProps = {
   rows: Token[][];

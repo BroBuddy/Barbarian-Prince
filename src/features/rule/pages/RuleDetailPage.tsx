@@ -23,33 +23,35 @@ function RuleDetail() {
   if (!rule) return null;
 
   return (
-    <Card title={rule.title}>
-      {rule.type && <Badge text={rule.type} icon={rule.type} />}
+    <>
+      <Card title={rule.title}>
+        {rule.type && <Badge text={rule.type} />}
 
-      {rule.desc && <p>{parseLinks(rule.desc as string)}</p>}
+        {rule.desc && <p>{parseLinks(rule.desc as string)}</p>}
 
-      {rule.optional && (
-        <p>
-          <em>
-            <span className="text-purple mr-1">Optional:</span>
-            {parseLinks(rule.optional as string)}
-          </em>
-        </p>
-      )}
+        {rule.optional && (
+          <p>
+            <em>
+              <span className="text-purple mr-1">Optional:</span>
+              {parseLinks(rule.optional as string)}
+            </em>
+          </p>
+        )}
+
+        {rule.note && (
+          <p>
+            <em>
+              <span className="text-purple mr-1">Note:</span>
+              {parseLinks(rule.note as string)}
+            </em>
+          </p>
+        )}
+      </Card>
 
       {rule.tables?.map((table, index) => (
         <TableRenderer key={index} table={table} />
       ))}
-
-      {rule.note && (
-        <p>
-          <em>
-            <span className="text-purple mr-1">Note:</span>
-            {parseLinks(rule.note as string)}
-          </em>
-        </p>
-      )}
-    </Card>
+    </>
   );
 }
 

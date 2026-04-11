@@ -61,37 +61,41 @@ function EventDetailPage() {
   const ActionButton = ICON_MAP[event.type];
 
   return (
-    <Card title={event.title}>
-      {ActionButton && (
-        <button
-          className="cardBtn"
-          onClick={handleAdd}
-          title={`Add ${event.type}`}
-        >
-          <ActionButton />
-        </button>
-      )}
+    <>
+      <Card title={event.title}>
+        {ActionButton && (
+          <button
+            className="cardBtn"
+            onClick={handleAdd}
+            title={`Add ${event.type}`}
+          >
+            <ActionButton />
+          </button>
+        )}
 
-      {event.type && <Badge text={event.type} />}
+        {event.type && <Badge text={event.type} />}
 
-      <div style={{ overflow: "hidden" }}>
-        {event.image && <ParagraphImage tag={event.tag} title={event.title} />}
-        <p>{parseLinks(event.desc || "")}</p>
-      </div>
+        <div style={{ overflow: "hidden" }}>
+          {event.image && (
+            <ParagraphImage tag={event.tag} title={event.title} />
+          )}
+          <p>{parseLinks(event.desc || "")}</p>
+        </div>
+
+        {event.note && (
+          <p>
+            <em>
+              <span className="text-purple mr-1">Note:</span>
+              {parseLinks(event.note)}
+            </em>
+          </p>
+        )}
+      </Card>
 
       {event.tables?.map((table, idx) => (
         <TableRenderer key={idx} table={table} />
       ))}
-
-      {event.note && (
-        <p>
-          <em>
-            <span className="text-purple mr-1">Note:</span>
-            {parseLinks(event.note)}
-          </em>
-        </p>
-      )}
-    </Card>
+    </>
   );
 }
 

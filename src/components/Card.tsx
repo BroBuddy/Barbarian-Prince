@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({ title, tag, children }) => {
             </span>
           )}
           {title && (
-            <div className="mx-2">
+            <div className="mx-1">
               <Headline>{title}</Headline>
             </div>
           )}

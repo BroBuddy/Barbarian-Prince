@@ -1,13 +1,12 @@
 import { parseLinks } from "@/lib/parseLinks";
 import type { SimpleListTableType } from "../types/EventType";
+import Card from "@/components/Card";
 
 function SimpleListTable({ table }: { table: SimpleListTableType }) {
   const hasDescription = table.rows.some((row) => row[1]);
 
   return (
-    <div className="mb-6">
-      <h3 className="text-bold mb-2">{table.label}</h3>
-
+    <Card title={table.label}>
       <table>
         {hasDescription && (
           <thead>
@@ -27,7 +26,7 @@ function SimpleListTable({ table }: { table: SimpleListTableType }) {
           ))}
         </tbody>
       </table>
-    </div>
+    </Card>
   );
 }
 

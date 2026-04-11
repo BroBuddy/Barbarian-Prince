@@ -1,12 +1,10 @@
-import { Headline } from "@/components/Headline";
 import type { RollTableType } from "../types/EventType";
 import { parseLinks } from "@/lib/parseLinks";
+import Card from "@/components/Card";
 
 function RollTable({ table }: { table: RollTableType }) {
   return (
-    <div className="mb-6">
-      <Headline>{table.label}</Headline>
-
+    <Card title={table.label}>
       <table>
         <thead>
           <tr>
@@ -30,7 +28,7 @@ function RollTable({ table }: { table: RollTableType }) {
           ))}
         </tbody>
       </table>
-    </div>
+    </Card>
   );
 }
 export default RollTable;

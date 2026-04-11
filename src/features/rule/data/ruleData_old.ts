@@ -1023,7 +1023,7 @@ const ruleData: Rule[] = [
     ],
   },
   {
-    tag: "r220b",
+    tag: "r220d",
     title: "Surprise",
     type: "combat",
     desc: "If characters achieve surprise in combat, they are allowed one “free” bonus strike at the start of the combat. Then, when the first round starts, the characters with surprise strike first each round.",

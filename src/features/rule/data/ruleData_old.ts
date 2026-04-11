@@ -112,8 +112,20 @@ const ruleData: Rule[] = [
     tag: "r205",
     title: "Lost",
     type: "movement",
-    desc: "Each time you attempt to leave a hex there is a danger of becoming lost. Consult the Travel Table (r207) for the terrain you are leaving and roll two dice. If the total equals or exceeds the 'Lost' number, your party is lost and cannot travel further that day.",
-    note: "Sub-rules: r205a Local Guide (-1 to lost roll), r205b Self-Guiding Moves (roads/rafts never lost), r205c Airborne Lost (drift roll), r205d River Crossing lost.",
+    desc: "Each time you attempt to leave a hex (travel to a new hex) there is a danger of becoming lost. Consult the Travel Table (r207) and find the terrain type you are leaving. Read across to the “Lost” column entry. Roll two dice. If the dice total equals or exceeds the number there, your party is lost. If you move more than one hex in the day, you must check for getting lost before each move (before you enter each hex).",
+    note: "If you get lost, you cannot travel further that day. You are stuck in the hex you tried to leave. You must check for a travel event (see r205b) in the hex you tried to enter, as if you actually entered it. This reflects you wandering around on the edges of the new hex and perhaps encountering something.",
+    tables: [
+      {
+        type: "simple-list",
+        label: "",
+        rows: [
+          ["r205a", "Local Guide"],
+          ["r205b", "Self-Guiding Moves"],
+          ["r205C", "Airborne and Lost"],
+          ["r205D", "River Crossing"],
+        ],
+      },
+    ],
   },
   {
     tag: "r205a",

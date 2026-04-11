@@ -28,30 +28,38 @@ function GamePage() {
 
       <Card title="Barbarian Prince">
         <p>
-          <em>
-            "Evil events have overtaken your Northlands Kingdom. Your father,
-            old King Hendryc Arath, is dead - assassinated by rivals to the
-            throne, led by your own evil brother. These usurpers now hold the
-            palace with their mercenary royal guard. You have escaped to the
-            south and must collect <strong>500 gold</strong> pieces to raise an
-            army to smash them and retake your heritage. Furthermore, the
-            usurpers have powerful friends overseas and in the Cult of Dark
-            Wizards of the South. If you can't return across the Tragoth River
-            to take them out in ten weeks, their allies will arm and you will
-            lose your kingdom forever. The way will not be easy, but you have
-            your stubborn Northlands will and your great sword ‘Bonebiter’ to
-            aid you in your quest..."
-          </em>
+          Barbarian Prince is a realistic adventure game. You play the game in
+          days. Each day starts with you selecting an{" "}
+          <Link to="/rule/r203">action</Link>, such as travelling to a new hex
+          on the map. Depending on the action selected, you will be referred to
+          a chart, where you roll one or two dice. The dice roll and chart may
+          then indicate a special event section, which you then resolve.
         </p>
         <p>
-          Each day, you must choose how to <Link to="/rule/r203">act</Link>. You
-          may <Link to="/rule/r204">travel</Link> across dangerous lands, search
-          for <Link to="/rule/r215">food</Link> to survive, engage in{" "}
-          <Link to="/rule/r220">combat</Link> with those who oppose you, or seek
-          out <Link to="/rule/r225">treasure</Link> to build your wealth. Every
-          action consumes precious time, and every choice carries risk. Neglect
-          your supplies, and you may starve. Seek battle, and you may fall.
-          Chase riches, and you may lose everything.
+          After all events (if any) are resolved for your daily action, you must
+          then eat your main (evening) meal, as described in the{" "}
+          <Link to="/rule/r215">food</Link> rules, and if in a town, castle, or
+          temple hex, you must also purchase{" "}
+          <Link to="/rule/r217">lodging</Link>. This ends the day, and you
+          continue play with the start of the next day, where you select another
+          action, etc. The game continues until either you are killed, or 70
+          days (10 weeks) elapse. If you haven’t won after 70 days, the game is
+          automatically lost!
+        </p>
+        <p>
+          Many events may lead to fighting, described in the{" "}
+          <Link to="/rule/r217">combat</Link> rules. You may also have
+          additional <Link to="/rule/r201">characters</Link> join your “party.”
+          These additional characters are especially useful in fights, although
+          some may have special knowledge or abilities useful in certain events.
+          Magicians, wizards, witches, priests and monks are especially useful
+          people to have in your party. All events are self explanatory, and
+          refer to the main rules section that describes how they are resolved.
+          Once you’ve read the rules a couple of times you won’t need to refer
+          to them again unless you have a specific question. Remember, Barbarian
+          Prince is a realistic game, so when in doubt about a situation,
+          imagine yourself acting out the event in real life, and select the
+          resolution that seems most realistic to you.
         </p>
         <p>
           <Link to="/event/e001" className="text-purple">

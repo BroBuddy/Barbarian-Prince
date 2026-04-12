@@ -5,6 +5,10 @@ import { getLinkClass } from "@/lib/formatters";
 
 const frequentlyUsed: TagItem[] = [
   {
+    tag: "r203",
+    title: "Daily Actions",
+  },
+  {
     tag: "r226",
     title: "Treasure Table",
   },

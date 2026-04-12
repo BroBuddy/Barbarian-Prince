@@ -37,7 +37,9 @@ function MidnightModal() {
     <Modal onClose={() => setModalOpen(false)}>
       <Card title="Midnight">
         <div className="flex items-center justify-between mb-3">
-          <p>Meal:</p>
+          <p>
+            <strong>Meal</strong>
+          </p>
           <div className="flex gap-10">
             <ChoiceButton onClick={() => modifyResources({ Starvation: 1 })}>
               No <Utensils size={20} />
@@ -60,7 +62,9 @@ function MidnightModal() {
         </div>
 
         <div className="flex items-center justify-between mb-3">
-          <p>Lodging:</p>
+          <p>
+            <strong>Lodging</strong>
+          </p>
           <div className="flex gap-4">
             <ChoiceButton
               disabled={goldRes <= 0}
@@ -72,10 +76,12 @@ function MidnightModal() {
         </div>
 
         <div className="flex items-center justify-between mb-3">
-          <p>Followers:</p>
+          <p>
+            <strong>Followers</strong>
+          </p>
           <div className="flex gap-4">
             <ChoiceButton
-              disabled={goldRes < totalPay}
+              disabled={goldRes < totalPay || totalPay === 0}
               onClick={() => modifyResources({ Gold: -totalPay })}
             >
               {totalPay} <BadgeCent size={22} />

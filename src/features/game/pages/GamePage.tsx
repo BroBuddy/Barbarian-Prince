@@ -48,7 +48,7 @@ function GamePage() {
         </p>
         <p>
           Many events may lead to fighting, described in the{" "}
-          <Link to="/rule/r217">combat</Link> rules. You may also have
+          <Link to="/rule/r220">combat</Link> rules. You may also have
           additional <Link to="/rule/r201">characters</Link> join your “party.”
           These additional characters are especially useful in fights, although
           some may have special knowledge or abilities useful in certain events.

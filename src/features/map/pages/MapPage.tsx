@@ -1,9 +1,7 @@
 import { useHexCanvas } from "../hooks/useHexCanvas";
 import { MoveModal } from "../components/MoveModal";
-import { useState } from "react";
-import { MidnightModal } from "../components/MidnightModal";
-import { Moon, Sun } from "lucide-react";
-import { Link } from "react-router-dom";
+import MidnightModal from "../components/MidnightModal";
+import DailyActionsModal from "../components/DailyActionsModal";
 
 function MapPage() {
   const {
@@ -14,8 +12,6 @@ function MapPage() {
     onAdvance,
     onClose,
   } = useHexCanvas();
-
-  const [midnightOpen, setMidnightOpen] = useState<boolean>(false);
 
   return (
     <div
@@ -29,39 +25,8 @@ function MapPage() {
         paddingTop: "15px",
       }}
     >
-      <div
-        className="pointer text-white bg-black rounded py-1"
-        style={{
-          position: "fixed",
-          bottom: "55px",
-          left: "calc(max(0px, (100vw - 768px) / 2) + 23px)",
-          zIndex: 10,
-        }}
-      >
-        <Link
-          to="/rule/r203"
-          className="flex p-1 px-2 items-center text-white pointer"
-        >
-          <Sun />
-        </Link>
-      </div>
-
-      <div
-        className="pointer text-white bg-black rounded py-1"
-        style={{
-          position: "fixed",
-          bottom: "55px",
-          right: "calc(max(0px, (100vw - 768px) / 2) + 21px)",
-          zIndex: 10,
-        }}
-      >
-        <button
-          onClick={() => setMidnightOpen(true)}
-          className="flex p-1 px-2 items-center text-white pointer"
-        >
-          <Moon />
-        </button>
-      </div>
+      <DailyActionsModal />
+      <MidnightModal />
 
       <div
         ref={containerRef}
@@ -90,10 +55,6 @@ function MapPage() {
             onAdvance={onAdvance}
             onClose={onClose}
           />
-        )}
-
-        {midnightOpen && (
-          <MidnightModal onClose={() => setMidnightOpen(false)} />
         )}
       </div>
     </div>
